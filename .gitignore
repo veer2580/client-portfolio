@@ -1,0 +1,13 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Temp / Editor / Node
+node_modules/
+dist/
+.vscode/
+.idea/
+*.log
+
+# Antigravity IDE scratch files
+_raw_input.txt

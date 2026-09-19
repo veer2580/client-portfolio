@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+
+
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CELEBSO X</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com">
+    // Mobile Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    if (mobileMenuBtn && mobileDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isHidden = mobileDrawer.classList.contains('hidden');
+        if (isHidden) {
+          mobileDrawer.classList.remove('hidden');
+          mobileDrawer.classList.add('flex');
+          mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">close</span>';
+        } else {
+          mobileDrawer.classList.add('hidden');
+          mobileDrawer.classList.remove('flex');
+          mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">menu</span>';
+        }
+      });
+    }
+
+  </script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-container": "#a77d20", "surface-bright": "#faf9f4", "primary-fixed": "#e5e2e1", "tertiary-fixed": "#ffdea6", "on-secondary-fixed": "#00164d", "tertiary": "#000000", "outline-variant": "#c4c7c7", "on-background": "#1b1c19", "inverse-surface": "#30312e", "on-primary": "#ffffff", "primary": "#000000", "secondary-fixed": "#dce1ff", "on-error-container": "#93000a", "secondary-fixed-dim": "#b5c4ff", "inverse-on-surface": "#f2f1ec", "secondary-container": "#2f69fb", "on-surface": "#1b1c19", "on-secondary": "#ffffff", "surface": "#faf9f4", "primary-container": "#1c1b1b", "on-secondary-fixed-variant": "#003cad", "surface-container-low": "#f5f4ef", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "on-tertiary-fixed-variant": "#5d4200", "surface-variant": "#e3e3de", "outline": "#747878", "tertiary-container": "#271900", "surface-container-highest": "#e3e3de", "inverse-primary": "#c8c6c5", "secondary": "#004edc", "error-container": "#ffdad6", "primary-fixed-dim": "#c8c6c5", "error": "#ba1a1a", "surface-container": "#efeee9", "surface-tint": "#5f5e5e", "on-error": "#ffffff", "on-secondary-container": "#fffbff", "surface-dim": "#dbdad5", "surface-container-high": "#e9e8e3", "on-primary-fixed": "#1c1b1b", "tertiary-fixed-dim": "#f1bf5d", "on-primary-container": "#858383", "on-primary-fixed-variant": "#474646", "on-surface-variant": "#444748", "on-tertiary-fixed": "#271900", "background": "#faf9f4" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "space-lg": "1.75rem", "margin-desktop": "4rem", "gutter-desktop": "2.5rem", "margin": "1.25rem", "space-md": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-xl": "3rem" }, "fontFamily": { "body-md": [ "Inter" ], "label-md": [ "JetBrains Mono" ], "display-sm": [ "Newsreader" ], "body-sm": [ "Inter" ], "headline-sm": [ "Newsreader" ], "display-sm-mobile": [ "Newsreader" ], "label-sm": [ "JetBrains Mono" ], "label-lg": [ "JetBrains Mono" ], "display-lg-mobile": [ "Newsreader" ], "body-lg": [ "Inter" ], "headline-lg": [ "Newsreader" ], "display-lg": [ "Newsreader" ] }, "fontSize": { "body-md": [ "0.9375rem", { "lineHeight": "1.5rem", "fontWeight": "400" } ], "label-md": [ "0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.12em", "fontWeight": "500" } ], "display-sm": [ "3rem", { "lineHeight": "3.25rem", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "body-sm": [ "0.8125rem", { "lineHeight": "1.25rem", "fontWeight": "400" } ], "headline-sm": [ "1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "display-sm-mobile": [ "2rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "label-sm": [ "0.625rem", { "lineHeight": "0.75rem", "letterSpacing": "0.14em", "fontWeight": "500" } ], "label-lg": [ "0.8125rem", { "lineHeight": "1rem", "letterSpacing": "0.08em", "fontWeight": "500" } ], "display-lg-mobile": [ "2.75rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "body-lg": [ "1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.005em", "fontWeight": "400" } ], "headline-lg": [ "2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.015em", "fontWeight": "400" } ], "display-lg": [ "4.5rem", { "lineHeight": "4.75rem", "letterSpacing": "-0.03em", "fontWeight": "400" } ] } } } };
+    // Mobile Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    if (mobileMenuBtn && mobileDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isHidden = mobileDrawer.classList.contains('hidden');
+        if (isHidden) {
+          mobileDrawer.classList.remove('hidden');
+          mobileDrawer.classList.add('flex');
+          mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">close</span>';
+        } else {
+          mobileDrawer.classList.add('hidden');
+          mobileDrawer.classList.remove('flex');
+          mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">menu</span>';
+        }
+      });
+    }
+
+  </script></head><body class="bg-surface-container-low font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-low/90 backdrop-blur-md border-b border-surface-container-highest"><div class="h-[72px] w-full px-6 lg:px-12 flex items-center justify-between"><div class="flex items-center gap-4"><a class="flex items-center gap-3 group" data-path="home" href="index.html"><img alt="Celebso X Architectural Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XIBoMCfs_BZeD2l-c7MVYu2Vr0JlcuTR0mjG2Vw1wJVY8vv6XGWA-s1TSBP3D2-vZnLdM5HDsw99QyJ4EzFl_w-GTN19yWaTm0c3SeT-Iaprp-hQ5By7Ofe6yPXVYQpIoTGPytIa2vabIXy6NBoEDiRtQ-I4Q--m8-6wjFQHHznEtnJntqYLNjYSjfDc7fqJE-jSzfMWp97RBt4IQ36zfRFouM5LIzW5UIxPLwXljm773z2PYtfMU87rwr"/><span class="font-label-lg text-label-lg tracking-widest text-primary uppercase">CELEBSO X</span></a><div class="hidden xl:flex items-center gap-2 pl-4 border-l border-surface-container-highest"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">IND • MUMBAI / BLR</span></div></div><nav class="hidden md:flex items-center gap-8 lg:gap-10" data-active-classes="text-primary font-medium border-b border-primary"><a class="font-label-md text-label-md tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="home" href="index.html">HOME</a><a class="font-label-md text-label-md tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="about" href="about.html">ABOUT</a>
+<a class="font-label-md text-label-md tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="portfolio" href="portfolio.html">PORTFOLIO</a><a aria-current="page" class="tracking-widest uppercase transition-colors py-1 text-primary font-medium border-b border-primary" data-path="blog" href="blog.html">BLOG</a><a class="font-label-md text-label-md tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="contact" href="contact.html">CONTACT</a></nav><div class="flex items-center gap-4"><a class="hidden sm:inline-flex items-center justify-center bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest px-5 py-2.5 hover:bg-secondary transition-colors duration-200" href="#">[ INSTALL CELEBSO ]</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><button aria-label="Toggle Navigation Menu" id="mobileMenuBtn" class="md:hidden flex items-center justify-center p-2 text-primary hover:bg-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div><div id="mobileDrawer" class="fixed inset-x-0 top-[72px] bg-surface-container-low/95 backdrop-blur-md border-b border-surface-container-highest p-6 hidden flex-col gap-4 shadow-xl z-50 md:hidden">
+  <nav class="flex flex-col gap-3">
+    <a href="index.html" class="font-label-md text-label-md tracking-widest uppercase py-2 border-b border-surface-container-highest text-on-surface-variant hover:text-primary">01 / HOME</a>
+    <a href="about.html" class="font-label-md text-label-md tracking-widest uppercase py-2 border-b border-surface-container-highest text-on-surface-variant hover:text-primary">02 / ABOUT</a>
+    <a href="portfolio.html" class="font-label-md text-label-md tracking-widest uppercase py-2 border-b border-surface-container-highest text-on-surface-variant hover:text-primary">03 / PORTFOLIO</a>
+    <a href="blog.html" class="font-label-md text-label-md tracking-widest uppercase py-2 border-b border-surface-container-highest text-primary font-medium">04 / BLOG</a>
+    <a href="contact.html" class="font-label-md text-label-md tracking-widest uppercase py-2 border-b border-surface-container-highest text-on-surface-variant hover:text-primary">05 / CONTACT</a>
+  </nav>
+  <div class="pt-2 flex flex-col gap-3">
+    <a href="index.html#install" class="inline-flex items-center justify-center bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest px-5 py-3 hover:bg-secondary transition-colors">[ INSTALL CELEBSO ]</a>
+    <div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-2">
+      <span>COORD: 19.0760° N, 72.8777° E</span>
+      <span class="text-secondary font-medium">SYS: STABLE</span>
+    </div>
+  </div>
+</div>
+</header><main class="w-full pt-[72px] bg-surface-container-low flex-grow"><div class="flex flex-col w-full">
+
+<!-- SECTION HEADER & ARCHITECTURAL INDEX -->
+
+<section class="w-full px-6 lg:px-12 pt-10 pb-8 border-b border-surface-container-highest">
+
+<div class="max-w-7xl mx-auto">
+
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+
+<div>
+
+<div class="flex items-center gap-3 mb-3">
+
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">01 / PERSPECTIVES &amp; EDITORIAL</span>
+
+<span class="font-label-sm text-label-sm text-outline-variant">•</span>
+
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">EDITION 2026.05</span>
+
+</div>
+
+<h1 class="font-headline-lg text-headline-lg lg:text-display-sm text-primary tracking-tight">BLOG &amp; ESSAYS</h1>
+
+</div>
+
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl leading-relaxed">
+
+          Ideas, stories and perspectives on creators, technology, digital identity and the future of professional connection across India and global creative ecosystems.
+
+        </p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURED ESSAY (HERO SPLIT) -->
+
+<section class="w-full px-6 lg:px-12 py-10 lg:py-14 border-b border-surface-container-highest">
+
+<div class="max-w-7xl mx-auto">
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-surface-container-highest bg-surface-container-lowest transition-all hover:border-outline">
+
+<!-- Feature Visual -->
+
+<div class="lg:col-span-7 relative min-h-[380px] lg:min-h-[520px] bg-surface-container overflow-hidden group">
+
+<img class="w-full h-full object-cover grayscale-[15%] contrast-[1.05] group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Three creative professionals and architectural designers collaborating in a warm daylight studio loft in Mumbai with scale architectural models, sketchbooks, Leica camera, laptop and urban cityscape visible through industrial steel frame windows during golden hour" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE5WLYiA4U6q3i-Lg6KfWk8f0Lus4CFPW1eVT9Bv12cb8X9F3C5X6gBUFjRcqLTr2QIAlaVJUZqUwfT5vidyc0qnuW5eYt2lirRmbY-uHdk3VGXPBut5ulwjj_WMg_XsbQsF5cKsLWAPYlw36hrTEa1M-yGYnjauwQU55ie6g_feWi2w6VsihmnxYvP7UHuz1Q_LmPbHLBvRVG-Ios7c2eVqcZg1f5BqG5yFoP7XDWgRxQQMrwGlumcg"/>
+
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-40"></div>
+
+<div class="absolute top-5 left-5 bg-surface-container-lowest/95 backdrop-blur px-3 py-1.5 border border-surface-container-highest flex items-center gap-2">
+
+<span class="w-1.5 h-1.5 bg-secondary rounded-full animate-pulse"></span>
+
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">FEATURED DOSSIER</span>
+
+</div>
+
+<div class="absolute bottom-5 right-5 font-label-sm text-label-sm uppercase tracking-widest text-on-primary bg-primary/90 px-3 py-1">
+
+            ARCHIVE // 05.26-A1
+
+          </div>
+
+</div>
+
+<!-- Feature Content Block -->
+
+<div class="lg:col-span-5 p-8 lg:p-12 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-surface-container-highest bg-surface-container-lowest">
+
+<div>
+
+<div class="flex items-center justify-between gap-4 mb-6">
+
+<span class="px-2.5 py-1 text-label-sm font-label-sm uppercase tracking-wider bg-secondary-fixed text-on-secondary-fixed border border-secondary/20">
+
+                DIGITAL IDENTITY
+
+              </span>
+
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
+
+                6 MIN READ
+
+              </span>
+
+</div>
+
+<h2 class="font-headline-lg text-headline-lg text-primary leading-tight mb-4 group-hover:text-secondary transition-colors">
+
+              Why Your Digital Identity Matters
+
+            </h2>
+
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+
+              Your online presence is becoming an important part of how people discover your work, skills and story. How intentional digital architecture replaces the algorithmic treadmill, cultivating genuine longevity for independent operators.
+
+            </p>
+
+<div class="space-y-2 py-4 border-y border-surface-container-highest font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
+
+<div class="flex justify-between">
+
+<span>AUTHOR</span>
+
+<span class="text-primary font-medium">BY EDITORIAL DESK</span>
+
+</div>
+
+<div class="flex justify-between">
+
+<span>PUBLISHED</span>
+
+<span class="text-primary">MAY 2026</span>
+
+</div>
+
+<div class="flex justify-between">
+
+<span>FOCUS COORD</span>
+
+<span class="text-primary font-mono">19.0760° N, 72.8777° E</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="pt-8 flex items-center justify-between">
+
+<button class="w-full inline-flex items-center justify-between bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-widest px-6 py-4 hover:bg-secondary transition-colors duration-200" onclick="openReader('article-featured')" type="button">
+
+<span>READ ARTICLE</span>
+
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FILTER & TAXONOMY BAR -->
+
+<section class="sticky top-[72px] z-30 w-full bg-surface-container-low/95 backdrop-blur-md border-b border-surface-container-highest px-6 lg:px-12 py-4">
+
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline mr-2 hidden sm:inline">TOPIC:</span>
+
+<button class="filter-tab active font-label-md text-label-md uppercase tracking-wider px-3.5 py-1.5 border border-primary bg-primary text-on-primary transition-all" onclick="filterArticles('all', this)">ALL</button>
+
+<button class="filter-tab font-label-md text-label-md uppercase tracking-wider px-3.5 py-1.5 border border-surface-container-highest hover:border-primary text-on-surface-variant hover:text-primary transition-all" onclick="filterArticles('creators', this)">CREATORS</button>
+
+<button class="filter-tab font-label-md text-label-md uppercase tracking-wider px-3.5 py-1.5 border border-surface-container-highest hover:border-primary text-on-surface-variant hover:text-primary transition-all" onclick="filterArticles('technology', this)">TECHNOLOGY</button>
+
+<button class="filter-tab font-label-md text-label-md uppercase tracking-wider px-3.5 py-1.5 border border-surface-container-highest hover:border-primary text-on-surface-variant hover:text-primary transition-all" onclick="filterArticles('digital identity', this)">DIGITAL IDENTITY</button>
+
+<button class="filter-tab font-label-md text-label-md uppercase tracking-wider px-3.5 py-1.5 border border-surface-container-highest hover:border-primary text-on-surface-variant hover:text-primary transition-all" onclick="filterArticles('business', this)">BUSINESS</button>
+
+<button class="filter-tab font-label-md text-label-md uppercase tracking-wider px-3.5 py-1.5 border border-surface-container-highest hover:border-primary text-on-surface-variant hover:text-primary transition-all" onclick="filterArticles('community', this)">COMMUNITY</button>
+
+<button class="filter-tab font-label-md text-label-md uppercase tracking-wider px-3.5 py-1.5 border border-surface-container-highest hover:border-primary text-on-surface-variant hover:text-primary transition-all" onclick="filterArticles('career', this)">CAREER</button>
+
+</div>
+
+<div class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant">
+
+<span id="article-count">8 ARTICLES LISTED</span>
+
+<span class="text-outline-variant">/</span>
+
+<span class="uppercase">SORT: CHRONO</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ARTICLE DOSSIER GRID -->
+
+<section class="w-full px-6 lg:px-12 py-12">
+
+<div class="max-w-7xl mx-auto">
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="articles-grid">
+
+<!-- Article 1 -->
+
+<article class="article-card flex flex-col justify-between bg-surface-container-lowest border border-surface-container-highest p-6 hover:border-secondary transition-colors duration-200 group" data-category="creators">
+
+<div>
+
+<div class="flex items-center justify-between mb-5 pb-3 border-b border-surface-container-highest">
+
+<span class="font-label-sm text-label-sm text-outline">DOC // 001</span>
+
+<span class="px-2 py-0.5 text-label-sm font-label-sm uppercase tracking-wider bg-surface-container text-on-surface-variant border border-surface-container-highest">CREATORS</span>
+
+</div>
+
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">MAY 12, 2026 • 5 MIN</div>
+
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-secondary transition-colors leading-snug">
+
+              How Creators Can Build a Stronger Digital Identity
+
+            </h3>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+
+              Moving past algorithmic vanity metrics into resilient reputation infrastructures anchored on verified craft, intentional publication, and domain authority.
+
+            </p>
+
+</div>
+
+<div class="pt-4 border-t border-surface-container-highest flex items-center justify-between">
+
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">T. MENON</span>
+
+<button class="font-label-md text-label-md uppercase tracking-widest text-primary group-hover:text-secondary flex items-center gap-1.5 transition-colors" onclick="openReader('article-1')">
+
+              READ <span>→</span>
+
+</button>
+
+</div>
+
+</article>
+
+<!-- Article 2 -->
+
+<article class="article-card flex flex-col justify-between bg-surface-container-lowest border border-surface-container-highest p-6 hover:border-secondary transition-colors duration-200 group" data-category="career">
+
+<div>
+
+<div class="flex items-center justify-between mb-5 pb-3 border-b border-surface-container-highest">
+
+<span class="font-label-sm text-label-sm text-outline">DOC // 002</span>
+
+<span class="px-2 py-0.5 text-label-sm font-label-sm uppercase tracking-wider bg-surface-container text-on-surface-variant border border-surface-container-highest">CAREER</span>
+
+</div>
+
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">MAY 09, 2026 • 7 MIN</div>
+
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-secondary transition-colors leading-snug">
+
+              From Social Profile to Professional Portfolio
+
+            </h3>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+
+              Why static resume templates fail modern multi-hyphenates. How to construct a live dossier that documents dynamic case studies, collaborations, and career trajectory.
+
+            </p>
+
+</div>
+
+<div class="pt-4 border-t border-surface-container-highest flex items-center justify-between">
+
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">A. SHARMA</span>
+
+<button class="font-label-md text-label-md uppercase tracking-widest text-primary group-hover:text-secondary flex items-center gap-1.5 transition-colors" onclick="openReader('article-2')">
+
+              READ <span>→</span>
+
+</button>
+
+</div>
+
+</article>
+
+<!-- Article 3 -->
+
+<article class="article-card flex flex-col justify-between bg-surface-container-lowest border border-surface-container-highest p-6 hover:border-secondary transition-colors duration-200 group" data-category="digital identity">
+
+<div>
+
+<div class="flex items-center justify-between mb-5 pb-3 border-b border-surface-container-highest">
+
+<span class="font-label-sm text-label-sm text-outline">DOC // 003</span>
+
+<span class="px-2 py-0.5 text-label-sm font-label-sm uppercase tracking-wider bg-secondary-fixed text-on-secondary-fixed border border-secondary/20">DIGITAL IDENTITY</span>
+
+</div>
+
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">MAY 06, 2026 • 4 MIN</div>
+
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-secondary transition-colors leading-snug">
+
+              Why Your Work Deserves More Than a Feed
+
+            </h3>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+
+              The 24-hour content decay cycle devalues complex thought and rigorous design. A case for permanent archival spaces that give ideas room to breathe.
+
+            </p>
+
+</div>
+
+<div class="pt-4 border-t border-surface-container-highest flex items-center justify-between">
+
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">R. KULKARNI</span>
+
+<button class="font-label-md text-label-md uppercase tracking-widest text-primary group-hover:text-secondary flex items-center gap-1.5 transition-colors" onclick="openReader('article-3')">
+
+              READ <span>→</span>
+
+</button>
+
+</div>
+
+</article>
+
+<!-- Article 4 -->
+
+<article class="article-card flex flex-col justify-between bg-surface-container-lowest border border-surface-container-highest p-6 hover:border-secondary transition-colors duration-200 group" data-category="business">
+
+<div>
+
+<div class="flex items-center justify-between mb-5 pb-3 border-b border-surface-container-highest">
+
+<span class="font-label-sm text-label-sm text-outline">DOC // 004</span>
+
+<span class="px-2 py-0.5 text-label-sm font-label-sm uppercase tracking-wider bg-surface-container text-on-surface-variant border border-surface-container-highest">BUSINESS</span>
+
+</div>
+
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">APR 29, 2026 • 8 MIN</div>
+
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-secondary transition-colors leading-snug">
+
+              The Future of Creator–Brand Collaboration
+
+            </h3>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+
+              Shifting from transactional sponsorships to long-term equity, design co-creations, and architectural partnerships across urban cultural hubs.
+
+            </p>
+
+</div>
+
+<div class="pt-4 border-t border-surface-container-highest flex items-center justify-between">
+
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">V. DESHMUKH</span>
+
+<button class="font-label-md text-label-md uppercase tracking-widest text-primary group-hover:text-secondary flex items-center gap-1.5 transition-colors" onclick="openReader('article-4')">
+
+              READ <span>→</span>
+
+</button>
+
+</div>
+
+</article>
+
+<!-- Article 5 -->
+
+<article class="article-card flex flex-col justify-between bg-surface-container-lowest border border-surface-container-highest p-6 hover:border-secondary transition-colors duration-200 group" data-category="community">
+
+<div>
+
+<div class="flex items-center justify-between mb-5 pb-3 border-b border-surface-container-highest">
+
+<span class="font-label-sm text-label-sm text-outline">DOC // 005</span>
+
+<span class="px-2 py-0.5 text-label-sm font-label-sm uppercase tracking-wider bg-surface-container text-on-surface-variant border border-surface-container-highest">COMMUNITY</span>
+
+</div>
+
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">APR 24, 2026 • 6 MIN</div>
+
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-secondary transition-colors leading-snug">
+
+              Building Communities Around Shared Interests
+
+            </h3>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+
+              How focused micro-collectives are replacing broadcast-style audience accumulation, creating high-trust environments for peer critique and real collaboration.
+
+            </p>
+
+</div>
+
+<div class="pt-4 border-t border-surface-container-highest flex items-center justify-between">
+
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">S. CHATTERJEE</span>
+
+<button class="font-label-md text-label-md uppercase tracking-widest text-primary group-hover:text-secondary flex items-center gap-1.5 transition-colors" onclick="openReader('article-5')">
+
+              READ <span>→</span>
+
+</button>
+
+</div>
+
+</article>
+
+<!-- Article 6 -->
+
+<article class="article-card flex flex-col justify-between bg-surface-container-lowest border border-surface-container-highest p-6 hover:border-secondary transition-colors duration-200 group" data-category="technology">
+
+<div>
+
+<div class="flex items-center justify-between mb-5 pb-3 border-b border-surface-container-highest">
+
+<span class="font-label-sm text-label-sm text-outline">DOC // 006</span>
+
+<span class="px-2 py-0.5 text-label-sm font-label-sm uppercase tracking-wider bg-surface-container text-on-surface-variant border border-surface-container-highest">TECHNOLOGY</span>
+
+</div>
+
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">APR 18, 2026 • 9 MIN</div>
+
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-secondary transition-colors leading-snug">
+
+              How Professionals Can Showcase Their Work Online
+
+            </h3>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+
+              A comprehensive technical framework for architects, designers, and software engineers to curate their engineering breakthroughs through modular blueprints.
+
+            </p>
+
+</div>
+
+<div class="pt-4 border-t border-surface-container-highest flex items-center justify-between">
+
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">K. NATH</span>
+
+<button class="font-label-md text-label-md uppercase tracking-widest text-primary group-hover:text-secondary flex items-center gap-1.5 transition-colors" onclick="openReader('article-6')">
+
+              READ <span>→</span>
+
+</button>
+
+</div>
+
+</article>
+
+<!-- Article 7 -->
+
+<article class="article-card flex flex-col justify-between bg-surface-container-lowest border border-surface-container-highest p-6 hover:border-secondary transition-colors duration-200 group" data-category="digital identity">
+
+<div>
+
+<div class="flex items-center justify-between mb-5 pb-3 border-b border-surface-container-highest">
+
+<span class="font-label-sm text-label-sm text-outline">DOC // 007</span>
+
+<span class="px-2 py-0.5 text-label-sm font-label-sm uppercase tracking-wider bg-secondary-fixed text-on-secondary-fixed border border-secondary/20">DIGITAL IDENTITY</span>
+
+</div>
+
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">APR 11, 2026 • 5 MIN</div>
+
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-secondary transition-colors leading-snug">
+
+              The New Age of Digital Reputation
+
+            </h3>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+
+              Decentralized proof of contribution, peer endorsements, and why the future of high-value hiring depends on authenticated public artifacts over resume declarations.
+
+            </p>
+
+</div>
+
+<div class="pt-4 border-t border-surface-container-highest flex items-center justify-between">
+
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">P. IYER</span>
+
+<button class="font-label-md text-label-md uppercase tracking-widest text-primary group-hover:text-secondary flex items-center gap-1.5 transition-colors" onclick="openReader('article-7')">
+
+              READ <span>→</span>
+
+</button>
+
+</div>
+
+</article>
+
+<!-- Article 8 -->
+
+<article class="article-card flex flex-col justify-between bg-surface-container-lowest border border-surface-container-highest p-6 hover:border-secondary transition-colors duration-200 group" data-category="creators">
+
+<div>
+
+<div class="flex items-center justify-between mb-5 pb-3 border-b border-surface-container-highest">
+
+<span class="font-label-sm text-label-sm text-outline">DOC // 008</span>
+
+<span class="px-2 py-0.5 text-label-sm font-label-sm uppercase tracking-wider bg-surface-container text-on-surface-variant border border-surface-container-highest">CREATORS</span>
+
+</div>
+
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">APR 03, 2026 • 6 MIN</div>
+
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-secondary transition-colors leading-snug">
+
+              Designing a Better Professional Social Experience
+
+            </h3>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+
+              Eliminating the notification gamification and endless scroll dopamine traps. Constructing interfaces that respect professional attention and intellectual bandwidth.
+
+            </p>
+
+</div>
+
+<div class="pt-4 border-t border-surface-container-highest flex items-center justify-between">
+
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">EDITORIAL BOARD</span>
+
+<button class="font-label-md text-label-md uppercase tracking-widest text-primary group-hover:text-secondary flex items-center gap-1.5 transition-colors" onclick="openReader('article-8')">
+
+              READ <span>→</span>
+
+</button>
+
+</div>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- NEWSLETTER / DISPATCH REGISTRY -->
+
+<section class="w-full px-6 lg:px-12 py-16 bg-surface-container-low border-t border-surface-container-highest">
+
+<div class="max-w-7xl mx-auto">
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-surface-container-lowest p-8 lg:p-12 border border-surface-container-highest">
+
+<div class="lg:col-span-6">
+
+<div class="flex items-center gap-2 mb-3">
+
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">02 // DISPATCHES</span>
+
+<span class="text-outline">•</span>
+
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">BI-WEEKLY</span>
+
+</div>
+
+<h2 class="font-headline-lg text-headline-lg text-primary mb-3">Subscribe to The Celebso Ledger</h2>
+
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-lg">
+
+            Curated analysis on computational architecture, independent creator economics, and technological identity straight to your inbox every alternate Thursday.
+
+          </p>
+
+</div>
+
+<div class="lg:col-span-6">
+
+<form class="space-y-3" onsubmit="handleSubscribe(event)">
+
+<div class="flex flex-col sm:flex-row gap-3">
+
+<input class="flex-1 bg-surface-container-low border border-surface-container-highest px-4 py-3.5 font-body-md text-body-md text-primary placeholder:text-outline focus:outline-none focus:border-secondary" placeholder="ENTER WORK EMAIL..." required="" type="email"/>
+
+<button class="bg-primary hover:bg-secondary text-on-primary font-label-md text-label-md uppercase tracking-widest px-8 py-3.5 transition-colors duration-200 shrink-0" type="submit">
+
+                JOIN ARCHIVE
+
+              </button>
+
+</div>
+
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+
+<span class="material-symbols-outlined text-[14px]">lock</span>
+
+<span>STRICT PRIVACY. ZERO THIRD-PARTY TRACKING. ONE-CLICK UNSUBSCRIBE.</span>
+
+</div>
+
+</form>
+
+<div class="hidden mt-3 p-3 bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wider" id="sub-success">
+
+            ✓ IDENTITY RECORDED. WELCOME TO THE ARCHIVE.
+
+          </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- INTERACTIVE ESSAY READER DRAWER / MODAL -->
+
+<div class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm hidden flex justify-end" id="reader-modal">
+
+<div class="w-full max-w-3xl h-full bg-surface-container-lowest overflow-y-auto border-l border-surface-container-highest flex flex-col shadow-2xl transition-transform duration-300 transform translate-x-full" id="reader-drawer">
+
+<!-- Drawer Bar -->
+
+<div class="sticky top-0 z-20 bg-surface-container-lowest/90 backdrop-blur-md border-b border-surface-container-highest px-6 lg:px-10 py-4 flex items-center justify-between">
+
+<div class="flex items-center gap-3">
+
+<span class="w-2 h-2 bg-secondary rounded-full"></span>
+
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant" id="modal-category">CATEGORY</span>
+
+<span class="text-outline-variant">/</span>
+
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-mono" id="modal-docid">DOC // 000</span>
+
+</div>
+
+<button aria-label="Close reader" class="p-1.5 hover:bg-surface-variant transition-colors flex items-center justify-center" onclick="closeReader()">
+
+<span class="material-symbols-outlined text-primary text-[22px]">close</span>
+
+</button>
+
+</div>
+
+<!-- Drawer Content -->
+
+<div class="p-6 lg:p-12 flex-grow">
+
+<div class="max-w-2xl mx-auto">
+
+<div class="mb-4">
+
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant" id="modal-meta">DATE • READING TIME</span>
+
+</div>
+
+<h1 class="font-headline-lg text-headline-lg lg:text-display-sm text-primary mb-6 leading-tight" id="modal-title">
+
+            Article Title
+
+          </h1>
+
+<div class="flex items-center gap-4 py-4 border-y border-surface-container-highest mb-8 font-label-sm text-label-sm">
+
+<div>
+
+<span class="text-outline block">BYLINE:</span>
+
+<span class="text-primary font-medium" id="modal-author">Author Name</span>
+
+</div>
+
+<div class="border-l border-surface-container-highest pl-4">
+
+<span class="text-outline block">LOCATION:</span>
+
+<span class="text-primary font-mono">19.0760° N, 72.8777° E</span>
+
+</div>
+
+<div class="border-l border-surface-container-highest pl-4">
+
+<span class="text-outline block">LICENSE:</span>
+
+<span class="text-primary font-mono">CELEBSO OPEN ED.</span>
+
+</div>
+
+</div>
+
+<!-- Essay Body -->
+
+<div class="space-y-6 font-body-lg text-body-lg text-on-surface leading-relaxed" id="modal-body">
+
+<!-- Injected dynamically -->
+
+</div>
+
+<div class="mt-12 pt-8 border-t border-surface-container-highest flex flex-col sm:flex-row items-center justify-between gap-4 font-label-md text-label-md">
+
+<button class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" onclick="closeReader()">
+
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+
+<span>RETURN TO DOSSIER FEED</span>
+
+</button>
+
+<div class="flex gap-2">
+
+<button class="px-4 py-2 border border-surface-container-highest text-primary hover:bg-surface-container transition-colors uppercase font-label-sm text-label-sm" onclick="copyArticleLink()">SHARE DOSSIER</button>
+
+<button class="px-4 py-2 bg-primary text-on-primary hover:bg-secondary transition-colors uppercase font-label-sm text-label-sm" onclick="window.print()">EXPORT ARCHIVE</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+    const articlesData = {
+
+      'article-featured': {
+
+        docId: 'DOC // 000-HERO',
+
+        category: 'DIGITAL IDENTITY',
+
+        meta: 'MAY 2026 • 6 MIN READ',
+
+        author: 'EDITORIAL DESK // MUMBAI BUREAU',
+
+        title: 'Why Your Digital Identity Matters: The Shift from Algorithmic Feeds to Architectural Portfolios',
+
+        content: `
+
+          <p class="first-letter:text-5xl first-letter:font-headline-lg first-letter:float-left first-letter:mr-3 first-letter:text-primary">
+
+            For the past decade, creative professionals have surrendered the narrative of their craft to social algorithmic streams designed for consumable ephemeral attention. The work of an architectural designer, an open-source software engineer, or a visual director takes weeks or months to realize, yet social platforms reduce it to a ephemeral post that decays within 12 hours.
+
+          </p>
+
+          <p>
+
+            Intentional digital architecture is the deliberate act of establishing permanent provenance. When you treat your identity not as a streaming feed, but as an indexed archive, the leverage shifts back into your hands. Potential collaborators, clients, and partners evaluate your work through depth and context rather than the arbitrary logic of an engagement algorithm.
+
+          </p>
+
+          <div class="my-8 p-6 bg-surface-container border-l-2 border-secondary font-headline-sm text-headline-sm italic text-primary">
+
+            "We must graduate from social feeds engineered for transient distraction, toward durable identity structures engineered for lifelong legacy."
+
+          </div>
+
+          <p>
+
+            Across Indian creative hubs from Bandra to Bangalore, a new cohort of creators is actively migrating away from feed dependence. They demand verified credentials, bespoke case studies, and transparent peer networks. This is not merely an aesthetic choice; it is an economic imperative for the high-craft economy.
+
+          </p>
+
+          <p>
+
+            By investing in your digital identity through structural documentation, you cultivate an asset that compounds over decades rather than diminishing with the next interface refresh.
+
+          </p>
+
+        `
+
+      },
+
+      'article-1': {
+
+        docId: 'DOC // 001',
+
+        category: 'CREATORS',
+
+        meta: 'MAY 12, 2026 • 5 MIN READ',
+
+        author: 'TARUN MENON',
+
+        title: 'How Creators Can Build a Stronger Digital Identity',
+
+        content: `
+
+          <p>The transition from creator to institutional pillar begins when you stop publishing purely for consumption and begin publishing for archive. A strong digital identity is not measured in followers; it is measured in the density of your peer respect.</p>
+
+          <p>First, build modular case studies. Rather than posting a finished render, detail the constraints, the material tests, and the failed prototypes. High-caliber clients and collaborators look for structured thinking rather than glossy end results.</p>
+
+          <p>Second, own your distribution coordinates. A verified URL and technical profile on an architectural platform ensures your work remains discovered regardless of platform shifts.</p>
+
+        `
+
+      },
+
+      'article-2': {
+
+        docId: 'DOC // 002',
+
+        category: 'CAREER',
+
+        meta: 'MAY 09, 2026 • 7 MIN READ',
+
+        author: 'ANANYA SHARMA',
+
+        title: 'From Social Profile to Professional Portfolio',
+
+        content: `
+
+          <p>The standard PDF resume is a relic of the twentieth-century corporate matrix. For contemporary creators spanning architecture, spatial computation, and editorial journalism, linear chronological lists fail to communicate nuance.</p>
+
+          <p>A living portfolio unifies real-time collaborative credentials with technical documentation. It allows potential studios to review not just where you worked, but your specific contribution to complex group efforts.</p>
+
+          <p>Explore how to design live modules that highlight active research, in-progress drafts, and public critiques.</p>
+
+        `
+
+      },
+
+      'article-3': {
+
+        docId: 'DOC // 003',
+
+        category: 'DIGITAL IDENTITY',
+
+        meta: 'MAY 06, 2026 • 4 MIN READ',
+
+        author: 'ROHAN KULKARNI',
+
+        title: 'Why Your Work Deserves More Than a Feed',
+
+        content: `
+
+          <p>The timeline feed was invented to monetize advertising impressions, not to honor creative mastery. When deep research is placed directly adjacent to sensational video clips, the context collapse destroys value.</p>
+
+          <p>Dossier-style layouts provide architectural permanence. They allow readers to explore your philosophy in an unhurried, magazine-grade environment where whitespace conveys intellectual confidence.</p>
+
+        `
+
+      },
+
+      'article-4': {
+
+        docId: 'DOC // 004',
+
+        category: 'BUSINESS',
+
+        meta: 'APR 29, 2026 • 8 MIN READ',
+
+        author: 'VIKRAM DESHMUKH',
+
+        title: 'The Future of Creator–Brand Collaboration',
+
+        content: `
+
+          <p>Brand partnerships are maturing beyond superficial banner placements. Leading industrial houses and design brands now seek genuine creative directorships with independent vanguards.</p>
+
+          <p>To attract transformative partnerships, creators must present rigorous audience demographic telemetry and demonstrate long-term alignment with cultural institutions.</p>
+
+        `
+
+      },
+
+      'article-5': {
+
+        docId: 'DOC // 005',
+
+        category: 'COMMUNITY',
+
+        meta: 'APR 24, 2026 • 6 MIN READ',
+
+        author: 'SNEHA CHATTERJEE',
+
+        title: 'Building Communities Around Shared Interests',
+
+        content: `
+
+          <p>Mass audience reach is rapidly declining in value; micro-density of relevance is rising. Creators who assemble sixty dedicated practitioners in an intimate salon yield higher career breakthroughs than those broadcasting to generic hundreds of thousands.</p>
+
+          <p>Learn how to cultivate high-density community circles through focused salons, peer code reviews, and physical-digital hybrid events.</p>
+
+        `
+
+      },
+
+      'article-6': {
+
+        docId: 'DOC // 006',
+
+        category: 'TECHNOLOGY',
+
+        meta: 'APR 18, 2026 • 9 MIN READ',
+
+        author: 'KABIR NATH',
+
+        title: 'How Professionals Can Showcase Their Work Online',
+
+        content: `
+
+          <p>Showcasing computational systems or complex architectural diagrams requires purpose-built visual tools. Standard web builders compress vector drafts and obscure CAD detail.</p>
+
+          <p>We detail five open standards for presenting interactive schematics, high-resolution drawing layers, and live code snippets directly within your personal public register.</p>
+
+        `
+
+      },
+
+      'article-7': {
+
+        docId: 'DOC // 007',
+
+        category: 'DIGITAL IDENTITY',
+
+        meta: 'APR 11, 2026 • 5 MIN READ',
+
+        author: 'POOJA IYER',
+
+        title: 'The New Age of Digital Reputation',
+
+        content: `
+
+          <p>In a world saturated by AI-generated content, human verification and cryptographic artifact stamping become the new baseline of credibility.</p>
+
+          <p>Reputation is moving toward verifiable proof of execution. Discover how peer attestation networks empower independent practitioners to establish undeniable authority in their domains.</p>
+
+        `
+
+      },
+
+      'article-8': {
+
+        docId: 'DOC // 008',
+
+        category: 'CREATORS',
+
+        meta: 'APR 03, 2026 • 6 MIN READ',
+
+        author: 'CELEBSO EDITORIAL BOARD',
+
+        title: 'Designing a Better Professional Social Experience',
+
+        content: `
+
+          <p>What would a social network look like if it were built by Bauhaus architects rather than casino algorithm engineers? It would prioritize quiet legibility, high-contrast monochrome printing, and spatial hierarchy.</p>
+
+          <p>CELEBSO X is engineered around this premise: turning the digital landscape into an open studio where respect replaces noise.</p>
+
+        `
+
+      }
+
+    };
+
+
+
+    
+    window.filterArticles = filterArticles;
+    window.openReader = openReader;
+    window.closeReader = closeReader;
+    window.copyArticleLink = copyArticleLink;
+    window.handleSubscribe = handleSubscribe;
+
+    function filterArticles(category, btn) {
+
+      const tabs = document.querySelectorAll('.filter-tab');
+
+      tabs.forEach(tab => {
+
+        tab.classList.remove('bg-primary', 'text-on-primary', 'border-primary');
+
+        tab.classList.add('border-surface-container-highest', 'text-on-surface-variant');
+
+      });
+
+
+
+      btn.classList.remove('border-surface-container-highest', 'text-on-surface-variant');
+
+      btn.classList.add('bg-primary', 'text-on-primary', 'border-primary');
+
+
+
+      const cards = document.querySelectorAll('.article-card');
+
+      let visibleCount = 0;
+
+
+
+      cards.forEach(card => {
+
+        const cardCat = card.getAttribute('data-category');
+
+        if (category === 'all' || (cardCat && cardCat.toLowerCase() === category.toLowerCase())) {
+
+          card.style.display = 'flex';
+
+          visibleCount++;
+
+        } else {
+
+          card.style.display = 'none';
+
+        }
+
+      });
+
+
+
+      document.getElementById('article-count').innerText = `${visibleCount} ARTICLE${visibleCount === 1 ? '' : 'S'} LISTED`;
+
+    }
+
+
+
+    function openReader(articleKey) {
+
+      const data = articlesData[articleKey];
+
+      if (!data) return;
+
+
+
+      document.getElementById('modal-docid').innerText = data.docId;
+
+      document.getElementById('modal-category').innerText = data.category;
+
+      document.getElementById('modal-meta').innerText = data.meta;
+
+      document.getElementById('modal-title').innerText = data.title;
+
+      document.getElementById('modal-author').innerText = data.author;
+
+      document.getElementById('modal-body').innerHTML = data.content;
+
+
+
+      const modal = document.getElementById('reader-modal');
+
+      const drawer = document.getElementById('reader-drawer');
+
+      modal.classList.remove('hidden');
+
+      setTimeout(() => {
+
+        drawer.classList.remove('translate-x-full');
+
+      }, 10);
+
+      document.body.style.overflow = 'hidden';
+
+    }
+
+
+
+    function closeReader() {
+
+      const drawer = document.getElementById('reader-drawer');
+
+      drawer.classList.add('translate-x-full');
+
+      setTimeout(() => {
+
+        document.getElementById('reader-modal').classList.add('hidden');
+
+        document.body.style.overflow = '';
+
+      }, 300);
+
+    }
+
+
+
+    function copyArticleLink() {
+
+      navigator.clipboard?.writeText(window.location.href);
+
+      alert('Archive link copied to clipboard.');
+
+    }
+
+
+
+    function handleSubscribe(e) {
+
+      e.preventDefault();
+
+      document.getElementById('sub-success').classList.remove('hidden');
+
+      e.target.reset();
+
+    }
+
+
+
+    document.getElementById('reader-modal').addEventListener('click', function(e) {
+
+      if (e.target === this) {
+
+        closeReader();
+
+      }
+
+    });
+
+  
+    // Mobile Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    if (mobileMenuBtn && mobileDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isHidden = mobileDrawer.classList.contains('hidden');
+        if (isHidden) {
+          mobileDrawer.classList.remove('hidden');
+          mobileDrawer.classList.add('flex');
+          mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">close</span>';
+        } else {
+          mobileDrawer.classList.add('hidden');
+          mobileDrawer.classList.remove('flex');
+          mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">menu</span>';
+        }
+      });
+    }
+
+  </script>
+
+</div></main><footer class="w-full bg-surface-container-low border-t border-surface-container-highest"><div class="w-full px-6 lg:px-12 py-16"><div class="mb-16 pb-12 border-b border-surface-container-highest"><p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-4">00 // IDENTITY ARCHITECTURE</p><h2 class="font-headline-lg text-headline-lg text-primary max-w-4xl">CELEBSO X — Build Your Identity. Create Your Legacy.</h2></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12"><div class="lg:col-span-1"><h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-4 pb-2 border-b border-surface-container-highest">BRAND &amp; VISION</h3><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">An India-first professional social platform for creators, professionals and the next generation of architectural talent.</p></div><div><h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-4 pb-2 border-b border-surface-container-highest">NAVIGATION</h3><ul class="space-y-2.5 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="home" href="index.html">01 / HOME</a></li><li><a class="hover:text-primary transition-colors" data-path="about" href="about.html">02 / ABOUT</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="portfolio" href="portfolio.html">03 / PORTFOLIO</a></li><li><a class="hover:text-primary transition-colors" data-path="blog" href="blog.html">04 / BLOG</a></li><li><a class="hover:text-primary transition-colors" data-path="contact" href="contact.html">05 / CONTACT</a></li></ul></div><div><h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-4 pb-2 border-b border-surface-container-highest">PLATFORM</h3><ul class="space-y-2.5 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant"><li><a class="hover:text-primary transition-colors" href="#">PROFILE &amp; PORTFOLIO</a></li><li><a class="hover:text-primary transition-colors" href="#">CONTENT &amp; LIVE</a></li><li><a class="hover:text-primary transition-colors" href="#">CONNECT</a></li><li><a class="hover:text-primary transition-colors" href="#">COLLABORATE</a></li></ul></div><div><h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-4 pb-2 border-b border-surface-container-highest">SUPPORT &amp; LEGAL</h3><ul class="space-y-2.5 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="contact" href="contact.html">CONTACT</a></li><li><a class="hover:text-primary transition-colors" href="#">PRIVACY POLICY</a></li><li><a class="hover:text-primary transition-colors" href="#">TERMS OF SERVICE</a></li></ul></div><div><h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-4 pb-2 border-b border-surface-container-highest">SOCIAL</h3><ul class="space-y-2.5 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant"><li><a class="hover:text-primary transition-colors" href="#">INSTAGRAM</a></li><li><a class="hover:text-primary transition-colors" href="#">LINKEDIN</a></li><li><a class="hover:text-primary transition-colors" href="#">YOUTUBE</a></li><li><a class="hover:text-primary transition-colors" href="#">X (TWITTER)</a></li></ul></div></div></div><div class="w-full px-6 lg:px-12 py-6 border-t border-surface-container-highest flex flex-col md:flex-row items-center justify-between gap-4"><div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">© 2026 Celebso Technologies. All rights reserved.</div><div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">19.0760° N, 72.8777° E</div></div></footer></body></html>
