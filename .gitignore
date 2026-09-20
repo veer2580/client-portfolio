@@ -12,3 +12,4 @@ dist/
 # Antigravity IDE scratch files
 _raw_input.txt
 scratch/
+.wrangler/
