@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Showcase — Celebso X</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'sh-bg': '#fcf9f2',
+            'sh-card': '#ffffff',
+            'sh-navy': '#111827',
+            'sh-blue': '#004edc',
+            'sh-accent': '#004edc',
+            'sh-muted': '#6b7280',
+            'sh-border': '#e5e2db',
+            'sh-light': '#f6f3ec',
+            'sh-dark': '#0C0D0E',
+          },
+          fontFamily: {
+            'display': ['Playfair Display', 'serif'],
+            'body': ['Plus Jakarta Sans', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html, body { margin: 0; padding: 0; }
+    ::-webkit-scrollbar { display: none; }
+    .scroll-row { overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+    .scroll-row > * { scroll-snap-align: start; }
+    .content-card { position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; }
+    .content-card img { transition: transform 0.5s ease; }
+    .content-card:hover img { transform: scale(1.06); }
+  </style>
+</head>
+<body class="bg-sh-bg font-body text-sh-navy antialiased min-h-screen flex flex-col">
+
+  <!-- ================= HEADER ================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#fcf9f2]/90 backdrop-blur-md border-b border-sh-border">
+    <div class="max-w-7xl mx-auto h-20 px-5 md:px-8 flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <a class="flex items-center group py-1" href="index.html">
+          <img alt="CelebsoX" class="h-8 md:h-9 w-auto object-contain transition-opacity hover:opacity-90" src="assets/celebsox_brand_header.png"/>
+        </a>
+      </div>
+      <nav class="hidden md:flex items-center gap-8">
+        <a class="font-mono text-xs uppercase text-sh-muted hover:text-sh-navy transition-colors py-1 tracking-widest" href="about.html">ABOUT</a>
+        <a class="font-mono text-xs uppercase text-sh-muted hover:text-sh-navy transition-colors py-1 tracking-widest" href="portfolio.html">PORTFOLIO</a>
+        <a class="font-mono text-xs uppercase text-sh-muted hover:text-sh-navy transition-colors py-1 tracking-widest" href="founding-members.html">FOUNDING MEMBERS</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a class="inline-flex items-center font-mono text-xs uppercase text-sh-blue font-semibold tracking-widest" href="showcase.html">[ EXPLORE TALENT ]</a>
+        <a href="portfolio.html#discovery-section" class="inline-flex items-center justify-center bg-black text-white font-mono text-xs uppercase px-4 py-2 hover:bg-sh-blue transition-all duration-150 tracking-wider shadow-sm">[ JOIN CELEBSO ]</a>
+        <a href="profile.html" class="w-8 h-8 rounded-full bg-black flex items-center justify-center cursor-pointer border border-sh-border text-white">
+          <span class="material-symbols-outlined text-[18px]">person</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="flex-1 pt-28 pb-16">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 space-y-12">
+
+      <!-- ===== HERO: SHOWCASE ===== -->
+      <section class="text-center pt-6 pb-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sh-blue/10 text-sh-blue font-mono text-xs uppercase tracking-widest mb-4">
+          <span class="w-2 h-2 rounded-full bg-sh-blue animate-pulse"></span>
+          Discovery Architecture · Ver 4.2
+        </div>
+        <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-sh-navy uppercase tracking-tight leading-none">Showcase</h1>
+        <p class="text-base sm:text-lg text-sh-muted mt-4 max-w-xl mx-auto leading-relaxed">
+          Showcase your talent, work, achievements, and personality through an authenticated creator profile.
+        </p>
+      </section>
+
+      <!-- ===== CONTENT CARDS SCROLL ===== -->
+      <section class="w-full">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-mono text-xs uppercase tracking-widest text-sh-muted">00 / CURATED HIGHLIGHTS</span>
+          <span class="font-mono text-xs text-sh-blue uppercase tracking-wider">Swipe to explore →</span>
+        </div>
+        <div class="scroll-row flex gap-4 pb-4 overflow-x-auto">
+          <!-- Card 1: Photoshoot -->
+          <div class="content-card w-[150px] sm:w-[180px] aspect-[3/4] bg-sh-dark cursor-pointer shadow-md">
+            <img src="assets/ananya_photoshoot.png" alt="Photoshoot" class="w-full h-full object-cover"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <div class="flex items-center gap-1 mb-1">
+                <span class="material-symbols-outlined text-white text-[14px]">photo_library</span>
+                <span class="text-[10px] text-white/80 font-mono">2.4k likes</span>
+              </div>
+              <p class="text-xs text-white font-semibold">Photoshoot</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Reels -->
+          <div class="content-card w-[150px] sm:w-[180px] aspect-[3/4] bg-sh-dark cursor-pointer shadow-md">
+            <img src="assets/ananya_creator_showcase.png" alt="Reels" class="w-full h-full object-cover"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute top-2.5 right-2.5 bg-black/40 backdrop-blur-md rounded-full px-2 py-0.5 flex items-center gap-1">
+              <span class="material-symbols-outlined text-white text-[12px]">play_arrow</span>
+              <span class="text-[9px] text-white font-mono">6.1k</span>
+            </div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <div class="flex items-center gap-1 mb-1">
+                <span class="material-symbols-outlined text-white text-[14px]">smart_display</span>
+              </div>
+              <p class="text-xs text-white font-semibold">Creator Reels</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Travel -->
+          <div class="content-card w-[150px] sm:w-[180px] aspect-[3/4] bg-sh-dark cursor-pointer shadow-md">
+            <img src="assets/ananya_golden_hour.jpg" alt="Travel" class="w-full h-full object-cover" style="object-position: center 20%;"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <div class="flex items-center gap-1 mb-1">
+                <span class="material-symbols-outlined text-white text-[14px]">flight</span>
+                <span class="text-[10px] text-white/80 font-mono">1.4k likes</span>
+              </div>
+              <p class="text-xs text-white font-semibold">Travel Diaries</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Behind the Scenes -->
+          <div class="content-card w-[150px] sm:w-[180px] aspect-[3/4] bg-sh-dark cursor-pointer shadow-md">
+            <img src="assets/about_creators_team.png" alt="Behind the Scenes" class="w-full h-full object-cover"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <div class="flex items-center gap-1 mb-1">
+                <span class="material-symbols-outlined text-white text-[14px]">movie</span>
+                <span class="text-[10px] text-white/80 font-mono">3.2k views</span>
+              </div>
+              <p class="text-xs text-white font-semibold">Behind Scenes</p>
+            </div>
+          </div>
+
+          <!-- Card 5: Q&A LIVE -->
+          <div class="content-card w-[150px] sm:w-[180px] aspect-[3/4] bg-sh-dark cursor-pointer shadow-md">
+            <img src="assets/hero_spotlight.jpg" alt="Q&A LIVE" class="w-full h-full object-cover"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute top-2.5 left-2.5 bg-red-600 rounded px-2 py-0.5 flex items-center gap-1 shadow">
+              <span class="text-[9px] text-white font-mono font-bold uppercase tracking-wider">LIVE</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+              <span class="text-[9px] text-white font-mono">6.4k</span>
+            </div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <div class="flex items-center gap-1 mb-1">
+                <span class="material-symbols-outlined text-white text-[14px]">live_tv</span>
+              </div>
+              <p class="text-xs text-white font-semibold">Q&A Live Session</p>
+            </div>
+          </div>
+
+          <!-- Card 6: Editorial -->
+          <div class="content-card w-[150px] sm:w-[180px] aspect-[3/4] bg-sh-dark cursor-pointer shadow-md">
+            <img src="assets/hero_spotlight.png" alt="Editorial" class="w-full h-full object-cover"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <div class="flex items-center gap-1 mb-1">
+                <span class="material-symbols-outlined text-white text-[14px]">auto_awesome</span>
+                <span class="text-[10px] text-white/80 font-mono">Spotlight</span>
+              </div>
+              <p class="text-xs text-white font-semibold">Editorial Feature</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 4-COLUMN FEATURES GRID WITH CLEAN INDEXING ===== -->
+      <section class="w-full pt-4">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-mono text-xs uppercase tracking-widest text-sh-muted">CORE PILLARS</span>
+          <span class="font-mono text-xs text-sh-muted uppercase tracking-wider">ARCHITECTURAL ROADMAP</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+          <!-- 01 Identity -->
+          <div class="bg-sh-card border border-sh-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="font-mono text-xs text-sh-blue font-bold">01</span>
+                <span class="text-xs text-sh-muted">/</span>
+                <span class="font-mono text-xs uppercase tracking-widest text-sh-muted font-semibold">Identity</span>
+              </div>
+              <h3 class="font-display text-xl font-bold text-sh-navy leading-tight uppercase">Your Profile.<br/>Your Identity.</h3>
+              <p class="text-xs text-sh-muted mt-3 leading-relaxed">
+                Build a professional profile that represents who you are, what you create, and what you have achieved. Bring together your experience, skills, and journey in one verifiable place.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-sh-border/60 space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-sh-blue text-[16px]">person</span>
+                <span class="text-xs text-sh-muted font-medium">Professional Profile</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-sh-blue text-[16px]">verified</span>
+                <span class="text-xs text-sh-muted font-medium">Verified Identity</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-sh-blue text-[16px]">description</span>
+                <span class="text-xs text-sh-muted font-medium">Professional Bio</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 02 Portfolio -->
+          <div class="bg-sh-card border border-sh-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="font-mono text-xs text-sh-blue font-bold">02</span>
+                <span class="text-xs text-sh-muted">/</span>
+                <span class="font-mono text-xs uppercase tracking-widest text-sh-muted font-semibold">Portfolio</span>
+              </div>
+              <h3 class="font-display text-xl font-bold text-sh-navy leading-tight uppercase">Showcase<br/>Your Work.</h3>
+              <p class="text-xs text-sh-muted mt-3 leading-relaxed">
+                Create an architectural portfolio that brings your best work, projects, and creative journey together. Share high-res images, video reels, case studies, and project details.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-sh-border/60 space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-sh-blue text-[16px]">folder</span>
+                <span class="text-xs text-sh-muted font-medium">Curated Projects</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-sh-blue text-[16px]">play_circle</span>
+                <span class="text-xs text-sh-muted font-medium">Visual Media Reels</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-sh-blue text-[16px]">emoji_events</span>
+                <span class="text-xs text-sh-muted font-medium">Verified Achievements</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 03 Connection -->
+          <div class="bg-sh-card border border-sh-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="font-mono text-xs text-sh-blue font-bold">03</span>
+                <span class="text-xs text-sh-muted">/</span>
+                <span class="font-mono text-xs uppercase tracking-widest text-sh-muted font-semibold">Connection</span>
+              </div>
+              <h3 class="font-display text-xl font-bold text-sh-navy leading-tight uppercase">Build Meaningful<br/>Connections.</h3>
+              <p class="text-xs text-sh-muted mt-3 leading-relaxed">
+                Connect with creators, professionals, founders, and leaders who share your interests and goals. Discover new people, start conversations, and build lasting partnerships.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-sh-border/60 space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-sh-blue text-[16px]">brush</span>
+                <span class="text-xs text-sh-muted font-medium">Top Tier Creators</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-sh-blue text-[16px]">work</span>
+                <span class="text-xs text-sh-muted font-medium">Industry Professionals</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-sh-blue text-[16px]">handshake</span>
+                <span class="text-xs text-sh-muted font-medium">Direct Collaborations</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 04 Opportunity -->
+          <div class="bg-sh-card border border-sh-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="font-mono text-xs text-sh-blue font-bold">04</span>
+                <span class="text-xs text-sh-muted">/</span>
+                <span class="font-mono text-xs uppercase tracking-widest text-sh-muted font-semibold">Opportunity</span>
+              </div>
+              <h3 class="font-display text-xl font-bold text-sh-navy leading-tight uppercase">Discover New<br/>Opportunities.</h3>
+              <p class="text-xs text-sh-muted mt-3 leading-relaxed">
+                Turn your craft and reputation into real-world opportunities. Discover commercial projects, brand campaigns, freelance engagements, and institutional partnerships.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-sh-border/60 space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-sh-blue text-[16px]">rocket_launch</span>
+                <span class="text-xs text-sh-muted font-medium">Commercial Projects</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-sh-blue text-[16px]">campaign</span>
+                <span class="text-xs text-sh-muted font-medium">Brand Collaborations</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-sh-blue text-[16px]">diversity_3</span>
+                <span class="text-xs text-sh-muted font-medium">Venture Partnerships</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== FOR CREATORS & LIVE SECTION ===== -->
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-4">
+
+        <!-- Content & Live -->
+        <div class="bg-sh-card border border-sh-border rounded-xl p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-sh-blue font-bold mb-2 block">Content & Live</span>
+            <h3 class="font-display text-2xl font-bold text-sh-navy uppercase leading-tight">Create. Share.<br/>Go Live.</h3>
+            <p class="text-xs text-sh-muted mt-3 leading-relaxed">
+              Publish images, reels, and stories. Go live, share your work in real time, build your audience, and grow your professional presence.
+            </p>
+          </div>
+          <div class="grid grid-cols-3 gap-3 mt-6">
+            <div class="aspect-square rounded-lg overflow-hidden relative cursor-pointer bg-sh-light shadow-inner">
+              <img src="assets/ananya_photoshoot.png" alt="Posts" class="w-full h-full object-cover"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <div class="absolute bottom-1.5 left-2">
+                <p class="text-[10px] text-white font-medium">Posts</p>
+              </div>
+            </div>
+            <div class="aspect-square rounded-lg overflow-hidden relative cursor-pointer bg-sh-light shadow-inner">
+              <img src="assets/ananya_creator_showcase.png" alt="Reels" class="w-full h-full object-cover"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <div class="absolute bottom-1.5 left-2">
+                <p class="text-[10px] text-white font-medium">Reels</p>
+              </div>
+            </div>
+            <div class="aspect-square rounded-lg overflow-hidden relative cursor-pointer bg-sh-light shadow-inner">
+              <img src="assets/hero_spotlight.jpg" alt="Live" class="w-full h-full object-cover"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <div class="absolute bottom-1.5 left-2">
+                <p class="text-[10px] text-white font-medium">Live</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Image Banner -->
+        <div class="rounded-xl overflow-hidden shadow-sm h-[320px] lg:h-auto">
+          <img src="assets/about_creators_team.png" alt="Creators Community" class="w-full h-full object-cover"/>
+        </div>
+
+        <!-- For Creators -->
+        <div class="bg-sh-card border border-sh-border rounded-xl p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-sh-blue font-bold mb-2 block">For Creators</span>
+            <h3 class="font-display text-2xl font-bold text-sh-navy uppercase leading-tight">Your Talent<br/>Deserves to Be Seen.</h3>
+            <p class="text-xs text-sh-muted mt-3 leading-relaxed">
+              Create a professional presence that goes beyond a fleeting social feed. Showcase your work, build your identity, and make new opportunities discoverable.
+            </p>
+          </div>
+          <div class="mt-6 space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-sh-blue text-[20px] mt-0.5" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+              <div>
+                <p class="text-xs font-bold text-sh-navy uppercase tracking-wider">Build Verified Identity</p>
+                <p class="text-[11px] text-sh-muted leading-relaxed mt-0.5">Showcase your craft, credentials, and achievements with an immutable pass.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-sh-blue text-[20px] mt-0.5" style="font-variation-settings: 'FILL' 1;">explore</span>
+              <div>
+                <p class="text-xs font-bold text-sh-navy uppercase tracking-wider">Direct Collaboration</p>
+                <p class="text-[11px] text-sh-muted leading-relaxed mt-0.5">Connect with brands and organizers directly without middleman friction.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ===== BOTTOM CTA ===== -->
+      <section class="w-full pt-4">
+        <div class="bg-black text-white rounded-2xl p-8 md:p-12 text-center shadow-xl">
+          <span class="font-mono text-xs uppercase tracking-widest text-sh-blue block mb-2 font-bold">NEXT GENERATION PLATFORM</span>
+          <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white uppercase tracking-tight leading-tight">
+            Showcase. Create. Connect.
+          </h2>
+          <p class="text-sm text-gray-400 mt-4 max-w-lg mx-auto leading-relaxed">
+            Build your professional identity, showcase your work, and connect with people and opportunities that move your career forward.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+            <a href="portfolio.html" class="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-lg font-mono text-xs font-bold uppercase tracking-wider hover:bg-gray-200 transition-colors shadow">
+              Explore Portfolio
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
+            <a href="portfolio.html#discovery-section" class="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 rounded-lg font-mono text-xs font-bold uppercase tracking-wider hover:bg-white/10 transition-colors">
+              Discover Talent
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-sh-border bg-white mt-auto">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <img src="assets/celebsox_brand_header.png" alt="Celebso" class="h-6 w-auto"/>
+        <p class="text-xs text-sh-muted">The premium creator platform for the next generation.</p>
+      </div>
+      <p class="text-xs text-sh-muted font-mono">© 2026 Celebso. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

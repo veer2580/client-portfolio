@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Ananya Sharma — Celebso</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand': '#0f1b2d',
+            'brand-light': '#1a3a5c',
+            'brand-accent': '#2563eb',
+            'brand-surface': '#f8f9fb',
+            'brand-card': '#ffffff',
+            'brand-muted': '#6b7280',
+            'brand-border': '#e5e7eb',
+            'brand-dark': '#111827',
+          },
+          fontFamily: {
+            'display': ['Playfair Display', 'serif'],
+            'body': ['Plus Jakarta Sans', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html, body { margin: 0; padding: 0; }
+    body { overscroll-behavior: none; }
+    ::-webkit-scrollbar { display: none; }
+
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .portfolio-item img {
+      transition: transform 0.5s ease;
+    }
+    .portfolio-item:hover img {
+      transform: scale(1.08);
+    }
+    .portfolio-item .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .portfolio-item:hover .overlay {
+      opacity: 1;
+    }
+    .portfolio-item .label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 14px;
+      z-index: 2;
+    }
+
+    .brand-logo {
+      filter: grayscale(100%);
+      opacity: 0.5;
+      transition: all 0.3s ease;
+    }
+    .brand-logo:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    .tab-btn.active {
+      background: #0f1b2d;
+      color: #ffffff;
+    }
+
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      opacity: 0.9;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .portfolio-item:hover .play-icon {
+      transform: translate(-50%, -50%) scale(1.1);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="bg-brand-surface font-body antialiased min-h-screen">
+
+  <!-- ========================================== -->
+  <!-- COVER PHOTO + PROFILE HEADER               -->
+  <!-- ========================================== -->
+  <section class="relative">
+    <!-- Cover Photo -->
+    <div class="w-full h-[200px] sm:h-[280px] md:h-[340px] overflow-hidden relative">
+      <img src="assets/ananya_golden_hour.jpg" alt="Cover" class="w-full h-full object-cover object-top"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-surface via-transparent to-transparent"></div>
+    </div>
+
+    <!-- Profile Info Overlay -->
+    <div class="max-w-5xl mx-auto px-5 md:px-8 relative -mt-[80px] sm:-mt-[90px] z-10">
+      <div class="flex flex-col sm:flex-row items-start sm:items-end gap-4 sm:gap-6">
+        <!-- Avatar -->
+        <div class="w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] rounded-full border-4 border-white shadow-xl overflow-hidden flex-shrink-0 bg-white">
+          <img src="assets/ananya_avatar.png" alt="Ananya Sharma" class="w-full h-full object-cover"/>
+        </div>
+        <!-- Verified Badge (overlapping avatar) -->
+        <div class="absolute left-[90px] sm:left-[108px] top-[85px] sm:top-[95px] w-7 h-7 bg-brand-accent rounded-full flex items-center justify-center border-2 border-white z-20">
+          <span class="material-symbols-outlined text-white text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+        </div>
+
+        <!-- Name + Tags -->
+        <div class="flex-1 pt-1 sm:pb-2">
+          <div class="flex items-center gap-2">
+            <h1 class="text-2xl sm:text-3xl font-display font-semibold text-brand-dark">Ananya Sharma</h1>
+            <span class="material-symbols-outlined text-brand-accent text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+          </div>
+          <p class="text-sm text-brand-muted mt-0.5 font-medium">Model • Creator • Public Figure</p>
+          <div class="flex items-center gap-1.5 text-sm text-brand-muted mt-1">
+            <span class="material-symbols-outlined text-[16px]">location_on</span>
+            <span>Mumbai, India</span>
+          </div>
+          <p class="text-sm text-brand-muted mt-2 max-w-xl leading-relaxed hidden sm:block">Living my dream and inspiring millions ✨ Fashion, lifestyle and everything in between.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="hidden md:flex items-center gap-6 pb-2">
+          <div class="text-center">
+            <p class="text-xl font-bold text-brand-dark">2.3M</p>
+            <p class="text-xs text-brand-muted">Followers</p>
+          </div>
+          <div class="w-px h-10 bg-brand-border"></div>
+          <div class="text-center">
+            <p class="text-xl font-bold text-brand-dark">48</p>
+            <p class="text-xs text-brand-muted">Collaborations</p>
+          </div>
+          <div class="w-px h-10 bg-brand-border"></div>
+          <div class="text-center">
+            <p class="text-xl font-bold text-brand-dark">120M+</p>
+            <p class="text-xs text-brand-muted">Total Reach</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Stats -->
+      <div class="flex md:hidden items-center gap-4 mt-4 pt-3 border-t border-brand-border">
+        <div class="text-center flex-1">
+          <p class="text-lg font-bold text-brand-dark">2.3M</p>
+          <p class="text-xs text-brand-muted">Followers</p>
+        </div>
+        <div class="w-px h-8 bg-brand-border"></div>
+        <div class="text-center flex-1">
+          <p class="text-lg font-bold text-brand-dark">48</p>
+          <p class="text-xs text-brand-muted">Collaborations</p>
+        </div>
+        <div class="w-px h-8 bg-brand-border"></div>
+        <div class="text-center flex-1">
+          <p class="text-lg font-bold text-brand-dark">120M+</p>
+          <p class="text-xs text-brand-muted">Total Reach</p>
+        </div>
+      </div>
+
+      <!-- Bio (mobile) -->
+      <p class="text-sm text-brand-muted mt-3 leading-relaxed sm:hidden">Living my dream and inspiring millions ✨ Fashion, lifestyle and everything in between.</p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center gap-3 mt-5">
+        <button class="inline-flex items-center gap-2 bg-brand text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-light transition-colors">
+          <span class="material-symbols-outlined text-[18px]">person_add</span>
+          Follow
+        </button>
+        <button class="inline-flex items-center gap-2 border border-brand-border text-brand-dark px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+          <span class="material-symbols-outlined text-[18px]">chat</span>
+          WhatsApp
+        </button>
+        <button class="inline-flex items-center gap-2 border border-brand-border text-brand-dark px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+          <span class="material-symbols-outlined text-[18px]">photo_camera</span>
+          Instagram
+        </button>
+        <button class="inline-flex items-center gap-2 border border-brand-border text-brand-dark px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+          <span class="material-symbols-outlined text-[18px]">mail</span>
+          Email
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- PORTFOLIO SECTION                           -->
+  <!-- ========================================== -->
+  <section class="max-w-5xl mx-auto px-5 md:px-8 mt-10">
+    <div class="flex items-center justify-between mb-5">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-brand-accent text-xl">auto_awesome</span>
+        <h2 class="text-xl sm:text-2xl font-display font-semibold text-brand-dark italic">Portfolio</h2>
+      </div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="flex items-center gap-2 mb-6 overflow-x-auto pb-1">
+      <button class="tab-btn active px-4 py-1.5 rounded-full text-xs font-semibold transition-colors whitespace-nowrap" onclick="setTab(this, 'all')">All</button>
+      <button class="tab-btn bg-gray-100 text-brand-muted px-4 py-1.5 rounded-full text-xs font-semibold hover:bg-gray-200 transition-colors whitespace-nowrap" onclick="setTab(this, 'photoshoots')">Photoshoots</button>
+      <button class="tab-btn bg-gray-100 text-brand-muted px-4 py-1.5 rounded-full text-xs font-semibold hover:bg-gray-200 transition-colors whitespace-nowrap" onclick="setTab(this, 'reels')">Reels</button>
+      <button class="tab-btn bg-gray-100 text-brand-muted px-4 py-1.5 rounded-full text-xs font-semibold hover:bg-gray-200 transition-colors whitespace-nowrap" onclick="setTab(this, 'campaigns')">Campaigns</button>
+    </div>
+
+    <!-- Portfolio Grid Row 1 -->
+    <div class="flex items-center justify-between mb-3">
+      <span></span>
+      <a href="#" class="text-sm text-brand-accent font-semibold flex items-center gap-1 hover:underline">View All <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
+      <!-- Item 1: Photoshoot -->
+      <div class="portfolio-item aspect-[4/5]">
+        <img src="assets/ananya_photoshoot.png" alt="Photoshoot" class="w-full h-full object-cover"/>
+        <div class="overlay"></div>
+        <div class="label">
+          <div class="flex items-center gap-1.5 text-white">
+            <span class="material-symbols-outlined text-[16px]">photo_library</span>
+            <span class="text-xs font-semibold">Photoshoot</span>
+          </div>
+          <p class="text-[10px] text-white/70 mt-0.5">24 Photos</p>
+        </div>
+      </div>
+
+      <!-- Item 2: Nykaa Campaign -->
+      <div class="portfolio-item aspect-[4/5]">
+        <img src="assets/ananya_creator_showcase.png" alt="Nykaa Campaign" class="w-full h-full object-cover"/>
+        <div class="overlay"></div>
+        <div class="play-icon">
+          <span class="material-symbols-outlined text-brand-dark text-[20px]">play_arrow</span>
+        </div>
+        <div class="label">
+          <p class="text-xs font-semibold text-white">Nykaa Campaign</p>
+          <p class="text-[10px] text-white/70 mt-0.5">Reel</p>
+        </div>
+      </div>
+
+      <!-- Item 3: ELLE India Cover -->
+      <div class="portfolio-item aspect-[4/5]">
+        <img src="assets/ananya_golden_hour.jpg" alt="ELLE India Cover" class="w-full h-full object-cover"/>
+        <div class="overlay"></div>
+        <div class="label">
+          <p class="text-xs font-semibold text-white">ELLE India Cover</p>
+          <p class="text-[10px] text-white/70 mt-0.5">Magazine Cover</p>
+        </div>
+      </div>
+
+      <!-- Item 4: Maldives Diaries -->
+      <div class="portfolio-item aspect-[4/5]">
+        <img src="assets/hero_spotlight.jpg" alt="Maldives Diaries" class="w-full h-full object-cover"/>
+        <div class="overlay"></div>
+        <div class="play-icon">
+          <span class="material-symbols-outlined text-brand-dark text-[20px]">play_arrow</span>
+        </div>
+        <div class="label">
+          <p class="text-xs font-semibold text-white">Maldives Diaries</p>
+          <p class="text-[10px] text-white/70 mt-0.5">Reel</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio Grid Row 2 -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <!-- Item 5: Lakme Fashion Week -->
+      <div class="portfolio-item aspect-[4/5]">
+        <img src="assets/ananya_photoshoot.png" alt="Lakme Fashion Week" class="w-full h-full object-cover object-center"/>
+        <div class="overlay"></div>
+        <div class="play-icon">
+          <span class="material-symbols-outlined text-brand-dark text-[20px]">play_arrow</span>
+        </div>
+        <div class="label">
+          <p class="text-xs font-semibold text-white">Lakme Fashion Week</p>
+          <p class="text-[10px] text-white/70 mt-0.5">Ramp Walk</p>
+        </div>
+      </div>
+
+      <!-- Item 6: Tanishq Ad Shoot -->
+      <div class="portfolio-item aspect-[4/5]">
+        <img src="assets/ananya_creator_showcase.png" alt="Tanishq Ad Shoot" class="w-full h-full object-cover"/>
+        <div class="overlay"></div>
+        <div class="label">
+          <p class="text-xs font-semibold text-white">Tanishq Ad Shoot</p>
+          <p class="text-[10px] text-white/70 mt-0.5">Campaign</p>
+        </div>
+      </div>
+
+      <!-- Item 7: Vogue Feature -->
+      <div class="portfolio-item aspect-[4/5]">
+        <img src="assets/hero_spotlight.png" alt="Vogue Feature" class="w-full h-full object-cover"/>
+        <div class="overlay"></div>
+        <div class="label">
+          <p class="text-xs font-semibold text-white">Vogue Feature</p>
+          <p class="text-[10px] text-white/70 mt-0.5">Magazine</p>
+        </div>
+      </div>
+
+      <!-- Item 8: BTS Moments -->
+      <div class="portfolio-item aspect-[4/5]">
+        <img src="assets/ananya_golden_hour.jpg" alt="BTS Moments" class="w-full h-full object-cover object-bottom"/>
+        <div class="overlay"></div>
+        <div class="play-icon">
+          <span class="material-symbols-outlined text-brand-dark text-[20px]">play_arrow</span>
+        </div>
+        <div class="label">
+          <p class="text-xs font-semibold text-white">BTS Moments</p>
+          <p class="text-[10px] text-white/70 mt-0.5">Reel</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- FEATURED IN / WORKED WITH                   -->
+  <!-- ========================================== -->
+  <section class="max-w-5xl mx-auto px-5 md:px-8 mt-12">
+    <div class="bg-brand-card border border-brand-border rounded-xl p-6 md:p-8">
+      <div class="flex items-center gap-2 mb-6">
+        <span class="material-symbols-outlined text-brand-accent text-xl">auto_awesome</span>
+        <h2 class="text-lg font-display font-semibold text-brand-dark italic">Featured In / Worked With</h2>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-12">
+        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Nykaa</span>
+        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Lakmé</span>
+        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Tanishq</span>
+        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Nike</span>
+        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Puma</span>
+        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Vogue</span>
+        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Elle</span>
+        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Spotify</span>
+        <button class="text-sm text-brand-accent font-semibold hover:underline">+ More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- LET'S WORK TOGETHER CTA                     -->
+  <!-- ========================================== -->
+  <section class="max-w-5xl mx-auto px-5 md:px-8 mt-10 mb-12">
+    <div class="bg-brand-card border border-brand-border rounded-xl overflow-hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <!-- Text Side -->
+        <div class="p-8 md:p-10 flex flex-col justify-center">
+          <h2 class="text-2xl sm:text-3xl font-display font-semibold text-brand-dark italic leading-tight">Let's Work Together</h2>
+          <p class="text-sm text-brand-muted mt-3 leading-relaxed">Open for brand collaborations, campaigns, events and more.</p>
+          <div class="mt-6">
+            <a href="contact.html" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-brand-light transition-colors">
+              Work With Me
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+        <!-- Image Side -->
+        <div class="hidden md:block h-[250px] overflow-hidden">
+          <img src="assets/ananya_golden_hour.jpg" alt="Collaboration" class="w-full h-full object-cover" style="object-position: center 18%;"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- FOOTER                                      -->
+  <!-- ========================================== -->
+  <footer class="border-t border-brand-border bg-white">
+    <div class="max-w-5xl mx-auto px-5 md:px-8 py-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <!-- Col 1 -->
+        <div>
+          <img src="assets/celebsox_brand_header.png" alt="Celebso" class="h-7 mb-4"/>
+          <p class="text-xs text-brand-muted leading-relaxed">The premium creator platform for the next generation.</p>
+        </div>
+        <!-- Col 2: Platform -->
+        <div>
+          <h4 class="text-xs font-bold text-brand-dark uppercase tracking-wider mb-3">Platform</h4>
+          <ul class="space-y-2 text-xs text-brand-muted">
+            <li><a href="index.html" class="hover:text-brand-dark transition-colors">Home</a></li>
+            <li><a href="portfolio.html" class="hover:text-brand-dark transition-colors">Explore</a></li>
+            <li><a href="portfolio.html#discovery-section" class="hover:text-brand-dark transition-colors">Creators</a></li>
+            <li><a href="about.html" class="hover:text-brand-dark transition-colors">About</a></li>
+          </ul>
+        </div>
+        <!-- Col 3: Support -->
+        <div>
+          <h4 class="text-xs font-bold text-brand-dark uppercase tracking-wider mb-3">Support</h4>
+          <ul class="space-y-2 text-xs text-brand-muted">
+            <li><a href="contact.html" class="hover:text-brand-dark transition-colors">Help Center</a></li>
+            <li><a href="contact.html" class="hover:text-brand-dark transition-colors">Contact Us</a></li>
+            <li><a href="terms.html" class="hover:text-brand-dark transition-colors">Privacy Policy</a></li>
+            <li><a href="terms.html" class="hover:text-brand-dark transition-colors">Terms</a></li>
+          </ul>
+        </div>
+        <!-- Col 4: Connect -->
+        <div>
+          <h4 class="text-xs font-bold text-brand-dark uppercase tracking-wider mb-3">Connect</h4>
+          <div class="flex items-center gap-3">
+            <a href="https://www.instagram.com/celebsox" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-brand hover:text-white transition-all text-brand-muted">
+              <span class="material-symbols-outlined text-[18px]">photo_camera</span>
+            </a>
+            <a href="https://www.linkedin.com/company/celebso/" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-brand hover:text-white transition-all text-brand-muted">
+              <span class="material-symbols-outlined text-[18px]">work</span>
+            </a>
+            <a href="https://x.com/Celebso_" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-brand hover:text-white transition-all text-brand-muted">
+              <span class="material-symbols-outlined text-[18px]">tag</span>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-brand hover:text-white transition-all text-brand-muted">
+              <span class="material-symbols-outlined text-[18px]">smart_display</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-brand-border mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-xs text-brand-muted">&copy; 2024 Celebso. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setTab(btn, category) {
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('active');
+        b.classList.add('bg-gray-100', 'text-brand-muted');
+      });
+      btn.classList.add('active');
+      btn.classList.remove('bg-gray-100', 'text-brand-muted');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Ananya Sharma — Celebso Creator Card</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'cx-bg': '#f0ebe3',
+            'cx-card': '#ffffff',
+            'cx-dark': '#1a1a2e',
+            'cx-navy': '#2d3561',
+            'cx-blue': '#4a6cf7',
+            'cx-purple': '#7c3aed',
+            'cx-pink': '#e040a0',
+            'cx-muted': '#7b7f8a',
+            'cx-light': '#f5f0ea',
+            'cx-border': '#e8e0d6',
+            'cx-gold': '#c8963e',
+          },
+          fontFamily: {
+            'display': ['Playfair Display', 'serif'],
+            'body': ['Plus Jakarta Sans', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html, body { margin: 0; padding: 0; }
+    body { overscroll-behavior: none; }
+    ::-webkit-scrollbar { display: none; }
+
+    .score-ring {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: conic-gradient(
+        #7c3aed 0deg,
+        #4a6cf7 90deg,
+        #e040a0 180deg,
+        #c8963e 270deg,
+        #7c3aed 360deg
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .score-ring-inner {
+      width: 136px;
+      height: 136px;
+      border-radius: 50%;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .score-bar {
+      height: 8px;
+      border-radius: 4px;
+      background: #f0ebe3;
+      overflow: hidden;
+      flex: 1;
+    }
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, #4a6cf7, #7c3aed);
+    }
+
+    .gradient-btn {
+      background: linear-gradient(135deg, #4a6cf7 0%, #7c3aed 50%, #e040a0 100%);
+    }
+    .gradient-btn:hover {
+      background: linear-gradient(135deg, #3b5de7 0%, #6c2add 50%, #d03090 100%);
+    }
+
+    .id-badge {
+      background: rgba(74, 108, 247, 0.85);
+      backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+<body class="bg-cx-bg font-body antialiased min-h-screen flex flex-col items-center">
+
+  <!-- FULL PAGE CARD CONTAINER -->
+  <div class="w-full max-w-[440px] mx-auto min-h-screen flex flex-col">
+
+    <!-- TOP BAR -->
+    <div class="flex items-center justify-between px-5 py-4">
+      <div class="flex items-center gap-1.5">
+        <img src="assets/celebsox_brand_header.png" alt="Celebso" class="h-7 w-auto object-contain"/>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-cx-gold text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="font-mono text-[9px] uppercase tracking-[0.15em] text-cx-navy font-semibold">Creator. Influencer. Visionary.</span>
+      </div>
+    </div>
+
+    <!-- COVER PHOTO -->
+    <div class="relative mx-4 rounded-2xl overflow-hidden">
+      <div class="aspect-[16/9] w-full overflow-hidden">
+        <img src="assets/ananya_golden_hour.jpg" alt="Cover" class="w-full h-full object-cover object-top"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+      </div>
+
+      <!-- ID Badge -->
+      <div class="absolute top-3 left-3 id-badge text-white px-3 py-1 rounded-md">
+        <span class="font-mono text-[10px] font-semibold tracking-wider">ID: AS-901</span>
+      </div>
+
+      <!-- Avatar (overlapping bottom) -->
+      <div class="absolute -bottom-[50px] left-1/2 -translate-x-1/2 z-10">
+        <div class="w-[100px] h-[100px] rounded-full border-4 border-white shadow-xl overflow-hidden bg-white">
+          <img src="assets/ananya_avatar.png" alt="Ananya Sharma" class="w-full h-full object-cover"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAME & INFO -->
+    <div class="text-center mt-[58px] px-5">
+      <h1 class="text-[32px] font-display font-bold text-cx-dark leading-tight tracking-tight">Ananya</h1>
+      <div class="flex items-center justify-center gap-1 -mt-0.5">
+        <span class="text-[28px] font-display italic text-cx-navy font-medium">Sharma</span>
+        <span class="material-symbols-outlined text-cx-blue text-lg ml-1" style="font-variation-settings: 'FILL' 1;">verified</span>
+      </div>
+      <div class="flex items-center justify-center gap-2 mt-2">
+        <span class="text-sm text-cx-muted font-medium">Fashion Model</span>
+        <span class="text-cx-muted">•</span>
+        <span class="text-sm text-cx-muted font-medium">Creator</span>
+        <span class="text-cx-muted">•</span>
+        <span class="text-sm text-cx-muted font-medium">Public Figure</span>
+      </div>
+    </div>
+
+    <!-- STATS ROW -->
+    <div class="grid grid-cols-3 gap-3 mx-5 mt-5">
+      <div class="bg-cx-card rounded-xl p-3 text-center border border-cx-border">
+        <div class="flex items-center justify-center gap-1 mb-1">
+          <span class="material-symbols-outlined text-cx-muted text-[16px]">group</span>
+        </div>
+        <p class="text-lg font-bold text-cx-dark">2.3M+</p>
+        <p class="text-[10px] text-cx-muted font-medium uppercase tracking-wider">Followers</p>
+      </div>
+      <div class="bg-cx-card rounded-xl p-3 text-center border border-cx-border">
+        <div class="flex items-center justify-center gap-1 mb-1">
+          <span class="material-symbols-outlined text-cx-muted text-[16px]">visibility</span>
+        </div>
+        <p class="text-lg font-bold text-cx-dark">120M+</p>
+        <p class="text-[10px] text-cx-muted font-medium uppercase tracking-wider">Total Reach</p>
+      </div>
+      <div class="bg-cx-card rounded-xl p-3 text-center border border-cx-border">
+        <div class="flex items-center justify-center gap-1 mb-1">
+          <span class="material-symbols-outlined text-cx-muted text-[16px]">handshake</span>
+        </div>
+        <p class="text-lg font-bold text-cx-dark">48+</p>
+        <p class="text-[10px] text-cx-muted font-medium uppercase tracking-wider">Collaborations</p>
+      </div>
+    </div>
+
+    <!-- CREATOR SCORE CARD -->
+    <div class="mx-5 mt-5 bg-cx-card rounded-2xl border border-cx-border p-5">
+      <!-- Section Header -->
+      <div class="flex items-center gap-2 mb-5">
+        <span class="material-symbols-outlined text-cx-blue text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-cx-dark">Celebso Creator Score</span>
+      </div>
+
+      <!-- Score Content -->
+      <div class="flex gap-5">
+        <!-- Score Ring -->
+        <div class="flex flex-col items-center flex-shrink-0">
+          <div class="score-ring">
+            <div class="score-ring-inner">
+              <span class="text-[40px] font-display font-bold text-cx-dark leading-none">92</span>
+              <span class="text-[11px] text-cx-muted font-medium mt-0.5">/ 100</span>
+            </div>
+          </div>
+          <p class="text-[9px] font-mono uppercase tracking-wider text-cx-muted mt-2 font-semibold">Overall Creator Score</p>
+          <p class="text-[9px] font-mono uppercase tracking-wider text-cx-purple mt-0.5 font-bold">Exceptional Creator Profile</p>
+        </div>
+
+        <!-- Score Breakdown -->
+        <div class="flex-1 flex flex-col justify-center gap-3.5">
+          <!-- Audience Quality -->
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-[10px] text-cx-muted font-bold w-5">01</span>
+              <span class="font-mono text-[10px] uppercase tracking-wider text-cx-dark font-semibold flex-1">Audience Quality</span>
+              <span class="font-mono text-[11px] text-cx-blue font-bold">94</span>
+              <span class="font-mono text-[9px] text-cx-muted">/ 100</span>
+            </div>
+            <div class="score-bar">
+              <div class="score-bar-fill" style="width: 94%"></div>
+            </div>
+          </div>
+          <!-- Content Impact -->
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-[10px] text-cx-muted font-bold w-5">02</span>
+              <span class="font-mono text-[10px] uppercase tracking-wider text-cx-dark font-semibold flex-1">Content Impact</span>
+              <span class="font-mono text-[11px] text-cx-blue font-bold">91</span>
+              <span class="font-mono text-[9px] text-cx-muted">/ 100</span>
+            </div>
+            <div class="score-bar">
+              <div class="score-bar-fill" style="width: 91%"></div>
+            </div>
+          </div>
+          <!-- Engagement -->
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-[10px] text-cx-muted font-bold w-5">03</span>
+              <span class="font-mono text-[10px] uppercase tracking-wider text-cx-dark font-semibold flex-1">Engagement</span>
+              <span class="font-mono text-[11px] text-cx-blue font-bold">89</span>
+              <span class="font-mono text-[9px] text-cx-muted">/ 100</span>
+            </div>
+            <div class="score-bar">
+              <div class="score-bar-fill" style="width: 89%"></div>
+            </div>
+          </div>
+          <!-- Brand Value -->
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-[10px] text-cx-muted font-bold w-5">04</span>
+              <span class="font-mono text-[10px] uppercase tracking-wider text-cx-dark font-semibold flex-1">Brand Value</span>
+              <span class="font-mono text-[11px] text-cx-blue font-bold">94</span>
+              <span class="font-mono text-[9px] text-cx-muted">/ 100</span>
+            </div>
+            <div class="score-bar">
+              <div class="score-bar-fill" style="width: 94%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VERIFIED SIGNALS -->
+    <div class="mx-5 mt-4 bg-cx-card rounded-2xl border border-cx-border px-5 py-4">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-cx-blue text-lg" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+          <span class="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-cx-dark">Verified Signals</span>
+        </div>
+        <div class="flex items-center gap-1 bg-cx-blue/10 px-2.5 py-1 rounded-full">
+          <span class="material-symbols-outlined text-cx-blue text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="font-mono text-[9px] text-cx-blue font-bold uppercase tracking-wider">Celebso Verified</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <div class="flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-cx-blue text-[14px]">check</span>
+          <span class="text-[11px] text-cx-muted font-medium">Verified Identity</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-cx-blue text-[14px]">check</span>
+          <span class="text-[11px] text-cx-muted font-medium">Authentic Audience</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-cx-blue text-[14px]">check</span>
+          <span class="text-[11px] text-cx-muted font-medium">Consistent Content</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-cx-blue text-[14px]">check</span>
+          <span class="text-[11px] text-cx-muted font-medium">Brand Collaboration Ready</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="mx-5 mt-5 flex flex-col gap-2.5">
+      <!-- Follow -->
+      <button class="gradient-btn w-full text-white py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-cx-blue/20 transition-all">
+        <span class="material-symbols-outlined text-[18px]">person_add</span>
+        Follow
+      </button>
+      <!-- Instagram + WhatsApp -->
+      <div class="grid grid-cols-2 gap-2.5">
+        <button class="bg-cx-card border border-cx-border rounded-xl py-2.5 flex items-center justify-center gap-2 text-sm font-medium text-cx-dark hover:bg-gray-50 transition-colors">
+          <span class="material-symbols-outlined text-[18px] text-pink-500">photo_camera</span>
+          Instagram
+        </button>
+        <button class="bg-cx-card border border-cx-border rounded-xl py-2.5 flex items-center justify-center gap-2 text-sm font-medium text-cx-dark hover:bg-gray-50 transition-colors">
+          <span class="material-symbols-outlined text-[18px] text-green-500">chat</span>
+          WhatsApp
+        </button>
+      </div>
+      <!-- View Full Portfolio -->
+      <a href="profile.html" class="bg-cx-card border border-cx-border rounded-xl py-2.5 flex items-center justify-center gap-2 text-sm font-medium text-cx-dark hover:bg-gray-50 transition-colors">
+        <span class="material-symbols-outlined text-[18px] text-cx-blue">open_in_new</span>
+        View Full Portfolio
+      </a>
+    </div>
+
+    <!-- QR SECTION -->
+    <div class="mx-5 mt-5 mb-8 flex items-center justify-center gap-3 py-4">
+      <!-- QR Code (CSS-generated placeholder) -->
+      <div class="w-[60px] h-[60px] rounded-lg border-2 border-cx-border overflow-hidden bg-white p-1 flex-shrink-0">
+        <div class="w-full h-full rounded bg-cx-card relative overflow-hidden">
+          <img src="assets/ananya_avatar.png" alt="QR" class="w-full h-full object-cover rounded opacity-80"/>
+          <div class="absolute inset-0 bg-white/40"></div>
+        </div>
+      </div>
+      <div>
+        <p class="text-sm font-display italic text-cx-navy">Scan to view</p>
+        <p class="text-xs text-cx-muted">my full portfolio on</p>
+        <div class="flex items-center gap-1 mt-0.5">
+          <img src="assets/celebsox_brand_header.png" alt="Celebso" class="h-4 w-auto"/>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
