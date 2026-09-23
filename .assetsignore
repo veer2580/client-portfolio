@@ -1,8 +1,13 @@
+# Large binary files exceeding Cloudflare 25MiB limit
+assets/celebsox.apk
+*.apk
+assets/*.apk
+
+# Scratch and internal dirs
+scratch/
+.wrangler/
 .git/
-.git
 node_modules/
-node_modules
-.gitignore
-package.json
-wrangler.toml
-README.md
+dist/
+*.log
+_raw_input.txt
