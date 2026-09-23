@@ -438,7 +438,7 @@
 
 <div class="flex flex-col gap-space-xs pt-space-sm">
 
-<button class="w-full bg-primary text-on-primary py-space-sm font-mono-technical text-mono-technical uppercase tracking-wider hover:bg-secondary transition-colors cursor-pointer text-center" onclick="openShareModal('celebso.com/u/ananya')">
+<button class="w-full bg-primary text-on-primary py-space-sm font-mono-technical text-mono-technical uppercase tracking-wider hover:bg-secondary transition-colors cursor-pointer text-center" onclick="window.location.href='profile.html'">
 
               [ VIEW PORTFOLIO → ]
 
@@ -661,277 +661,343 @@
 </div>
 
 <!-- 6-Item Editorial Artifact Grid -->
-
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
 
-<!-- Item 1: SINGER -->
-
-<div class="bg-surface-container-lowest shadow-md overflow-hidden group cursor-pointer" onclick="openPortfolioModal()">
-
-<div class="relative aspect-video bg-surface-dark overflow-hidden flex items-center justify-center">
-
-<div class="absolute inset-0 bg-gradient-to-t from-surface-dark/80 via-transparent to-transparent z-10"></div>
-
-<div class="absolute inset-0 flex items-center justify-center z-20 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all">
-
-<span class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-on-secondary shadow-lg">
-
-<span class="material-symbols-outlined">play_arrow</span>
-
-</span>
-
+<!-- Item 1: SINGER / CREATOR VIDEO -->
+<div class="bg-surface-container-lowest shadow-md overflow-hidden rounded-xl border border-border-hairline group">
+  <div class="relative aspect-video bg-black overflow-hidden flex items-center justify-center">
+    <video 
+      src="assets/videos/video_3.mp4" 
+      controls 
+      playsinline 
+      preload="metadata" 
+      class="w-full h-full object-cover"
+    ></video>
+  </div>
+  <div class="p-space-md">
+    <div class="flex items-center justify-between">
+      <span class="font-mono-technical text-mono-technical text-secondary uppercase">CREATOR &bull; LIVE REEL</span>
+      <span class="font-mono-technical text-mono-technical text-text-muted">HD VIDEO</span>
+    </div>
+    <h3 class="font-title-lg text-title-lg text-on-surface mt-1 group-hover:text-secondary transition-colors">Acoustic Raga Session</h3>
+    <p class="font-body-sm text-body-sm text-text-muted mt-1">Live studio recording showcasing verified craft, tone resonance, and performance proof.</p>
+  </div>
 </div>
 
-<!-- Decorative abstract audio waveform graphic -->
-
-<svg class="w-full h-24 text-secondary/30" fill="currentColor" viewbox="0 0 300 100">
-
-<rect height="40" rx="3" width="6" x="10" y="30"></rect>
-
-<rect height="70" rx="3" width="6" x="25" y="15"></rect>
-
-<rect height="20" rx="3" width="6" x="40" y="40"></rect>
-
-<rect height="80" rx="3" width="6" x="55" y="10"></rect>
-
-<rect height="50" rx="3" width="6" x="70" y="25"></rect>
-
-<rect height="10" rx="3" width="6" x="85" y="45"></rect>
-
-<rect height="60" rx="3" width="6" x="100" y="20"></rect>
-
-<rect height="30" rx="3" width="6" x="115" y="35"></rect>
-
-<rect height="90" rx="3" width="6" x="130" y="5"></rect>
-
-<rect height="40" rx="3" width="6" x="145" y="30"></rect>
-
-<rect height="70" rx="3" width="6" x="160" y="15"></rect>
-
-<rect height="20" rx="3" width="6" x="175" y="40"></rect>
-
-<rect height="50" rx="3" width="6" x="190" y="25"></rect>
-
-<rect height="80" rx="3" width="6" x="205" y="10"></rect>
-
-<rect height="30" rx="3" width="6" x="220" y="35"></rect>
-
-<rect height="60" rx="3" width="6" x="235" y="20"></rect>
-
-<rect height="10" rx="3" width="6" x="250" y="45"></rect>
-
-<rect height="40" rx="3" width="6" x="265" y="30"></rect>
-
-<rect height="70" rx="3" width="6" x="280" y="15"></rect>
-
-</svg>
-
+<!-- Item 2: DESIGNER / MOTION VIDEO -->
+<div class="bg-surface-container-lowest shadow-md overflow-hidden rounded-xl border border-border-hairline group">
+  <div class="relative aspect-video bg-black overflow-hidden flex items-center justify-center">
+    <video 
+      src="assets/videos/video_4.mp4" 
+      controls 
+      playsinline 
+      preload="metadata" 
+      class="w-full h-full object-cover"
+    ></video>
+  </div>
+  <div class="p-space-md">
+    <div class="flex items-center justify-between">
+      <span class="font-mono-technical text-mono-technical text-secondary uppercase">DESIGNER &bull; PROJECT MOTION</span>
+      <span class="font-mono-technical text-mono-technical text-text-muted">MOTION WORK</span>
+    </div>
+    <h3 class="font-title-lg text-title-lg text-on-surface mt-1 group-hover:text-secondary transition-colors">Spatial Interface System</h3>
+    <p class="font-body-sm text-body-sm text-text-muted mt-1">Dynamic visual prototype and live interface interaction design in action.</p>
+  </div>
 </div>
 
-<div class="p-space-md">
-
-<div class="flex items-center justify-between">
-
-<span class="font-mono-technical text-mono-technical text-secondary uppercase">SINGER · REEL</span>
-
-<span class="font-mono-technical text-mono-technical text-text-muted">04:18 MIN</span>
-
-</div>
-
-<h3 class="font-title-lg text-title-lg text-on-surface mt-1 group-hover:text-secondary transition-colors">Acoustic Raga Session</h3>
-
-<p class="font-body-sm text-body-sm text-text-muted mt-1">Live improvisational recording in Raag Yaman with ambient drone textures.</p>
-
+<!-- Item 3: CREATIVE / CAMPAIGN VIDEO -->
+<div class="bg-surface-container-lowest shadow-md overflow-hidden rounded-xl border border-border-hairline group">
+  <div class="relative aspect-video bg-black overflow-hidden flex items-center justify-center">
+    <video 
+      src="assets/videos/video_2.mp4" 
+      controls 
+      playsinline 
+      preload="metadata" 
+      class="w-full h-full object-cover"
+    ></video>
+  </div>
+  <div class="p-space-md">
+    <div class="flex items-center justify-between">
+      <span class="font-mono-technical text-mono-technical text-secondary uppercase">TALENT &bull; PERFORMANCE</span>
+      <span class="font-mono-technical text-mono-technical text-text-muted">AUTHENTICATED</span>
+    </div>
+    <h3 class="font-title-lg text-title-lg text-on-surface mt-1 group-hover:text-secondary transition-colors">Creative Talent Showcase</h3>
+    <p class="font-body-sm text-body-sm text-text-muted mt-1">High-impact creative production reel demonstrating live talent and presence.</p>
+  </div>
 </div>
 
 </div>
 
-<!-- Item 2: DESIGNER -->
-
-<div class="bg-surface-container-lowest shadow-md overflow-hidden group cursor-pointer" onclick="openPortfolioModal()">
-
-<div class="relative aspect-video bg-surface-container flex items-center justify-center p-space-md">
-
-<div class="w-full h-full bg-surface-container-highest flex flex-col justify-between p-space-sm">
-
-<div class="flex justify-between items-center">
-
-<span class="font-mono-technical text-mono-technical text-on-surface">GRID / 12-COL</span>
-
-<span class="w-2 h-2 bg-secondary rounded-full"></span>
-
-</div>
-
-<div class="grid grid-cols-4 gap-1 h-12">
-
-<div class="bg-primary/20"></div>
-
-<div class="bg-primary/40"></div>
-
-<div class="bg-primary/60"></div>
-
-<div class="bg-secondary/60"></div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="p-space-md">
-
-<div class="flex items-center justify-between">
-
-<span class="font-mono-technical text-mono-technical text-secondary uppercase">DESIGNER · PROJECT</span>
-
-<span class="font-mono-technical text-mono-technical text-text-muted">FIGMA CASE STUDY</span>
-
-</div>
-
-<h3 class="font-title-lg text-title-lg text-on-surface mt-1 group-hover:text-secondary transition-colors">Spatial Interface System</h3>
-
-<p class="font-body-sm text-body-sm text-text-muted mt-1">Architectural design token repository engineered for next-generation canvas software.</p>
-
-</div>
-
-</div>
-
-<!-- Item 3: STUDENT RESEARCHER -->
-
-<div class="bg-surface-container-lowest shadow-md overflow-hidden group cursor-pointer" onclick="openPortfolioModal()">
-
-<div class="relative aspect-video bg-surface-dark flex flex-col justify-center items-center p-space-md text-on-primary">
-
-<span class="font-mono-metric text-mono-metric text-tertiary-fixed-dim">|Ψ⟩ = α|0⟩ + β|1⟩</span>
-
-<span class="font-mono-technical text-mono-technical text-text-muted mt-2 tracking-widest">ERROR RATE &lt; 0.0014%</span>
-
-</div>
-
-<div class="p-space-md">
-
-<div class="flex items-center justify-between">
-
-<span class="font-mono-technical text-mono-technical text-secondary uppercase">STUDENT · THESIS</span>
-
-<span class="font-mono-technical text-mono-technical text-text-muted">PDF PUBLISHED</span>
-
-</div>
-
-<h3 class="font-title-lg text-title-lg text-on-surface mt-1 group-hover:text-secondary transition-colors">Quantum Algorithms Thesis</h3>
-
-<p class="font-body-sm text-body-sm text-text-muted mt-1">Research preprint exploring fault-tolerant lattice optimization in noisy quantum gates.</p>
-
-</div>
-
-</div>
-
-<!-- Item 4: STARTUP FOUNDER -->
-
-<div class="bg-surface-container-lowest shadow-md overflow-hidden group cursor-pointer" onclick="openPortfolioModal()">
-
-<div class="relative aspect-video bg-surface-container-high flex flex-col justify-end p-space-md">
-
-<div class="space-y-1">
-
-<span class="font-mono-technical text-mono-technical text-secondary">ARR: $1.2M IN 9 MONTHS</span>
-
-<div class="w-full bg-surface-container-lowest h-2 overflow-hidden">
-
-<div class="bg-secondary h-full w-4/5"></div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="p-space-md">
-
-<div class="flex items-center justify-between">
-
-<span class="font-mono-technical text-mono-technical text-secondary uppercase">FOUNDER · JOURNEY</span>
-
-<span class="font-mono-technical text-mono-technical text-text-muted">DECK &amp; METRICS</span>
-
-</div>
-
-<h3 class="font-title-lg text-title-lg text-on-surface mt-1 group-hover:text-secondary transition-colors">Zero-to-One Logistics</h3>
-
-<p class="font-body-sm text-body-sm text-text-muted mt-1">How a team of 4 orchestrated distributed cold-chain deliveries across 14 Tier-1 cities.</p>
-
-</div>
-
-</div>
-
-<!-- Item 5: FREELANCER -->
-
-<div class="bg-surface-container-lowest shadow-md overflow-hidden group cursor-pointer" onclick="openPortfolioModal()">
-
-<div class="relative aspect-video bg-surface-container flex items-center justify-center p-space-md">
-
-<div class="text-center">
-
-<span class="font-display-hero text-headline-sm text-on-surface font-serif italic">Atelier Noir</span>
-
-<p class="font-mono-technical text-mono-technical text-text-muted">GLOBAL REBRANDING</p>
-
-</div>
-
-</div>
-
-<div class="p-space-md">
-
-<div class="flex items-center justify-between">
-
-<span class="font-mono-technical text-mono-technical text-secondary uppercase">FREELANCER · CLIENT</span>
-
-<span class="font-mono-technical text-mono-technical text-text-muted">COMMISSIONED</span>
-
-</div>
-
-<h3 class="font-title-lg text-title-lg text-on-surface mt-1 group-hover:text-secondary transition-colors">Global Brand Identity</h3>
-
-<p class="font-body-sm text-body-sm text-text-muted mt-1">Full-spectrum design overhaul for an independent Scandinavian perfumery house.</p>
-
-</div>
-
-</div>
-
-<!-- Item 6: DEVELOPER -->
-
-<div class="bg-surface-container-lowest shadow-md overflow-hidden group cursor-pointer" onclick="openPortfolioModal()">
-
-<div class="relative aspect-video bg-surface-dark-card p-space-md flex flex-col justify-between font-mono-technical text-mono-technical text-on-primary">
-
-<div class="text-text-muted">$ ./celebso-engine --weights=int4</div>
-
-<div class="text-secondary-fixed">TOKENS/SEC: 142.6 | TTFT: 12ms</div>
-
-<div class="text-tertiary-fixed-dim">[MODEL LOADED IN 2.1GB VRAM]</div>
-
-</div>
-
-<div class="p-space-md">
-
-<div class="flex items-center justify-between">
-
-<span class="font-mono-technical text-mono-technical text-secondary uppercase">DEVELOPER · PRODUCT</span>
-
-<span class="font-mono-technical text-mono-technical text-text-muted">GITHUB VERIFIED</span>
-
-</div>
-
-<h3 class="font-title-lg text-title-lg text-on-surface mt-1 group-hover:text-secondary transition-colors">Local AI Inference Engine</h3>
-
-<p class="font-body-sm text-body-sm text-text-muted mt-1">Ultra-lean C++ runtime optimized for edge transformers running on consumer silicon.</p>
-
-</div>
-
-</div>
-
-</div>
-
+</section>
+
+<!-- ================================================================= -->
+<!-- ARJUN MEHTA INVESTOR DOSSIER (EXACT SS1 REPLICA)                   -->
+<!-- ================================================================= -->
+<section class="w-full px-margin md:px-margin-tablet lg:px-margin-desktop py-space-md">
+  <div class="w-full max-w-[1400px] mx-auto space-y-4 font-sans text-[#111827]">
+    
+    <!-- Top Main Profile Card -->
+    <div class="bg-white rounded-2xl p-6 lg:p-7 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-[#e5e7eb] flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+      
+      <!-- Left: Avatar + Details -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+        <!-- Avatar with verified badge -->
+        <a href="arjun-profile.html" class="relative shrink-0 block group" title="View Arjun Mehta Profile">
+          <img src="assets/arjun_avatar.png" alt="Arjun Mehta" class="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover border border-[#e5e7eb] shadow-sm group-hover:ring-2 group-hover:ring-[#2563eb] transition">
+          <div class="absolute bottom-1 right-1 w-7 h-7 bg-[#1a68ff] rounded-full border-2 border-white flex items-center justify-center text-white text-xs shadow-sm">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+          </div>
+        </a>
+
+        <!-- Info -->
+        <div class="space-y-1.5">
+          <div class="flex flex-wrap items-center gap-2.5">
+            <a href="arjun-profile.html" class="text-2xl sm:text-[28px] font-bold text-[#0f172a] hover:text-[#0062ff] font-serif tracking-tight leading-none transition">Arjun Mehta</a>
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold tracking-wide uppercase bg-[#eff6ff] text-[#2563eb] border border-[#bfdbfe]">
+              <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              VERIFIED INVESTOR
+            </span>
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold tracking-wide uppercase bg-[#f1f5f9] text-[#475569] border border-[#e2e8f0]">
+              PARTNER / INVESTOR
+            </span>
+          </div>
+
+          <p class="text-sm font-semibold text-[#1e293b]">
+            Venture Capital Partner &bull; Early Stage Investor &bull; Board Advisor
+          </p>
+
+          <p class="text-[12px] font-mono uppercase tracking-wider text-[#64748b] flex items-center gap-1.5">
+            <span class="inline-block w-3.5 h-3.5 text-center leading-none">📍</span>
+            <span>MUMBAI, INDIA [19.076&deg; N]</span>
+            <span class="text-[#cbd5e1]">&bull;</span>
+            <span>TIMEZONE: IST (GMT+5:30)</span>
+          </p>
+
+          <p class="text-[13px] text-[#475569] leading-snug pt-1 max-w-2xl">
+            Backing ambitious founders building category-defining companies.<br>
+            <span class="text-[#64748b]">Focus areas: AI, DeepTech, FinTech, SpaceTech, Enterprise SaaS.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: Action Buttons + Quick Numbers -->
+      <div class="flex flex-col items-start lg:items-end justify-between gap-5 shrink-0 pt-2 lg:pt-0">
+        <!-- CTAs -->
+        <div class="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
+          <a href="arjun-profile.html" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-lg bg-[#0f172a] hover:bg-[#1e293b] text-white text-xs font-bold tracking-wider uppercase transition shadow-sm">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            VIEW PROFILE
+          </a>
+          <button class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-[#0062ff] hover:bg-[#0052d9] text-white text-xs font-bold tracking-wider uppercase transition shadow-sm">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            CONNECT
+          </button>
+          <button class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-white hover:bg-slate-50 text-[#0f172a] border border-[#d1d5db] text-xs font-bold tracking-wider uppercase transition shadow-sm">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+            PITCH
+          </button>
+        </div>
+
+        <!-- Metric figures -->
+        <div class="grid grid-cols-4 gap-4 sm:gap-6 border-t lg:border-t-0 border-[#f1f5f9] pt-3 lg:pt-0 w-full sm:w-auto">
+          <div class="text-center sm:text-right">
+            <div class="text-xl sm:text-2xl font-extrabold text-[#0f172a] leading-none">42</div>
+            <div class="text-[10px] font-bold text-[#64748b] tracking-wider uppercase mt-1">INVESTMENTS</div>
+          </div>
+          <div class="text-center sm:text-right">
+            <div class="text-xl sm:text-2xl font-extrabold text-[#0f172a] leading-none">8</div>
+            <div class="text-[10px] font-bold text-[#64748b] tracking-wider uppercase mt-1">EXITS</div>
+          </div>
+          <div class="text-center sm:text-right">
+            <div class="text-xl sm:text-2xl font-extrabold text-[#0f172a] leading-none">₹250Cr+</div>
+            <div class="text-[10px] font-bold text-[#64748b] tracking-wider uppercase mt-1">DEPLOYED</div>
+          </div>
+          <div class="text-center sm:text-right">
+            <div class="text-xl sm:text-2xl font-extrabold text-[#0f172a] leading-none">12</div>
+            <div class="text-[10px] font-bold text-[#64748b] tracking-wider uppercase mt-1">ACTIVE PORTFOLIO</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 6 Highlight Metric Cards Row -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-3.5">
+      <!-- 1 -->
+      <div class="bg-white rounded-xl p-3.5 sm:p-4 border border-[#e5e7eb] shadow-[0_1px_4px_rgba(0,0,0,0.03)] flex flex-col justify-between">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-[#64748b]">VERIFIED NETWORK</span>
+        <div class="my-1.5">
+          <div class="text-lg sm:text-xl font-extrabold text-[#0f172a] tracking-tight">48.2K+</div>
+          <div class="text-[11px] text-[#475569] font-medium leading-tight">Founders & Operators</div>
+        </div>
+        <div class="text-[11px] font-semibold text-[#16a34a] flex items-center gap-1">
+          <span>&uarr;</span> 12% this cycle
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="bg-white rounded-xl p-3.5 sm:p-4 border border-[#e5e7eb] shadow-[0_1px_4px_rgba(0,0,0,0.03)] flex flex-col justify-between">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-[#64748b]">DEAL EXPERIENCE</span>
+        <div class="my-1.5">
+          <div class="text-lg sm:text-xl font-extrabold text-[#0f172a] tracking-tight">5+ Yrs</div>
+          <div class="text-[11px] text-[#475569] font-medium leading-tight">Across Market Cycles</div>
+        </div>
+        <div class="text-[11px] font-medium text-[#2563eb]">
+          India &bull; SEA &bull; US
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="bg-white rounded-xl p-3.5 sm:p-4 border border-[#e5e7eb] shadow-[0_1px_4px_rgba(0,0,0,0.03)] flex flex-col justify-between">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-[#64748b]">PORTFOLIO IMPACT</span>
+        <div class="my-1.5">
+          <div class="text-lg sm:text-xl font-extrabold text-[#0f172a] tracking-tight">₹1,250Cr+</div>
+          <div class="text-[11px] text-[#475569] font-medium leading-tight">Portfolio Valuation (Est.)</div>
+        </div>
+        <div class="text-[11px] font-medium text-[#64748b]">
+          As of May '26
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="bg-white rounded-xl p-3.5 sm:p-4 border border-[#e5e7eb] shadow-[0_1px_4px_rgba(0,0,0,0.03)] flex flex-col justify-between">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-[#64748b]">AVG. FIRST CHECK</span>
+        <div class="my-1.5">
+          <div class="text-lg sm:text-xl font-extrabold text-[#0f172a] tracking-tight">₹50L &ndash; ₹3Cr</div>
+          <div class="text-[11px] text-[#475569] font-medium leading-tight">Stage: Seed to Series A</div>
+        </div>
+        <div class="text-[11px] font-medium text-[#64748b]">
+          India Focused
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="bg-white rounded-xl p-3.5 sm:p-4 border border-[#e5e7eb] shadow-[0_1px_4px_rgba(0,0,0,0.03)] flex flex-col justify-between">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-[#64748b]">PORTFOLIO SUPPORT</span>
+        <div class="my-1.5">
+          <div class="text-lg sm:text-xl font-extrabold text-[#0f172a] tracking-tight">Hands-on</div>
+          <div class="text-[11px] text-[#475569] font-medium leading-tight">Fundraising, GTM, Talent</div>
+        </div>
+        <div class="text-[11px] font-medium text-[#64748b]">
+          & Strategy
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="bg-white rounded-xl p-3.5 sm:p-4 border border-[#e5e7eb] shadow-[0_1px_4px_rgba(0,0,0,0.03)] flex flex-col justify-between">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-[#64748b]">LP BACKED</span>
+        <div class="my-1.5">
+          <div class="text-lg sm:text-xl font-extrabold text-[#0f172a] tracking-tight">₹250Cr+</div>
+          <div class="text-[11px] text-[#475569] font-medium leading-tight">Under Management</div>
+        </div>
+        <div class="text-[11px] font-medium text-[#64748b]">
+          Family Office Backed
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="flex items-center gap-2 pt-2 border-b border-[#e5e7eb] overflow-x-auto pb-1">
+      <button class="px-5 py-2.5 rounded-lg bg-[#0f172a] text-white text-[12px] font-extrabold tracking-wider uppercase whitespace-nowrap shadow-sm">
+        PORTFOLIO [08]
+      </button>
+      <button class="px-5 py-2.5 rounded-lg text-[#64748b] hover:text-[#0f172a] hover:bg-white text-[12px] font-bold tracking-wider uppercase whitespace-nowrap transition">
+        INVESTMENT THESIS [03]
+      </button>
+      <button class="px-5 py-2.5 rounded-lg text-[#64748b] hover:text-[#0f172a] hover:bg-white text-[12px] font-bold tracking-wider uppercase whitespace-nowrap transition">
+        FOUNDER NETWORK [24]
+      </button>
+      <button class="px-5 py-2.5 rounded-lg text-[#64748b] hover:text-[#0f172a] hover:bg-white text-[12px] font-bold tracking-wider uppercase whitespace-nowrap transition">
+        ABOUT &amp; CRITERIA
+      </button>
+    </div>
+
+    <!-- 4 Portfolio Company Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-1">
+      
+      <!-- Card 1: NOVA AI -->
+      <div class="bg-white rounded-xl overflow-hidden border border-[#e5e7eb] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition group">
+        <div class="relative h-28 bg-[#090d16] overflow-hidden">
+          <img src="assets/arjun_nova.png" alt="Nova AI" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+        </div>
+        <div class="p-3.5 space-y-2">
+          <p class="text-xs font-semibold text-[#1e293b] leading-tight">AI Copilots for Enterprise</p>
+          <div class="flex items-center justify-between text-[11px] pt-1 border-t border-[#f1f5f9]">
+            <div class="flex items-center gap-1.5 text-[#64748b] font-medium uppercase text-[10px]">
+              <span>&bull; AI</span>
+              <span>&bull; B2B SAAS</span>
+            </div>
+            <span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#0062ff]">
+              <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              INVESTED
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: OrbitX -->
+      <div class="bg-white rounded-xl overflow-hidden border border-[#e5e7eb] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition group">
+        <div class="relative h-28 bg-[#090d16] overflow-hidden">
+          <img src="assets/arjun_orbit.png" alt="OrbitX" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+        </div>
+        <div class="p-3.5 space-y-2">
+          <p class="text-xs font-semibold text-[#1e293b] leading-tight">Space Situational Intelligence</p>
+          <div class="flex items-center justify-between text-[11px] pt-1 border-t border-[#f1f5f9]">
+            <div class="flex items-center gap-1.5 text-[#64748b] font-medium uppercase text-[10px]">
+              <span>&bull; SPACETECH</span>
+              <span>&bull; DEEPTECH</span>
+            </div>
+            <span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#0062ff]">
+              <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              INVESTED
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Finverse -->
+      <div class="bg-white rounded-xl overflow-hidden border border-[#e5e7eb] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition group">
+        <div class="relative h-28 bg-[#090d16] overflow-hidden">
+          <img src="assets/arjun_finverse.png" alt="Finverse" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+        </div>
+        <div class="p-3.5 space-y-2">
+          <p class="text-xs font-semibold text-[#1e293b] leading-tight">Digital Banking Infrastructure</p>
+          <div class="flex items-center justify-between text-[11px] pt-1 border-t border-[#f1f5f9]">
+            <div class="flex items-center gap-1.5 text-[#64748b] font-medium uppercase text-[10px]">
+              <span>&bull; FINTECH</span>
+              <span>&bull; B2B</span>
+            </div>
+            <span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#0062ff]">
+              <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              INVESTED
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: GridOS -->
+      <div class="bg-white rounded-xl overflow-hidden border border-[#e5e7eb] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition group">
+        <div class="relative h-28 bg-[#090d16] overflow-hidden">
+          <img src="assets/arjun_gridos.png" alt="GridOS" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+        </div>
+        <div class="p-3.5 space-y-2">
+          <p class="text-xs font-semibold text-[#1e293b] leading-tight">AI Optimization for Energy Grids</p>
+          <div class="flex items-center justify-between text-[11px] pt-1 border-t border-[#f1f5f9]">
+            <div class="flex items-center gap-1.5 text-[#64748b] font-medium uppercase text-[10px]">
+              <span>&bull; CLIMATE TECH</span>
+              <span>&bull; AI</span>
+            </div>
+            <span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#0062ff]">
+              <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              INVESTED
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
 <!-- ================================================================= -->
@@ -1226,7 +1292,7 @@
 
           </button>
 
-<button class="bg-surface-dark-card text-on-primary font-mono-technical text-mono-technical uppercase px-space-lg py-space-sm hover:bg-secondary transition-colors cursor-pointer flex items-center gap-space-xs" onclick="openShareModal('celebso.com/card/ananya-sharma', 'card-ananya.html')">
+<button class="bg-surface-dark-card text-on-primary font-mono-technical text-mono-technical uppercase px-space-lg py-space-sm hover:bg-secondary transition-colors cursor-pointer flex items-center gap-space-xs" onclick="openShareModal('celebso.com/card/ananya-sharma', 'profile.html')">
 
 <span class="material-symbols-outlined text-sm">share</span>
 
@@ -1398,10 +1464,8 @@
 
 <div class="pt-space-sm">
 
-<button class="bg-primary text-on-primary font-mono-technical text-mono-technical uppercase px-space-lg py-space-md hover:bg-secondary transition-colors cursor-pointer shadow-md" onclick="openPortfolioModal()">
-
+<button class="bg-primary text-on-primary font-mono-technical text-mono-technical uppercase px-space-lg py-space-md hover:bg-secondary transition-colors cursor-pointer shadow-md" onclick="window.location.href='profile.html'">
             [ VIEW SAMPLE PORTFOLIO → ]
-
           </button>
 
 </div>
@@ -1697,157 +1761,264 @@
 <!-- Talent Result Grid -->
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg" id="talent-card-container">
+<!-- Talent 1: Aarav -->
 
-<!-- Talent 1: Modal -->
-<div class="talent-card bg-surface-container-lowest shadow-md p-space-md flex flex-col justify-between" data-category="SINGERS CREATORS ARTISTS" data-keywords="modal musician singer music producer performer electronic">
-<div>
-<div class="flex items-center justify-between mb-space-sm">
-<span class="bg-surface-container px-space-xs py-0.5 font-mono-technical text-label-caps uppercase text-on-surface">MUSICIAN</span>
-<div class="flex items-center gap-1">
-<span class="font-mono-metric text-mono-metric text-secondary font-bold">87</span>
-<span class="font-label-caps text-label-caps text-text-muted">AI SCORE</span>
-</div>
-</div>
-<h3 class="font-title-lg text-title-lg text-on-surface">Modal</h3>
-<p class="font-mono-technical text-mono-technical text-text-muted uppercase mt-0.5">Singer · Music Producer · Performer</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm">
-Ideas Build Realities. Independent musician composing ambient soundtracks, dynamic vocal records, and electronic soundscapes.
-</p>
-<div class="flex flex-wrap gap-1 mt-space-sm">
-<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Music Producer</span>
-<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Performer</span>
-</div>
-</div>
-<div class="grid grid-cols-2 gap-space-xs pt-space-md">
-<button class="bg-surface-container-high py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-surface-container cursor-pointer text-center" onclick="openShareModal('celebso.com/card/modal', 'card-modal.html')">
-[ AI CARD ]
-</button>
-<button class="bg-primary text-on-primary py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-secondary cursor-pointer text-center" onclick="triggerToast('Connection request dispatched to Modal')">
-[ CONNECT ]
-</button>
-</div>
-</div>
+<div class="talent-card bg-surface-container-lowest shadow-md p-space-md flex flex-col justify-between" data-category="SINGERS CREATORS ARTISTS" data-keywords="aarav music producer sound design electronic bangalore">
 
-<!-- Talent 2: Aarohi Mehra -->
-<div class="talent-card bg-surface-container-lowest shadow-md p-space-md flex flex-col justify-between" data-category="SINGERS CREATORS ARTISTS" data-keywords="aarohi mehra singer musician performer vocal playback">
 <div>
-<div class="flex items-center justify-between mb-space-sm">
-<span class="bg-surface-container px-space-xs py-0.5 font-mono-technical text-label-caps uppercase text-on-surface">SINGER</span>
-<div class="flex items-center gap-1">
-<span class="font-mono-metric text-mono-metric text-secondary font-bold">90</span>
-<span class="font-label-caps text-label-caps text-text-muted">AI SCORE</span>
-</div>
-</div>
-<h3 class="font-title-lg text-title-lg text-on-surface">Aarohi Mehra</h3>
-<p class="font-mono-technical text-mono-technical text-text-muted uppercase mt-0.5">Musician · Singer · Performer</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm">
-Music Connects Us. Professional vocalist with 1.8M+ followers, 85M+ total reach, and 36+ cross-genre studio collaborations.
-</p>
-<div class="flex flex-wrap gap-1 mt-space-sm">
-<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Playback</span>
-<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Performer</span>
-</div>
-</div>
-<div class="grid grid-cols-2 gap-space-xs pt-space-md">
-<button class="bg-surface-container-high py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-surface-container cursor-pointer text-center" onclick="openShareModal('celebso.com/card/aarohi-mehra', 'card-aarohi.html')">
-[ AI CARD ]
-</button>
-<button class="bg-primary text-on-primary py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-secondary cursor-pointer text-center" onclick="triggerToast('Connection request dispatched to Aarohi Mehra')">
-[ CONNECT ]
-</button>
-</div>
-</div>
 
-<!-- Talent 3: Rohan Mehta -->
-<div class="talent-card bg-surface-container-lowest shadow-md p-space-md flex flex-col justify-between" data-category="DESIGNERS FREELANCERS CREATORS" data-keywords="rohan mehta freelancer ui ux designer web developer brand designer">
-<div>
 <div class="flex items-center justify-between mb-space-sm">
-<span class="bg-surface-container px-space-xs py-0.5 font-mono-technical text-label-caps uppercase text-on-surface">FREELANCER</span>
+
+<span class="bg-surface-container px-space-xs py-0.5 font-mono-technical text-label-caps uppercase text-on-surface">PRODUCER</span>
+
 <div class="flex items-center gap-1">
+
 <span class="font-mono-metric text-mono-metric text-secondary font-bold">88</span>
+
 <span class="font-label-caps text-label-caps text-text-muted">AI SCORE</span>
-</div>
-</div>
-<h3 class="font-title-lg text-title-lg text-on-surface">Rohan Mehta</h3>
-<p class="font-mono-technical text-mono-technical text-text-muted uppercase mt-0.5">UI/UX Designer · Web Developer</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm">
-Build Create Deliver. Top-rated freelancer with 210+ projects completed, 4.9 client rating, and full-stack brand design mastery.
-</p>
-<div class="flex flex-wrap gap-1 mt-space-sm">
-<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">UI/UX</span>
-<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Web Developer</span>
-</div>
-</div>
-<div class="grid grid-cols-2 gap-space-xs pt-space-md">
-<button class="bg-surface-container-high py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-surface-container cursor-pointer text-center" onclick="openShareModal('celebso.com/card/rohan-mehta', 'card-rohan.html')">
-[ AI CARD ]
-</button>
-<button class="bg-primary text-on-primary py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-secondary cursor-pointer text-center" onclick="triggerToast('Connection request dispatched to Rohan Mehta')">
-[ CONNECT ]
-</button>
-</div>
+
 </div>
 
-<!-- Talent 4: Kabir Mehta -->
-<div class="talent-card bg-surface-container-lowest shadow-md p-space-md flex flex-col justify-between" data-category="FOUNDERS DEVELOPERS" data-keywords="kabir mehta founder entrepreneur builder investor venture">
+</div>
+
+<h3 class="font-title-lg text-title-lg text-on-surface">Aarav Mehta</h3>
+
+<p class="font-mono-technical text-mono-technical text-text-muted uppercase mt-0.5">Electronic Music Producer &bull; Bangalore</p>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm">
+
+            Specializes in spatial audio synthesis, cinematic sound beds, and modular hardware mixing.
+
+          </p>
+
+<div class="flex flex-wrap gap-1 mt-space-sm">
+
+<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Spatial Audio</span>
+
+<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Mixing</span>
+
+</div>
+
+</div>
+
+<div class="grid grid-cols-2 gap-space-xs pt-space-md">
+
+<button class="bg-surface-container-high py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-surface-container cursor-pointer text-center" onclick="openShareModal('celebso.com/card/aarav-mehta', 'card-aarav.html')">
+
+            [ AI CARD ]
+
+          </button>
+
+<button class="bg-primary text-on-primary py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-secondary cursor-pointer text-center" onclick="triggerToast('Connection request dispatched to Aarav Mehta')">
+
+            [ CONNECT ]
+
+          </button>
+
+</div>
+
+</div>
+
+<!-- Talent 2: Meera -->
+
+<div class="talent-card bg-surface-container-lowest shadow-md p-space-md flex flex-col justify-between" data-category="DESIGNERS FREELANCERS CREATORS" data-keywords="meera ui ux designer design system figma london">
+
 <div>
+
 <div class="flex items-center justify-between mb-space-sm">
+
+<span class="bg-surface-container px-space-xs py-0.5 font-mono-technical text-label-caps uppercase text-on-surface">DESIGNER</span>
+
+<div class="flex items-center gap-1">
+
+<span class="font-mono-metric text-mono-metric text-secondary font-bold">91</span>
+
+<span class="font-label-caps text-label-caps text-text-muted">AI SCORE</span>
+
+</div>
+
+</div>
+
+<h3 class="font-title-lg text-title-lg text-on-surface">Meera Varma</h3>
+
+<p class="font-mono-technical text-mono-technical text-text-muted uppercase mt-0.5">Senior UI/UX Designer &bull; London / Remote</p>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm">
+
+            Creator of multi-brand design systems for fintech and computational tools. Focus on high-contrast accessibility.
+
+          </p>
+
+<div class="flex flex-wrap gap-1 mt-space-sm">
+
+<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Design Systems</span>
+
+<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Typography</span>
+
+</div>
+
+</div>
+
+<div class="grid grid-cols-2 gap-space-xs pt-space-md">
+
+<button class="bg-surface-container-high py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-surface-container cursor-pointer text-center" onclick="openShareModal('celebso.com/card/meera-varma', 'card-meera.html')">
+
+            [ AI CARD ]
+
+          </button>
+
+<button class="bg-primary text-on-primary py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-secondary cursor-pointer text-center" onclick="triggerToast('Connection request dispatched to Meera Varma')">
+
+            [ CONNECT ]
+
+          </button>
+
+</div>
+
+</div>
+
+<!-- Talent 3: Rohan -->
+
+<div class="talent-card bg-surface-container-lowest shadow-md p-space-md flex flex-col justify-between" data-category="FOUNDERS DEVELOPERS" data-keywords="rohan startup founder dev infra rust san francisco">
+
+<div>
+
+<div class="flex items-center justify-between mb-space-sm">
+
 <span class="bg-surface-container px-space-xs py-0.5 font-mono-technical text-label-caps uppercase text-on-surface">FOUNDER</span>
+
 <div class="flex items-center gap-1">
-<span class="font-mono-metric text-mono-metric text-secondary font-bold">88</span>
+
+<span class="font-mono-metric text-mono-metric text-secondary font-bold">86</span>
+
 <span class="font-label-caps text-label-caps text-text-muted">AI SCORE</span>
+
 </div>
+
 </div>
-<h3 class="font-title-lg text-title-lg text-on-surface">Kabir Mehta</h3>
-<p class="font-mono-technical text-mono-technical text-text-muted uppercase mt-0.5">Entrepreneur · Builder · Investor</p>
+
+<h3 class="font-title-lg text-title-lg text-on-surface">Rohan Sen</h3>
+
+<p class="font-mono-technical text-mono-technical text-text-muted uppercase mt-0.5">Startup Founder &amp; Architect &bull; San Francisco</p>
+
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm">
-Build Create Lead. Serial tech founder backing creators and emerging internet protocols. Over 42+ high-impact collaborations.
-</p>
+
+            Building distributed developer tooling and edge compute mesh. YC W23 Alum with background in low-latency systems.
+
+          </p>
+
 <div class="flex flex-wrap gap-1 mt-space-sm">
-<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Venture</span>
-<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Builder</span>
+
+<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Distributed Systems</span>
+
+<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Rust</span>
+
 </div>
+
 </div>
+
 <div class="grid grid-cols-2 gap-space-xs pt-space-md">
-<button class="bg-surface-container-high py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-surface-container cursor-pointer text-center" onclick="openShareModal('celebso.com/card/kabir-mehta', 'card-kabir.html')">
-[ AI CARD ]
-</button>
-<button class="bg-primary text-on-primary py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-secondary cursor-pointer text-center" onclick="triggerToast('Connection request dispatched to Kabir Mehta')">
-[ CONNECT ]
-</button>
+
+<button class="bg-surface-container-high py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-surface-container cursor-pointer text-center" onclick="openShareModal('celebso.com/card/rohan-sen', 'card-kabir.html')">
+
+            [ AI CARD ]
+
+          </button>
+
+<button class="bg-primary text-on-primary py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-secondary cursor-pointer text-center"onclick="triggerToast('Connection request dispatched to Rohan Sen')">
+            [ CONNECT ]
+          </button>
 </div>
 </div>
 
-<!-- Talent 5: Ananya Sharma -->
-<div class="talent-card bg-surface-container-lowest shadow-md p-space-md flex flex-col justify-between" data-category="CREATORS ARTISTS" data-keywords="ananya sharma fashion model creator public figure mumbai">
+<!-- Talent 4: Priya (Singer / Vocalist) -->
+<div class="talent-card bg-surface-container-lowest shadow-md p-space-md flex flex-col justify-between" data-category="SINGERS ARTISTS CREATORS" data-keywords="priya nair classical vocalist fusion raga mumbai">
 <div>
 <div class="flex items-center justify-between mb-space-sm">
-<span class="bg-surface-container px-space-xs py-0.5 font-mono-technical text-label-caps uppercase text-on-surface">CREATOR</span>
+<span class="bg-surface-container px-space-xs py-0.5 font-mono-technical text-label-caps uppercase text-on-surface">VOCALIST</span>
 <div class="flex items-center gap-1">
-<span class="font-mono-metric text-mono-metric text-secondary font-bold">92</span>
+<span class="font-mono-metric text-mono-metric text-secondary font-bold">94</span>
 <span class="font-label-caps text-label-caps text-text-muted">AI SCORE</span>
 </div>
 </div>
-<h3 class="font-title-lg text-title-lg text-on-surface">Ananya Sharma</h3>
-<p class="font-mono-technical text-mono-technical text-text-muted uppercase mt-0.5">Fashion Model · Creator · Public Figure</p>
+<h3 class="font-title-lg text-title-lg text-on-surface">Priya Nair</h3>
+<p class="font-mono-technical text-mono-technical text-text-muted uppercase mt-0.5">Carnatic Fusion &amp; Playback Singer &bull; Mumbai</p>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm">
-Living my dream and inspiring millions. 2.3M+ followers, 120M+ total reach, and 48+ editorial collaborations across Lakme, Vogue, and Elle.
-</p>
+            Bridging South Indian classical scales with modern orchestral arrangements. Over 30 studio recordings.
+          </p>
 <div class="flex flex-wrap gap-1 mt-space-sm">
-<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Fashion</span>
-<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Public Figure</span>
+<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Carnatic</span>
+<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Playback</span>
 </div>
 </div>
 <div class="grid grid-cols-2 gap-space-xs pt-space-md">
-<button class="bg-surface-container-high py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-surface-container cursor-pointer text-center" onclick="openShareModal('celebso.com/card/ananya-sharma', 'card-ananya.html')">
-[ AI CARD ]
-</button>
-<button class="bg-primary text-on-primary py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-secondary cursor-pointer text-center" onclick="triggerToast('Connection request dispatched to Ananya Sharma')">
-[ CONNECT ]
-</button>
+<button class="bg-surface-container-high py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-surface-container cursor-pointer text-center" onclick="openShareModal('celebso.com/card/priya-nair', 'card-priya.html')">
+            [ AI CARD ]
+          </button>
+<button class="bg-primary text-on-primary py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-secondary cursor-pointer text-center" onclick="triggerToast('Connection request dispatched to Priya Nair')">
+            [ CONNECT ]
+          </button>
 </div>
 </div>
 
+<!-- Talent 5: Dr. Siddharth (Student / Researcher) -->
+<div class="talent-card bg-surface-container-lowest shadow-md p-space-md flex flex-col justify-between" data-category="STUDENTS DEVELOPERS" data-keywords="siddharth rao quantum machine learning researcher iit delhi">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="bg-surface-container px-space-xs py-0.5 font-mono-technical text-label-caps uppercase text-on-surface">RESEARCHER</span>
+<div class="flex items-center gap-1">
+<span class="font-mono-metric text-mono-metric text-secondary font-bold">89</span>
+<span class="font-label-caps text-label-caps text-text-muted">AI SCORE</span>
+</div>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Dr. Siddharth Rao</h3>
+<p class="font-mono-technical text-mono-technical text-text-muted uppercase mt-0.5">Quantum ML Fellow &bull; IIT Delhi</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm">
+            Published author on hybrid quantum-classical neural network architectures and topological error correction.
+          </p>
+<div class="flex flex-wrap gap-1 mt-space-sm">
+<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Quantum AI</span>
+<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Preprints</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-space-md">
+<button class="bg-surface-container-high py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-surface-container cursor-pointer text-center" onclick="openShareModal('celebso.com/card/siddharth-rao', 'card-siddharth.html')">
+            [ AI CARD ]
+          </button>
+<button class="bg-primary text-on-primary py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-secondary cursor-pointer text-center" onclick="triggerToast('Connection request dispatched to Dr. Siddharth Rao')">
+            [ CONNECT ]
+          </button>
+</div>
+</div>
+
+<!-- Talent 6: Tanya (Actor & Performer) -->
+<div class="talent-card bg-surface-container-lowest shadow-md p-space-md flex flex-col justify-between" data-category="ACTORS CREATORS ARTISTS" data-keywords="tanya kapoor theatre actor performance screen mumbai">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="bg-surface-container px-space-xs py-0.5 font-mono-technical text-label-caps uppercase text-on-surface">ACTOR</span>
+<div class="flex items-center gap-1">
+<span class="font-mono-metric text-mono-metric text-secondary font-bold">93</span>
+<span class="font-label-caps text-label-caps text-text-muted">AI SCORE</span>
+</div>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Tanya Kapoor</h3>
+<p class="font-mono-technical text-mono-technical text-text-muted uppercase mt-0.5">Theatre &amp; Independent Screen Actor &bull; Mumbai</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm">
+            Prithvi Theatre repertory artist. Lead performance in National Award-winning experimental feature film.
+          </p>
+<div class="flex flex-wrap gap-1 mt-space-sm">
+<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Method Acting</span>
+<span class="text-xs bg-surface-container-low px-1.5 py-0.5 font-mono-technical">Screen</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-space-md">
+<button class="bg-surface-container-high py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-surface-container cursor-pointer text-center" onclick="openShareModal('celebso.com/card/tanya-kapoor', 'card-tanya.html')">
+            [ AI CARD ]
+          </button>
+<button class="bg-primary text-on-primary py-space-xs font-mono-technical text-mono-technical uppercase hover:bg-secondary cursor-pointer text-center" onclick="triggerToast('Connection request dispatched to Tanya Kapoor')">
+            [ CONNECT ]
+          </button>
+</div>
 </div>
 </div>
 </section>
@@ -2088,7 +2259,7 @@ Living my dream and inspiring millions. 2.3M+ followers, 120M+ total reach, and 
     </div>
     <div class="pt-space-xs border-t border-border-hairline flex justify-end">
       <button id="viewCardBtn" onclick="closeShareModal(); window.location.href=activeTargetCard;" class="w-full bg-primary text-on-primary font-mono-technical text-mono-technical uppercase py-space-sm hover:bg-secondary transition-colors cursor-pointer text-center block">
-        [ VIEW PORTFOLIO → ]
+        [ VIEW PROFILE → ]
       </button>
     </div>
   </div>
@@ -2221,11 +2392,7 @@ Living my dream and inspiring millions. 2.3M+ followers, 120M+ total reach, and 
 
   // Modal Open/Close Controls
   function openPortfolioModal() {
-    const m = document.getElementById('portfolioModal');
-    if (m) {
-      m.classList.remove('hidden');
-      m.classList.add('flex');
-    }
+    window.location.href = 'profile.html';
   }
   function closePortfolioModal() {
     const m = document.getElementById('portfolioModal');
@@ -2251,10 +2418,19 @@ Living my dream and inspiring millions. 2.3M+ followers, 120M+ total reach, and 
   }
 
   let activeShareUrl = '';
-  let activeTargetCard = 'card-ananya.html';
+  let activeTargetCard = 'profile.html';
   function openShareModal(url, cardPage) {
     activeShareUrl = url.startsWith('http') ? url : 'https://' + url;
-    activeTargetCard = cardPage || 'card-ananya.html';
+    if (!cardPage) {
+      if (url.includes('/card/')) {
+        const slug = url.split('/card/')[1];
+        const name = slug.split('-')[0];
+        cardPage = 'card-' + name + '.html';
+      } else {
+        cardPage = 'profile.html';
+      }
+    }
+    activeTargetCard = cardPage;
     const m = document.getElementById('shareModal');
     const disp = document.getElementById('shareUrlDisplay');
     const viewCardBtn = document.getElementById('viewCardBtn');

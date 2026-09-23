@@ -4,6 +4,8 @@
   "private": true,
   "description": "CELEBSO X — Architectural Portfolio Platform",
   "scripts": {
+    "dev": "python -m http.server 3000",
+    "start": "python -m http.server 3000",
     "build": "echo 'Static build complete'",
     "deploy": "wrangler pages deploy ."
   }

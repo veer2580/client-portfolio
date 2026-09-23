@@ -4,52 +4,64 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Ananya Sharma — Celebso Creator Card</title>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  
+  <!-- Fonts: Plus Jakarta Sans, Playfair Display, Caveat for Signature -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet"/>
+  
+  <!-- Material Symbols & FontAwesome -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            'cx-bg': '#f0ebe3',
+            'cx-bg': '#f5f3ed',
             'cx-card': '#ffffff',
-            'cx-dark': '#1a1a2e',
-            'cx-navy': '#2d3561',
-            'cx-blue': '#4a6cf7',
+            'cx-dark': '#0d1522',
+            'cx-navy': '#1e293b',
+            'cx-blue': '#2563eb',
             'cx-purple': '#7c3aed',
-            'cx-pink': '#e040a0',
-            'cx-muted': '#7b7f8a',
-            'cx-light': '#f5f0ea',
-            'cx-border': '#e8e0d6',
-            'cx-gold': '#c8963e',
+            'cx-pink': '#ec4899',
+            'cx-muted': '#64748b',
+            'cx-border': '#e5e1d8',
           },
           fontFamily: {
-            'display': ['Playfair Display', 'serif'],
-            'body': ['Plus Jakarta Sans', 'sans-serif'],
+            'serif': ['Playfair Display', 'serif'],
+            'sans': ['Plus Jakarta Sans', 'sans-serif'],
+            'cursive': ['Caveat', 'cursive'],
             'mono': ['JetBrains Mono', 'monospace'],
           }
         }
       }
     };
   </script>
-  <style>
-    html, body { margin: 0; padding: 0; }
-    body { overscroll-behavior: none; }
-    ::-webkit-scrollbar { display: none; }
 
+  <style>
+    body {
+      background-color: #f5f3ed;
+      color: #0d1522;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Score Ring Conic Gradient */
     .score-ring {
-      width: 160px;
-      height: 160px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       background: conic-gradient(
-        #7c3aed 0deg,
-        #4a6cf7 90deg,
-        #e040a0 180deg,
-        #c8963e 270deg,
-        #7c3aed 360deg
+        #3b82f6 0deg,
+        #8b5cf6 90deg,
+        #ec4899 180deg,
+        #3b82f6 360deg
       );
       display: flex;
       align-items: center;
@@ -57,8 +69,8 @@
       position: relative;
     }
     .score-ring-inner {
-      width: 136px;
-      height: 136px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       background: #ffffff;
       display: flex;
@@ -67,256 +79,304 @@
       justify-content: center;
     }
 
-    .score-bar {
-      height: 8px;
-      border-radius: 4px;
-      background: #f0ebe3;
-      overflow: hidden;
-      flex: 1;
+    /* Follow Gradient Button */
+    .btn-follow-gradient {
+      background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 40%, #ec4899 75%, #f43f5e 100%);
+      transition: all 0.25s ease;
     }
+    .btn-follow-gradient:hover {
+      opacity: 0.94;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(139, 92, 246, 0.35);
+    }
+
+    /* Score Bar Gradient */
     .score-bar-fill {
-      height: 100%;
-      border-radius: 4px;
-      background: linear-gradient(90deg, #4a6cf7, #7c3aed);
+      background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 70%, #ec4899 100%);
     }
 
-    .gradient-btn {
-      background: linear-gradient(135deg, #4a6cf7 0%, #7c3aed 50%, #e040a0 100%);
-    }
-    .gradient-btn:hover {
-      background: linear-gradient(135deg, #3b5de7 0%, #6c2add 50%, #d03090 100%);
+    /* Signature Gradient Text */
+    .signature-gradient {
+      background: linear-gradient(135deg, #7c3aed 0%, #ec4899 45%, #f97316 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .id-badge {
-      background: rgba(74, 108, 247, 0.85);
-      backdrop-filter: blur(8px);
+    /* Instagram Brand Gradient */
+    .ig-icon-gradient {
+      background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
-<body class="bg-cx-bg font-body antialiased min-h-screen flex flex-col items-center">
+<body class="min-h-screen py-6 px-3 sm:px-4 flex flex-col items-center justify-center">
 
-  <!-- FULL PAGE CARD CONTAINER -->
-  <div class="w-full max-w-[440px] mx-auto min-h-screen flex flex-col">
+  <!-- TOP RETURN BAR (Discreet Navigation) -->
+  <div class="w-full max-w-[480px] mb-3 flex items-center justify-between px-2">
+    <a href="portfolio.html" class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-slate-600 hover:text-slate-900 transition-colors uppercase tracking-wider">
+      <span class="material-symbols-outlined text-sm">arrow_back</span>
+      <span>Back to Portfolio</span>
+    </a>
+    <span class="text-[11px] font-mono text-slate-400 uppercase tracking-widest">Autonomous Identity Pass</span>
+  </div>
 
-    <!-- TOP BAR -->
-    <div class="flex items-center justify-between px-5 py-4">
+  <!-- ================= THE SS2 CREATOR SCORE CARD ================= -->
+  <div class="w-full max-w-[480px] bg-white rounded-[28px] sm:rounded-[32px] border border-[#e8e4dc] shadow-2xl p-4 sm:p-5 relative transition-all duration-300">
+    
+    <!-- 1. TOP HEADER -->
+    <div class="flex items-center justify-between pb-3.5 px-1">
+      <!-- Left: Celebso Logo + Purple Star -->
+      <div class="flex items-center">
+        <span class="font-bold text-[22px] tracking-tight text-slate-900 font-sans">Celebso</span>
+        <span class="text-lg text-[#7c3aed] font-extrabold ml-0.5 -mt-1">✦</span>
+      </div>
+      <!-- Right: Slogan with Amber Star -->
       <div class="flex items-center gap-1.5">
-        <img src="assets/celebsox_brand_header.png" alt="Celebso" class="h-7 w-auto object-contain"/>
-      </div>
-      <div class="flex items-center gap-1.5">
-        <span class="material-symbols-outlined text-cx-gold text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-        <span class="font-mono text-[9px] uppercase tracking-[0.15em] text-cx-navy font-semibold">Creator. Influencer. Visionary.</span>
+        <span class="text-[#f59e0b] text-sm">✦</span>
+        <span class="font-mono text-[9px] uppercase tracking-[0.14em] text-[#2d3561] font-bold">CREATOR. INFLUENCER. VISIONARY.</span>
       </div>
     </div>
 
-    <!-- COVER PHOTO -->
-    <div class="relative mx-4 rounded-2xl overflow-hidden">
-      <div class="aspect-[16/9] w-full overflow-hidden">
-        <img src="assets/ananya_golden_hour.jpg" alt="Cover" class="w-full h-full object-cover object-top"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+    <!-- 2. COVER PHOTO WITH OVERLAPPING AVATAR -->
+    <div class="relative rounded-2xl overflow-hidden aspect-[16/8.8] bg-slate-900 shadow-inner">
+      <img src="assets/ananya_golden_hour.jpg" alt="Ananya Sharma Cover" class="w-full h-full object-cover" style="object-position: center 25%;"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent"></div>
+      
+      <!-- Top-Left Translucent ID Badge -->
+      <div class="absolute top-2.5 left-2.5 bg-black/40 backdrop-blur-md text-white text-[10px] font-mono px-2.5 py-0.5 rounded border border-white/20 shadow-sm">
+        ID: AS-901
       </div>
 
-      <!-- ID Badge -->
-      <div class="absolute top-3 left-3 id-badge text-white px-3 py-1 rounded-md">
-        <span class="font-mono text-[10px] font-semibold tracking-wider">ID: AS-901</span>
-      </div>
-
-      <!-- Avatar (overlapping bottom) -->
-      <div class="absolute -bottom-[50px] left-1/2 -translate-x-1/2 z-10">
-        <div class="w-[100px] h-[100px] rounded-full border-4 border-white shadow-xl overflow-hidden bg-white">
-          <img src="assets/ananya_avatar.png" alt="Ananya Sharma" class="w-full h-full object-cover"/>
+      <!-- Overlapping Circular Avatar -->
+      <div class="absolute -bottom-[42px] left-1/2 -translate-x-1/2 z-10">
+        <div class="w-[84px] h-[84px] rounded-full border-[3.5px] border-white shadow-xl overflow-hidden bg-white">
+          <img src="assets/ss2_avatar_clean.png" alt="Ananya Sharma" class="w-full h-full object-cover"/>
         </div>
       </div>
     </div>
 
-    <!-- NAME & INFO -->
-    <div class="text-center mt-[58px] px-5">
-      <h1 class="text-[32px] font-display font-bold text-cx-dark leading-tight tracking-tight">Ananya</h1>
-      <div class="flex items-center justify-center gap-1 -mt-0.5">
-        <span class="text-[28px] font-display italic text-cx-navy font-medium">Sharma</span>
-        <span class="material-symbols-outlined text-cx-blue text-lg ml-1" style="font-variation-settings: 'FILL' 1;">verified</span>
+    <!-- 3. NAME & INFORMATION -->
+    <div class="mt-12 text-center px-2">
+      <h1 class="font-serif text-[32px] font-bold text-slate-900 leading-tight tracking-tight">Ananya</h1>
+      <div class="flex items-center justify-center gap-1.5 -mt-1">
+        <span class="font-cursive text-[36px] font-bold leading-none signature-gradient">Sharma</span>
+        <!-- Blue Verified Badge -->
+        <span class="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full bg-[#1d9bf0] text-white text-[10px] shadow-sm ml-0.5" title="Verified Creator">
+          <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20">
+            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+          </svg>
+        </span>
       </div>
-      <div class="flex items-center justify-center gap-2 mt-2">
-        <span class="text-sm text-cx-muted font-medium">Fashion Model</span>
-        <span class="text-cx-muted">•</span>
-        <span class="text-sm text-cx-muted font-medium">Creator</span>
-        <span class="text-cx-muted">•</span>
-        <span class="text-sm text-cx-muted font-medium">Public Figure</span>
+      <!-- Subtitle -->
+      <p class="text-xs text-slate-500 font-medium mt-1 flex items-center justify-center gap-2">
+        <span>Fashion Model</span>
+        <span class="text-slate-300">•</span>
+        <span>Creator</span>
+        <span class="text-slate-300">•</span>
+        <span>Public Figure</span>
+      </p>
+    </div>
+
+    <!-- 4. STATS ROW (3 CARDS) -->
+    <div class="grid grid-cols-3 gap-2.5 mt-4">
+      <!-- Followers -->
+      <div class="bg-[#fcfbf9] border border-[#ede9e2] rounded-xl p-2.5 text-center shadow-xs">
+        <div class="flex items-center justify-center mb-1 text-[#6366f1]">
+          <span class="material-symbols-outlined text-[17px]">group</span>
+        </div>
+        <p class="text-base font-bold text-slate-900 leading-tight">2.3M+</p>
+        <p class="text-[9px] text-slate-500 font-medium uppercase tracking-wider mt-0.5">Followers</p>
+      </div>
+
+      <!-- Total Reach -->
+      <div class="bg-[#fcfbf9] border border-[#ede9e2] rounded-xl p-2.5 text-center shadow-xs">
+        <div class="flex items-center justify-center mb-1 text-[#6366f1]">
+          <span class="material-symbols-outlined text-[17px]">visibility</span>
+        </div>
+        <p class="text-base font-bold text-slate-900 leading-tight">120M+</p>
+        <p class="text-[9px] text-slate-500 font-medium uppercase tracking-wider mt-0.5">Total Reach</p>
+      </div>
+
+      <!-- Collaborations -->
+      <div class="bg-[#fcfbf9] border border-[#ede9e2] rounded-xl p-2.5 text-center shadow-xs">
+        <div class="flex items-center justify-center mb-1 text-[#6366f1]">
+          <span class="material-symbols-outlined text-[17px]">public</span>
+        </div>
+        <p class="text-base font-bold text-slate-900 leading-tight">48+</p>
+        <p class="text-[9px] text-slate-500 font-medium uppercase tracking-wider mt-0.5">Collaborations</p>
       </div>
     </div>
 
-    <!-- STATS ROW -->
-    <div class="grid grid-cols-3 gap-3 mx-5 mt-5">
-      <div class="bg-cx-card rounded-xl p-3 text-center border border-cx-border">
-        <div class="flex items-center justify-center gap-1 mb-1">
-          <span class="material-symbols-outlined text-cx-muted text-[16px]">group</span>
-        </div>
-        <p class="text-lg font-bold text-cx-dark">2.3M+</p>
-        <p class="text-[10px] text-cx-muted font-medium uppercase tracking-wider">Followers</p>
-      </div>
-      <div class="bg-cx-card rounded-xl p-3 text-center border border-cx-border">
-        <div class="flex items-center justify-center gap-1 mb-1">
-          <span class="material-symbols-outlined text-cx-muted text-[16px]">visibility</span>
-        </div>
-        <p class="text-lg font-bold text-cx-dark">120M+</p>
-        <p class="text-[10px] text-cx-muted font-medium uppercase tracking-wider">Total Reach</p>
-      </div>
-      <div class="bg-cx-card rounded-xl p-3 text-center border border-cx-border">
-        <div class="flex items-center justify-center gap-1 mb-1">
-          <span class="material-symbols-outlined text-cx-muted text-[16px]">handshake</span>
-        </div>
-        <p class="text-lg font-bold text-cx-dark">48+</p>
-        <p class="text-[10px] text-cx-muted font-medium uppercase tracking-wider">Collaborations</p>
-      </div>
-    </div>
-
-    <!-- CREATOR SCORE CARD -->
-    <div class="mx-5 mt-5 bg-cx-card rounded-2xl border border-cx-border p-5">
-      <!-- Section Header -->
-      <div class="flex items-center gap-2 mb-5">
-        <span class="material-symbols-outlined text-cx-blue text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-        <span class="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-cx-dark">Celebso Creator Score</span>
+    <!-- 5. CELEBSO CREATOR SCORE BOX -->
+    <div class="mt-4 bg-[#fcfbf9] border border-[#ede9e2] rounded-2xl p-4 shadow-xs">
+      <!-- Header -->
+      <div class="flex items-center gap-1.5 mb-3.5">
+        <span class="text-[#7c3aed] text-sm">✦</span>
+        <span class="font-mono text-[10px] font-bold uppercase tracking-[0.14em] text-slate-800">CELEBSO CREATOR SCORE</span>
       </div>
 
-      <!-- Score Content -->
-      <div class="flex gap-5">
-        <!-- Score Ring -->
+      <div class="flex items-center gap-4">
+        <!-- Left: Circular Gauge -->
         <div class="flex flex-col items-center flex-shrink-0">
-          <div class="score-ring">
+          <div class="score-ring shadow-sm">
             <div class="score-ring-inner">
-              <span class="text-[40px] font-display font-bold text-cx-dark leading-none">92</span>
-              <span class="text-[11px] text-cx-muted font-medium mt-0.5">/ 100</span>
+              <span class="font-serif text-[32px] font-bold text-slate-900 leading-none">92</span>
+              <span class="text-[10px] text-slate-400 font-mono mt-0.5">/ 100</span>
             </div>
           </div>
-          <p class="text-[9px] font-mono uppercase tracking-wider text-cx-muted mt-2 font-semibold">Overall Creator Score</p>
-          <p class="text-[9px] font-mono uppercase tracking-wider text-cx-purple mt-0.5 font-bold">Exceptional Creator Profile</p>
+          <p class="text-[8px] font-mono uppercase tracking-wider text-slate-600 font-bold mt-2">Overall Creator Score</p>
+          <p class="text-[8px] font-mono uppercase tracking-wider text-[#7c3aed] font-extrabold mt-0.5">Exceptional Creator Profile</p>
         </div>
 
-        <!-- Score Breakdown -->
-        <div class="flex-1 flex flex-col justify-center gap-3.5">
-          <!-- Audience Quality -->
+        <!-- Right: 4 Metrics Breakdown -->
+        <div class="flex-1 flex flex-col justify-center gap-2.5">
+          <!-- 01 Audience Quality -->
           <div>
-            <div class="flex items-center gap-2 mb-1">
-              <span class="font-mono text-[10px] text-cx-muted font-bold w-5">01</span>
-              <span class="font-mono text-[10px] uppercase tracking-wider text-cx-dark font-semibold flex-1">Audience Quality</span>
-              <span class="font-mono text-[11px] text-cx-blue font-bold">94</span>
-              <span class="font-mono text-[9px] text-cx-muted">/ 100</span>
+            <div class="flex items-center justify-between text-[10px] font-mono mb-1">
+              <div class="flex items-center gap-1.5">
+                <span class="text-slate-400 font-bold">01</span>
+                <span class="uppercase tracking-wider text-slate-800 font-semibold">AUDIENCE QUALITY</span>
+              </div>
+              <div class="font-bold text-slate-800">
+                <span class="text-[#2563eb]">94</span><span class="text-slate-400 text-[9px] font-normal"> / 100</span>
+              </div>
             </div>
-            <div class="score-bar">
-              <div class="score-bar-fill" style="width: 94%"></div>
+            <div class="h-1.5 w-full bg-[#e8e4dc] rounded-full overflow-hidden">
+              <div class="h-full score-bar-fill rounded-full" style="width: 94%;"></div>
             </div>
           </div>
-          <!-- Content Impact -->
+
+          <!-- 02 Content Impact -->
           <div>
-            <div class="flex items-center gap-2 mb-1">
-              <span class="font-mono text-[10px] text-cx-muted font-bold w-5">02</span>
-              <span class="font-mono text-[10px] uppercase tracking-wider text-cx-dark font-semibold flex-1">Content Impact</span>
-              <span class="font-mono text-[11px] text-cx-blue font-bold">91</span>
-              <span class="font-mono text-[9px] text-cx-muted">/ 100</span>
+            <div class="flex items-center justify-between text-[10px] font-mono mb-1">
+              <div class="flex items-center gap-1.5">
+                <span class="text-slate-400 font-bold">02</span>
+                <span class="uppercase tracking-wider text-slate-800 font-semibold">CONTENT IMPACT</span>
+              </div>
+              <div class="font-bold text-slate-800">
+                <span class="text-[#2563eb]">91</span><span class="text-slate-400 text-[9px] font-normal"> / 100</span>
+              </div>
             </div>
-            <div class="score-bar">
-              <div class="score-bar-fill" style="width: 91%"></div>
+            <div class="h-1.5 w-full bg-[#e8e4dc] rounded-full overflow-hidden">
+              <div class="h-full score-bar-fill rounded-full" style="width: 91%;"></div>
             </div>
           </div>
-          <!-- Engagement -->
+
+          <!-- 03 Engagement -->
           <div>
-            <div class="flex items-center gap-2 mb-1">
-              <span class="font-mono text-[10px] text-cx-muted font-bold w-5">03</span>
-              <span class="font-mono text-[10px] uppercase tracking-wider text-cx-dark font-semibold flex-1">Engagement</span>
-              <span class="font-mono text-[11px] text-cx-blue font-bold">89</span>
-              <span class="font-mono text-[9px] text-cx-muted">/ 100</span>
+            <div class="flex items-center justify-between text-[10px] font-mono mb-1">
+              <div class="flex items-center gap-1.5">
+                <span class="text-slate-400 font-bold">03</span>
+                <span class="uppercase tracking-wider text-slate-800 font-semibold">ENGAGEMENT</span>
+              </div>
+              <div class="font-bold text-slate-800">
+                <span class="text-[#2563eb]">89</span><span class="text-slate-400 text-[9px] font-normal"> / 100</span>
+              </div>
             </div>
-            <div class="score-bar">
-              <div class="score-bar-fill" style="width: 89%"></div>
+            <div class="h-1.5 w-full bg-[#e8e4dc] rounded-full overflow-hidden">
+              <div class="h-full score-bar-fill rounded-full" style="width: 89%;"></div>
             </div>
           </div>
-          <!-- Brand Value -->
+
+          <!-- 04 Brand Value -->
           <div>
-            <div class="flex items-center gap-2 mb-1">
-              <span class="font-mono text-[10px] text-cx-muted font-bold w-5">04</span>
-              <span class="font-mono text-[10px] uppercase tracking-wider text-cx-dark font-semibold flex-1">Brand Value</span>
-              <span class="font-mono text-[11px] text-cx-blue font-bold">94</span>
-              <span class="font-mono text-[9px] text-cx-muted">/ 100</span>
+            <div class="flex items-center justify-between text-[10px] font-mono mb-1">
+              <div class="flex items-center gap-1.5">
+                <span class="text-slate-400 font-bold">04</span>
+                <span class="uppercase tracking-wider text-slate-800 font-semibold">BRAND VALUE</span>
+              </div>
+              <div class="font-bold text-slate-800">
+                <span class="text-[#2563eb]">94</span><span class="text-slate-400 text-[9px] font-normal"> / 100</span>
+              </div>
             </div>
-            <div class="score-bar">
-              <div class="score-bar-fill" style="width: 94%"></div>
+            <div class="h-1.5 w-full bg-[#e8e4dc] rounded-full overflow-hidden">
+              <div class="h-full score-bar-fill rounded-full" style="width: 94%;"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- VERIFIED SIGNALS -->
-    <div class="mx-5 mt-4 bg-cx-card rounded-2xl border border-cx-border px-5 py-4">
-      <div class="flex items-center justify-between mb-3">
-        <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-cx-blue text-lg" style="font-variation-settings: 'FILL' 1;">verified_user</span>
-          <span class="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-cx-dark">Verified Signals</span>
+    <!-- 6. VERIFIED SIGNALS BOX -->
+    <div class="mt-3 bg-[#fcfbf9] border border-[#ede9e2] rounded-2xl p-3 shadow-xs">
+      <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[#2563eb] text-[16px]">verified_user</span>
+          <span class="font-mono text-[10px] font-bold uppercase tracking-wider text-slate-800">VERIFIED SIGNALS</span>
         </div>
-        <div class="flex items-center gap-1 bg-cx-blue/10 px-2.5 py-1 rounded-full">
-          <span class="material-symbols-outlined text-cx-blue text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
-          <span class="font-mono text-[9px] text-cx-blue font-bold uppercase tracking-wider">Celebso Verified</span>
+        <div class="bg-[#2563eb] text-white text-[8px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full flex items-center gap-1 shadow-xs">
+          <span>★</span>
+          <span>CELEBSO VERIFIED</span>
         </div>
       </div>
-      <div class="grid grid-cols-2 gap-2">
-        <div class="flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-cx-blue text-[14px]">check</span>
-          <span class="text-[11px] text-cx-muted font-medium">Verified Identity</span>
+
+      <div class="grid grid-cols-2 gap-x-2 gap-y-1.5 pt-0.5">
+        <div class="flex items-center gap-1.5 text-[10px] text-slate-600 font-medium">
+          <span class="text-[#2563eb] font-bold">✓</span>
+          <span>Verified Identity</span>
         </div>
-        <div class="flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-cx-blue text-[14px]">check</span>
-          <span class="text-[11px] text-cx-muted font-medium">Authentic Audience</span>
+        <div class="flex items-center gap-1.5 text-[10px] text-slate-600 font-medium">
+          <span class="text-[#2563eb] font-bold">✓</span>
+          <span>Authentic Audience</span>
         </div>
-        <div class="flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-cx-blue text-[14px]">check</span>
-          <span class="text-[11px] text-cx-muted font-medium">Consistent Content</span>
+        <div class="flex items-center gap-1.5 text-[10px] text-slate-600 font-medium">
+          <span class="text-[#2563eb] font-bold">✓</span>
+          <span>Consistent Content</span>
         </div>
-        <div class="flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-cx-blue text-[14px]">check</span>
-          <span class="text-[11px] text-cx-muted font-medium">Brand Collaboration Ready</span>
+        <div class="flex items-center gap-1.5 text-[10px] text-slate-600 font-medium">
+          <span class="text-[#2563eb] font-bold">✓</span>
+          <span>Brand Collaboration Ready</span>
         </div>
       </div>
     </div>
 
-    <!-- ACTION BUTTONS -->
-    <div class="mx-5 mt-5 flex flex-col gap-2.5">
-      <!-- Follow -->
-      <button class="gradient-btn w-full text-white py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-cx-blue/20 transition-all">
-        <span class="material-symbols-outlined text-[18px]">person_add</span>
-        Follow
+    <!-- 7. INTERACTIVE ACTION BUTTONS -->
+    <div class="mt-3.5 space-y-2">
+      <!-- Follow Button -->
+      <button onclick="this.classList.toggle('opacity-80'); this.innerHTML = this.innerHTML.includes('Following') ? '<span class=\'material-symbols-outlined text-[17px]\'>person_add</span> Follow' : '<span class=\'material-symbols-outlined text-[17px]\'>check</span> Following';" class="btn-follow-gradient w-full text-white font-semibold text-xs py-2.5 rounded-xl shadow-md flex items-center justify-center gap-1.5 cursor-pointer">
+        <span class="material-symbols-outlined text-[17px]">person_add</span>
+        <span>Follow</span>
       </button>
-      <!-- Instagram + WhatsApp -->
-      <div class="grid grid-cols-2 gap-2.5">
-        <button class="bg-cx-card border border-cx-border rounded-xl py-2.5 flex items-center justify-center gap-2 text-sm font-medium text-cx-dark hover:bg-gray-50 transition-colors">
-          <span class="material-symbols-outlined text-[18px] text-pink-500">photo_camera</span>
-          Instagram
-        </button>
-        <button class="bg-cx-card border border-cx-border rounded-xl py-2.5 flex items-center justify-center gap-2 text-sm font-medium text-cx-dark hover:bg-gray-50 transition-colors">
-          <span class="material-symbols-outlined text-[18px] text-green-500">chat</span>
-          WhatsApp
-        </button>
+
+      <!-- Instagram & WhatsApp -->
+      <div class="grid grid-cols-2 gap-2">
+        <a href="https://instagram.com" target="_blank" class="bg-white border border-[#e2e8f0] text-slate-800 font-medium text-xs py-2 rounded-xl flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors shadow-xs">
+          <i class="fa-brands fa-instagram text-base ig-icon-gradient"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="https://whatsapp.com" target="_blank" class="bg-white border border-[#e2e8f0] text-slate-800 font-medium text-xs py-2 rounded-xl flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors shadow-xs">
+          <i class="fa-brands fa-whatsapp text-base text-[#25d366]"></i>
+          <span>WhatsApp</span>
+        </a>
       </div>
+
       <!-- View Full Portfolio -->
-      <a href="profile.html" class="bg-cx-card border border-cx-border rounded-xl py-2.5 flex items-center justify-center gap-2 text-sm font-medium text-cx-dark hover:bg-gray-50 transition-colors">
-        <span class="material-symbols-outlined text-[18px] text-cx-blue">open_in_new</span>
-        View Full Portfolio
+      <a href="profile.html" class="w-full bg-[#f8f9ff] border border-[#a5b4fc] text-[#4f46e5] hover:bg-[#eef2ff] font-semibold text-xs py-2.5 rounded-xl flex items-center justify-center gap-1.5 transition-colors shadow-xs">
+        <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+        <span>View Full Portfolio</span>
       </a>
     </div>
 
-    <!-- QR SECTION -->
-    <div class="mx-5 mt-5 mb-8 flex items-center justify-center gap-3 py-4">
-      <!-- QR Code (CSS-generated placeholder) -->
-      <div class="w-[60px] h-[60px] rounded-lg border-2 border-cx-border overflow-hidden bg-white p-1 flex-shrink-0">
-        <div class="w-full h-full rounded bg-cx-card relative overflow-hidden">
-          <img src="assets/ananya_avatar.png" alt="QR" class="w-full h-full object-cover rounded opacity-80"/>
-          <div class="absolute inset-0 bg-white/40"></div>
-        </div>
+    <!-- 8. QR CODE SECTION -->
+    <div class="mt-3.5 bg-[#fcfbf9] border border-[#ede9e2] rounded-2xl p-2.5 flex items-center justify-center gap-3">
+      <!-- Crisp QR Code Image -->
+      <div class="w-[58px] h-[58px] rounded-lg border border-[#e2e8f0] bg-white p-1 flex-shrink-0 shadow-xs">
+        <img src="assets/ss2_qr_code.png" alt="Scan QR" class="w-full h-full object-contain"/>
       </div>
-      <div>
-        <p class="text-sm font-display italic text-cx-navy">Scan to view</p>
-        <p class="text-xs text-cx-muted">my full portfolio on</p>
-        <div class="flex items-center gap-1 mt-0.5">
-          <img src="assets/celebsox_brand_header.png" alt="Celebso" class="h-4 w-auto"/>
+      <!-- Arrow & Text -->
+      <div class="relative flex items-center gap-2">
+        <!-- Curved Arrow -->
+        <svg class="w-6 h-6 text-[#f59e0b] -rotate-12 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+        <div>
+          <p class="font-cursive text-lg text-[#6366f1] font-bold leading-tight -mb-0.5">Scan to view</p>
+          <p class="text-[10px] text-slate-500 font-medium">my full portfolio on</p>
+          <div class="flex items-center gap-0.5 mt-0.5">
+            <span class="font-bold text-xs tracking-tight text-slate-900 font-sans">Celebso</span>
+            <span class="text-[10px] text-[#7c3aed] font-extrabold -mt-1">✦</span>
+          </div>
         </div>
       </div>
     </div>

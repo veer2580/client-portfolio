@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Arjun Mehta — Investor Profile</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet"/>
+  
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'inv-bg': '#faf8f5',
+            'inv-dark': '#0a1120',
+            'inv-blue': '#2563eb',
+            'inv-card-border': '#eae6dd',
+            'inv-subtext': '#64748b',
+          },
+          fontFamily: {
+            'serif': ['Playfair Display', 'serif'],
+            'sans': ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #faf8f5;
+      color: #0f172a;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-shadow {
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03), 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+  </style>
+</head>
+<body class="bg-[#faf8f5] text-[#0f172a] min-h-screen flex flex-col justify-between selection:bg-blue-100">
+
+  <!-- ================================================================= -->
+  <!-- TOP NAVBAR                                                        -->
+  <!-- ================================================================= -->
+  <header class="w-full bg-[#faf8f5]/90 backdrop-blur-md sticky top-0 z-50 border-b border-[#eae6dd]/70">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="portfolio.html" class="flex items-center gap-1.5 shrink-0 group">
+        <span class="font-serif font-bold text-lg sm:text-xl tracking-tight text-[#0a1120]">INVESTOR PROFILE</span>
+        <span class="text-[#2563eb] text-sm">✦</span>
+      </a>
+
+      <!-- Center Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 text-xs font-semibold text-[#475569]">
+        <a href="#thesis" class="hover:text-[#0a1120] transition">Thesis</a>
+        <a href="#portfolio" class="hover:text-[#0a1120] transition">Portfolio</a>
+        <a href="#resources" class="hover:text-[#0a1120] transition">Founder Resources</a>
+        <div class="relative py-1 text-[#0a1120] font-bold">
+          <a href="#about">About</a>
+          <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#2563eb] rounded-full"></span>
+        </div>
+      </nav>
+
+      <!-- Right: Search + Share Button -->
+      <div class="flex items-center gap-3">
+        <!-- Search input -->
+        <div class="relative hidden sm:block">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-[11px] text-gray-400"></i>
+          <input 
+            type="text" 
+            placeholder="Search companies, founders..." 
+            class="pl-9 pr-3.5 py-1.5 text-xs rounded-full bg-[#eeeae0] focus:bg-white text-gray-800 placeholder-gray-400 border border-transparent focus:border-[#2563eb] outline-none w-48 lg:w-60 transition"
+          />
+        </div>
+
+        <!-- Share Profile Button -->
+        <button class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0a1120] hover:bg-black text-white text-xs font-semibold transition shadow-sm">
+          <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+          <span>Share Profile</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================================================================= -->
+  <!-- MAIN CONTAINER                                                    -->
+  <!-- ================================================================= -->
+  <main class="w-full max-w-[1240px] mx-auto px-4 sm:px-6 py-6 space-y-6">
+
+    <!-- HERO PROFILE CARD -->
+    <div class="bg-white rounded-2xl border border-[#eae6dd] overflow-hidden custom-shadow">
+      
+      <!-- Top Skyline Header Banner -->
+      <div class="h-28 sm:h-36 md:h-40 w-full relative overflow-hidden bg-[#e8e4db]">
+        <img 
+          src="assets/arjun_hero_skyline_clean.png" 
+          alt="Skyline" 
+          class="w-full h-full object-cover object-center"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/90"></div>
+      </div>
+
+      <!-- Main Profile Info Body -->
+      <div class="px-6 pb-6 pt-0 relative">
+        
+        <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 -mt-16 sm:-mt-20">
+          
+          <!-- Left: Big Avatar + Name Details -->
+          <div class="flex flex-col sm:flex-row items-start sm:items-end gap-5">
+            <!-- Avatar with Verified Check -->
+            <div class="relative shrink-0">
+              <img 
+                src="assets/arjun_avatar.png" 
+                alt="Arjun Mehta" 
+                class="w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover border-4 border-white shadow-md bg-white"
+              />
+              <div class="absolute bottom-2 right-2 w-7 h-7 bg-[#2563eb] rounded-full border-2 border-white flex items-center justify-center text-white text-xs shadow-sm">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              </div>
+            </div>
+
+            <!-- Details -->
+            <div class="space-y-1 sm:pb-1">
+              <div class="flex items-center gap-2">
+                <h1 class="font-serif text-2xl sm:text-3xl font-bold text-[#0a1120] tracking-tight">Arjun Mehta</h1>
+                <span class="w-5 h-5 rounded-full bg-[#2563eb] flex items-center justify-center text-white text-[11px] shadow-sm">
+                  <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                </span>
+              </div>
+              <p class="text-xs sm:text-sm font-semibold text-[#334155]">
+                Venture Capitalist &bull; Investor &bull; Founder
+              </p>
+              <p class="text-xs text-[#64748b] flex items-center gap-1.5 pt-0.5">
+                <i class="fa-solid fa-location-dot text-[11px] text-gray-400"></i>
+                <span>Mumbai, India</span>
+              </p>
+              <p class="text-xs sm:text-sm text-[#475569] pt-1 max-w-xl leading-relaxed">
+                Backing ambitious founders building category-defining companies.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: 3 Stats -->
+          <div class="flex items-center gap-6 sm:gap-8 border-t lg:border-t-0 border-gray-100 pt-3 lg:pt-0 w-full lg:w-auto justify-around lg:justify-end shrink-0 sm:pb-1">
+            <div class="text-center sm:text-right">
+              <div class="font-serif text-2xl sm:text-3xl font-bold text-[#0a1120]">42</div>
+              <div class="text-[11px] font-medium text-[#64748b]">Investments</div>
+            </div>
+            <div class="w-px h-8 bg-gray-200"></div>
+            <div class="text-center sm:text-right">
+              <div class="font-serif text-2xl sm:text-3xl font-bold text-[#0a1120]">8</div>
+              <div class="text-[11px] font-medium text-[#64748b]">Exits</div>
+            </div>
+            <div class="w-px h-8 bg-gray-200"></div>
+            <div class="text-center sm:text-right">
+              <div class="font-serif text-2xl sm:text-3xl font-bold text-[#0a1120]">₹250Cr+</div>
+              <div class="text-[11px] font-medium text-[#64748b]">Deployed</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Action / Social Buttons Row -->
+        <div class="flex flex-wrap items-center gap-3 pt-5 mt-4 border-t border-[#f1f0ea]">
+          <button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#0a1120] hover:bg-black text-white text-xs font-semibold transition shadow-sm">
+            <i class="fa-solid fa-user text-[11px]"></i>
+            <span>Connect</span>
+          </button>
+          <a href="https://wa.me/" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white hover:bg-gray-50 border border-[#d8d3c8] text-[#0f172a] text-xs font-semibold transition shadow-sm">
+            <i class="fa-brands fa-whatsapp text-emerald-600 text-sm"></i>
+            <span>WhatsApp</span>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white hover:bg-gray-50 border border-[#d8d3c8] text-[#0f172a] text-xs font-semibold transition shadow-sm">
+            <i class="fa-brands fa-linkedin text-[#0077b5] text-sm"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a href="mailto:arjun@example.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white hover:bg-gray-50 border border-[#d8d3c8] text-[#0f172a] text-xs font-semibold transition shadow-sm">
+            <i class="fa-regular fa-envelope text-gray-600 text-xs"></i>
+            <span>Email</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- =============================================================== -->
+    <!-- SECTION: INVESTMENT PORTFOLIO                                   -->
+    <!-- =============================================================== -->
+    <section id="portfolio" class="bg-white rounded-2xl border border-[#eae6dd] p-6 custom-shadow space-y-5">
+      
+      <!-- Section Header + Filter Tabs -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        
+        <div class="flex items-center gap-2.5">
+          <i class="fa-solid fa-arrow-trend-up text-[#2563eb] text-sm"></i>
+          <h2 class="font-serif text-xl sm:text-2xl font-bold text-[#0a1120] tracking-tight">Investment Portfolio</h2>
+        </div>
+
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 text-xs">
+          <button class="px-4 py-1.5 rounded-full bg-[#0a1120] text-white font-semibold shadow-sm">All</button>
+          <button class="px-3.5 py-1.5 rounded-full bg-[#f3f0e8] hover:bg-[#eae5da] text-[#475569] font-medium transition">AI &amp; DeepTech</button>
+          <button class="px-3.5 py-1.5 rounded-full bg-[#f3f0e8] hover:bg-[#eae5da] text-[#475569] font-medium transition">SaaS</button>
+          <button class="px-3.5 py-1.5 rounded-full bg-[#f3f0e8] hover:bg-[#eae5da] text-[#475569] font-medium transition">FinTech</button>
+          <button class="px-3.5 py-1.5 rounded-full bg-[#f3f0e8] hover:bg-[#eae5da] text-[#475569] font-medium transition">Consumer</button>
+        </div>
+
+        <a href="#portfolio" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#2563eb] hover:text-blue-700 transition">
+          <span>View All Investments</span>
+          <i class="fa-solid fa-arrow-right text-[11px]"></i>
+        </a>
+
+      </div>
+
+      <!-- 8 Company Cards Grid (2 Rows of 4) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- 1. NOVA AI -->
+        <div class="bg-white rounded-xl border border-[#eae6dd] overflow-hidden hover:shadow-md transition group">
+          <div class="h-28 bg-[#090d16] overflow-hidden">
+            <img src="assets/arjun_card_nova.png" alt="NOVA AI" class="w-full h-full object-cover group-hover:scale-105 transition duration-300"/>
+          </div>
+          <div class="p-3.5 space-y-2">
+            <div class="text-xs text-[#475569] font-medium">Series A &bull; AI</div>
+            <div class="flex items-center gap-1 text-[11px] font-bold text-[#2563eb]">
+              <i class="fa-solid fa-circle-check text-[11px]"></i>
+              <span>INVESTED</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. OrbitX -->
+        <div class="bg-white rounded-xl border border-[#eae6dd] overflow-hidden hover:shadow-md transition group">
+          <div class="h-28 bg-[#090d16] overflow-hidden">
+            <img src="assets/arjun_card_orbit.png" alt="OrbitX" class="w-full h-full object-cover group-hover:scale-105 transition duration-300"/>
+          </div>
+          <div class="p-3.5 space-y-2">
+            <div class="text-xs text-[#475569] font-medium">Seed &bull; SpaceTech</div>
+            <div class="flex items-center gap-1 text-[11px] font-bold text-[#2563eb]">
+              <i class="fa-solid fa-circle-check text-[11px]"></i>
+              <span>INVESTED</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Finverse -->
+        <div class="bg-white rounded-xl border border-[#eae6dd] overflow-hidden hover:shadow-md transition group">
+          <div class="h-28 bg-[#090d16] overflow-hidden">
+            <img src="assets/arjun_card_finverse.png" alt="Finverse" class="w-full h-full object-cover group-hover:scale-105 transition duration-300"/>
+          </div>
+          <div class="p-3.5 space-y-2">
+            <div class="text-xs text-[#475569] font-medium">Series A &bull; FinTech</div>
+            <div class="flex items-center gap-1 text-[11px] font-bold text-[#2563eb]">
+              <i class="fa-solid fa-circle-check text-[11px]"></i>
+              <span>INVESTED</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. GridOS -->
+        <div class="bg-white rounded-xl border border-[#eae6dd] overflow-hidden hover:shadow-md transition group">
+          <div class="h-28 bg-[#090d16] overflow-hidden">
+            <img src="assets/arjun_card_gridos.png" alt="GridOS" class="w-full h-full object-cover group-hover:scale-105 transition duration-300"/>
+          </div>
+          <div class="p-3.5 space-y-2">
+            <div class="text-xs text-[#475569] font-medium">Pre-Series A &bull; ClimateTech</div>
+            <div class="flex items-center gap-1 text-[11px] font-bold text-[#2563eb]">
+              <i class="fa-solid fa-circle-check text-[11px]"></i>
+              <span>INVESTED</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Medora -->
+        <div class="bg-white rounded-xl border border-[#eae6dd] overflow-hidden hover:shadow-md transition group">
+          <div class="h-28 bg-[#fdf5ed] overflow-hidden">
+            <img src="assets/arjun_card_medora.png" alt="Medora" class="w-full h-full object-cover group-hover:scale-105 transition duration-300"/>
+          </div>
+          <div class="p-3.5 space-y-2">
+            <div class="text-xs text-[#475569] font-medium">Seed &bull; HealthTech</div>
+            <div class="flex items-center gap-1 text-[11px] font-bold text-[#2563eb]">
+              <i class="fa-solid fa-circle-check text-[11px]"></i>
+              <span>INVESTED</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Buildly -->
+        <div class="bg-white rounded-xl border border-[#eae6dd] overflow-hidden hover:shadow-md transition group">
+          <div class="h-28 bg-[#f5f1e8] overflow-hidden">
+            <img src="assets/arjun_card_buildly.png" alt="Buildly" class="w-full h-full object-cover group-hover:scale-105 transition duration-300"/>
+          </div>
+          <div class="p-3.5 space-y-2">
+            <div class="text-xs text-[#475569] font-medium">Seed &bull; ConTech</div>
+            <div class="flex items-center gap-1 text-[11px] font-bold text-[#2563eb]">
+              <i class="fa-solid fa-circle-check text-[11px]"></i>
+              <span>INVESTED</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. VANTA LABS -->
+        <div class="bg-white rounded-xl border border-[#eae6dd] overflow-hidden hover:shadow-md transition group">
+          <div class="h-28 bg-[#110c1f] overflow-hidden">
+            <img src="assets/arjun_card_vanta.png" alt="VANTA LABS" class="w-full h-full object-cover group-hover:scale-105 transition duration-300"/>
+          </div>
+          <div class="p-3.5 space-y-2">
+            <div class="text-xs text-[#475569] font-medium">Series A &bull; Cybersecurity</div>
+            <div class="flex items-center gap-1 text-[11px] font-bold text-[#2563eb]">
+              <i class="fa-solid fa-circle-check text-[11px]"></i>
+              <span>INVESTED</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. NEXORA -->
+        <div class="bg-white rounded-xl border border-[#eae6dd] overflow-hidden hover:shadow-md transition group">
+          <div class="h-28 bg-[#091122] overflow-hidden">
+            <img src="assets/arjun_card_nexora.png" alt="NEXORA" class="w-full h-full object-cover group-hover:scale-105 transition duration-300"/>
+          </div>
+          <div class="p-3.5 space-y-2">
+            <div class="text-xs text-[#475569] font-medium">Seed &bull; Enterprise SaaS</div>
+            <div class="flex items-center gap-1 text-[11px] font-bold text-[#2563eb]">
+              <i class="fa-solid fa-circle-check text-[11px]"></i>
+              <span>INVESTED</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- SECTION: THESIS & HIGHLIGHTS (TWO COLUMNS)                      -->
+    <!-- =============================================================== -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      
+      <!-- Left Card: Investment Thesis (span 7) -->
+      <section id="thesis" class="lg:col-span-7 bg-white rounded-2xl border border-[#eae6dd] p-6 custom-shadow space-y-5">
+        <div class="flex items-center gap-2.5">
+          <i class="fa-solid fa-bullseye text-[#2563eb] text-sm"></i>
+          <h2 class="font-serif text-xl sm:text-2xl font-bold text-[#0a1120] tracking-tight">Investment Thesis</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-1">
+          <!-- Col 1 -->
+          <div class="space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-blue-50 text-[#2563eb] flex items-center justify-center text-sm">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <h3 class="text-xs font-bold text-[#0a1120] uppercase tracking-wide">AI &amp; DeepTech</h3>
+            <p class="text-xs text-[#64748b] leading-relaxed">
+              Intelligence at the core of transformational businesses.
+            </p>
+          </div>
+
+          <!-- Col 2 -->
+          <div class="space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-blue-50 text-[#2563eb] flex items-center justify-center text-sm">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3 class="text-xs font-bold text-[#0a1120] uppercase tracking-wide">Future of Work</h3>
+            <p class="text-xs text-[#64748b] leading-relaxed">
+              Tools and platforms enabling the next era of productivity.
+            </p>
+          </div>
+
+          <!-- Col 3 -->
+          <div class="space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-blue-50 text-[#2563eb] flex items-center justify-center text-sm">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <h3 class="text-xs font-bold text-[#0a1120] uppercase tracking-wide">Climate &amp; Infrastructure</h3>
+            <p class="text-xs text-[#64748b] leading-relaxed">
+              Sustainable solutions for a resilient and equitable future.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Card: Portfolio Highlights (span 5) -->
+      <section class="lg:col-span-5 bg-white rounded-2xl border border-[#eae6dd] p-6 custom-shadow flex flex-col justify-between space-y-4">
+        <div class="flex items-center gap-2.5">
+          <i class="fa-solid fa-chart-simple text-[#2563eb] text-sm"></i>
+          <h2 class="font-serif text-xl sm:text-2xl font-bold text-[#0a1120] tracking-tight">Portfolio Highlights</h2>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 py-2 border-y border-[#f1f0ea]">
+          <div class="text-center">
+            <div class="font-serif text-2xl sm:text-3xl font-bold text-[#0a1120]">18</div>
+            <div class="text-[11px] font-medium text-[#64748b] mt-0.5 leading-tight">Active Companies</div>
+          </div>
+          <div class="text-center border-x border-[#f1f0ea]">
+            <div class="font-serif text-2xl sm:text-3xl font-bold text-[#0a1120]">6</div>
+            <div class="text-[11px] font-medium text-[#64748b] mt-0.5 leading-tight">Follow-on Rounds</div>
+          </div>
+          <div class="text-center">
+            <div class="font-serif text-2xl sm:text-3xl font-bold text-[#0a1120]">4</div>
+            <div class="text-[11px] font-medium text-[#64748b] mt-0.5 leading-tight">Unicorn-scale Bets</div>
+          </div>
+        </div>
+
+        <div class="text-[11px] text-gray-400">
+          * Sample / Demo Data
+        </div>
+      </section>
+
+    </div>
+
+    <!-- =============================================================== -->
+    <!-- SECTION: FOUNDER NETWORK / WORKED WITH                          -->
+    <!-- =============================================================== -->
+    <section class="bg-white rounded-2xl border border-[#eae6dd] p-6 custom-shadow space-y-4">
+      <div class="flex items-center gap-2.5">
+        <i class="fa-regular fa-handshake text-[#2563eb] text-sm"></i>
+        <h2 class="font-serif text-lg sm:text-xl font-bold text-[#0a1120] tracking-tight">Founder Network / Worked With</h2>
+      </div>
+
+      <!-- Partner Logos Row -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 pt-1 items-center">
+        
+        <!-- 1: Altitude Ventures -->
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded bg-[#0a1120] text-white flex items-center justify-center text-[11px] font-black">▲</div>
+          <div class="text-[10px] font-bold text-[#0f172a] uppercase leading-tight">ALTITUDE<br><span class="text-gray-500 font-normal">VENTURES</span></div>
+        </div>
+
+        <!-- 2: Founders Edge -->
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-full border-2 border-[#0a1120] flex items-center justify-center text-[10px] font-bold">⚙</div>
+          <div class="text-[10px] font-bold text-[#0f172a] uppercase leading-tight">FOUNDERS<br><span class="text-gray-500 font-normal">EDGE</span></div>
+        </div>
+
+        <!-- 3: Catalyst Capital -->
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded bg-[#0a1120] text-white flex items-center justify-center text-[10px] font-black">⚑</div>
+          <div class="text-[10px] font-bold text-[#0f172a] uppercase leading-tight">CATALYST<br><span class="text-gray-500 font-normal">CAPITAL</span></div>
+        </div>
+
+        <!-- 4: Pioneer Angels -->
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 text-[#0a1120] flex items-center justify-center text-sm font-black">❖</div>
+          <div class="text-[10px] font-bold text-[#0f172a] uppercase leading-tight">PIONEER<br><span class="text-gray-500 font-normal">ANGELS</span></div>
+        </div>
+
+        <!-- 5: Vista Growth -->
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 text-[#0a1120] flex items-center justify-center text-sm font-black">✓</div>
+          <div class="text-[10px] font-bold text-[#0f172a] uppercase leading-tight">VISTA<br><span class="text-gray-500 font-normal">GROWTH</span></div>
+        </div>
+
+        <!-- 6: Amplify Partners -->
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 text-[#0a1120] flex items-center justify-center text-sm font-black">▲</div>
+          <div class="text-[10px] font-bold text-[#0f172a] uppercase leading-tight">AMPLIFY<br><span class="text-gray-500 font-normal">PARTNERS</span></div>
+        </div>
+
+        <!-- 7: Northstar Ventures -->
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 text-[#0a1120] flex items-center justify-center text-sm font-black">➤</div>
+          <div class="text-[10px] font-bold text-[#0f172a] uppercase leading-tight">NORTHSTAR<br><span class="text-gray-500 font-normal">VENTURES</span></div>
+        </div>
+
+        <!-- 8: + More -->
+        <div class="flex items-center justify-center sm:justify-start">
+          <a href="#network" class="text-xs font-bold text-[#2563eb] hover:underline">+ More</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- CTA BANNER: BUILDING SOMETHING AMBITIOUS?                       -->
+    <!-- =============================================================== -->
+    <div class="relative bg-white rounded-2xl border border-[#eae6dd] overflow-hidden custom-shadow min-h-[160px] flex items-center">
+      
+      <!-- Right Architectural Bonsai Background -->
+      <div class="absolute right-0 top-0 bottom-0 w-full sm:w-2/3 md:w-1/2 overflow-hidden pointer-events-none">
+        <img 
+          src="assets/arjun_pitch_bg.png" 
+          alt="Architectural Stairs & Bonsai" 
+          class="w-full h-full object-cover object-right"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+      </div>
+
+      <!-- Banner Content -->
+      <div class="relative z-10 p-6 sm:p-8 max-w-lg space-y-2.5">
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#0a1120] tracking-tight">
+          Building something ambitious?
+        </h2>
+        <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">
+          Share your company, traction and vision.
+        </p>
+        <div class="pt-2">
+          <button class="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-[#0a1120] hover:bg-black text-white text-xs font-bold transition shadow-sm">
+            <span>Pitch to Me</span>
+            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- FOOTER                                                            -->
+  <!-- ================================================================= -->
+  <footer class="w-full border-t border-[#eae6dd] bg-white mt-12 py-10 text-xs">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6">
+      
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 pb-8">
+        
+        <!-- Brand Info -->
+        <div class="col-span-2 space-y-2">
+          <div class="flex items-center gap-1.5 font-serif font-bold text-lg text-[#0a1120] tracking-tight">
+            <span>INVESTOR PROFILE</span>
+            <span class="text-[#2563eb] text-sm">✦</span>
+          </div>
+          <p class="text-xs text-[#64748b] leading-relaxed max-w-xs">
+            Backing bold founders.<br>Building the future.
+          </p>
+        </div>
+
+        <!-- Explore -->
+        <div class="space-y-2">
+          <h4 class="font-bold text-[#0a1120] text-xs">Explore</h4>
+          <ul class="space-y-1.5 text-[#64748b]">
+            <li><a href="#thesis" class="hover:text-[#0a1120] transition">Thesis</a></li>
+            <li><a href="#portfolio" class="hover:text-[#0a1120] transition">Portfolio</a></li>
+            <li><a href="#resources" class="hover:text-[#0a1120] transition">Founder Resources</a></li>
+            <li><a href="#about" class="hover:text-[#0a1120] transition">About</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="space-y-2">
+          <h4 class="font-bold text-[#0a1120] text-xs">Resources</h4>
+          <ul class="space-y-1.5 text-[#64748b]">
+            <li><a href="#" class="hover:text-[#0a1120] transition">For Founders</a></li>
+            <li><a href="#" class="hover:text-[#0a1120] transition">Investor Network</a></li>
+            <li><a href="#" class="hover:text-[#0a1120] transition">Articles &amp; Insights</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal & Connect -->
+        <div class="space-y-2">
+          <h4 class="font-bold text-[#0a1120] text-xs">Legal</h4>
+          <ul class="space-y-1.5 text-[#64748b] pb-3">
+            <li><a href="terms.html" class="hover:text-[#0a1120] transition">Privacy Policy</a></li>
+            <li><a href="terms.html" class="hover:text-[#0a1120] transition">Terms of Use</a></li>
+          </ul>
+          
+          <h4 class="font-bold text-[#0a1120] text-xs pt-2">Connect</h4>
+          <div class="flex items-center gap-2 pt-1">
+            <a href="https://linkedin.com" target="_blank" class="w-7 h-7 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700 transition">
+              <i class="fa-brands fa-linkedin-in text-xs"></i>
+            </a>
+            <a href="https://x.com" target="_blank" class="w-7 h-7 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700 transition">
+              <i class="fa-brands fa-x-twitter text-xs"></i>
+            </a>
+            <a href="mailto:arjun@example.com" class="w-7 h-7 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700 transition">
+              <i class="fa-regular fa-envelope text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-6 border-t border-[#f1f0ea] flex flex-col sm:flex-row items-center justify-between text-[#94a3b8] text-[11px] gap-2">
+        <p>&copy; 2024 Investor Profile. All rights reserved.</p>
+        <p>Curated for visionary founders and venture partners.</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

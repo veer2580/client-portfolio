@@ -36,11 +36,36 @@
   <style>
     html, body { margin: 0; padding: 0; }
     ::-webkit-scrollbar { display: none; }
-    .scroll-row { overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+    .scroll-row { overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
     .scroll-row > * { scroll-snap-align: start; }
-    .content-card { position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; }
-    .content-card img { transition: transform 0.5s ease; }
-    .content-card:hover img { transform: scale(1.06); }
+    .reel-frame {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      border-radius: 18px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+    .reel-frame:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 25px 35px -10px rgba(0, 0, 0, 0.45);
+    }
+    .reel-frame img {
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reel-frame:hover img {
+      transform: scale(1.07);
+    }
+    @keyframes musicBars {
+      0%, 100% { height: 4px; }
+      50% { height: 14px; }
+    }
+    .bar-1 { animation: musicBars 0.7s ease-in-out infinite; }
+    .bar-2 { animation: musicBars 0.7s ease-in-out infinite 0.2s; }
+    .bar-3 { animation: musicBars 0.7s ease-in-out infinite 0.4s; }
   </style>
 </head>
 <body class="bg-sh-bg font-body text-sh-navy antialiased min-h-screen flex flex-col">
@@ -84,97 +109,401 @@
         </p>
       </section>
 
-      <!-- ===== CONTENT CARDS SCROLL ===== -->
+      <!-- ===== FEATURED CREATOR REELS SECTION ===== -->
       <section class="w-full">
-        <div class="flex items-center justify-between mb-4">
-          <span class="font-mono text-xs uppercase tracking-widest text-sh-muted">00 / CURATED HIGHLIGHTS</span>
-          <span class="font-mono text-xs text-sh-blue uppercase tracking-wider">Swipe to explore →</span>
+        <div class="flex items-center justify-between mb-5">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+            <span class="font-mono text-xs uppercase tracking-widest text-sh-navy font-bold">00 / VERIFIED CREATOR REELS</span>
+            <span class="hidden sm:inline-block text-xs text-sh-muted font-mono">· 5 Authenticated Shorts</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="scrollReels(-1)" class="w-8 h-8 rounded-full border border-sh-border bg-white hover:bg-sh-light flex items-center justify-center text-sh-navy transition-all shadow-sm cursor-pointer" title="Previous Reel">
+              <span class="material-symbols-outlined text-[16px]">chevron_left</span>
+            </button>
+            <button onclick="scrollReels(1)" class="w-8 h-8 rounded-full border border-sh-border bg-white hover:bg-sh-light flex items-center justify-center text-sh-navy transition-all shadow-sm cursor-pointer" title="Next Reel">
+              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+            </button>
+          </div>
         </div>
-        <div class="scroll-row flex gap-4 pb-4 overflow-x-auto">
-          <!-- Card 1: Photoshoot -->
-          <div class="content-card w-[150px] sm:w-[180px] aspect-[3/4] bg-sh-dark cursor-pointer shadow-md">
-            <img src="assets/ananya_photoshoot.png" alt="Photoshoot" class="w-full h-full object-cover"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-3 left-3 right-3">
-              <div class="flex items-center gap-1 mb-1">
-                <span class="material-symbols-outlined text-white text-[14px]">photo_library</span>
-                <span class="text-[10px] text-white/80 font-mono">2.4k likes</span>
+
+        <div id="reels-track" class="scroll-row flex gap-5 pb-6 overflow-x-auto select-none">
+
+          <!-- Reel 1: Ananya Sharma (Red Couture Walk) -->
+          <div class="reel-frame w-[240px] sm:w-[270px] md:w-[290px] group bg-black" onclick="openReelModal(0)">
+            <img src="assets/reel_1.png" alt="Ananya Sharma — Runway Reel" class="w-full h-full object-cover"/>
+            
+            <!-- Vignette Overlays -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40 pointer-events-none"></div>
+
+            <!-- Top Reel Header -->
+            <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
+              <div class="bg-black/50 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-full text-white text-[10px] font-mono flex items-center gap-1.5 shadow">
+                <span class="material-symbols-outlined text-[14px] text-red-500">movie</span>
+                <span class="font-bold tracking-wider">REEL</span>
               </div>
-              <p class="text-xs text-white font-semibold">Photoshoot</p>
+              <div class="bg-black/50 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-full text-white text-[10px] font-mono flex items-center gap-1 shadow">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                <span>184.2K</span>
+              </div>
+            </div>
+
+            <!-- Center Hover Play Button -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+              <div class="w-14 h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 shadow-xl">
+                <span class="material-symbols-outlined text-[32px] fill-current pl-1">play_arrow</span>
+              </div>
+            </div>
+
+            <!-- Right Vertical Actions Bar (Reel Style) -->
+            <div class="absolute right-3 bottom-20 flex flex-col items-center gap-3.5 z-20">
+              <button onclick="event.stopPropagation(); toggleReelLike(this, 'like-count-0', 42800)" class="flex flex-col items-center group/btn text-white cursor-pointer transition-transform active:scale-125">
+                <div class="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover/btn:bg-red-500/80 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">favorite</span>
+                </div>
+                <span id="like-count-0" class="text-[10px] font-mono mt-0.5 drop-shadow">42.8K</span>
+              </button>
+              <button onclick="event.stopPropagation(); openReelModal(0)" class="flex flex-col items-center group/btn text-white cursor-pointer">
+                <div class="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover/btn:bg-white/30 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+                </div>
+                <span class="text-[10px] font-mono mt-0.5 drop-shadow">1.2K</span>
+              </button>
+              <button onclick="event.stopPropagation(); shareReel('Ananya Sharma — Runway Reel', 'assets/reel_1.png')" class="flex flex-col items-center group/btn text-white cursor-pointer">
+                <div class="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover/btn:bg-white/30 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">send</span>
+                </div>
+                <span class="text-[10px] font-mono mt-0.5 drop-shadow">Share</span>
+              </button>
+            </div>
+
+            <!-- Bottom Content Info -->
+            <div class="absolute bottom-3 left-3 right-14 z-10 text-white pointer-events-none">
+              <!-- Creator Row -->
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-6 h-6 rounded-full bg-gradient-to-tr from-amber-500 to-rose-500 flex items-center justify-center text-[10px] font-bold text-white shadow-sm ring-1 ring-white/40">A</span>
+                <span class="text-xs font-bold font-body truncate drop-shadow">ananya_sharma</span>
+                <span class="material-symbols-outlined text-blue-400 text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+              </div>
+
+              <!-- Caption -->
+              <p class="text-[11px] leading-tight text-white/90 line-clamp-2 drop-shadow font-normal">
+                Walk into every room like you own the vision. Haute couture runway in Milan ✨
+              </p>
+
+              <!-- Audio Ticker -->
+              <div class="flex items-center gap-1.5 mt-2 bg-black/30 backdrop-blur-sm rounded-full py-0.5 px-2 w-fit max-w-full border border-white/10">
+                <span class="material-symbols-outlined text-[12px] text-white">music_note</span>
+                <span class="text-[10px] font-mono text-white/90 truncate max-w-[130px]">Ludovico Einaudi · Experience</span>
+                <div class="flex items-end gap-0.5 h-3 ml-1">
+                  <span class="w-0.5 bg-white rounded-full bar-1"></span>
+                  <span class="w-0.5 bg-white rounded-full bar-2"></span>
+                  <span class="w-0.5 bg-white rounded-full bar-3"></span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Card 2: Reels -->
-          <div class="content-card w-[150px] sm:w-[180px] aspect-[3/4] bg-sh-dark cursor-pointer shadow-md">
-            <img src="assets/ananya_creator_showcase.png" alt="Reels" class="w-full h-full object-cover"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div class="absolute top-2.5 right-2.5 bg-black/40 backdrop-blur-md rounded-full px-2 py-0.5 flex items-center gap-1">
-              <span class="material-symbols-outlined text-white text-[12px]">play_arrow</span>
-              <span class="text-[9px] text-white font-mono">6.1k</span>
-            </div>
-            <div class="absolute bottom-3 left-3 right-3">
-              <div class="flex items-center gap-1 mb-1">
-                <span class="material-symbols-outlined text-white text-[14px]">smart_display</span>
+          <!-- Reel 2: Kabir Mehta (Creative people need creative people) -->
+          <div class="reel-frame w-[240px] sm:w-[270px] md:w-[290px] group bg-black" onclick="openReelModal(1)">
+            <img src="assets/reel_2.png" alt="Kabir Mehta — Creative Manifesto Reel" class="w-full h-full object-cover"/>
+            
+            <!-- Vignette Overlays -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40 pointer-events-none"></div>
+
+            <!-- Top Reel Header -->
+            <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
+              <div class="bg-black/50 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-full text-white text-[10px] font-mono flex items-center gap-1.5 shadow">
+                <span class="material-symbols-outlined text-[14px] text-red-500">movie</span>
+                <span class="font-bold tracking-wider">REEL</span>
               </div>
-              <p class="text-xs text-white font-semibold">Creator Reels</p>
+              <div class="bg-black/50 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-full text-white text-[10px] font-mono flex items-center gap-1 shadow">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                <span>142.5K</span>
+              </div>
+            </div>
+
+            <!-- Center Hover Play Button -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+              <div class="w-14 h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 shadow-xl">
+                <span class="material-symbols-outlined text-[32px] fill-current pl-1">play_arrow</span>
+              </div>
+            </div>
+
+            <!-- Right Vertical Actions Bar -->
+            <div class="absolute right-3 bottom-20 flex flex-col items-center gap-3.5 z-20">
+              <button onclick="event.stopPropagation(); toggleReelLike(this, 'like-count-1', 38100)" class="flex flex-col items-center group/btn text-white cursor-pointer transition-transform active:scale-125">
+                <div class="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover/btn:bg-red-500/80 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">favorite</span>
+                </div>
+                <span id="like-count-1" class="text-[10px] font-mono mt-0.5 drop-shadow">38.1K</span>
+              </button>
+              <button onclick="event.stopPropagation(); openReelModal(1)" class="flex flex-col items-center group/btn text-white cursor-pointer">
+                <div class="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover/btn:bg-white/30 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+                </div>
+                <span class="text-[10px] font-mono mt-0.5 drop-shadow">890</span>
+              </button>
+              <button onclick="event.stopPropagation(); shareReel('Kabir Mehta — Manifesto Reel', 'assets/reel_2.png')" class="flex flex-col items-center group/btn text-white cursor-pointer">
+                <div class="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover/btn:bg-white/30 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">send</span>
+                </div>
+                <span class="text-[10px] font-mono mt-0.5 drop-shadow">Share</span>
+              </button>
+            </div>
+
+            <!-- Bottom Content Info -->
+            <div class="absolute bottom-3 left-3 right-14 z-10 text-white pointer-events-none">
+              <!-- Creator Row -->
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-6 h-6 rounded-full bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-[10px] font-bold text-white shadow-sm ring-1 ring-white/40">K</span>
+                <span class="text-xs font-bold font-body truncate drop-shadow">kabir_mehta</span>
+                <span class="material-symbols-outlined text-blue-400 text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+              </div>
+
+              <!-- Caption -->
+              <p class="text-[11px] leading-tight text-white/90 line-clamp-2 drop-shadow font-normal">
+                Creative people need creative people. The most important law of building in 2026.
+              </p>
+
+              <!-- Audio Ticker -->
+              <div class="flex items-center gap-1.5 mt-2 bg-black/30 backdrop-blur-sm rounded-full py-0.5 px-2 w-fit max-w-full border border-white/10">
+                <span class="material-symbols-outlined text-[12px] text-white">music_note</span>
+                <span class="text-[10px] font-mono text-white/90 truncate max-w-[130px]">Deep Focus · Original Sound</span>
+                <div class="flex items-end gap-0.5 h-3 ml-1">
+                  <span class="w-0.5 bg-white rounded-full bar-1"></span>
+                  <span class="w-0.5 bg-white rounded-full bar-2"></span>
+                  <span class="w-0.5 bg-white rounded-full bar-3"></span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Card 3: Travel -->
-          <div class="content-card w-[150px] sm:w-[180px] aspect-[3/4] bg-sh-dark cursor-pointer shadow-md">
-            <img src="assets/ananya_golden_hour.jpg" alt="Travel" class="w-full h-full object-cover" style="object-position: center 20%;"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-3 left-3 right-3">
-              <div class="flex items-center gap-1 mb-1">
-                <span class="material-symbols-outlined text-white text-[14px]">flight</span>
-                <span class="text-[10px] text-white/80 font-mono">1.4k likes</span>
+          <!-- Reel 3: Aarohi Mehra (Red Chic Sunglasses & Studio) -->
+          <div class="reel-frame w-[240px] sm:w-[270px] md:w-[290px] group bg-black" onclick="openReelModal(2)">
+            <img src="assets/reel_3.jpg" alt="Aarohi Mehra — Studio Drop Reel" class="w-full h-full object-cover"/>
+            
+            <!-- Vignette Overlays -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40 pointer-events-none"></div>
+
+            <!-- Top Reel Header -->
+            <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
+              <div class="bg-black/50 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-full text-white text-[10px] font-mono flex items-center gap-1.5 shadow">
+                <span class="material-symbols-outlined text-[14px] text-red-500">movie</span>
+                <span class="font-bold tracking-wider">REEL</span>
               </div>
-              <p class="text-xs text-white font-semibold">Travel Diaries</p>
+              <div class="bg-black/50 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-full text-white text-[10px] font-mono flex items-center gap-1 shadow">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                <span>196.7K</span>
+              </div>
+            </div>
+
+            <!-- Center Hover Play Button -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+              <div class="w-14 h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 shadow-xl">
+                <span class="material-symbols-outlined text-[32px] fill-current pl-1">play_arrow</span>
+              </div>
+            </div>
+
+            <!-- Right Vertical Actions Bar -->
+            <div class="absolute right-3 bottom-20 flex flex-col items-center gap-3.5 z-20">
+              <button onclick="event.stopPropagation(); toggleReelLike(this, 'like-count-2', 54300)" class="flex flex-col items-center group/btn text-white cursor-pointer transition-transform active:scale-125">
+                <div class="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover/btn:bg-red-500/80 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">favorite</span>
+                </div>
+                <span id="like-count-2" class="text-[10px] font-mono mt-0.5 drop-shadow">54.3K</span>
+              </button>
+              <button onclick="event.stopPropagation(); openReelModal(2)" class="flex flex-col items-center group/btn text-white cursor-pointer">
+                <div class="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover/btn:bg-white/30 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+                </div>
+                <span class="text-[10px] font-mono mt-0.5 drop-shadow">2.1K</span>
+              </button>
+              <button onclick="event.stopPropagation(); shareReel('Aarohi Mehra — Studio Drop Reel', 'assets/reel_3.jpg')" class="flex flex-col items-center group/btn text-white cursor-pointer">
+                <div class="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover/btn:bg-white/30 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">send</span>
+                </div>
+                <span class="text-[10px] font-mono mt-0.5 drop-shadow">Share</span>
+              </button>
+            </div>
+
+            <!-- Bottom Content Info -->
+            <div class="absolute bottom-3 left-3 right-14 z-10 text-white pointer-events-none">
+              <!-- Creator Row -->
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-6 h-6 rounded-full bg-gradient-to-tr from-pink-500 to-rose-600 flex items-center justify-center text-[10px] font-bold text-white shadow-sm ring-1 ring-white/40">A</span>
+                <span class="text-xs font-bold font-body truncate drop-shadow">aarohi_mehra</span>
+                <span class="material-symbols-outlined text-blue-400 text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+              </div>
+
+              <!-- Caption -->
+              <p class="text-[11px] leading-tight text-white/90 line-clamp-2 drop-shadow font-normal">
+                Red mood in studio. Dropping the acoustic version this weekend 🎙️❤️
+              </p>
+
+              <!-- Audio Ticker -->
+              <div class="flex items-center gap-1.5 mt-2 bg-black/30 backdrop-blur-sm rounded-full py-0.5 px-2 w-fit max-w-full border border-white/10">
+                <span class="material-symbols-outlined text-[12px] text-white">music_note</span>
+                <span class="text-[10px] font-mono text-white/90 truncate max-w-[130px]">Aarohi Mehra · Raag Yaman Live</span>
+                <div class="flex items-end gap-0.5 h-3 ml-1">
+                  <span class="w-0.5 bg-white rounded-full bar-1"></span>
+                  <span class="w-0.5 bg-white rounded-full bar-2"></span>
+                  <span class="w-0.5 bg-white rounded-full bar-3"></span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Card 4: Behind the Scenes -->
-          <div class="content-card w-[150px] sm:w-[180px] aspect-[3/4] bg-sh-dark cursor-pointer shadow-md">
-            <img src="assets/about_creators_team.png" alt="Behind the Scenes" class="w-full h-full object-cover"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-3 left-3 right-3">
-              <div class="flex items-center gap-1 mb-1">
-                <span class="material-symbols-outlined text-white text-[14px]">movie</span>
-                <span class="text-[10px] text-white/80 font-mono">3.2k views</span>
+          <!-- Reel 4: Modal (India Celebso Editorial) -->
+          <div class="reel-frame w-[240px] sm:w-[270px] md:w-[290px] group bg-black" onclick="openReelModal(3)">
+            <img src="assets/reel_4.jpg" alt="Modal — Celebso Newspaper Reel" class="w-full h-full object-cover"/>
+            
+            <!-- Vignette Overlays -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40 pointer-events-none"></div>
+
+            <!-- Top Reel Header -->
+            <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
+              <div class="bg-black/50 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-full text-white text-[10px] font-mono flex items-center gap-1.5 shadow">
+                <span class="material-symbols-outlined text-[14px] text-red-500">movie</span>
+                <span class="font-bold tracking-wider">REEL</span>
               </div>
-              <p class="text-xs text-white font-semibold">Behind Scenes</p>
+              <div class="bg-black/50 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-full text-white text-[10px] font-mono flex items-center gap-1 shadow">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                <span>118.9K</span>
+              </div>
+            </div>
+
+            <!-- Center Hover Play Button -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+              <div class="w-14 h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 shadow-xl">
+                <span class="material-symbols-outlined text-[32px] fill-current pl-1">play_arrow</span>
+              </div>
+            </div>
+
+            <!-- Right Vertical Actions Bar -->
+            <div class="absolute right-3 bottom-20 flex flex-col items-center gap-3.5 z-20">
+              <button onclick="event.stopPropagation(); toggleReelLike(this, 'like-count-3', 29400)" class="flex flex-col items-center group/btn text-white cursor-pointer transition-transform active:scale-125">
+                <div class="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover/btn:bg-red-500/80 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">favorite</span>
+                </div>
+                <span id="like-count-3" class="text-[10px] font-mono mt-0.5 drop-shadow">29.4K</span>
+              </button>
+              <button onclick="event.stopPropagation(); openReelModal(3)" class="flex flex-col items-center group/btn text-white cursor-pointer">
+                <div class="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover/btn:bg-white/30 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+                </div>
+                <span class="text-[10px] font-mono mt-0.5 drop-shadow">670</span>
+              </button>
+              <button onclick="event.stopPropagation(); shareReel('Modal — Celebso Issue 04', 'assets/reel_4.jpg')" class="flex flex-col items-center group/btn text-white cursor-pointer">
+                <div class="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover/btn:bg-white/30 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">send</span>
+                </div>
+                <span class="text-[10px] font-mono mt-0.5 drop-shadow">Share</span>
+              </button>
+            </div>
+
+            <!-- Bottom Content Info -->
+            <div class="absolute bottom-3 left-3 right-14 z-10 text-white pointer-events-none">
+              <!-- Creator Row -->
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-6 h-6 rounded-full bg-gradient-to-tr from-purple-500 to-indigo-600 flex items-center justify-center text-[10px] font-bold text-white shadow-sm ring-1 ring-white/40">M</span>
+                <span class="text-xs font-bold font-body truncate drop-shadow">modal_music</span>
+                <span class="material-symbols-outlined text-blue-400 text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+              </div>
+
+              <!-- Caption -->
+              <p class="text-[11px] leading-tight text-white/90 line-clamp-2 drop-shadow font-normal">
+                The front page speaks for itself. India's creator revolution is live 📰✨
+              </p>
+
+              <!-- Audio Ticker -->
+              <div class="flex items-center gap-1.5 mt-2 bg-black/30 backdrop-blur-sm rounded-full py-0.5 px-2 w-fit max-w-full border border-white/10">
+                <span class="material-symbols-outlined text-[12px] text-white">music_note</span>
+                <span class="text-[10px] font-mono text-white/90 truncate max-w-[130px]">Celebso Soundscapes · Vol. 04</span>
+                <div class="flex items-end gap-0.5 h-3 ml-1">
+                  <span class="w-0.5 bg-white rounded-full bar-1"></span>
+                  <span class="w-0.5 bg-white rounded-full bar-2"></span>
+                  <span class="w-0.5 bg-white rounded-full bar-3"></span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Card 5: Q&A LIVE -->
-          <div class="content-card w-[150px] sm:w-[180px] aspect-[3/4] bg-sh-dark cursor-pointer shadow-md">
-            <img src="assets/hero_spotlight.jpg" alt="Q&A LIVE" class="w-full h-full object-cover"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div class="absolute top-2.5 left-2.5 bg-red-600 rounded px-2 py-0.5 flex items-center gap-1 shadow">
-              <span class="text-[9px] text-white font-mono font-bold uppercase tracking-wider">LIVE</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
-              <span class="text-[9px] text-white font-mono">6.4k</span>
-            </div>
-            <div class="absolute bottom-3 left-3 right-3">
-              <div class="flex items-center gap-1 mb-1">
-                <span class="material-symbols-outlined text-white text-[14px]">live_tv</span>
+          <!-- Reel 5: Rohan Mehta (Director's Chair & Clapperboard) -->
+          <div class="reel-frame w-[240px] sm:w-[270px] md:w-[290px] group bg-black" onclick="openReelModal(4)">
+            <img src="assets/reel_5.jpg" alt="Rohan Mehta — Directorial Cut Reel" class="w-full h-full object-cover"/>
+            
+            <!-- Vignette Overlays -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40 pointer-events-none"></div>
+
+            <!-- Top Reel Header -->
+            <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
+              <div class="bg-black/50 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-full text-white text-[10px] font-mono flex items-center gap-1.5 shadow">
+                <span class="material-symbols-outlined text-[14px] text-red-500">movie</span>
+                <span class="font-bold tracking-wider">REEL</span>
               </div>
-              <p class="text-xs text-white font-semibold">Q&A Live Session</p>
+              <div class="bg-black/50 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-full text-white text-[10px] font-mono flex items-center gap-1 shadow">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                <span>92.4K</span>
+              </div>
+            </div>
+
+            <!-- Center Hover Play Button -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+              <div class="w-14 h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 shadow-xl">
+                <span class="material-symbols-outlined text-[32px] fill-current pl-1">play_arrow</span>
+              </div>
+            </div>
+
+            <!-- Right Vertical Actions Bar -->
+            <div class="absolute right-3 bottom-20 flex flex-col items-center gap-3.5 z-20">
+              <button onclick="event.stopPropagation(); toggleReelLike(this, 'like-count-4', 21600)" class="flex flex-col items-center group/btn text-white cursor-pointer transition-transform active:scale-125">
+                <div class="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover/btn:bg-red-500/80 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">favorite</span>
+                </div>
+                <span id="like-count-4" class="text-[10px] font-mono mt-0.5 drop-shadow">21.6K</span>
+              </button>
+              <button onclick="event.stopPropagation(); openReelModal(4)" class="flex flex-col items-center group/btn text-white cursor-pointer">
+                <div class="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover/btn:bg-white/30 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+                </div>
+                <span class="text-[10px] font-mono mt-0.5 drop-shadow">512</span>
+              </button>
+              <button onclick="event.stopPropagation(); shareReel('Rohan Mehta — Directorial Cut Reel', 'assets/reel_5.jpg')" class="flex flex-col items-center group/btn text-white cursor-pointer">
+                <div class="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover/btn:bg-white/30 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">send</span>
+                </div>
+                <span class="text-[10px] font-mono mt-0.5 drop-shadow">Share</span>
+              </button>
+            </div>
+
+            <!-- Bottom Content Info -->
+            <div class="absolute bottom-3 left-3 right-14 z-10 text-white pointer-events-none">
+              <!-- Creator Row -->
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-6 h-6 rounded-full bg-gradient-to-tr from-amber-600 to-orange-500 flex items-center justify-center text-[10px] font-bold text-white shadow-sm ring-1 ring-white/40">R</span>
+                <span class="text-xs font-bold font-body truncate drop-shadow">rohan_mehta</span>
+                <span class="material-symbols-outlined text-blue-400 text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+              </div>
+
+              <!-- Caption -->
+              <p class="text-[11px] leading-tight text-white/90 line-clamp-2 drop-shadow font-normal">
+                Scene 01, Take 04. Bringing stories from paper to celluloid 🎬
+              </p>
+
+              <!-- Audio Ticker -->
+              <div class="flex items-center gap-1.5 mt-2 bg-black/30 backdrop-blur-sm rounded-full py-0.5 px-2 w-fit max-w-full border border-white/10">
+                <span class="material-symbols-outlined text-[12px] text-white">music_note</span>
+                <span class="text-[10px] font-mono text-white/90 truncate max-w-[130px]">Cinema Orchestral Theme</span>
+                <div class="flex items-end gap-0.5 h-3 ml-1">
+                  <span class="w-0.5 bg-white rounded-full bar-1"></span>
+                  <span class="w-0.5 bg-white rounded-full bar-2"></span>
+                  <span class="w-0.5 bg-white rounded-full bar-3"></span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Card 6: Editorial -->
-          <div class="content-card w-[150px] sm:w-[180px] aspect-[3/4] bg-sh-dark cursor-pointer shadow-md">
-            <img src="assets/hero_spotlight.png" alt="Editorial" class="w-full h-full object-cover"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-3 left-3 right-3">
-              <div class="flex items-center gap-1 mb-1">
-                <span class="material-symbols-outlined text-white text-[14px]">auto_awesome</span>
-                <span class="text-[10px] text-white/80 font-mono">Spotlight</span>
-              </div>
-              <p class="text-xs text-white font-semibold">Editorial Feature</p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -376,6 +705,111 @@
 
       </section>
 
+      <!-- ===== SS1: EDITORIAL PERSPECTIVES & PANORAMIC SHOWCASE ===== -->
+      <section class="w-full space-y-6 pt-4">
+        
+        <!-- 3 Cards Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- Card 1: For Brands & Organizations -->
+          <div class="bg-white border border-[#e5e2db] rounded-2xl p-6 md:p-7 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs uppercase tracking-widest text-[#004edc] font-bold block mb-2">FOR BRANDS &amp; ORGANIZATIONS</span>
+              <h3 class="font-display text-2xl sm:text-[26px] font-bold text-slate-900 leading-tight">
+                FIND THE RIGHT PEOPLE.<br/>BUILD WHAT MATTERS.
+              </h3>
+              <p class="text-xs text-slate-500 mt-3 leading-relaxed">
+                Discover creators and professionals for campaigns, projects, content, partnerships, and long-term collaborations.
+              </p>
+            </div>
+            
+            <!-- 4 Badges on the right/bottom -->
+            <div class="mt-6 flex flex-col gap-2.5">
+              <div class="flex items-center gap-3 bg-[#f8fafc] border border-slate-100 rounded-xl px-3.5 py-2">
+                <span class="material-symbols-outlined text-[#004edc] text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                <span class="text-xs font-semibold text-slate-800">Verified profiles</span>
+              </div>
+              <div class="flex items-center gap-3 bg-[#f8fafc] border border-slate-100 rounded-xl px-3.5 py-2">
+                <span class="material-symbols-outlined text-[#004edc] text-[20px]">photo_camera</span>
+                <span class="text-xs font-semibold text-slate-800">Authentic portfolios</span>
+              </div>
+              <div class="flex items-center gap-3 bg-[#f8fafc] border border-slate-100 rounded-xl px-3.5 py-2">
+                <span class="material-symbols-outlined text-[#004edc] text-[20px]">folder_special</span>
+                <span class="text-xs font-semibold text-slate-800">Project discovery</span>
+              </div>
+              <div class="flex items-center gap-3 bg-[#f8fafc] border border-slate-100 rounded-xl px-3.5 py-2">
+                <span class="material-symbols-outlined text-[#004edc] text-[20px]">diversity_3</span>
+                <span class="text-xs font-semibold text-slate-800">Direct collaboration</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Why We Exist -->
+          <div class="bg-white border border-[#e5e2db] rounded-2xl p-6 md:p-7 shadow-sm flex flex-col">
+            <span class="font-mono text-xs uppercase tracking-widest text-[#004edc] font-bold block mb-2">WHY WE EXIST</span>
+            <h3 class="font-display text-2xl sm:text-[26px] font-bold text-slate-900 leading-tight">
+              WHY WE EXIST.
+            </h3>
+            <div class="text-xs text-slate-500 mt-3 space-y-3 leading-relaxed flex-1">
+              <p>
+                The internet gives everyone a platform, but not everyone gets the opportunity to be truly discovered.
+              </p>
+              <p>
+                Celebso X exists to help creators and professionals showcase their talent, build a lasting identity, and connect with people who share their ambition.
+              </p>
+              <p>
+                Your profile should represent more than your latest post. It should reflect who you are, what you create, what you have achieved, and where you want to go.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Who is Celebso X? -->
+          <div class="bg-white border border-[#e5e2db] rounded-2xl p-6 md:p-7 shadow-sm flex flex-col">
+            <span class="font-mono text-xs uppercase tracking-widest text-[#004edc] font-bold block mb-2">WHO IS CELEBSO X?</span>
+            <h3 class="font-display text-2xl sm:text-[26px] font-bold text-slate-900 leading-tight">
+              A PROFESSIONAL SOCIAL PLATFORM BUILT AROUND PEOPLE, TALENT <span class="italic font-serif">And</span> OPPORTUNITY.
+            </h3>
+            <div class="text-xs text-slate-500 mt-3 space-y-3 leading-relaxed flex-1">
+              <p>
+                Celebso X is an India-first professional social platform created for creators and professionals to showcase their work, build their identity, share content, and connect with people who share their ambition.
+              </p>
+              <p>
+                Celebso X brings profiles, portfolios, content, live sessions, networking, and collaboration opportunities into one professional ecosystem.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Panoramic Sunset Banner: SHOWCASE. CREATE. CONNECT. -->
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl min-h-[220px] md:min-h-[260px] flex items-center bg-[#0a0f1d]">
+          <!-- Clean Background Image without baked text -->
+          <img src="assets/ss1_sunset_panorama_clean.png" alt="Showcase Create Connect" class="absolute inset-0 w-full h-full object-cover object-right md:object-center"/>
+          <!-- Subtle Dark Gradient on left for crystal-clear readability -->
+          <div class="absolute inset-0 bg-gradient-to-r from-[#0a0f1d]/95 via-[#0a0f1d]/60 to-transparent"></div>
+
+          <!-- Banner Content -->
+          <div class="relative z-10 p-6 md:p-10 lg:p-12 max-w-2xl text-white">
+            <h2 class="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold tracking-tight uppercase leading-tight">
+              SHOWCASE. CREATE. CONNECT.
+            </h2>
+            <p class="text-xs sm:text-sm text-gray-200 mt-2.5 max-w-lg leading-relaxed">
+              Build your professional identity, showcase your work, and connect with the people and opportunities that move you forward.
+            </p>
+            <div class="flex flex-wrap items-center gap-3.5 mt-5">
+              <a href="portfolio.html#discovery-section" class="inline-flex items-center gap-2 bg-[#004edc] hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-md">
+                <span>JOIN CELEBSO X</span>
+                <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+              </a>
+              <a href="showcase.html" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/40 text-white backdrop-blur-md px-5 py-2.5 rounded-lg font-mono text-xs font-bold uppercase tracking-wider transition-all">
+                <span>EXPLORE CREATORS</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
       <!-- ===== BOTTOM CTA ===== -->
       <section class="w-full pt-4">
         <div class="bg-black text-white rounded-2xl p-8 md:p-12 text-center shadow-xl">
@@ -402,15 +836,401 @@
   </main>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="border-t border-sh-border bg-white mt-auto">
-    <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-4">
-        <img src="assets/celebsox_brand_header.png" alt="Celebso" class="h-6 w-auto"/>
-        <p class="text-xs text-sh-muted">The premium creator platform for the next generation.</p>
+  <footer class="w-full bg-[#faf9f4] border-t border-[#e3e3de] mt-auto">
+    <div class="w-full px-6 lg:px-12 py-16">
+      <div class="mb-16 pb-12 border-b border-[#e3e3de]">
+        <p class="font-mono text-xs uppercase tracking-widest text-[#444748] mb-4">00 // IDENTITY ARCHITECTURE</p>
+        <h2 class="font-serif text-2xl md:text-3xl text-black max-w-4xl font-normal">CELEBSO X — Build Your Identity. Create Your Legacy.</h2>
       </div>
-      <p class="text-xs text-sh-muted font-mono">© 2026 Celebso. All rights reserved.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div class="lg:col-span-1">
+          <h3 class="font-mono text-xs uppercase tracking-widest text-black mb-4 pb-2 border-b border-[#e3e3de] font-semibold">BRAND &amp; VISION</h3>
+          <p class="text-xs text-[#444748] leading-relaxed">An India-first professional social platform for creators, professionals, and the next generation of creative talent.</p>
+        </div>
+        <div>
+          <h3 class="font-mono text-xs uppercase tracking-widest text-black mb-4 pb-2 border-b border-[#e3e3de] font-semibold">NAVIGATION</h3>
+          <ul class="space-y-2.5 font-mono text-xs uppercase tracking-wider text-[#444748]">
+            <li><a class="hover:text-black transition-colors" data-path="home" href="index.html">01 / HOME</a></li>
+            <li><a class="hover:text-black transition-colors" data-path="about" href="about.html">02 / ABOUT</a></li>
+            <li><a class="hover:text-black transition-colors text-[#004edc]" data-path="portfolio" href="portfolio.html">03 / PORTFOLIO</a></li>
+            <li><a class="hover:text-black transition-colors" data-path="blog" href="blog.html">04 / BLOG</a></li>
+            <li><a class="hover:text-black transition-colors" data-path="contact" href="contact.html">05 / CONTACT</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-mono text-xs uppercase tracking-widest text-black mb-4 pb-2 border-b border-[#e3e3de] font-semibold">PLATFORM</h3>
+          <ul class="space-y-2.5 font-mono text-xs uppercase tracking-wider text-[#444748]">
+            <li><a class="hover:text-black transition-colors" href="index.html#profile-section">PROFILE &amp; PORTFOLIO</a></li>
+            <li><a class="hover:text-black transition-colors" href="index.html#profile-section">CONTENT &amp; LIVE</a></li>
+            <li><a class="hover:text-black transition-colors" href="index.html#profile-section">CONNECT</a></li>
+            <li><a class="hover:text-black transition-colors" href="index.html#profile-section">COLLABORATE</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-mono text-xs uppercase tracking-widest text-black mb-4 pb-2 border-b border-[#e3e3de] font-semibold">SUPPORT &amp; LEGAL</h3>
+          <ul class="space-y-2.5 font-mono text-xs uppercase tracking-wider text-[#444748]">
+            <li><a class="hover:text-black transition-colors" data-path="contact" href="contact.html">CONTACT</a></li>
+            <li><a class="hover:text-black transition-colors" href="#">PRIVACY POLICY</a></li>
+            <li><a class="hover:text-black transition-colors" href="terms.html">TERMS OF SERVICE</a></li>
+            <li><a class="hover:text-black transition-colors" href="help-center.html">HELP CENTER</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-mono text-xs uppercase tracking-widest text-black mb-4 pb-2 border-b border-[#e3e3de] font-semibold">SOCIAL</h3>
+          <ul class="space-y-2.5 font-mono text-xs uppercase tracking-wider text-[#444748]">
+            <li><a class="hover:text-black transition-colors" href="https://www.instagram.com/celebsox?stkn=MXZkcjhxM3huYjRlcw==" target="_blank" rel="noopener">INSTAGRAM</a></li>
+            <li><a class="hover:text-black transition-colors" href="https://www.linkedin.com/company/celebso/" target="_blank" rel="noopener">LINKEDIN</a></li>
+            <li><a class="hover:text-black transition-colors" href="#">YOUTUBE</a></li>
+            <li><a class="hover:text-black transition-colors" href="https://x.com/Celebso_" target="_blank" rel="noopener">X (TWITTER)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="w-full px-6 lg:px-12 py-6 border-t border-[#e3e3de] flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="font-mono text-xs uppercase tracking-widest text-[#444748]">© 2026 <a href="https://antellay.in/" target="_blank" rel="noopener" class="font-bold text-black hover:text-[#004edc] transition-colors underline-offset-2 hover:underline">ANTELLAY Labs</a>. All Rights Reserved. A <a href="https://celebso.com/" target="_blank" rel="noopener" class="font-bold text-black hover:text-[#004edc] transition-colors underline-offset-2 hover:underline">Celebso Group</a> Company.</div>
+      <div class="font-mono text-xs uppercase tracking-widest text-[#444748]">19.0760° N, 72.8777° E</div>
     </div>
   </footer>
 
+  <!-- ================= REEL FULLSCREEN LIGHTBOX / PLAYER MODAL ================= -->
+  <div id="reelModal" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-2xl items-center justify-center p-3 sm:p-6" onclick="closeReelModal(event)">
+    <!-- Modal Close Button -->
+    <button onclick="closeReelModalDirect()" class="absolute top-4 right-4 sm:top-6 sm:right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white flex items-center justify-center transition-all z-50 cursor-pointer">
+      <span class="material-symbols-outlined text-[24px]">close</span>
+    </button>
+
+    <!-- Prev Reel Button -->
+    <button onclick="prevReel(event)" class="hidden md:flex absolute left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 text-white items-center justify-center transition-all z-40 cursor-pointer">
+      <span class="material-symbols-outlined text-[28px]">chevron_left</span>
+    </button>
+
+    <!-- Next Reel Button -->
+    <button onclick="nextReel(event)" class="hidden md:flex absolute right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 text-white items-center justify-center transition-all z-40 cursor-pointer">
+      <span class="material-symbols-outlined text-[28px]">chevron_right</span>
+    </button>
+
+    <!-- Reel Mobile Device Viewport -->
+    <div class="relative w-full max-w-[390px] h-[85vh] max-h-[760px] bg-black rounded-3xl overflow-hidden shadow-2xl border border-white/15 flex flex-col justify-between" onclick="event.stopPropagation()">
+      
+      <!-- Reel Image Background -->
+      <img id="modalReelImg" src="assets/reel_1.png" alt="Reel Video" class="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"/>
+      
+      <!-- Gradient Overlays for Readability -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60 pointer-events-none"></div>
+
+      <!-- Top Story/Reel Progress Bar -->
+      <div class="relative z-20 pt-3 px-3">
+        <div class="w-full bg-white/25 h-1 rounded-full overflow-hidden">
+          <div id="modalProgressBar" class="h-full bg-white rounded-full transition-all duration-100 ease-linear" style="width: 35%;"></div>
+        </div>
+
+        <!-- Top Header Info -->
+        <div class="flex items-center justify-between mt-2 text-white">
+          <div class="flex items-center gap-2">
+            <span id="modalReelInitial" class="w-7 h-7 rounded-full bg-gradient-to-tr from-rose-500 to-amber-500 flex items-center justify-center text-xs font-bold ring-1 ring-white/40">A</span>
+            <div>
+              <div class="flex items-center gap-1">
+                <span id="modalReelUser" class="text-xs font-bold tracking-tight">ananya_sharma</span>
+                <span class="material-symbols-outlined text-blue-400 text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+              </div>
+              <span id="modalReelViews" class="text-[10px] font-mono text-white/70">184.2K views</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="toggleSound()" class="w-8 h-8 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-black/60 transition-colors">
+              <span id="soundIcon" class="material-symbols-outlined text-[16px]">volume_up</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center Big Play/Pause Toggle Indicator -->
+      <div class="relative z-20 flex-1 flex items-center justify-center cursor-pointer select-none" onclick="togglePlayPause()">
+        <div id="playCenterIcon" class="w-16 h-16 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center text-white opacity-0 transition-opacity duration-300">
+          <span class="material-symbols-outlined text-[36px]">play_arrow</span>
+        </div>
+      </div>
+
+      <!-- Right Action Sidebar inside Modal -->
+      <div class="absolute right-3 bottom-24 flex flex-col items-center gap-4 z-30">
+        <!-- Like -->
+        <button onclick="modalLikeClick()" class="flex flex-col items-center text-white cursor-pointer active:scale-125 transition-transform">
+          <div id="modalLikeBtn" class="w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-red-500/80 transition-colors">
+            <span id="modalLikeIcon" class="material-symbols-outlined text-[20px]">favorite</span>
+          </div>
+          <span id="modalLikeCount" class="text-[10px] font-mono mt-1 drop-shadow">42.8K</span>
+        </button>
+
+        <!-- Comment -->
+        <button onclick="alert('Comments are open for verified Celebso network members.')" class="flex flex-col items-center text-white cursor-pointer">
+          <div class="w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/25 transition-colors">
+            <span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+          </div>
+          <span id="modalCommentCount" class="text-[10px] font-mono mt-1 drop-shadow">1.2K</span>
+        </button>
+
+        <!-- Share -->
+        <button onclick="modalShareClick()" class="flex flex-col items-center text-white cursor-pointer">
+          <div class="w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/25 transition-colors">
+            <span class="material-symbols-outlined text-[20px]">send</span>
+          </div>
+          <span class="text-[10px] font-mono mt-1 drop-shadow">Share</span>
+        </button>
+
+        <!-- View Pass / Profile -->
+        <a id="modalPassLink" href="card-ananya.html" class="flex flex-col items-center text-white cursor-pointer">
+          <div class="w-10 h-10 rounded-full bg-blue-600 border border-white/30 flex items-center justify-center hover:bg-blue-700 transition-colors shadow-lg">
+            <span class="material-symbols-outlined text-[20px]">badge</span>
+          </div>
+          <span class="text-[10px] font-mono mt-1 text-blue-200">Pass</span>
+        </a>
+      </div>
+
+      <!-- Bottom Meta & Caption Area -->
+      <div class="relative z-20 pb-4 px-4 text-white">
+        <!-- Caption -->
+        <p id="modalCaption" class="text-xs leading-relaxed text-white/95 font-medium drop-shadow mb-2">
+          Walk into every room like you own the vision. Haute couture runway in Milan ✨
+        </p>
+
+        <!-- Audio Track -->
+        <div class="flex items-center justify-between pt-2 border-t border-white/10">
+          <div class="flex items-center gap-2 overflow-hidden">
+            <span class="material-symbols-outlined text-[14px] text-white">music_note</span>
+            <span id="modalAudio" class="text-[11px] font-mono text-white/80 truncate">Ludovico Einaudi · Experience</span>
+          </div>
+          <div class="flex items-end gap-0.5 h-3">
+            <span class="w-0.5 bg-white rounded-full bar-1"></span>
+            <span class="w-0.5 bg-white rounded-full bar-2"></span>
+            <span class="w-0.5 bg-white rounded-full bar-3"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // 5 Exact Reel Data
+    const reelsData = [
+      {
+        src: 'assets/reel_1.png',
+        user: 'ananya_sharma',
+        initial: 'A',
+        initialBg: 'from-amber-500 to-rose-500',
+        views: '184.2K',
+        likes: '42.8K',
+        comments: '1.2K',
+        caption: 'Walk into every room like you own the vision. Haute couture runway in Milan ✨',
+        audio: 'Ludovico Einaudi · Experience (Remix)',
+        passUrl: 'card-ananya.html'
+      },
+      {
+        src: 'assets/reel_2.png',
+        user: 'kabir_mehta',
+        initial: 'K',
+        initialBg: 'from-sky-500 to-indigo-600',
+        views: '142.5K',
+        likes: '38.1K',
+        comments: '890',
+        caption: 'Creative people need creative people. The most important law of building in 2026.',
+        audio: 'Deep Focus · Original Sound',
+        passUrl: 'card-kabir.html'
+      },
+      {
+        src: 'assets/reel_3.jpg',
+        user: 'aarohi_mehra',
+        initial: 'A',
+        initialBg: 'from-pink-500 to-rose-600',
+        views: '196.7K',
+        likes: '54.3K',
+        comments: '2.1K',
+        caption: 'Red mood in studio. Dropping the acoustic version this weekend 🎙️❤️',
+        audio: 'Aarohi Mehra · Raag Yaman Live',
+        passUrl: 'card-aarohi.html'
+      },
+      {
+        src: 'assets/reel_4.jpg',
+        user: 'modal_music',
+        initial: 'M',
+        initialBg: 'from-purple-500 to-indigo-600',
+        views: '118.9K',
+        likes: '29.4K',
+        comments: '670',
+        caption: 'The front page speaks for itself. India\'s creator revolution is live 📰✨',
+        audio: 'Celebso Soundscapes · Vol. 04',
+        passUrl: 'card-modal.html'
+      },
+      {
+        src: 'assets/reel_5.jpg',
+        user: 'rohan_mehta',
+        initial: 'R',
+        initialBg: 'from-amber-600 to-orange-500',
+        views: '92.4K',
+        likes: '21.6K',
+        comments: '512',
+        caption: 'Scene 01, Take 04. Bringing stories from paper to celluloid 🎬',
+        audio: 'Cinema Orchestral Theme · Celebso',
+        passUrl: 'card-rohan.html'
+      }
+    ];
+
+    let currentReelIndex = 0;
+    let reelProgressInterval = null;
+    let currentProgress = 0;
+    let isPlaying = true;
+    let isSoundOn = true;
+
+    function scrollReels(dir) {
+      const track = document.getElementById('reels-track');
+      if (track) {
+        track.scrollBy({ left: dir * 300, behavior: 'smooth' });
+      }
+    }
+
+    function toggleReelLike(btn, countId, base) {
+      const icon = btn.querySelector('.material-symbols-outlined');
+      const countEl = document.getElementById(countId);
+      if (btn.classList.contains('text-red-500')) {
+        btn.classList.remove('text-red-500');
+        if (countEl) countEl.innerText = (base / 1000).toFixed(1) + 'K';
+      } else {
+        btn.classList.add('text-red-500');
+        if (countEl) countEl.innerText = ((base + 1) / 1000).toFixed(1) + 'K';
+      }
+    }
+
+    function shareReel(title, src) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(window.location.origin + '/' + src);
+        alert('Reel link copied: ' + title);
+      } else {
+        alert('Sharing: ' + title);
+      }
+    }
+
+    function openReelModal(index) {
+      currentReelIndex = index;
+      renderModalReel();
+      const m = document.getElementById('reelModal');
+      if (m) {
+        m.classList.remove('hidden');
+        m.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+      startProgressTimer();
+    }
+
+    function closeReelModalDirect() {
+      const m = document.getElementById('reelModal');
+      if (m) {
+        m.classList.add('hidden');
+        m.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+      clearInterval(reelProgressInterval);
+    }
+
+    function closeReelModal(e) {
+      if (e.target.id === 'reelModal') {
+        closeReelModalDirect();
+      }
+    }
+
+    function prevReel(e) {
+      if (e) e.stopPropagation();
+      currentReelIndex = (currentReelIndex - 1 + reelsData.length) % reelsData.length;
+      renderModalReel();
+      startProgressTimer();
+    }
+
+    function nextReel(e) {
+      if (e) e.stopPropagation();
+      currentReelIndex = (currentReelIndex + 1) % reelsData.length;
+      renderModalReel();
+      startProgressTimer();
+    }
+
+    function renderModalReel() {
+      const r = reelsData[currentReelIndex];
+      document.getElementById('modalReelImg').src = r.src;
+      document.getElementById('modalReelUser').innerText = r.user;
+      document.getElementById('modalReelInitial').innerText = r.initial;
+      document.getElementById('modalReelViews').innerText = r.views + ' views';
+      document.getElementById('modalLikeCount').innerText = r.likes;
+      document.getElementById('modalCommentCount').innerText = r.comments;
+      document.getElementById('modalCaption').innerText = r.caption;
+      document.getElementById('modalAudio').innerText = r.audio;
+      document.getElementById('modalPassLink').href = r.passUrl;
+
+      const likeBtn = document.getElementById('modalLikeBtn');
+      if (likeBtn) likeBtn.classList.remove('text-red-500', 'bg-red-500');
+    }
+
+    function startProgressTimer() {
+      clearInterval(reelProgressInterval);
+      currentProgress = 0;
+      isPlaying = true;
+      const bar = document.getElementById('modalProgressBar');
+      const icon = document.getElementById('playCenterIcon');
+      if (icon) icon.style.opacity = '0';
+
+      reelProgressInterval = setInterval(() => {
+        if (!isPlaying) return;
+        currentProgress += 1;
+        if (bar) bar.style.width = currentProgress + '%';
+        if (currentProgress >= 100) {
+          nextReel();
+        }
+      }, 70);
+    }
+
+    function togglePlayPause() {
+      isPlaying = !isPlaying;
+      const icon = document.getElementById('playCenterIcon');
+      if (icon) {
+        icon.querySelector('.material-symbols-outlined').innerText = isPlaying ? 'play_arrow' : 'pause';
+        icon.style.opacity = '1';
+        setTimeout(() => {
+          if (isPlaying) icon.style.opacity = '0';
+        }, 600);
+      }
+    }
+
+    function toggleSound() {
+      isSoundOn = !isSoundOn;
+      const icon = document.getElementById('soundIcon');
+      if (icon) {
+        icon.innerText = isSoundOn ? 'volume_up' : 'volume_off';
+      }
+    }
+
+    function modalLikeClick() {
+      const btn = document.getElementById('modalLikeBtn');
+      const count = document.getElementById('modalLikeCount');
+      if (btn.classList.contains('text-red-500')) {
+        btn.classList.remove('text-red-500');
+        btn.classList.remove('bg-red-500/80');
+      } else {
+        btn.classList.add('text-red-500', 'bg-red-500/80');
+      }
+    }
+
+    function modalShareClick() {
+      const r = reelsData[currentReelIndex];
+      shareReel(r.user + ' Reel', r.src);
+    }
+
+    // Keyboard support: Escape, Left Arrow, Right Arrow, Spacebar
+    document.addEventListener('keydown', (e) => {
+      const m = document.getElementById('reelModal');
+      if (m && !m.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeReelModalDirect();
+        if (e.key === 'ArrowLeft') prevReel();
+        if (e.key === 'ArrowRight') nextReel();
+        if (e.key === ' ') { e.preventDefault(); togglePlayPause(); }
+      }
+    });
+  </script>
 </body>
 </html>

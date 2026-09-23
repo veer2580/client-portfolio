@@ -4,447 +4,653 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Ananya Sharma — Celebso</title>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  
+  <!-- Google Fonts: Inter & Outfit & Plus Jakarta Sans & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+  
+  <!-- FontAwesome for official social brands: WhatsApp, Instagram, LinkedIn, YouTube, X -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            'brand': '#0f1b2d',
-            'brand-light': '#1a3a5c',
-            'brand-accent': '#2563eb',
-            'brand-surface': '#f8f9fb',
-            'brand-card': '#ffffff',
-            'brand-muted': '#6b7280',
-            'brand-border': '#e5e7eb',
-            'brand-dark': '#111827',
+            'cb-bg': '#fcfbf7',
+            'cb-dark': '#0d1522',
+            'cb-muted': '#6b7280',
+            'cb-blue': '#1a68ff',
+            'cb-card-border': '#eef0f3',
+            'cb-badge-blue': '#2563eb',
           },
           fontFamily: {
-            'display': ['Playfair Display', 'serif'],
-            'body': ['Plus Jakarta Sans', 'sans-serif'],
-            'mono': ['JetBrains Mono', 'monospace'],
+            'sans': ['Plus Jakarta Sans', 'sans-serif'],
+            'serif': ['Playfair Display', 'serif'],
           }
         }
       }
     };
   </script>
+
   <style>
-    html, body { margin: 0; padding: 0; }
-    body { overscroll-behavior: none; }
-    ::-webkit-scrollbar { display: none; }
+    body {
+      background-color: #fcfbf7;
+      color: #0d1522;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-    .portfolio-item {
+    /* Smooth transitions */
+    .btn-action {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-action:hover {
+      transform: translateY(-1px);
+    }
+
+    /* Portfolio Card styling */
+    .portfolio-card {
       position: relative;
-      overflow: hidden;
       border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 16 / 14;
+      background-color: #1e293b;
       cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .portfolio-item img {
-      transition: transform 0.5s ease;
+    .portfolio-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     }
-    .portfolio-item:hover img {
-      transform: scale(1.08);
+    .portfolio-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
     }
-    .portfolio-item .overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .portfolio-item:hover .overlay {
-      opacity: 1;
-    }
-    .portfolio-item .label {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 12px 14px;
-      z-index: 2;
+    .portfolio-card:hover img {
+      transform: scale(1.04);
     }
 
-    .brand-logo {
-      filter: grayscale(100%);
-      opacity: 0.5;
-      transition: all 0.3s ease;
+    /* Modal animation */
+    .fade-enter {
+      animation: fadeIn 0.2s ease-out forwards;
     }
-    .brand-logo:hover {
-      filter: grayscale(0%);
-      opacity: 1;
-    }
-
-    .tab-btn.active {
-      background: #0f1b2d;
-      color: #ffffff;
-    }
-
-    .play-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 40px;
-      height: 40px;
-      background: rgba(255,255,255,0.9);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 3;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      opacity: 0.9;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-    .portfolio-item:hover .play-icon {
-      transform: translate(-50%, -50%) scale(1.1);
-      opacity: 1;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
-<body class="bg-brand-surface font-body antialiased min-h-screen">
+<body class="antialiased min-h-screen flex flex-col">
 
-  <!-- ========================================== -->
-  <!-- COVER PHOTO + PROFILE HEADER               -->
-  <!-- ========================================== -->
-  <section class="relative">
-    <!-- Cover Photo -->
-    <div class="w-full h-[200px] sm:h-[280px] md:h-[340px] overflow-hidden relative">
-      <img src="assets/ananya_golden_hour.jpg" alt="Cover" class="w-full h-full object-cover object-top"/>
-      <div class="absolute inset-0 bg-gradient-to-t from-brand-surface via-transparent to-transparent"></div>
-    </div>
+  <!-- ================= TOP NAVBAR ================= -->
+  <header class="w-full bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      
+      <!-- Left: Brand Logo -->
+      <a href="index.html" class="flex items-center gap-1 group flex-shrink-0">
+        <span class="text-2xl font-bold tracking-tight text-gray-900">Celebso</span>
+        <span class="text-cb-blue text-2xl font-black leading-none -mt-1 group-hover:rotate-45 transition-transform duration-300">+</span>
+      </a>
 
-    <!-- Profile Info Overlay -->
-    <div class="max-w-5xl mx-auto px-5 md:px-8 relative -mt-[80px] sm:-mt-[90px] z-10">
-      <div class="flex flex-col sm:flex-row items-start sm:items-end gap-4 sm:gap-6">
-        <!-- Avatar -->
-        <div class="w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] rounded-full border-4 border-white shadow-xl overflow-hidden flex-shrink-0 bg-white">
-          <img src="assets/ananya_avatar.png" alt="Ananya Sharma" class="w-full h-full object-cover"/>
-        </div>
-        <!-- Verified Badge (overlapping avatar) -->
-        <div class="absolute left-[90px] sm:left-[108px] top-[85px] sm:top-[95px] w-7 h-7 bg-brand-accent rounded-full flex items-center justify-center border-2 border-white z-20">
-          <span class="material-symbols-outlined text-white text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
-        </div>
+      <!-- Center: Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-600">
+        <a href="index.html" class="hover:text-black transition-colors">Home</a>
+        <a href="showcase.html" class="hover:text-black transition-colors">Explore</a>
+        <a href="portfolio.html" class="hover:text-black transition-colors">Creators</a>
+        <a href="about.html" class="hover:text-black transition-colors">About</a>
+      </nav>
 
-        <!-- Name + Tags -->
-        <div class="flex-1 pt-1 sm:pb-2">
-          <div class="flex items-center gap-2">
-            <h1 class="text-2xl sm:text-3xl font-display font-semibold text-brand-dark">Ananya Sharma</h1>
-            <span class="material-symbols-outlined text-brand-accent text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
-          </div>
-          <p class="text-sm text-brand-muted mt-0.5 font-medium">Model • Creator • Public Figure</p>
-          <div class="flex items-center gap-1.5 text-sm text-brand-muted mt-1">
-            <span class="material-symbols-outlined text-[16px]">location_on</span>
-            <span>Mumbai, India</span>
-          </div>
-          <p class="text-sm text-brand-muted mt-2 max-w-xl leading-relaxed hidden sm:block">Living my dream and inspiring millions ✨ Fashion, lifestyle and everything in between.</p>
+      <!-- Right: Search Bar & Share Profile -->
+      <div class="flex items-center gap-3">
+        <!-- Real Typeable Search Bar -->
+        <div class="hidden sm:flex items-center bg-gray-100/90 rounded-full px-3.5 py-1.5 w-48 md:w-60 border border-transparent focus-within:border-cb-blue/40 focus-within:bg-white transition-all">
+          <span class="material-symbols-outlined text-[18px] text-gray-400 mr-2">search</span>
+          <input 
+            id="searchInput" 
+            type="text" 
+            placeholder="Search creators..." 
+            class="bg-transparent text-xs sm:text-sm outline-none w-full text-gray-800 placeholder-gray-400"
+            oninput="handleSearch(this.value)"
+          />
         </div>
 
-        <!-- Stats -->
-        <div class="hidden md:flex items-center gap-6 pb-2">
-          <div class="text-center">
-            <p class="text-xl font-bold text-brand-dark">2.3M</p>
-            <p class="text-xs text-brand-muted">Followers</p>
-          </div>
-          <div class="w-px h-10 bg-brand-border"></div>
-          <div class="text-center">
-            <p class="text-xl font-bold text-brand-dark">48</p>
-            <p class="text-xs text-brand-muted">Collaborations</p>
-          </div>
-          <div class="w-px h-10 bg-brand-border"></div>
-          <div class="text-center">
-            <p class="text-xl font-bold text-brand-dark">120M+</p>
-            <p class="text-xs text-brand-muted">Total Reach</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Mobile Stats -->
-      <div class="flex md:hidden items-center gap-4 mt-4 pt-3 border-t border-brand-border">
-        <div class="text-center flex-1">
-          <p class="text-lg font-bold text-brand-dark">2.3M</p>
-          <p class="text-xs text-brand-muted">Followers</p>
-        </div>
-        <div class="w-px h-8 bg-brand-border"></div>
-        <div class="text-center flex-1">
-          <p class="text-lg font-bold text-brand-dark">48</p>
-          <p class="text-xs text-brand-muted">Collaborations</p>
-        </div>
-        <div class="w-px h-8 bg-brand-border"></div>
-        <div class="text-center flex-1">
-          <p class="text-lg font-bold text-brand-dark">120M+</p>
-          <p class="text-xs text-brand-muted">Total Reach</p>
-        </div>
-      </div>
-
-      <!-- Bio (mobile) -->
-      <p class="text-sm text-brand-muted mt-3 leading-relaxed sm:hidden">Living my dream and inspiring millions ✨ Fashion, lifestyle and everything in between.</p>
-
-      <!-- Action Buttons -->
-      <div class="flex flex-wrap items-center gap-3 mt-5">
-        <button class="inline-flex items-center gap-2 bg-brand text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-light transition-colors">
-          <span class="material-symbols-outlined text-[18px]">person_add</span>
-          Follow
-        </button>
-        <button class="inline-flex items-center gap-2 border border-brand-border text-brand-dark px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
-          <span class="material-symbols-outlined text-[18px]">chat</span>
-          WhatsApp
-        </button>
-        <button class="inline-flex items-center gap-2 border border-brand-border text-brand-dark px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
-          <span class="material-symbols-outlined text-[18px]">photo_camera</span>
-          Instagram
-        </button>
-        <button class="inline-flex items-center gap-2 border border-brand-border text-brand-dark px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
-          <span class="material-symbols-outlined text-[18px]">mail</span>
-          Email
+        <!-- Share Profile Button -->
+        <button 
+          id="shareProfileBtn" 
+          onclick="handleShareProfile()" 
+          class="inline-flex items-center gap-2 bg-[#0d1522] text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-lg hover:bg-black transition-all shadow-sm cursor-pointer whitespace-nowrap btn-action"
+        >
+          <span class="material-symbols-outlined text-[16px]">share</span>
+          <span>Share Profile</span>
         </button>
       </div>
-    </div>
-  </section>
 
-  <!-- ========================================== -->
-  <!-- PORTFOLIO SECTION                           -->
-  <!-- ========================================== -->
-  <section class="max-w-5xl mx-auto px-5 md:px-8 mt-10">
-    <div class="flex items-center justify-between mb-5">
-      <div class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-brand-accent text-xl">auto_awesome</span>
-        <h2 class="text-xl sm:text-2xl font-display font-semibold text-brand-dark italic">Portfolio</h2>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTAINER ================= -->
+  <main class="flex-1 w-full max-w-[1240px] mx-auto px-3 sm:px-6 py-5 space-y-6">
+
+    <!-- ================= 1. CREATOR HERO PROFILE CARD ================= -->
+    <section class="w-full bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 relative">
+      
+      <!-- Top Panoramic Ambient Cover Image -->
+      <div class="relative w-full h-44 sm:h-56 md:h-64 overflow-hidden bg-gradient-to-r from-amber-50 to-orange-50">
+        <img 
+          src="assets/clean_hero_bg.png" 
+          alt="Ananya Sharma Cover Landscape" 
+          class="w-full h-full object-cover object-center pointer-events-none select-none"
+        />
+        <!-- Seamless White Gradient Fade at Bottom -->
+        <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none"></div>
       </div>
-    </div>
 
-    <!-- Filter Tabs -->
-    <div class="flex items-center gap-2 mb-6 overflow-x-auto pb-1">
-      <button class="tab-btn active px-4 py-1.5 rounded-full text-xs font-semibold transition-colors whitespace-nowrap" onclick="setTab(this, 'all')">All</button>
-      <button class="tab-btn bg-gray-100 text-brand-muted px-4 py-1.5 rounded-full text-xs font-semibold hover:bg-gray-200 transition-colors whitespace-nowrap" onclick="setTab(this, 'photoshoots')">Photoshoots</button>
-      <button class="tab-btn bg-gray-100 text-brand-muted px-4 py-1.5 rounded-full text-xs font-semibold hover:bg-gray-200 transition-colors whitespace-nowrap" onclick="setTab(this, 'reels')">Reels</button>
-      <button class="tab-btn bg-gray-100 text-brand-muted px-4 py-1.5 rounded-full text-xs font-semibold hover:bg-gray-200 transition-colors whitespace-nowrap" onclick="setTab(this, 'campaigns')">Campaigns</button>
-    </div>
+      <!-- Creator Information & Meta Row (Clean Spacing, No Overlap) -->
+      <div class="px-5 sm:px-8 pb-7 pt-0 relative -mt-14 sm:-mt-16 z-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          
+          <!-- Avatar + Text Information -->
+          <div class="flex flex-col sm:flex-row items-start sm:items-end gap-5">
+            
+            <!-- Circular Avatar with Verified Badge -->
+            <div class="relative flex-shrink-0">
+              <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-white shadow-md overflow-hidden bg-gray-100">
+                <img 
+                  src="assets/ananya_avatar_exact.png" 
+                  alt="Ananya Sharma Profile Avatar" 
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <!-- Verified Badge -->
+              <div class="absolute bottom-1 right-1 w-6 h-6 bg-cb-badge-blue rounded-full border-2 border-white flex items-center justify-center text-white shadow-sm" title="Verified Creator">
+                <span class="material-symbols-outlined text-[14px] font-bold">check</span>
+              </div>
+            </div>
 
-    <!-- Portfolio Grid Row 1 -->
-    <div class="flex items-center justify-between mb-3">
-      <span></span>
-      <a href="#" class="text-sm text-brand-accent font-semibold flex items-center gap-1 hover:underline">View All <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
-    </div>
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
-      <!-- Item 1: Photoshoot -->
-      <div class="portfolio-item aspect-[4/5]">
-        <img src="assets/ananya_photoshoot.png" alt="Photoshoot" class="w-full h-full object-cover"/>
-        <div class="overlay"></div>
-        <div class="label">
-          <div class="flex items-center gap-1.5 text-white">
-            <span class="material-symbols-outlined text-[16px]">photo_library</span>
-            <span class="text-xs font-semibold">Photoshoot</span>
+            <!-- Name, Profession, Location, Bio -->
+            <div class="pt-1">
+              <div class="flex items-center gap-2">
+                <h1 class="text-2xl sm:text-3xl font-bold font-serif tracking-tight text-gray-900">Ananya Sharma</h1>
+                <span class="material-symbols-outlined text-cb-badge-blue text-[20px]" title="Verified">verified</span>
+              </div>
+              <p class="text-xs sm:text-sm font-medium text-gray-500 mt-1">
+                Model &bull; Creator &bull; Public Figure
+              </p>
+              <div class="flex items-center gap-1.5 text-xs text-gray-500 mt-1.5 font-medium">
+                <span class="material-symbols-outlined text-[16px] text-gray-400">location_on</span>
+                <span>Mumbai, India</span>
+              </div>
+              <p class="text-xs sm:text-sm text-gray-600 mt-2 max-w-xl leading-relaxed">
+                Living my dream and inspiring millions ✨<br/>
+                Fashion, lifestyle and everything in between.
+              </p>
+            </div>
           </div>
-          <p class="text-[10px] text-white/70 mt-0.5">24 Photos</p>
-        </div>
-      </div>
 
-      <!-- Item 2: Nykaa Campaign -->
-      <div class="portfolio-item aspect-[4/5]">
-        <img src="assets/ananya_creator_showcase.png" alt="Nykaa Campaign" class="w-full h-full object-cover"/>
-        <div class="overlay"></div>
-        <div class="play-icon">
-          <span class="material-symbols-outlined text-brand-dark text-[20px]">play_arrow</span>
-        </div>
-        <div class="label">
-          <p class="text-xs font-semibold text-white">Nykaa Campaign</p>
-          <p class="text-[10px] text-white/70 mt-0.5">Reel</p>
-        </div>
-      </div>
-
-      <!-- Item 3: ELLE India Cover -->
-      <div class="portfolio-item aspect-[4/5]">
-        <img src="assets/ananya_golden_hour.jpg" alt="ELLE India Cover" class="w-full h-full object-cover"/>
-        <div class="overlay"></div>
-        <div class="label">
-          <p class="text-xs font-semibold text-white">ELLE India Cover</p>
-          <p class="text-[10px] text-white/70 mt-0.5">Magazine Cover</p>
-        </div>
-      </div>
-
-      <!-- Item 4: Maldives Diaries -->
-      <div class="portfolio-item aspect-[4/5]">
-        <img src="assets/hero_spotlight.jpg" alt="Maldives Diaries" class="w-full h-full object-cover"/>
-        <div class="overlay"></div>
-        <div class="play-icon">
-          <span class="material-symbols-outlined text-brand-dark text-[20px]">play_arrow</span>
-        </div>
-        <div class="label">
-          <p class="text-xs font-semibold text-white">Maldives Diaries</p>
-          <p class="text-[10px] text-white/70 mt-0.5">Reel</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Grid Row 2 -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-      <!-- Item 5: Lakme Fashion Week -->
-      <div class="portfolio-item aspect-[4/5]">
-        <img src="assets/ananya_photoshoot.png" alt="Lakme Fashion Week" class="w-full h-full object-cover object-center"/>
-        <div class="overlay"></div>
-        <div class="play-icon">
-          <span class="material-symbols-outlined text-brand-dark text-[20px]">play_arrow</span>
-        </div>
-        <div class="label">
-          <p class="text-xs font-semibold text-white">Lakme Fashion Week</p>
-          <p class="text-[10px] text-white/70 mt-0.5">Ramp Walk</p>
-        </div>
-      </div>
-
-      <!-- Item 6: Tanishq Ad Shoot -->
-      <div class="portfolio-item aspect-[4/5]">
-        <img src="assets/ananya_creator_showcase.png" alt="Tanishq Ad Shoot" class="w-full h-full object-cover"/>
-        <div class="overlay"></div>
-        <div class="label">
-          <p class="text-xs font-semibold text-white">Tanishq Ad Shoot</p>
-          <p class="text-[10px] text-white/70 mt-0.5">Campaign</p>
-        </div>
-      </div>
-
-      <!-- Item 7: Vogue Feature -->
-      <div class="portfolio-item aspect-[4/5]">
-        <img src="assets/hero_spotlight.png" alt="Vogue Feature" class="w-full h-full object-cover"/>
-        <div class="overlay"></div>
-        <div class="label">
-          <p class="text-xs font-semibold text-white">Vogue Feature</p>
-          <p class="text-[10px] text-white/70 mt-0.5">Magazine</p>
-        </div>
-      </div>
-
-      <!-- Item 8: BTS Moments -->
-      <div class="portfolio-item aspect-[4/5]">
-        <img src="assets/ananya_golden_hour.jpg" alt="BTS Moments" class="w-full h-full object-cover object-bottom"/>
-        <div class="overlay"></div>
-        <div class="play-icon">
-          <span class="material-symbols-outlined text-brand-dark text-[20px]">play_arrow</span>
-        </div>
-        <div class="label">
-          <p class="text-xs font-semibold text-white">BTS Moments</p>
-          <p class="text-[10px] text-white/70 mt-0.5">Reel</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================== -->
-  <!-- FEATURED IN / WORKED WITH                   -->
-  <!-- ========================================== -->
-  <section class="max-w-5xl mx-auto px-5 md:px-8 mt-12">
-    <div class="bg-brand-card border border-brand-border rounded-xl p-6 md:p-8">
-      <div class="flex items-center gap-2 mb-6">
-        <span class="material-symbols-outlined text-brand-accent text-xl">auto_awesome</span>
-        <h2 class="text-lg font-display font-semibold text-brand-dark italic">Featured In / Worked With</h2>
-      </div>
-      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-12">
-        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Nykaa</span>
-        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Lakmé</span>
-        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Tanishq</span>
-        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Nike</span>
-        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Puma</span>
-        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Vogue</span>
-        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Elle</span>
-        <span class="font-display font-bold text-xl sm:text-2xl text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer uppercase tracking-tight">Spotify</span>
-        <button class="text-sm text-brand-accent font-semibold hover:underline">+ More</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================== -->
-  <!-- LET'S WORK TOGETHER CTA                     -->
-  <!-- ========================================== -->
-  <section class="max-w-5xl mx-auto px-5 md:px-8 mt-10 mb-12">
-    <div class="bg-brand-card border border-brand-border rounded-xl overflow-hidden">
-      <div class="grid grid-cols-1 md:grid-cols-2">
-        <!-- Text Side -->
-        <div class="p-8 md:p-10 flex flex-col justify-center">
-          <h2 class="text-2xl sm:text-3xl font-display font-semibold text-brand-dark italic leading-tight">Let's Work Together</h2>
-          <p class="text-sm text-brand-muted mt-3 leading-relaxed">Open for brand collaborations, campaigns, events and more.</p>
-          <div class="mt-6">
-            <a href="contact.html" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-brand-light transition-colors">
-              Work With Me
-              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-            </a>
+          <!-- Creator Numerical Metrics -->
+          <div class="flex items-center gap-6 sm:gap-8 border-t md:border-t-0 pt-4 md:pt-0 border-gray-100">
+            <div>
+              <div class="text-xl sm:text-2xl font-bold text-gray-900">2.3M</div>
+              <div class="text-xs text-gray-500 font-medium">Followers</div>
+            </div>
+            <div class="w-px h-8 bg-gray-200 hidden sm:block"></div>
+            <div>
+              <div class="text-xl sm:text-2xl font-bold text-gray-900">48</div>
+              <div class="text-xs text-gray-500 font-medium">Collaborations</div>
+            </div>
+            <div class="w-px h-8 bg-gray-200 hidden sm:block"></div>
+            <div>
+              <div class="text-xl sm:text-2xl font-bold text-gray-900">120M+</div>
+              <div class="text-xs text-gray-500 font-medium">Total Reach</div>
+            </div>
           </div>
+
         </div>
-        <!-- Image Side -->
-        <div class="hidden md:block h-[250px] overflow-hidden">
-          <img src="assets/ananya_golden_hour.jpg" alt="Collaboration" class="w-full h-full object-cover" style="object-position: center 18%;"/>
+
+        <!-- Action Buttons Row (Follow, WhatsApp, Instagram, Email) -->
+        <div class="flex flex-wrap items-center gap-3 mt-6 pt-5 border-t border-gray-100">
+          
+          <!-- 1. Follow Button -->
+          <button 
+            id="followBtn" 
+            onclick="toggleFollow()" 
+            class="inline-flex items-center justify-center gap-2 bg-[#0d1522] text-white text-xs sm:text-sm font-semibold px-6 py-2.5 rounded-lg hover:bg-black transition-all shadow-sm cursor-pointer btn-action flex-1 sm:flex-initial"
+          >
+            <span id="followIcon" class="material-symbols-outlined text-[18px]">person_add</span>
+            <span id="followText">Follow</span>
+          </button>
+
+          <!-- 2. WhatsApp Button -->
+          <a 
+            href="https://wa.me/919876543210?text=Hi%20Ananya,%20I%20saw%20your%20portfolio%20on%20Celebso%20and%20would%20love%20to%20collaborate!" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center justify-center gap-2 bg-white text-gray-700 border border-gray-200 text-xs sm:text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-emerald-50 hover:border-emerald-300 hover:text-emerald-700 transition-all shadow-xs cursor-pointer btn-action flex-1 sm:flex-initial"
+          >
+            <i class="fa-brands fa-whatsapp text-emerald-500 text-[16px]"></i>
+            <span>WhatsApp</span>
+          </a>
+
+          <!-- 3. Instagram Button -->
+          <a 
+            href="https://instagram.com/ananyasharma" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center justify-center gap-2 bg-white text-gray-700 border border-gray-200 text-xs sm:text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-pink-50 hover:border-pink-300 hover:text-pink-600 transition-all shadow-xs cursor-pointer btn-action flex-1 sm:flex-initial"
+          >
+            <i class="fa-brands fa-instagram text-pink-500 text-[16px]"></i>
+            <span>Instagram</span>
+          </a>
+
+          <!-- 4. Email Button -->
+          <a 
+            href="mailto:contact@ananyasharma.com?subject=Brand%20Collaboration%20Inquiry%20via%20Celebso" 
+            class="inline-flex items-center justify-center gap-2 bg-white text-gray-700 border border-gray-200 text-xs sm:text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-blue-50 hover:border-blue-300 hover:text-cb-blue transition-all shadow-xs cursor-pointer btn-action flex-1 sm:flex-initial"
+          >
+            <span class="material-symbols-outlined text-[18px] text-gray-500">mail</span>
+            <span>Email</span>
+          </a>
+
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========================================== -->
-  <!-- FOOTER                                      -->
-  <!-- ========================================== -->
-  <footer class="border-t border-brand-border bg-white">
-    <div class="max-w-5xl mx-auto px-5 md:px-8 py-10">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <!-- Col 1 -->
+    <!-- ================= 2. PORTFOLIO SHOWCASE SECTION ================= -->
+    <section class="w-full bg-white rounded-2xl p-5 sm:p-7 shadow-sm border border-gray-100">
+      
+      <!-- Section Header -->
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-cb-blue text-[22px]">auto_awesome</span>
+          <h2 class="text-xl sm:text-2xl font-bold font-serif tracking-tight text-gray-900">Portfolio</h2>
+        </div>
+        
+        <!-- View All Link -->
+        <a href="portfolio.html" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-cb-blue hover:text-blue-700 hover:underline">
+          <span>View All</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Interactive Filter Buttons (All, Photoshoots, Reels, Campaigns) -->
+      <div class="flex items-center gap-2 mb-5 overflow-x-auto pb-1" id="filterContainer">
+        <button onclick="filterPortfolio('all', this)" class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-cb-blue text-white shadow-sm cursor-pointer transition-all">All</button>
+        <button onclick="filterPortfolio('photoshoot', this)" class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 cursor-pointer transition-all">Photoshoots</button>
+        <button onclick="filterPortfolio('reel', this)" class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 cursor-pointer transition-all">Reels</button>
+        <button onclick="filterPortfolio('campaign', this)" class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 cursor-pointer transition-all">Campaigns</button>
+      </div>
+
+      <!-- Real Clean Portfolio Cards Grid (8 Individual Clean Cards) -->
+      <div id="portfolioGrid" class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+        
+        <!-- Card 1: Photoshoot (24 Photos) -->
+        <div class="portfolio-card group" data-category="photoshoot" onclick="openPortfolioModal('Photoshoot', '24 Photos', 'High-fashion editorial photoshoot featuring seasonal spring styling.', 'assets/clean_card_1.png', false)">
+          <img src="assets/clean_card_1.png" alt="Photoshoot — 24 Photos" loading="lazy" />
+        </div>
+
+        <!-- Card 2: Nykaa Campaign (Reel) -->
+        <div class="portfolio-card group" data-category="reel" onclick="openPortfolioModal('Nykaa Campaign', 'Reel', 'Glamour cosmetics showcase and beauty reel with Nykaa.', 'assets/clean_card_2.png', true)">
+          <img src="assets/clean_card_2.png" alt="Nykaa Campaign — Reel" loading="lazy" />
+        </div>
+
+        <!-- Card 3: ELLE India Cover (Magazine Cover) -->
+        <div class="portfolio-card group" data-category="campaign" onclick="openPortfolioModal('ELLE India Cover', 'Magazine Cover', 'Exclusive front cover feature and editorial story in ELLE India.', 'assets/clean_card_3.png', false)">
+          <img src="assets/clean_card_3.png" alt="ELLE India Cover — Magazine Cover" loading="lazy" />
+        </div>
+
+        <!-- Card 4: Maldives Diaries (Reel) -->
+        <div class="portfolio-card group" data-category="reel" onclick="openPortfolioModal('Maldives Diaries', 'Reel', 'Travel diary, beach lifestyle cinematography and resort showcase.', 'assets/clean_card_4.png', true)">
+          <img src="assets/clean_card_4.png" alt="Maldives Diaries — Reel" loading="lazy" />
+        </div>
+
+        <!-- Card 5: Lakme Fashion Week (Ramp Walk) -->
+        <div class="portfolio-card group" data-category="campaign" onclick="openPortfolioModal('Lakme Fashion Week', 'Ramp Walk', 'Showstopper ramp walk at Lakme Fashion Week premier showcase.', 'assets/clean_card_5.png', true)">
+          <img src="assets/clean_card_5.png" alt="Lakme Fashion Week — Ramp Walk" loading="lazy" />
+        </div>
+
+        <!-- Card 6: Tanishq Ad Shoot (Campaign) -->
+        <div class="portfolio-card group" data-category="campaign" onclick="openPortfolioModal('Tanishq Ad Shoot', 'Campaign', 'Heritage festive jewelry collection ad film and campaign.', 'assets/clean_card_6.png', false)">
+          <img src="assets/clean_card_6.png" alt="Tanishq Ad Shoot — Campaign" loading="lazy" />
+        </div>
+
+        <!-- Card 7: Vogue Feature (Magazine) -->
+        <div class="portfolio-card group" data-category="photoshoot" onclick="openPortfolioModal('Vogue Feature', 'Magazine', 'Black and white intimate portrait spread in Vogue Special Issue.', 'assets/clean_card_7.png', false)">
+          <img src="assets/clean_card_7.png" alt="Vogue Feature — Magazine" loading="lazy" />
+        </div>
+
+        <!-- Card 8: BTS Moments (Reel) -->
+        <div class="portfolio-card group" data-category="reel" onclick="openPortfolioModal('BTS Moments', 'Reel', 'Behind-the-scenes candid photography and video snippets on set.', 'assets/clean_card_8.png', true)">
+          <img src="assets/clean_card_8.png" alt="BTS Moments — Reel" loading="lazy" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 3. FEATURED IN / WORKED WITH SECTION ================= -->
+    <section class="w-full bg-white rounded-2xl p-5 sm:p-7 shadow-sm border border-gray-100">
+      
+      <!-- Section Title -->
+      <div class="flex items-center gap-2 mb-5">
+        <span class="material-symbols-outlined text-cb-blue text-[22px]">auto_awesome</span>
+        <h2 class="text-lg sm:text-xl font-bold font-serif tracking-tight text-gray-900">Featured In / Worked With</h2>
+      </div>
+
+      <!-- Brand Logos Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-4 sm:gap-6 items-center">
+        <!-- Nykaa -->
+        <div class="flex items-center justify-center p-2 grayscale hover:grayscale-0 opacity-75 hover:opacity-100 transition-all cursor-pointer">
+          <span class="text-xl sm:text-2xl font-black italic tracking-tighter text-pink-600 font-sans">NYKAA</span>
+        </div>
+        <!-- Lakme -->
+        <div class="flex items-center justify-center p-2 grayscale hover:grayscale-0 opacity-75 hover:opacity-100 transition-all cursor-pointer">
+          <span class="text-lg sm:text-xl font-bold tracking-widest text-gray-900 font-serif">LAKMÉ</span>
+        </div>
+        <!-- Tanishq -->
+        <div class="flex flex-col items-center justify-center p-2 grayscale hover:grayscale-0 opacity-75 hover:opacity-100 transition-all cursor-pointer">
+          <span class="text-sm font-bold tracking-wider text-amber-900">TANISHQ</span>
+        </div>
+        <!-- Nike -->
+        <div class="flex items-center justify-center p-2 grayscale hover:grayscale-0 opacity-75 hover:opacity-100 transition-all cursor-pointer">
+          <span class="text-xl sm:text-2xl font-black italic tracking-tighter text-black">NIKE</span>
+        </div>
+        <!-- Puma -->
+        <div class="flex items-center justify-center p-2 grayscale hover:grayscale-0 opacity-75 hover:opacity-100 transition-all cursor-pointer">
+          <span class="text-lg sm:text-xl font-black tracking-wider text-black">PUMA</span>
+        </div>
+        <!-- Vogue -->
+        <div class="flex items-center justify-center p-2 grayscale hover:grayscale-0 opacity-75 hover:opacity-100 transition-all cursor-pointer">
+          <span class="text-xl sm:text-2xl font-serif font-black tracking-widest text-black">VOGUE</span>
+        </div>
+        <!-- Elle -->
+        <div class="flex items-center justify-center p-2 grayscale hover:grayscale-0 opacity-75 hover:opacity-100 transition-all cursor-pointer">
+          <span class="text-xl sm:text-2xl font-serif font-extrabold tracking-widest text-black">ELLE</span>
+        </div>
+        <!-- Spotify -->
+        <div class="flex items-center justify-center p-2 grayscale hover:grayscale-0 opacity-75 hover:opacity-100 transition-all cursor-pointer gap-1.5">
+          <i class="fa-brands fa-spotify text-emerald-500 text-xl"></i>
+          <span class="text-sm font-bold text-gray-900">Spotify</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. LET'S WORK TOGETHER CTA SECTION ================= -->
+    <section class="w-full bg-[#f6f5f0] rounded-2xl overflow-hidden shadow-sm border border-gray-200/80 relative flex flex-col md:flex-row items-center justify-between">
+      
+      <!-- Left Content -->
+      <div class="p-6 sm:p-10 z-10 max-w-xl">
+        <h2 class="text-2xl sm:text-3xl font-bold font-serif tracking-tight text-gray-900">Let's Work Together</h2>
+        <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed">
+          Open for brand collaborations, campaigns, events and more.
+        </p>
+        <div class="mt-6">
+          <a 
+            href="mailto:collaborate@ananyasharma.com?subject=Brand%20Partnership%20Proposal" 
+            class="inline-flex items-center gap-2 bg-[#0d1522] text-white text-xs sm:text-sm font-semibold px-6 py-3 rounded-lg hover:bg-black transition-all shadow-sm cursor-pointer btn-action"
+          >
+            <span>Work With Me</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Visual Image -->
+      <div class="w-full md:w-1/2 h-48 md:h-64 relative overflow-hidden flex items-center justify-end">
+        <img 
+          src="assets/work_woman.png" 
+          alt="Ananya Sharma Collaboration" 
+          class="w-full h-full object-cover object-[center_20%] md:object-right"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#f6f5f0] via-[#f6f5f0]/30 to-transparent hidden md:block"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ================= 5. FOOTER ================= -->
+  <footer class="w-full bg-white border-t border-gray-100 mt-12 py-10">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-gray-100">
+        
+        <!-- Brand & Description -->
         <div>
-          <img src="assets/celebsox_brand_header.png" alt="Celebso" class="h-7 mb-4"/>
-          <p class="text-xs text-brand-muted leading-relaxed">The premium creator platform for the next generation.</p>
+          <a href="index.html" class="flex items-center gap-1">
+            <span class="text-xl font-bold tracking-tight text-gray-900">Celebso</span>
+            <span class="text-cb-blue text-xl font-bold leading-none -mt-1">+</span>
+          </a>
+          <p class="text-xs text-gray-500 mt-3 leading-relaxed">
+            The premium creator platform for the next generation.
+          </p>
         </div>
-        <!-- Col 2: Platform -->
+
+        <!-- Platform Links -->
         <div>
-          <h4 class="text-xs font-bold text-brand-dark uppercase tracking-wider mb-3">Platform</h4>
-          <ul class="space-y-2 text-xs text-brand-muted">
-            <li><a href="index.html" class="hover:text-brand-dark transition-colors">Home</a></li>
-            <li><a href="portfolio.html" class="hover:text-brand-dark transition-colors">Explore</a></li>
-            <li><a href="portfolio.html#discovery-section" class="hover:text-brand-dark transition-colors">Creators</a></li>
-            <li><a href="about.html" class="hover:text-brand-dark transition-colors">About</a></li>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 mb-3">Platform</h4>
+          <ul class="space-y-2 text-xs text-gray-600 font-medium">
+            <li><a href="index.html" class="hover:text-black transition-colors">Home</a></li>
+            <li><a href="showcase.html" class="hover:text-black transition-colors">Explore</a></li>
+            <li><a href="portfolio.html" class="hover:text-black transition-colors">Creators</a></li>
+            <li><a href="about.html" class="hover:text-black transition-colors">About</a></li>
           </ul>
         </div>
-        <!-- Col 3: Support -->
+
+        <!-- Support Links (Includes Help Center under Terms/Legal) -->
         <div>
-          <h4 class="text-xs font-bold text-brand-dark uppercase tracking-wider mb-3">Support</h4>
-          <ul class="space-y-2 text-xs text-brand-muted">
-            <li><a href="contact.html" class="hover:text-brand-dark transition-colors">Help Center</a></li>
-            <li><a href="contact.html" class="hover:text-brand-dark transition-colors">Contact Us</a></li>
-            <li><a href="terms.html" class="hover:text-brand-dark transition-colors">Privacy Policy</a></li>
-            <li><a href="terms.html" class="hover:text-brand-dark transition-colors">Terms</a></li>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 mb-3">Support</h4>
+          <ul class="space-y-2 text-xs text-gray-600 font-medium">
+            <li><a href="terms.html" class="hover:text-black transition-colors">Terms & Conditions</a></li>
+            <li><a href="help-center.html" class="text-cb-blue font-bold hover:underline transition-colors">Help Center</a></li>
+            <li><a href="contact.html" class="hover:text-black transition-colors">Contact Us</a></li>
+            <li><a href="terms.html" class="hover:text-black transition-colors">Privacy Policy</a></li>
           </ul>
         </div>
-        <!-- Col 4: Connect -->
+
+        <!-- Connect / Socials -->
         <div>
-          <h4 class="text-xs font-bold text-brand-dark uppercase tracking-wider mb-3">Connect</h4>
-          <div class="flex items-center gap-3">
-            <a href="https://www.instagram.com/celebsox" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-brand hover:text-white transition-all text-brand-muted">
-              <span class="material-symbols-outlined text-[18px]">photo_camera</span>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 mb-3">Connect</h4>
+          <div class="flex items-center gap-4 text-gray-600">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-pink-600 transition-colors" title="Instagram">
+              <i class="fa-brands fa-instagram text-lg"></i>
             </a>
-            <a href="https://www.linkedin.com/company/celebso/" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-brand hover:text-white transition-all text-brand-muted">
-              <span class="material-symbols-outlined text-[18px]">work</span>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 transition-colors" title="LinkedIn">
+              <i class="fa-brands fa-linkedin text-lg"></i>
             </a>
-            <a href="https://x.com/Celebso_" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-brand hover:text-white transition-all text-brand-muted">
-              <span class="material-symbols-outlined text-[18px]">tag</span>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="hover:text-black transition-colors" title="X / Twitter">
+              <i class="fa-brands fa-x-twitter text-lg"></i>
             </a>
-            <a href="#" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-brand hover:text-white transition-all text-brand-muted">
-              <span class="material-symbols-outlined text-[18px]">smart_display</span>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors" title="YouTube">
+              <i class="fa-brands fa-youtube text-lg"></i>
             </a>
           </div>
         </div>
+
       </div>
-      <div class="border-t border-brand-border mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p class="text-xs text-brand-muted">&copy; 2024 Celebso. All rights reserved.</p>
+
+      <!-- Copyright Bar -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+        <p>&copy; 2026 Celebso. All rights reserved.</p>
+        <p>Handcrafted for elite creators worldwide.</p>
       </div>
+
     </div>
   </footer>
 
+  <!-- ================= INTERACTIVE LIGHTBOX / PORTFOLIO MODAL ================= -->
+  <div id="portfolioModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl relative fade-enter">
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 flex items-center justify-between border-b border-gray-100">
+        <div>
+          <span id="modalCategory" class="text-xs font-semibold text-cb-blue uppercase tracking-wider">Category</span>
+          <h3 id="modalTitle" class="text-lg font-bold font-serif text-gray-900">Title</h3>
+        </div>
+        <button onclick="closePortfolioModal()" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 cursor-pointer transition-colors">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+      
+      <!-- Modal Image / Media Preview -->
+      <div class="relative bg-black aspect-video flex items-center justify-center overflow-hidden">
+        <img id="modalImage" src="" alt="Portfolio Media" class="w-full h-full object-cover" />
+        <div id="modalPlayOverlay" class="absolute inset-0 flex items-center justify-center bg-black/30 hidden">
+          <div class="w-14 h-14 rounded-full bg-white/90 text-cb-blue flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer">
+            <span class="material-symbols-outlined text-[28px] ml-1">play_arrow</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Description & Action -->
+      <div class="p-4 sm:p-5">
+        <p id="modalDesc" class="text-xs sm:text-sm text-gray-600 leading-relaxed">Description</p>
+        <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-end gap-2">
+          <button onclick="closePortfolioModal()" class="px-4 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:bg-gray-100 cursor-pointer">Close</button>
+          <a id="modalActionBtn" href="https://instagram.com" target="_blank" class="px-5 py-2 rounded-lg text-xs font-semibold bg-[#0d1522] text-white hover:bg-black transition-all cursor-pointer">
+            View on Instagram &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT INTERACTIONS ================= -->
   <script>
-    function setTab(btn, category) {
-      document.querySelectorAll('.tab-btn').forEach(b => {
-        b.classList.remove('active');
-        b.classList.add('bg-gray-100', 'text-brand-muted');
-      });
-      btn.classList.add('active');
-      btn.classList.remove('bg-gray-100', 'text-brand-muted');
+    // 1. Follow Button State
+    let isFollowing = false;
+    function toggleFollow() {
+      isFollowing = !isFollowing;
+      const btn = document.getElementById('followBtn');
+      const text = document.getElementById('followText');
+      const icon = document.getElementById('followIcon');
+
+      if (isFollowing) {
+        btn.classList.remove('bg-[#0d1522]', 'hover:bg-black');
+        btn.classList.add('bg-cb-blue', 'hover:bg-blue-700');
+        text.innerText = 'Following';
+        icon.innerText = 'check';
+      } else {
+        btn.classList.remove('bg-cb-blue', 'hover:bg-blue-700');
+        btn.classList.add('bg-[#0d1522]', 'hover:bg-black');
+        text.innerText = 'Follow';
+        icon.innerText = 'person_add';
+      }
     }
+
+    // 2. Web Share API with Fallback
+    async function handleShareProfile() {
+      const shareData = {
+        title: 'Ananya Sharma — Celebso Profile',
+        text: 'Check out the official portfolio and profile of Ananya Sharma on Celebso!',
+        url: window.location.href,
+      };
+
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+        } catch (err) {
+          if (err.name !== 'AbortError') {
+            copyToClipboardFallback();
+          }
+        }
+      } else {
+        copyToClipboardFallback();
+      }
+    }
+
+    function copyToClipboardFallback() {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          alert('Profile link copied to clipboard!');
+        }).catch(() => {
+          prompt('Copy profile link:', window.location.href);
+        });
+      } else {
+        prompt('Copy profile link:', window.location.href);
+      }
+    }
+
+    // 3. Portfolio Category Filter Functionality
+    function filterPortfolio(category, activeBtn) {
+      const buttons = document.querySelectorAll('#filterContainer .filter-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-cb-blue', 'text-white', 'shadow-sm');
+        btn.classList.add('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+      });
+      activeBtn.classList.remove('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+      activeBtn.classList.add('bg-cb-blue', 'text-white', 'shadow-sm');
+
+      const cards = document.querySelectorAll('#portfolioGrid .portfolio-card');
+      cards.forEach(card => {
+        const itemCat = card.getAttribute('data-category');
+        if (category === 'all' || itemCat === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 4. Live Search in Portfolio Items
+    function handleSearch(query) {
+      const q = query.trim().toLowerCase();
+      const cards = document.querySelectorAll('#portfolioGrid .portfolio-card');
+      cards.forEach(card => {
+        const title = card.querySelector('img')?.getAttribute('alt')?.toLowerCase() || '';
+        const cat = card.getAttribute('data-category')?.toLowerCase() || '';
+        if (!q || title.includes(q) || cat.includes(q)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 5. Portfolio Item Modal Lightbox
+    function openPortfolioModal(title, category, desc, imgSrc, isVideo) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalCategory').innerText = category;
+      document.getElementById('modalDesc').innerText = desc;
+      document.getElementById('modalImage').src = imgSrc;
+      
+      const playOverlay = document.getElementById('modalPlayOverlay');
+      if (isVideo) {
+        playOverlay.classList.remove('hidden');
+      } else {
+        playOverlay.classList.add('hidden');
+      }
+
+      const modal = document.getElementById('portfolioModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closePortfolioModal() {
+      const modal = document.getElementById('portfolioModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    document.getElementById('portfolioModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closePortfolioModal();
+      }
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closePortfolioModal();
+      }
+    });
   </script>
+
 </body>
 </html>
