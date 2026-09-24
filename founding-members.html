@@ -17,6 +17,54 @@
       main > :last-child { margin-bottom: 0 !important; }
     }
     ::-webkit-scrollbar { display: none; }
+
+    /* Role directory: text-first cards, matching the founding-member editorial layout. */
+    .role-directory > div:last-child a {
+      min-height: 142px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.25rem 1.35rem;
+      background: #faf9f4;
+      border-color: #cfd0cc;
+      transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .role-directory > div:last-child a img { display: none; }
+    .role-directory > div:last-child a::before {
+      content: "";
+      position: absolute;
+      top: 1.25rem;
+      left: 1.35rem;
+      width: 32px;
+      height: 3px;
+      background: #2563eb;
+    }
+    .role-directory > div:last-child a:hover {
+      background: #fff;
+      border-color: #2563eb;
+      transform: translateY(-3px);
+    }
+    .role-directory > div:last-child a > div { width: 100%; padding: 0; }
+    .role-directory > div:last-child a span:first-child {
+      display: block;
+      max-width: 88%;
+      font-family: Newsreader, Georgia, serif;
+      font-size: 1.25rem;
+      line-height: 1.05;
+      letter-spacing: .01em;
+      color: #111;
+    }
+    .role-directory > div:last-child a span:last-child {
+      position: absolute;
+      right: 1.25rem;
+      bottom: 1.1rem;
+      font-size: 1.5rem;
+    }
+    @media (max-width: 640px) {
+      .role-directory > div:last-child a { min-height: 124px; padding: 1rem; }
+      .role-directory > div:last-child a::before { top: 1rem; left: 1rem; }
+      .role-directory > div:last-child a span:first-child { font-size: 1rem; }
+    }
   </style>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -139,187 +187,170 @@
         <!-- Right: Team Workspace Image -->
         <div class="lg:col-span-6">
           <div class="relative w-full rounded-lg overflow-hidden shadow-xl border border-surface-container-highest">
-            <img src="assets/founding_hero_team.png" alt="Founding Members Team collaborating in studio" class="w-full h-auto object-cover" />
+            <img src="assets/founding-hero-photo.png" alt="Founding Members Team collaborating in studio" class="w-full h-auto object-cover" />
           </div>
         </div>
       </section>
 
-      <!-- SECTION 02: VERIFIED IDENTITY DOSSIER (SS1) -->
-      <section id="verified-dossier" class="flex flex-col gap-8 w-full scroll-mt-36">
+      <!-- SECTION 02: PORTFOLIO IDENTITY CARD (SS3) -->
+      <section id="verified-dossier" class="hidden flex flex-col gap-8 w-full scroll-mt-36">
 
-        <!-- 1. HERO PROFILE BANNER (EXACT SS1 IMAGE) -->
-        <div class="w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-[#111317]">
-          <img src="assets/ss1_hero_banner_hd.png" alt="Ananya Sharma — Verified Dossier" class="w-full h-auto block" />
-        </div>
+        <!-- The Architectural Profile Card Container -->
+        <div class="bg-surface-container-lowest shadow-xl border border-surface-container-highest p-6 md:p-10 rounded-lg">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
 
-        <!-- 2. VERIFIED SKILLS SECTION -->
-        <div class="flex flex-col gap-3">
-          <!-- Section Header -->
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2 text-[#2563eb] font-mono text-xs font-semibold tracking-widest uppercase">
-              <span class="text-sm leading-none">✦</span>
-              <span>VERIFIED SKILLS</span>
-            </div>
-            <span class="text-[#2563eb] font-mono text-xs font-semibold tracking-widest uppercase">
-              [ 8 ENDORSED ]
-            </span>
-          </div>
-
-          <!-- 5 Skill Cards Grid (Row 1: 3, Row 2: 2) -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
-            <!-- Skill 1 -->
-            <div class="bg-surface-container-lowest border border-surface-container-highest rounded-xl px-4 py-3 flex items-center justify-between shadow-sm hover:border-secondary/40 transition-colors">
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-slate-500 text-lg">graphic_eq</span>
-                <span class="font-mono text-xs uppercase tracking-wider text-slate-800 font-semibold">VOCAL PERFORMANCE</span>
+            <!-- Profile Sidebar: Portrait & Quick Stats -->
+            <div class="lg:col-span-4 flex flex-col space-y-5">
+              <div class="relative aspect-square w-full bg-surface-container-high overflow-hidden rounded-2xl border border-border-hairline p-5 shadow-md flex items-center justify-center group">
+                <div class="relative w-full h-full rounded-full border-4 border-white ring-2 ring-secondary/30 shadow-xl overflow-hidden transition-transform duration-500 group-hover:scale-105">
+                  <img alt="Ananya Sharma Digital ID Logo" class="w-full h-full object-cover object-top" src="assets/ananya_avatar_hd.png"/>
+                </div>
+                <div class="absolute top-3 right-3 bg-primary text-on-primary px-2 py-0.5 text-xs font-mono rounded-sm shadow-sm border border-white/10 z-10">
+                  ID: AS-901
+                </div>
               </div>
-              <span class="font-mono text-xs text-slate-500 font-medium">98%</span>
-            </div>
 
-            <!-- Skill 2 -->
-            <div class="bg-surface-container-lowest border border-surface-container-highest rounded-xl px-4 py-3 flex items-center justify-between shadow-sm hover:border-secondary/40 transition-colors">
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-slate-500 text-lg">music_note</span>
-                <span class="font-mono text-xs uppercase tracking-wider text-slate-800 font-semibold">ACOUSTIC COMPOSITION</span>
+              <div class="space-y-1.5">
+                <div class="flex items-center gap-1.5">
+                  <h3 class="font-sans text-lg font-bold text-primary uppercase tracking-tight">Ananya Sharma</h3>
+                  <span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">verified</span>
+                </div>
+                <p class="font-mono text-[11px] text-on-surface-variant uppercase tracking-wider">Creator · Singer · Mumbai &amp; Global</p>
+                <p class="text-sm text-on-surface-variant pt-1.5 leading-relaxed">
+                  Ananya Sharma is a Mumbai-based creator and digital personality known for her work across fashion, lifestyle, travel, and visual storytelling. With a passion for creativity and self-expression, she creates engaging content, collaborates with leading brands, and connects with audiences across India and beyond.
+                </p>
               </div>
-              <span class="font-mono text-xs text-slate-500 font-medium">94%</span>
-            </div>
 
-            <!-- Skill 3 -->
-            <div class="bg-surface-container-lowest border border-surface-container-highest rounded-xl px-4 py-3 flex items-center justify-between shadow-sm hover:border-secondary/40 transition-colors">
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-slate-500 text-lg">lightbulb</span>
-                <span class="font-mono text-xs uppercase tracking-wider text-slate-800 font-semibold">CREATIVE DIRECTION</span>
+              <!-- Network Metrics -->
+              <div class="grid grid-cols-2 gap-3 pt-1">
+                <div class="bg-surface-container-low p-3 rounded">
+                  <span class="font-mono text-[10px] uppercase tracking-wider text-on-surface-variant font-semibold">REPUTATION SCORE</span>
+                  <p class="font-mono text-lg text-secondary font-bold">92.4</p>
+                </div>
+                <div class="bg-surface-container-low p-3 rounded">
+                  <span class="font-mono text-[10px] uppercase tracking-wider text-on-surface-variant font-semibold">FOLLOWERS</span>
+                  <p class="font-mono text-lg text-primary font-bold">48.2K</p>
+                </div>
               </div>
-              <span class="font-mono text-xs text-slate-500 font-medium">90%</span>
             </div>
 
-            <!-- Skill 4 -->
-            <div class="bg-surface-container-lowest border border-surface-container-highest rounded-xl px-4 py-3 flex items-center justify-between shadow-sm hover:border-secondary/40 transition-colors">
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-slate-500 text-lg">tune</span>
-                <span class="font-mono text-xs uppercase tracking-wider text-slate-800 font-semibold">ABLETON LIVE SYNTHESIS</span>
-              </div>
-              <span class="font-mono text-xs text-slate-500 font-medium">92%</span>
-            </div>
+            <!-- Profile Content: Skills, Projects, Experience -->
+            <div class="lg:col-span-8 flex flex-col space-y-8">
 
-            <!-- Skill 5 -->
-            <div class="bg-surface-container-lowest border border-surface-container-highest rounded-xl px-4 py-3 flex items-center justify-between shadow-sm hover:border-secondary/40 transition-colors">
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-slate-500 text-lg">auto_awesome</span>
-                <span class="font-mono text-xs uppercase tracking-wider text-slate-800 font-semibold">SOUND DESIGN</span>
-              </div>
-              <span class="font-mono text-xs text-slate-500 font-medium">88%</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. FEATURED ARTIFACTS SECTION -->
-        <div class="flex flex-col gap-3">
-          <!-- Section Header -->
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2 text-[#2563eb] font-mono text-xs font-semibold tracking-widest uppercase">
-              <span class="text-sm leading-none">✦</span>
-              <span>FEATURED ARTIFACTS</span>
-            </div>
-            <span class="text-[#2563eb] font-mono text-xs font-semibold tracking-widest uppercase">
-              [ 03 CURATED ]
-            </span>
-          </div>
-
-          <!-- 4 Artifact Cards (Exact SS1 Visuals) -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            
-            <!-- Artifact 1: Photoshoot -->
-            <div class="relative rounded-2xl overflow-hidden aspect-[16/11] shadow-md border border-surface-container-highest group cursor-pointer hover:shadow-xl transition-all duration-300">
-              <img src="assets/ss1_artifact_photoshoot_hd.png" alt="Photoshoot - 24 Photos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            </div>
-
-            <!-- Artifact 2: Nykaa Campaign -->
-            <div class="relative rounded-2xl overflow-hidden aspect-[16/11] shadow-md border border-surface-container-highest group cursor-pointer hover:shadow-xl transition-all duration-300">
-              <img src="assets/ss1_artifact_nykaa_hd.png" alt="Nykaa Campaign - Reel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            </div>
-
-            <!-- Artifact 3: ELLE India Cover -->
-            <div class="relative rounded-2xl overflow-hidden aspect-[16/11] shadow-md border border-surface-container-highest group cursor-pointer hover:shadow-xl transition-all duration-300">
-              <img src="assets/ss1_artifact_elle_hd.png" alt="ELLE India Cover - Magazine Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            </div>
-
-            <!-- Artifact 4: Maldives Diaries -->
-            <div class="relative rounded-2xl overflow-hidden aspect-[16/11] shadow-md border border-surface-container-highest group cursor-pointer hover:shadow-xl transition-all duration-300">
-              <img src="assets/ss1_artifact_maldives_hd.png" alt="Maldives Diaries - Reel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            </div>
-
-          </div>
-        </div>
-
-        <!-- 4. ABOUT & CHRONOLOGICAL RECORD COLUMNS -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pt-2">
-          
-          <!-- Left Column: About (5 cols) -->
-          <div class="lg:col-span-5 flex flex-col items-start">
-            <div class="flex items-center gap-2 text-[#2563eb] font-mono text-xs font-semibold tracking-widest uppercase mb-4">
-              <span class="text-sm leading-none">✦</span>
-              <span>ABOUT</span>
-            </div>
-            <h3 class="font-serif text-3xl sm:text-4xl text-slate-900 font-normal tracking-tight leading-[1.15] mb-4">
-              More than a profile.<br/>
-              A platform for what's next.
-            </h3>
-            <p class="font-body text-on-surface-variant text-sm leading-relaxed max-w-md">
-              From classical roots to global stages, I create music that feels. I believe in the power of sound to connect people, cultures and emotions — across borders.
-            </p>
-          </div>
-
-          <!-- Right Column: Chronological Record & Certifications (7 cols) -->
-          <div class="lg:col-span-7 flex flex-col gap-3">
-            <div class="flex items-center justify-between mb-1">
-              <div class="flex items-center gap-2 text-[#2563eb] font-mono text-xs font-semibold tracking-widest uppercase">
-                <span class="text-sm leading-none">✦</span>
-                <span>CHRONOLOGICAL RECORD</span>
-              </div>
-              <span class="text-[#2563eb] font-mono text-xs font-semibold tracking-widest uppercase">
-                [ 2022 — PRESENT ]
-              </span>
-            </div>
-
-            <!-- Record 1 -->
-            <div class="bg-surface-container-high/60 rounded-xl p-4 flex items-start justify-between border border-surface-container-highest">
+              <!-- Skills Cluster -->
               <div>
-                <h4 class="font-body font-semibold text-primary text-sm sm:text-base">Lead Solo Vocalist</h4>
-                <p class="text-on-surface-variant text-xs font-body mt-0.5">Subcontinental Arts Residency · Geneva &amp; Delhi</p>
+                <div class="flex items-center justify-between pb-2 mb-3">
+                  <span class="font-mono text-[11px] uppercase tracking-widest text-on-surface-variant font-semibold">VERIFIED SKILLS</span>
+                  <span class="font-mono text-[11px] text-secondary font-semibold tracking-widest">[ 8 ENDORSED ]</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-surface-container-high px-4 py-1.5 font-mono text-[11px] uppercase text-primary tracking-wider rounded">Content Creation — Advanced</span>
+                  <span class="bg-surface-container-high px-4 py-1.5 font-mono text-[11px] uppercase text-primary tracking-wider rounded">Photography &amp; Video — Professional</span>
+                  <span class="bg-surface-container-high px-4 py-1.5 font-mono text-[11px] uppercase text-primary tracking-wider rounded">Social Media &amp; Storytelling — Advanced</span>
+                  <span class="bg-surface-container-high px-4 py-1.5 font-mono text-[11px] uppercase text-primary tracking-wider rounded">Creative Direction — Professional</span>
+                  <span class="bg-surface-container-high px-4 py-1.5 font-mono text-[11px] uppercase text-primary tracking-wider rounded">Brand Collaboration — Advanced</span>
+                  <span class="bg-surface-container-high px-4 py-1.5 font-mono text-[11px] uppercase text-primary tracking-wider rounded">Personal Branding — Professional</span>
+                </div>
               </div>
-              <span class="font-mono text-xs text-primary font-semibold tracking-wider whitespace-nowrap ml-4">
-                2024 — ACT
-              </span>
-            </div>
 
-            <!-- Record 2 -->
-            <div class="bg-surface-container-high/60 rounded-xl p-4 flex items-start justify-between border border-surface-container-highest">
+              <!-- Featured Work / Project Showcase Links -->
               <div>
-                <h4 class="font-body font-semibold text-primary text-sm sm:text-base">Resident Sound Curator</h4>
-                <p class="text-on-surface-variant text-xs font-body mt-0.5">Vayu Acoustic Research Pavilion</p>
+                <div class="flex items-center justify-between pb-2 mb-3">
+                  <span class="font-mono text-[11px] uppercase tracking-widest text-on-surface-variant font-semibold">FEATURED ARTIFACTS</span>
+                  <span class="font-mono text-[11px] text-on-surface-variant tracking-widest">[ 03 CURATED ]</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div class="bg-surface-container-low p-4 hover:bg-surface-container-high transition-colors cursor-pointer group border border-surface-container-highest rounded">
+                    <span class="font-mono text-[10px] text-secondary uppercase tracking-wider font-semibold">BRAND CAMPAIGN</span>
+                    <p class="font-sans text-base font-semibold text-primary group-hover:text-secondary mt-1 transition-colors">NYKAA — Brand Campaign</p>
+                    <p class="font-mono text-[11px] text-secondary mt-2 tracking-wider">VIEW PROJECT →</p>
+                  </div>
+                  <div class="bg-surface-container-low p-4 hover:bg-surface-container-high transition-colors cursor-pointer group border border-surface-container-highest rounded">
+                    <span class="font-mono text-[10px] text-secondary uppercase tracking-wider font-semibold">FASHION COLLABORATION</span>
+                    <p class="font-sans text-base font-semibold text-primary group-hover:text-secondary mt-1 transition-colors">LAKMÉ FASHION WEEK</p>
+                    <p class="font-mono text-[11px] text-secondary mt-2 tracking-wider">VIEW PROJECT →</p>
+                  </div>
+                </div>
               </div>
-              <span class="font-mono text-xs text-primary font-semibold tracking-wider whitespace-nowrap ml-4">
-                2023 — 2024
-              </span>
-            </div>
 
-            <!-- Certifications Row -->
-            <div class="flex flex-wrap items-center gap-2 pt-2 text-[11px] font-mono">
-              <span class="text-on-surface-variant uppercase tracking-wider font-semibold">CERTIFIED BY:</span>
-              <span class="bg-surface-container-highest border border-surface-container-highest text-primary px-2.5 py-1 rounded tracking-wider uppercase font-medium">
-                TRINITY COLLEGE LONDON (DISTINCTION)
-              </span>
-              <span class="bg-surface-container-highest border border-surface-container-highest text-primary px-2.5 py-1 rounded tracking-wider uppercase font-medium">
-                PANDIT JASRAJ ACADEMY
-              </span>
-            </div>
+              <!-- Experience Timeline -->
+              <div>
+                <div class="flex items-center justify-between pb-2 mb-3">
+                  <span class="font-mono text-[11px] uppercase tracking-widest text-on-surface-variant font-semibold">CHRONOLOGICAL RECORD</span>
+                  <span class="font-mono text-[11px] text-on-surface-variant tracking-widest">2022 – PRESENT</span>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-start justify-between py-3 bg-surface-container-low/50 px-4 rounded border border-surface-container-highest">
+                    <div>
+                      <span class="font-sans text-sm font-semibold text-primary">Independent Creator &amp; Content Professional</span>
+                      <p class="text-xs text-on-surface-variant mt-0.5">Content Strategy, Visual Storytelling &amp; Personal Branding</p>
+                    </div>
+                    <span class="font-mono text-[11px] text-primary font-semibold tracking-wider whitespace-nowrap ml-4">2023 – Present</span>
+                  </div>
+                  <div class="flex items-start justify-between py-3 bg-surface-container-low/50 px-4 rounded border border-surface-container-highest">
+                    <div>
+                      <span class="font-sans text-sm font-semibold text-primary">Brand &amp; Creative Collaborations</span>
+                      <p class="text-xs text-on-surface-variant mt-0.5">Editorial Shoots, Lifestyle Campaigns &amp; Brand Partnerships</p>
+                    </div>
+                    <span class="font-mono text-[11px] text-primary font-semibold tracking-wider whitespace-nowrap ml-4">2022 – 2023</span>
+                  </div>
+                </div>
+              </div>
 
+              <!-- Awards & Recognition -->
+              <div class="flex flex-wrap items-center gap-2 pt-1">
+                <span class="font-mono text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">AWARDS &amp; RECOGNITION:</span>
+                <span class="font-mono text-[11px] text-primary bg-surface-container-highest px-2.5 py-1 rounded tracking-wider uppercase font-medium">NATIONAL YOUTH CULTURAL FELLOWSHIP</span>
+                <span class="font-mono text-[11px] text-primary bg-surface-container-highest px-2.5 py-1 rounded tracking-wider uppercase font-medium">BEST INDEPENDENT CREATOR — INDIESOUND</span>
+              </div>
+
+            </div>
           </div>
-
         </div>
 
+      </section>
+
+
+      <!-- SECTION 02: WHO IS THIS FOR? -->
+      <section class="role-directory flex flex-col">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-1 bg-secondary"></div>
+          <h2 class="font-display text-4xl sm:text-5xl text-primary uppercase font-normal tracking-tight">WHO IS THIS FOR?</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+          <a href="#apply" class="group border border-surface-container-highest bg-surface-container-lowest overflow-hidden">
+            <img src="assets/role_founders.png" alt="Founders and entrepreneurs" class="w-full aspect-[1.35] object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="p-3 flex items-center justify-between"><span class="font-mono text-[10px] sm:text-xs uppercase tracking-wider font-semibold">FOUNDERS &amp; ENTREPRENEURS</span><span class="text-secondary text-xl">→</span></div>
+          </a>
+          <a href="#apply" class="group border border-surface-container-highest bg-surface-container-lowest overflow-hidden">
+            <img src="assets/role_creators.png" alt="Creators and artists" class="w-full aspect-[1.35] object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="p-3 flex items-center justify-between"><span class="font-mono text-[10px] sm:text-xs uppercase tracking-wider font-semibold">CREATORS &amp; ARTISTS</span><span class="text-secondary text-xl">→</span></div>
+          </a>
+          <a href="#apply" class="group border border-surface-container-highest bg-surface-container-lowest overflow-hidden">
+            <img src="assets/role_designers.png" alt="Designers and architects" class="w-full aspect-[1.35] object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="p-3 flex items-center justify-between"><span class="font-mono text-[10px] sm:text-xs uppercase tracking-wider font-semibold">DESIGNERS &amp; ARCHITECTS</span><span class="text-secondary text-xl">→</span></div>
+          </a>
+          <a href="#apply" class="group border border-surface-container-highest bg-surface-container-lowest overflow-hidden">
+            <img src="assets/role_engineers.png" alt="Engineers and developers" class="w-full aspect-[1.35] object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="p-3 flex items-center justify-between"><span class="font-mono text-[10px] sm:text-xs uppercase tracking-wider font-semibold">ENGINEERS &amp; DEVELOPERS</span><span class="text-secondary text-xl">→</span></div>
+          </a>
+          <a href="#apply" class="group border border-surface-container-highest bg-surface-container-lowest overflow-hidden">
+            <img src="assets/role_researchers.png" alt="Researchers and students" class="w-full aspect-[1.35] object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="p-3 flex items-center justify-between"><span class="font-mono text-[10px] sm:text-xs uppercase tracking-wider font-semibold">RESEARCHERS &amp; STUDENTS</span><span class="text-secondary text-xl">→</span></div>
+          </a>
+          <a href="#apply" class="group border border-surface-container-highest bg-surface-container-lowest overflow-hidden">
+            <img src="assets/role_investors.png" alt="Investors and operators" class="w-full aspect-[1.35] object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="p-3 flex items-center justify-between"><span class="font-mono text-[10px] sm:text-xs uppercase tracking-wider font-semibold">INVESTORS &amp; OPERATORS</span><span class="text-secondary text-xl">→</span></div>
+          </a>
+          <a href="#apply" class="group border border-surface-container-highest bg-surface-container-lowest overflow-hidden">
+            <img src="assets/role_media.png" alt="Media and professionals" class="w-full aspect-[1.35] object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="p-3 flex items-center justify-between"><span class="font-mono text-[10px] sm:text-xs uppercase tracking-wider font-semibold">MEDIA &amp; PROFESSIONALS</span><span class="text-secondary text-xl">→</span></div>
+          </a>
+          <a href="#apply" class="group border border-surface-container-highest bg-surface-container-lowest overflow-hidden">
+            <img src="assets/role_emerging.png" alt="Emerging talent" class="w-full aspect-[1.35] object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="p-3 flex items-center justify-between"><span class="font-mono text-[10px] sm:text-xs uppercase tracking-wider font-semibold">EMERGING TALENT</span><span class="text-secondary text-xl">→</span></div>
+          </a>
+        </div>
       </section>
 
       <!-- SECTION 03: FOUNDING ACCESS (6 BENEFIT TILES) -->
@@ -392,17 +423,17 @@
 
           <!-- Right Column: Form -->
           <div class="lg:col-span-7">
-            <form id="foundingForm" class="flex flex-col gap-6" onsubmit="event.preventDefault(); document.getElementById('successMsg').classList.remove('hidden'); this.reset();">
+            <form id="foundingForm" class="flex flex-col gap-6" onsubmit="event.preventDefault(); const data = new FormData(this); const subject = encodeURIComponent('Founding Member Query — ' + (data.get('fullName') || 'New applicant')); const body = encodeURIComponent('Full Name: ' + (data.get('fullName') || '') + '\nEmail: ' + (data.get('email') || '') + '\nProfession / Role: ' + (data.get('role') || '') + '\nCity / Country: ' + (data.get('location') || '') + '\nPortfolio / LinkedIn: ' + (data.get('portfolio') || '') + '\n\nWhy do you want to join?\n' + (data.get('motivation') || '')); window.location.href = 'mailto:info.celebso@gmail.com?subject=' + subject + '&body=' + body;">
               
               <!-- Row 1: Full Name & Email -->
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div class="flex flex-col gap-2">
                   <label class="font-mono text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">FULL NAME</label>
-                  <input required type="text" placeholder="Your full name" class="w-full px-4 py-3 bg-surface-container-low border border-surface-container-highest rounded text-sm text-primary focus:outline-none focus:border-secondary transition-colors" />
+                  <input required name="fullName" type="text" placeholder="Your full name" class="w-full px-4 py-3 bg-surface-container-low border border-surface-container-highest rounded text-sm text-primary focus:outline-none focus:border-secondary transition-colors" />
                 </div>
                 <div class="flex flex-col gap-2">
                   <label class="font-mono text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">EMAIL</label>
-                  <input required type="email" placeholder="your@domain.com" class="w-full px-4 py-3 bg-surface-container-low border border-surface-container-highest rounded text-sm text-primary focus:outline-none focus:border-secondary transition-colors" />
+                  <input required name="email" type="email" placeholder="your@domain.com" class="w-full px-4 py-3 bg-surface-container-low border border-surface-container-highest rounded text-sm text-primary focus:outline-none focus:border-secondary transition-colors" />
                 </div>
               </div>
 
@@ -410,7 +441,7 @@
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div class="flex flex-col gap-2">
                   <label class="font-mono text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">PROFESSION / ROLE</label>
-                  <select required class="w-full px-4 py-3 bg-surface-container-low border border-surface-container-highest rounded text-sm text-primary focus:outline-none focus:border-secondary transition-colors appearance-none cursor-pointer">
+                  <select required name="role" class="w-full px-4 py-3 bg-surface-container-low border border-surface-container-highest rounded text-sm text-primary focus:outline-none focus:border-secondary transition-colors appearance-none cursor-pointer">
                     <option value="" disabled selected>Select your role</option>
                     <option value="founder">Founder &amp; Entrepreneur</option>
                     <option value="creator">Creator &amp; Artist</option>
@@ -425,20 +456,20 @@
                 </div>
                 <div class="flex flex-col gap-2">
                   <label class="font-mono text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">CITY / COUNTRY</label>
-                  <input required type="text" placeholder="City, Country" class="w-full px-4 py-3 bg-surface-container-low border border-surface-container-highest rounded text-sm text-primary focus:outline-none focus:border-secondary transition-colors" />
+                  <input required name="location" type="text" placeholder="City, Country" class="w-full px-4 py-3 bg-surface-container-low border border-surface-container-highest rounded text-sm text-primary focus:outline-none focus:border-secondary transition-colors" />
                 </div>
               </div>
 
               <!-- Row 3: Portfolio / LinkedIn -->
               <div class="flex flex-col gap-2">
                 <label class="font-mono text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">PORTFOLIO / LINKEDIN</label>
-                <input required type="url" placeholder="https://..." class="w-full px-4 py-3 bg-surface-container-low border border-surface-container-highest rounded text-sm text-primary focus:outline-none focus:border-secondary transition-colors" />
+                <input required name="portfolio" type="url" placeholder="https://..." class="w-full px-4 py-3 bg-surface-container-low border border-surface-container-highest rounded text-sm text-primary focus:outline-none focus:border-secondary transition-colors" />
               </div>
 
               <!-- Row 4: Why do you want to join? -->
               <div class="flex flex-col gap-2">
                 <label class="font-mono text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">WHY DO YOU WANT TO JOIN?</label>
-                <textarea rows="3" placeholder="Share your motivation..." class="w-full px-4 py-3 bg-surface-container-low border border-surface-container-highest rounded text-sm text-primary focus:outline-none focus:border-secondary transition-colors resize-none"></textarea>
+                <textarea name="motivation" rows="3" placeholder="Share your motivation..." class="w-full px-4 py-3 bg-surface-container-low border border-surface-container-highest rounded text-sm text-primary focus:outline-none focus:border-secondary transition-colors resize-none"></textarea>
               </div>
 
               <!-- Submit Button -->
