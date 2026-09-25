@@ -1,1656 +1,559 @@
 <!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CelebsoX — Build Your Identity. Create Your Legacy.</title>
+  <meta name="description" content="An India-first professional social platform and architectural portfolio network. Showcase your talent, share your story, and be discovered on CelebsoX." />
 
+  <!-- Google Fonts: Editorial luxury serif + sleek sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400&family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-
-<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CELEBSO X</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com">
-    // Mobile Drawer Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileDrawer = document.getElementById('mobileDrawer');
-    if (mobileMenuBtn && mobileDrawer) {
-      mobileMenuBtn.addEventListener('click', () => {
-        const isHidden = mobileDrawer.classList.contains('hidden');
-        if (isHidden) {
-          mobileDrawer.classList.remove('hidden');
-          mobileDrawer.classList.add('flex');
-          mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">close</span>';
-        } else {
-          mobileDrawer.classList.add('hidden');
-          mobileDrawer.classList.remove('flex');
-          mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">menu</span>';
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#D89016',
+              goldLight: '#E8A32A',
+              goldDark: '#B87508',
+              bgLight: '#E8E1D5',
+              bgMid: '#E4DC CF',
+              bgDark: '#DDD4C5',
+              dark: '#101114',
+              darkSurface: '#16171B',
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Bodoni Moda', 'serif'],
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
         }
-      });
-    }
-
-  </script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-container": "#a77d20", "surface-bright": "#faf9f4", "primary-fixed": "#e5e2e1", "tertiary-fixed": "#ffdea6", "on-secondary-fixed": "#00164d", "tertiary": "#000000", "outline-variant": "#c4c7c7", "on-background": "#1b1c19", "inverse-surface": "#30312e", "on-primary": "#ffffff", "primary": "#000000", "secondary-fixed": "#dce1ff", "on-error-container": "#93000a", "secondary-fixed-dim": "#b5c4ff", "inverse-on-surface": "#f2f1ec", "secondary-container": "#2f69fb", "on-surface": "#1b1c19", "on-secondary": "#ffffff", "surface": "#faf9f4", "primary-container": "#1c1b1b", "on-secondary-fixed-variant": "#003cad", "surface-container-low": "#f5f4ef", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "on-tertiary-fixed-variant": "#5d4200", "surface-variant": "#e3e3de", "outline": "#747878", "tertiary-container": "#271900", "surface-container-highest": "#e3e3de", "inverse-primary": "#c8c6c5", "secondary": "#004edc", "error-container": "#ffdad6", "primary-fixed-dim": "#c8c6c5", "error": "#ba1a1a", "surface-container": "#efeee9", "surface-tint": "#5f5e5e", "on-error": "#ffffff", "on-secondary-container": "#fffbff", "surface-dim": "#dbdad5", "surface-container-high": "#e9e8e3", "on-primary-fixed": "#1c1b1b", "tertiary-fixed-dim": "#f1bf5d", "on-primary-container": "#858383", "on-primary-fixed-variant": "#474646", "on-surface-variant": "#444748", "on-tertiary-fixed": "#271900", "background": "#faf9f4" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "space-lg": "1.75rem", "margin-desktop": "4rem", "gutter-desktop": "2.5rem", "margin": "1.25rem", "space-md": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-xl": "3rem" }, "fontFamily": { "body-md": [ "Inter" ], "label-md": [ "JetBrains Mono" ], "display-sm": [ "Newsreader" ], "body-sm": [ "Inter" ], "headline-sm": [ "Newsreader" ], "display-sm-mobile": [ "Newsreader" ], "label-sm": [ "JetBrains Mono" ], "label-lg": [ "JetBrains Mono" ], "display-lg-mobile": [ "Newsreader" ], "body-lg": [ "Inter" ], "headline-lg": [ "Newsreader" ], "display-lg": [ "Newsreader" ] }, "fontSize": { "body-md": [ "0.9375rem", { "lineHeight": "1.5rem", "fontWeight": "400" } ], "label-md": [ "0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.12em", "fontWeight": "500" } ], "display-sm": [ "3rem", { "lineHeight": "3.25rem", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "body-sm": [ "0.8125rem", { "lineHeight": "1.25rem", "fontWeight": "400" } ], "headline-sm": [ "1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "display-sm-mobile": [ "2rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "label-sm": [ "0.625rem", { "lineHeight": "0.75rem", "letterSpacing": "0.14em", "fontWeight": "500" } ], "label-lg": [ "0.8125rem", { "lineHeight": "1rem", "letterSpacing": "0.08em", "fontWeight": "500" } ], "display-lg-mobile": [ "2.75rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "body-lg": [ "1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.005em", "fontWeight": "400" } ], "headline-lg": [ "2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.015em", "fontWeight": "400" } ], "display-lg": [ "4.5rem", { "lineHeight": "4.75rem", "letterSpacing": "-0.03em", "fontWeight": "400" } ] } } } };
-    // Mobile Drawer Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileDrawer = document.getElementById('mobileDrawer');
-    if (mobileMenuBtn && mobileDrawer) {
-      mobileMenuBtn.addEventListener('click', () => {
-        const isHidden = mobileDrawer.classList.contains('hidden');
-        if (isHidden) {
-          mobileDrawer.classList.remove('hidden');
-          mobileDrawer.classList.add('flex');
-          mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">close</span>';
-        } else {
-          mobileDrawer.classList.add('hidden');
-          mobileDrawer.classList.remove('flex');
-          mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">menu</span>';
-        }
-      });
-    }
-
-  </script></head><body class="bg-surface-container-low font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-low/90 backdrop-blur-md border-b border-surface-container-highest"><div class="h-[72px] w-full px-6 lg:px-12 flex items-center justify-between"><div class="flex items-center gap-4"><a class="flex items-center group py-1" data-path="home" href="index.html"><img alt="CelebsoX" class="h-8 md:h-9 w-auto object-contain transition-opacity hover:opacity-90" src="assets/celebsox_brand_header.png"/></a><div class="hidden xl:flex items-center gap-2 pl-4 border-l border-surface-container-highest"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">IND • MUMBAI / BLR</span></div></div><nav class="hidden md:flex items-center gap-6 lg:gap-8" data-active-classes="text-primary font-medium border-b border-primary"><a class="font-label-md text-label-md tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="about" href="about.html">ABOUT</a>
-<a class="font-label-md text-label-md tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="portfolio" href="portfolio.html">PORTFOLIO</a><a class="font-label-md text-label-md tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="founding-members" href="founding-members.html">FOUNDING MEMBERS</a></nav><div class="flex items-center gap-4"><a class="hidden sm:inline-flex items-center justify-center bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest px-5 py-2.5 hover:bg-secondary transition-colors duration-200" href="https://github.com/veer2580/client-portfolio/raw/main/assets/celebsox.apk" download="CelebsoX.apk">[ INSTALL CELEBSO ]</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><button aria-label="Toggle Navigation Menu" id="mobileMenuBtn" class="md:hidden flex items-center justify-center p-2 text-primary hover:bg-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div><div id="mobileDrawer" class="fixed inset-x-0 top-[72px] bg-surface-container-low/95 backdrop-blur-md border-b border-surface-container-highest p-6 hidden flex-col gap-4 shadow-xl z-50 md:hidden">
-  <nav class="flex flex-col gap-3">
-    <a href="about.html" class="font-label-md text-label-md tracking-widest uppercase py-2 border-b border-surface-container-highest text-on-surface-variant hover:text-primary">01 / ABOUT</a>
-    <a href="portfolio.html" class="font-label-md text-label-md tracking-widest uppercase py-2 border-b border-surface-container-highest text-on-surface-variant hover:text-primary">02 / PORTFOLIO</a>
-    <a href="founding-members.html" class="font-label-md text-label-md tracking-widest uppercase py-2 border-b border-surface-container-highest text-on-surface-variant hover:text-primary">03 / FOUNDING MEMBERS</a>
-  </nav>
-  <div class="pt-2 flex flex-col gap-3">
-    <a href="https://github.com/veer2580/client-portfolio/raw/main/assets/celebsox.apk" download="CelebsoX.apk" class="inline-flex items-center justify-center bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest px-5 py-3 hover:bg-secondary transition-colors">[ INSTALL CELEBSO ]</a>
-    <div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-2">
-      <span>COORD: 19.0760° N, 72.8777° E</span>
-      <span class="text-secondary font-medium">SYS: STABLE</span>
-    </div>
-  </div>
-</div>
-</header><main class="w-full pt-[72px] bg-surface-container-low flex-grow"><div class="flex flex-col w-full">
-
-<!-- SECTION 01: HERO FOUNDATION -->
-
-<section class="relative w-full bg-surface-container-low px-6 lg:px-12 py-12 lg:py-20 overflow-hidden">
-
-<!-- Architectural grid accents -->
-
-<div class="max-w-7xl mx-auto flex flex-col gap-10">
-
-<!-- Metadata Row -->
-
-<div class="flex flex-wrap items-center justify-between gap-4 pb-6 bg-surface-container-low">
-
-<div class="flex items-center gap-3">
-
-<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">01 // CELEBSO X — FOUNDATION</span>
-
-</div>
-
-<div class="flex items-center gap-6 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
-
-<span class="hidden sm:inline">COORD: 19.0760° N, 72.8777° E</span>
-
-<span class="inline-flex items-center gap-1 text-secondary font-medium">
-
-<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
-
-            SYS: STABLE
-
-          </span>
-
-<span class="tabular-nums font-mono" id="liveClock">14:32:08 IST</span>
-
-</div>
-
-</div>
-
-<!-- Main Hero Narrative Grid -->
-
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-
-<div class="lg:col-span-8 flex flex-col gap-6">
-
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary uppercase tracking-tight leading-none">
-
-            BUILD YOUR IDENTITY.<br/>
-
-<span class="italic font-display-lg text-secondary">CREATE YOUR LEGACY.</span>
-
-</h1>
-
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-
-            An India-first professional social network to showcase your talent, build your identity, and connect with people who share your ambition.
-
-          </p>
-
-<div class="flex flex-wrap items-center gap-4 pt-4">
-
-<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-widest px-8 py-4 hover:bg-secondary transition-colors duration-200 shadow-sm" href="#profile-section">
-
-<span>EXPLORE CELEBSO</span>
-
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-
-</a>
-
-<a class="inline-flex items-center gap-2 bg-surface-container-lowest text-primary font-label-lg text-label-lg uppercase tracking-widest px-7 py-4 hover:bg-primary hover:text-on-primary transition-all duration-200 shadow-sm" href="https://github.com/veer2580/client-portfolio/raw/main/assets/celebsox.apk" download="CelebsoX.apk">
-
-<span class="material-symbols-outlined text-[18px]">download</span>
-
-<span>INSTALL APP</span>
-
-</a>
-
-</div>
-
-</div>
-
-<div class="lg:col-span-4 flex flex-col gap-4">
-
-<div class="p-6 bg-surface-container-lowest rounded shadow-sm flex flex-col gap-4">
-
-<div class="flex items-center justify-between pb-3 bg-surface-container-low px-3 py-2 rounded">
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">COMMUNITY METRICS</span>
-
-<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Q2 // LIVE DATA</span>
-
-</div>
-
-<div class="grid grid-cols-2 gap-4">
-
-<div>
-
-<p class="font-display-sm text-headline-lg text-primary">1K+</p>
-
-<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">VERIFIED PEOPLES</p>
-
-</div>
-
-<div>
-
-<p class="font-display-sm text-headline-lg text-secondary">100+</p>
-
-<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">COLLAB REACH</p>
-
-</div>
-
-</div>
-
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-
-              Curated networks spanning Jaipur, Bengaluru, Delhi, Hyderabad, and Udaipur , Grugram.
-
-            </p>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- Video Feature: community in motion -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center mt-4">
-  <div class="relative w-full aspect-video bg-black rounded-lg overflow-hidden shadow-2xl border border-surface-container-highest">
-    <video class="w-full h-full object-cover" autoplay muted loop playsinline controls preload="metadata" aria-label="Celebso X community in motion">
-      <source src="assets/home-community-video.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 font-label-sm text-label-sm uppercase tracking-widest font-semibold pointer-events-none">CELEBSO X // IN MOTION</div>
-  </div>
-  <div class="flex flex-col gap-5 lg:pr-8">
-    <div class="w-10 h-1 bg-secondary"></div>
-    <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">02 // THE COMMUNITY</span>
-    <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary uppercase leading-[0.95] tracking-tight">MAKE YOUR<br/><span class="italic text-secondary">WORK SEEN.</span></h2>
-    <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">Celebso X brings creators, founders, designers, and ambitious professionals into one living network — a place to share what you are building and find the people who can take it further.</p>
-    <a class="inline-flex self-start items-center gap-2 bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-widest px-7 py-4 hover:bg-secondary transition-colors duration-200" href="#profile-section"><span>DISCOVER THE NETWORK</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
-  </div>
-</div>
-
-<!-- Photographic Architectural Mosaic -->
-
-<div class="relative w-full mt-4">
-
-<div class="relative w-full h-[380px] md:h-[520px] bg-black rounded-lg overflow-hidden shadow-2xl group">
-
-<img alt="Celebso X Spotlight &mdash; Where Identity Meets Opportunity" class="w-full h-full object-cover object-right md:object-center filter contrast-110 brightness-100 group-hover:scale-105 transition-all duration-1000 ease-out" src="assets/hero_spotlight.png"/>
-
-<!-- Cinematic Scrim Overlay: Dark on left for text legibility, transparent on right for camera flashes -->
-
-<div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-transparent flex flex-col justify-between p-6 md:p-10 text-white pointer-events-none">
-
-<!-- Brand Emblem in Spotlight Blank Space -->
-<div class="flex items-center justify-start pl-2 sm:pl-4 md:pl-6 pt-10 sm:pt-14 md:pt-16">
-  <a href="https://www.instagram.com/celebsox?stkn=MXZkcjhxM3huYjRlcw==" target="_blank" rel="noopener" class="pointer-events-auto inline-block hover:opacity-90 transition-opacity">
-    <img alt="CelebsoX" class="h-9 sm:h-12 md:h-14 w-auto object-contain filter drop-shadow-lg" src="assets/celebsox_white_logo.png"/>
-  </a>
-</div>
-
-<div class="flex flex-wrap items-end justify-between gap-4">
-
-<div class="max-w-xl">
-
-<span class="inline-block bg-secondary text-on-secondary px-3 py-1 font-label-sm text-label-sm uppercase tracking-widest mb-3 font-semibold shadow-sm">SHOWCASE &bull; CREATE &bull; CONNECT</span>
-
-<h3 class="font-headline-lg text-headline-lg text-white font-bold tracking-tight">WHERE IDENTITY MEETS OPPORTUNITY.</h3>
-
-<p class="font-body-md text-body-md text-gray-200 mt-2 leading-relaxed">Build your presence, connect with opportunities, and make your work impossible to overlook.</p>
-
-</div>
-
-<div class="font-label-sm text-label-sm tracking-widest uppercase text-gray-300 text-right hidden sm:block">
-
-<span class="text-secondary font-semibold">STAGE 01 // SPOTLIGHT</span><br/>
-
-                COLLECTIVE DISCOVERY 2026
-
-              </div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- Floating technical pill -->
-
-<div class="absolute -bottom-5 right-8 hidden md:flex items-center gap-3 bg-surface-container-lowest px-4 py-2.5 rounded shadow-lg border border-border-hairline">
-
-<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">AUTHENTIC TALENT STAGE • CELEBSO X</span>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- SECTION 02: PURPOSE -->
-
-<section class="w-full bg-surface px-6 lg:px-12 py-20 lg:py-28">
-
-<div class="max-w-7xl mx-auto flex flex-col gap-12">
-
-<!-- Section Header -->
-
-<div class="flex flex-col gap-2">
-
-<div class="flex items-center gap-2">
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">02 / PURPOSE</span>
-
-<span class="w-12 h-[1px] bg-secondary-fixed-dim"></span>
-
-</div>
-
-<h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tight">
-
-          YOUR IDENTITY IS YOUR DIGITAL ASSET.
-
-        </h2>
-
-</div>
-
-<!-- 2-Column Broadside Layout -->
-
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-
-<div class="lg:col-span-5 bg-surface-container-lowest p-8 lg:p-12 rounded shadow-sm">
-
-<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-6">MANIFESTO // 01</p>
-
-<blockquote class="font-display-sm text-display-sm-mobile lg:text-display-sm text-primary leading-tight">
-
-            "The internet changed how people connect. Celebso X transforms how they endure."
-
-          </blockquote>
-
-<div class="mt-8 pt-6 flex items-center justify-between">
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">DIGITAL INTEGRITY</span>
-
-<span class="font-label-sm text-label-sm text-secondary font-mono">SEC_02 // PR-IND</span>
-
-</div>
-
-</div>
-
-<div class="lg:col-span-7 flex flex-col gap-8 justify-center h-full">
-
-<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
-
-            Conventional platforms reduced creative mastery to fleeting 15-second ephemeral feeds, volatile algorithmic engagement hacks, and disposable metrics. Celebso X was founded on a contrary proposition: that your professional identity is your foremost economic asset.
-
-          </p>
-
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-
-            We deliver museum-grade portfolio framing, structured collaborative briefs, and direct access to brand institutions across the subcontinent. Every portfolio on Celebso X is a verified architectural dossier—permanent, search-indexed, and engineered for high-trust commercial engagements.
-
-          </p>
-
-<!-- Core Values Metric Strip -->
-
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
-
-<div class="p-4 bg-surface-container-low rounded">
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-1">01 / PERMANENCE</span>
-
-<p class="font-body-sm text-body-sm text-on-surface">Portfolios structured as archival records, not algorithmic feeds.</p>
-
-</div>
-
-<div class="p-4 bg-surface-container-low rounded">
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-1">02 / PROVENANCE</span>
-
-<p class="font-body-sm text-body-sm text-on-surface">Verified credentials and authentic collaborative history.</p>
-
-</div>
-
-<div class="p-4 bg-surface-container-low rounded">
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-1">03 / PROXIMITY</span>
-
-<p class="font-body-sm text-body-sm text-on-surface">Direct access between talent and tier-one patrons &amp; agencies.</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- SECTION EXECUTE BANNER -->
-<section class="w-full bg-surface px-6 lg:px-12 py-6 lg:py-10">
-  <div class="max-w-7xl mx-auto">
-    <div class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-surface-container-highest group">
-      <img alt="CelebsoX - I don't just dream. I EXECUTE." class="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-700 ease-out" src="assets/execute_banner.png"/>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 03: PLATFORM ARCHITECTURE -->
-
-<section class="w-full bg-surface-container-low px-6 lg:px-12 py-20 lg:py-28">
-
-<div class="max-w-7xl mx-auto flex flex-col gap-12">
-
-<!-- Section Header with architectural index -->
-
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
-
-<div>
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">03 / PLATFORM CAPABILITIES</span>
-
-<h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tight mt-1">
-
-            ONE PLATFORM. MANY POSSIBILITIES.
-
-          </h2>
-
-</div>
-
-<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
-
-          Engineered as modular architectural suites. Seamlessly transition from quiet portfolio curation to synchronized live broadcasts.
-
-        </p>
-
-</div>
-
-<!-- 4 Architectural Blocks Grid -->
-
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-<!-- Module 01 -->
-
-<div class="bg-surface-container-lowest p-8 rounded shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group">
-
-<div>
-
-<div class="flex items-center justify-between mb-8">
-
-<span class="font-label-sm text-label-sm text-secondary font-mono">01 // DOSSIER</span>
-
-<span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors text-[24px]">folder_special</span>
-
-</div>
-
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">PROFILE &amp; PORTFOLIO</h3>
-
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-
-              Showcase your identity, verified skills, exhibitions, client projects, and career milestones with bespoke modular grid systems.
-
-            </p>
-
-</div>
-
-<div class="mt-8 pt-4 flex items-center justify-between font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
-
-<span>MOD_01</span>
-
-<span class="text-secondary group-hover:translate-x-1 transition-transform">EXPLORE →</span>
-
-</div>
-
-</div>
-
-<!-- Module 02 -->
-
-<div class="bg-surface-container-lowest p-8 rounded shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group">
-
-<div>
-
-<div class="flex items-center justify-between mb-8">
-
-<span class="font-label-sm text-label-sm text-secondary font-mono">02 // TRANSMIT</span>
-
-<span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors text-[24px]">sensors</span>
-
-</div>
-
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">CONTENT &amp; LIVE</h3>
-
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-
-              Publish your work, ideas, and creative journey on Celebso X through images, reels, and professional content. Go live, share your work in real time, and build your audience and professional identity.
-
-            </p>
-
-</div>
-
-<div class="mt-8 pt-4 flex items-center justify-between font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
-
-<span>MOD_02</span>
-
-<span class="text-secondary group-hover:translate-x-1 transition-transform">EXPLORE →</span>
-
-</div>
-
-</div>
-
-<!-- Module 03 -->
-
-<div class="bg-surface-container-lowest p-8 rounded shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group">
-
-<div>
-
-<div class="flex items-center justify-between mb-8">
-
-<span class="font-label-sm text-label-sm text-secondary font-mono">03 // SYNAPSE</span>
-
-<span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors text-[24px]">hub</span>
-
-</div>
-
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">CONNECT</h3>
-
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-
-              Form private collective rooms, peer councils, and regional director cohorts with zero algorithmic clutter or noise.
-
-            </p>
-
-</div>
-
-<div class="mt-8 pt-4 flex items-center justify-between font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
-
-<span>MOD_03</span>
-
-<span class="text-secondary group-hover:translate-x-1 transition-transform">EXPLORE →</span>
-
-</div>
-
-</div>
-
-<!-- Module 04 -->
-
-<div class="bg-surface-container-lowest p-8 rounded shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group">
-
-<div>
-
-<div class="flex items-center justify-between mb-8">
-
-<span class="font-label-sm text-label-sm text-secondary font-mono">04 // ALLIANCE</span>
-
-<span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors text-[24px]">handshake</span>
-
-</div>
-
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">COLLABORATE</h3>
-
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-
-              Structured brief marketplace. Review commission requests, execute bilateral contracts, and manage milestones safely.
-
-            </p>
-
-</div>
-
-<div class="mt-8 pt-4 flex items-center justify-between font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
-
-<span>MOD_04</span>
-
-<span class="text-secondary group-hover:translate-x-1 transition-transform">EXPLORE →</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- SECTION 04: YOUR PROFILE SHOWCASE -->
-
-<section class="w-full bg-surface px-6 lg:px-12 py-20 lg:py-28" id="profile-section">
-
-<div class="max-w-7xl mx-auto flex flex-col gap-10">
-
-<!-- Section Header -->
-
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-
-<div>
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">04 / YOUR PROFILE</span>
-
-<h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tight mt-1">
-
-            MORE THAN A PROFILE.
-
-          </h2>
-
-</div>
-
-<div class="flex items-center gap-3">
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">INTERACTIVE CAD INTERFACE</span>
-
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-
-</div>
-
-</div>
-
-<!-- High-Fidelity App UI Container -->
-
-<div class="bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden">
-
-<!-- App Top Utility Bar -->
-
-<div class="bg-surface-container-high px-6 py-3 flex items-center justify-between">
-
-<div class="flex items-center gap-3">
-
-<div class="flex gap-1.5">
-
-<span class="w-3 h-3 rounded-full bg-outline-variant"></span>
-
-<span class="w-3 h-3 rounded-full bg-outline-variant"></span>
-
-<span class="w-3 h-3 rounded-full bg-outline-variant"></span>
-
-</div>
-
-<span class="font-label-sm text-label-sm text-on-surface-variant font-mono pl-4">app.celebso.com/x/kabir.mehta</span>
-
-</div>
-
-<div class="flex items-center gap-3 text-on-surface-variant">
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest font-mono">STATUS: ENCRYPTED // TLS 1.3</span>
-
-</div>
-
-</div>
-
-<!-- Profile Canvas -->
-
-<div class="p-6 lg:p-10 flex flex-col gap-8">
-
-<!-- Creator Header Block -->
-
-<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 bg-surface-container-low p-6 rounded-lg">
-
-<div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-
-<!-- Avatar Placeholder with Detailed Prompt -->
-
-<div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-md flex-shrink-0">
-
-<img class="w-full h-full object-cover" data-alt="High-contrast black and white architectural portrait of a South Asian male creative director in his early thirties with spectacles and sharp tailored linen collar, soft dramatic window lighting in a brutalist Mumbai studio interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_U6g_HofOMidexDwEPqIvjAibQr31q1krZwnpUwqsHpkWJ1eGzjYKQbTvXageK1Crye2QjCvANPVVRaeyItff7yYGBYXBOEiGtPNpAcsK58rGYKpGQBS2Aai5f4sNAfX204COuTTx29jlybgvzQJASFxySwt_aPLnIViFmJFbCQDXi3FD3ScNcrJp232_2eeI29NVvM2XJ4pQP9QT0pzGoLICBsFTFnepG8XrbZZP2ugblPhm_cQvPg"/>
-
-<span class="absolute bottom-1 right-1 bg-secondary text-on-secondary w-6 h-6 rounded-full flex items-center justify-center text-xs shadow">
-
-<span class="material-symbols-outlined text-[14px]">check</span>
-
-</span>
-
-</div>
-
-<!-- Identity Meta -->
-
-<div class="flex flex-col gap-1">
-
-<div class="flex items-center gap-2 flex-wrap">
-
-<h3 class="font-headline-sm text-headline-sm text-primary font-medium">Kabir Mehta</h3>
-
-<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-widest px-2 py-0.5 rounded font-semibold">
-
-                    VERIFIED DIRECTOR
-
-                  </span>
-
-<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm uppercase tracking-widest px-2 py-0.5 rounded font-semibold">
-
-                    FELLOW '26
-
-                  </span>
-
-</div>
-
-<p class="font-body-md text-body-md text-on-surface-variant">
-
-                  Cinematographer &amp; Architectural Director • Studio Kalpavriksha
-
-                </p>
-
-<div class="flex items-center gap-4 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider mt-1">
-
-<span class="flex items-center gap-1">
-
-<span class="material-symbols-outlined text-[14px]">location_on</span>
-
-                    MUMBAI, INDIA [19.076° N]
-
-                  </span>
-
-<span>•</span>
-
-<span>TIMEZONE: IST (GMT+5:30)</span>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- Profile Actions -->
-
-<div class="flex items-center gap-3">
-
-<button class="bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-widest px-6 py-3 rounded hover:bg-primary transition-colors flex items-center gap-2 shadow-sm" id="btnCollabModal">
-
-<span class="material-symbols-outlined text-[16px]">mail</span>
-
-<span>COLLABORATE</span>
-
-</button>
-
-<button class="bg-surface text-primary font-label-sm text-label-sm uppercase tracking-widest px-5 py-3 rounded hover:bg-surface-variant transition-colors flex items-center gap-2" id="btnFollowToggle">
-
-<span class="material-symbols-outlined text-[16px]" id="followIcon">person_add</span>
-
-<span id="followText">FOLLOW</span>
-
-</button>
-
-</div>
-
-</div>
-
-<!-- Quantitative Credentials Strip -->
-
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-
-<div class="p-4 bg-surface-container-low rounded">
-
-<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">VERIFIED NETWORK</p>
-
-<p class="font-headline-sm text-headline-sm text-primary font-mono mt-1">48.2K</p>
-
-<span class="text-secondary font-label-sm text-label-sm">↑ +12% this cycle</span>
-
-</div>
-
-<div class="p-4 bg-surface-container-low rounded">
-
-<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">COMMISSIONED WORKS</p>
-
-<p class="font-headline-sm text-headline-sm text-primary font-mono mt-1">142</p>
-
-<span class="text-on-surface-variant font-label-sm text-label-sm">34 Global Exhibitions</span>
-
-</div>
-
-<div class="p-4 bg-surface-container-low rounded">
-
-<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">TRUST CO-INDEX</p>
-
-<p class="font-headline-sm text-headline-sm text-secondary font-mono mt-1">98.4%</p>
-
-<span class="text-on-surface-variant font-label-sm text-label-sm">Score based on 40 briefs</span>
-
-</div>
-
-<div class="p-4 bg-surface-container-low rounded">
-
-<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">ACTIVE INQUIRIES</p>
-
-<p class="font-headline-sm text-headline-sm text-primary font-mono mt-1">03 SLOTS</p>
-
-<span class="text-on-tertiary-container font-label-sm text-label-sm">Booking Q3 / 2026</span>
-
-</div>
-
-</div>
-
-<!-- Tab Navigation Bar -->
-
-<div class="flex items-center gap-2 overflow-x-auto pb-2">
-
-<button class="tab-btn active px-5 py-2.5 font-label-md text-label-md uppercase tracking-wider bg-primary text-on-primary rounded transition-all" data-target="tab-portfolio">
-
-              PORTFOLIO [08]
-
-            </button>
-
-<button class="tab-btn px-5 py-2.5 font-label-md text-label-md uppercase tracking-wider bg-surface-container-low text-on-surface-variant hover:text-primary rounded transition-all" data-target="tab-live">
-
-              LIVE SESSIONS [02]
-
-            </button>
-
-<button class="tab-btn px-5 py-2.5 font-label-md text-label-md uppercase tracking-wider bg-surface-container-low text-on-surface-variant hover:text-primary rounded transition-all" data-target="tab-projects">
-
-              COLLABORATIVE BRIEFS [14]
-
-            </button>
-
-<button class="tab-btn px-5 py-2.5 font-label-md text-label-md uppercase tracking-wider bg-surface-container-low text-on-surface-variant hover:text-primary rounded transition-all" data-target="tab-about">
-
-              ABOUT &amp; HARDWARE
-
-            </button>
-
-</div>
-
-<!-- Tab 1: Portfolio View -->
-
-<div class="tab-content flex flex-col gap-6" id="tab-portfolio">
-
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-<!-- Card 1 -->
-
-<div class="group bg-surface-container-low rounded overflow-hidden shadow-sm hover:shadow-md transition-all">
-
-<div class="relative h-56 w-full overflow-hidden bg-surface-variant">
-
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Brutalist concrete architecture in Ahmedabad during golden hour dusk with geometric cast shadows and deep architectural perspective captured on 35mm film" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDikDpQMctnyTQiA9ZnjHscIs-6PElHPMWjQ_rW-u_7X8unHPhqb71jz0RB8mbDiVNYWNNwWD_Erj_GQiZl9zEeKiW6gwdu2SUB1zS5LdL5NK4bQixzBP29kvMpLLXTdMEg2PnCuTcIuaMS-r4gVl0e9yoxC_hhIp6ov7GEy3dSyiEJ7an5m5EDaoHJu9z9dNojCb0pFhUvRAPexaSY4eQgkVAj-QlQjfnbyr66JfKp4ONovQAvKafE0A"/>
-
-<span class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest px-2 py-0.5">FILM STILL</span>
-
-<span class="absolute top-3 right-3 bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary uppercase px-2 py-0.5">2026</span>
-
-</div>
-
-<div class="p-5 flex flex-col gap-2">
-
-<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">ARCHITECTURAL CINEMA</p>
-
-<h4 class="font-headline-sm text-headline-sm text-primary">Monoliths of Gujarat</h4>
-
-<p class="font-body-sm text-body-sm text-on-surface-variant">Commissioned documentary tracking post-independence concrete heritage and human habitations.</p>
-
-<div class="mt-3 pt-3 flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
-
-<span>CLIENT: CEPT FOUNDATION</span>
-
-<span class="text-primary font-medium">VIEW PROJECT ↗</span>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- Card 2 -->
-
-<div class="group bg-surface-container-low rounded overflow-hidden shadow-sm hover:shadow-md transition-all">
-
-<div class="relative h-56 w-full overflow-hidden bg-surface-variant">
-
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-fashion modern South Asian editorial model wearing sculptured raw khadi textile against warm minimalist clay studio walls in Mumbai" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxTGWMWFLPG2t9xXsH5gtJvTvPrihjkoGOS33ezuNHiXsQYIJWCsydWNTENArI1H1dpqQDFhTg5HAWC7IK90qsIe5IKOsKdsyvvkaMAaihGdehS0Ijl_QvE3v-Lcds-yNt70ZenYp572ixyF9lKzZq7H9MZXTKgONKzjcRsqBqSwo20bF6h77ASsvrz22N2-UgCWidu0JZ3RLJaEJX1F2KNQ23NkBeEZWhLSuL1N2qg9eQHRTn_8i-vA"/>
-
-<span class="absolute top-3 left-3 bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-widest px-2 py-0.5">COMMERCIAL</span>
-
-<span class="absolute top-3 right-3 bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary uppercase px-2 py-0.5">2025</span>
-
-</div>
-
-<div class="p-5 flex flex-col gap-2">
-
-<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">TEXTILE ARCHIVE</p>
-
-<h4 class="font-headline-sm text-headline-sm text-primary">Vayu — Spring Kinetic</h4>
-
-<p class="font-body-sm text-body-sm text-on-surface-variant">Campaign direction showcasing handwoven indigenous fabrics styled in structured silhouettes.</p>
-
-<div class="mt-3 pt-3 flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
-
-<span>CLIENT: RAW MANGO &amp; GQ</span>
-
-<span class="text-primary font-medium">VIEW PROJECT ↗</span>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- Card 3 -->
-
-<div class="group bg-surface-container-low rounded overflow-hidden shadow-sm hover:shadow-md transition-all">
-
-<div class="relative h-56 w-full overflow-hidden bg-surface-variant">
-
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist design exhibition space with floating paper installations and warm spot lighting inside an industrial gallery in Bangalore" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7Jc80KTFFXJPtH06HiKJPJrR_-kfUPfGdSxIb2AOTQWyQ7PHRyVRPLfQFQLld2wgWMH_ejjxXBYFznmewngaY4Dqw0yKweQ2PgNv-XB-s2oUEmwXgcFSfHoV5O5m7yVivcfbnRUBB0Sfq0yVpN0YkXZlGWE4lc9nUNrfMfm6RSr7wiCZT0gK-H1eHRKvylYXEIOyQDPQ1pBSg5ba8KBKY4J6Woh-NQ0h1zW177lw3f_VYFVgoDEm5WA"/>
-
-<span class="absolute top-3 left-3 bg-on-tertiary-container text-on-primary font-label-sm text-label-sm uppercase tracking-widest px-2 py-0.5">CURATION</span>
-
-<span class="absolute top-3 right-3 bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary uppercase px-2 py-0.5">2025</span>
-
-</div>
-
-<div class="p-5 flex flex-col gap-2">
-
-<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">SPATIAL INSTALLATION</p>
-
-<h4 class="font-headline-sm text-headline-sm text-primary">Ephemeral Volumes</h4>
-
-<p class="font-body-sm text-body-sm text-on-surface-variant">Lighting score and spatial choreography for the Bangalore Design Triennale central pavilion.</p>
-
-<div class="mt-3 pt-3 flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
-
-<span>VENUE: MAP BENGALURU</span>
-
-<span class="text-primary font-medium">VIEW PROJECT ↗</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- Tab 2: Live Sessions (hidden by default) -->
-
-<div class="tab-content hidden flex flex-col gap-6" id="tab-live">
-
-<div class="p-8 bg-surface-container-low rounded-lg flex flex-col md:flex-row items-center justify-between gap-6">
-
-<div class="flex items-center gap-5">
-
-<div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center text-secondary flex-shrink-0">
-
-<span class="material-symbols-outlined text-[32px]">videocam</span>
-
-</div>
-
-<div>
-
-<span class="inline-flex items-center gap-1.5 bg-error-container text-on-error-container px-2 py-0.5 font-label-sm text-label-sm font-semibold rounded">
-
-<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
-
-                    NEXT LIVE TRANSMISSION
-
-                  </span>
-
-<h4 class="font-headline-sm text-headline-sm text-primary mt-1">Color Grading for Concrete: Deconstructing 35mm Emulsion</h4>
-
-<p class="font-body-sm text-body-sm text-on-surface-variant">Broadcast directly from Studio Kalpavriksha, Worli • Thursday at 19:00 IST</p>
-
-</div>
-
-</div>
-
-<button class="bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest px-6 py-3 rounded hover:bg-secondary transition-colors whitespace-nowrap">
-
-                RESERVE ACCESS (FREE)
-
-              </button>
-
-</div>
-
-</div>
-
-<!-- Tab 3: Projects (hidden by default) -->
-
-<div class="tab-content hidden flex flex-col gap-4" id="tab-projects">
-
-<div class="p-6 bg-surface-container-low rounded flex items-center justify-between">
-
-<div>
-
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">BRIEF #BLR-204 // CLOSED</span>
-
-<h4 class="font-headline-sm text-headline-sm text-primary">Kochi Biennale Pavilion Visual Identity</h4>
-
-<p class="font-body-sm text-body-sm text-on-surface-variant">Collaboration with Studio Tessera &amp; Dept of Cultural Affairs</p>
-
-</div>
-
-<span class="font-label-md text-label-md uppercase bg-surface-container-lowest px-3 py-1 text-primary">COMPLETED // ₹14.5L</span>
-
-</div>
-
-<div class="p-6 bg-surface-container-low rounded flex items-center justify-between">
-
-<div>
-
-<span class="font-label-sm text-label-sm text-on-tertiary-container uppercase tracking-widest">BRIEF #MUM-912 // IN PROGRESS</span>
-
-<h4 class="font-headline-sm text-headline-sm text-primary">South Asian Craft Archive Documentary Series</h4>
-
-<p class="font-body-sm text-body-sm text-on-surface-variant">Directing 4-part series documenting disappearing handloom clusters</p>
-
-</div>
-
-<span class="font-label-md text-label-md uppercase bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1">MILESTONE 2/4</span>
-
-</div>
-
-</div>
-
-<!-- Tab 4: About & Hardware (hidden by default) -->
-
-<div class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-6" id="tab-about">
-
-<div class="p-6 bg-surface-container-low rounded flex flex-col gap-3">
-
-<h4 class="font-headline-sm text-headline-sm text-primary">Philosophy</h4>
-
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-
-                Operating at the juncture of architecture, cinema, and South Asian material culture. Graduate of National Institute of Design (NID), Ahmedabad. Former resident fellow at Milan Triennale.
-
-              </p>
-
-</div>
-
-<div class="p-6 bg-surface-container-low rounded flex flex-col gap-3">
-
-<h4 class="font-headline-sm text-headline-sm text-primary">Production Kit</h4>
-
-<ul class="font-body-sm text-body-sm text-on-surface-variant space-y-1 font-mono">
-
-<li>• ARRI Alexa Mini LF // Cooke Anamorphic /i Full Frame Plus</li>
-
-<li>• Leica M11-P // Summilux-M 35mm f/1.4 ASPH</li>
-
-<li>• DaVinci Resolve Studio &amp; Baselight Colour Suite</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- SECTION 05: EXPERIENCE (DARK VISUAL PANELS) -->
-
-<section class="w-full bg-primary text-on-primary px-6 lg:px-12 py-20 lg:py-28">
-
-<div class="max-w-7xl mx-auto flex flex-col gap-12">
-
-<!-- Section Header -->
-
-<div class="flex flex-col gap-2">
-
-<div class="flex items-center gap-2">
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed font-semibold">05 / THE CELEBSO EXPERIENCE</span>
-
-<span class="w-12 h-[1px] bg-outline"></span>
-
-</div>
-
-<h2 class="font-headline-lg text-headline-lg text-on-primary uppercase tracking-tight">
-
-          CREATE. CONNECT. GROW.
-
-        </h2>
-
-</div>
-
-<!-- 3 Dramatic Dark Visual Panels -->
-
-<!-- 3 Dramatic Visual Panels from PDF Page 2 (ss2: SHOWCASE, CREATE, CONNECT) -->
-<div class="relative w-full rounded-2xl overflow-hidden shadow-2xl bg-black border border-white/15 group">
-  <img src="assets/hero_panels.png" alt="The Celebso Experience — Showcase, Create, Connect" class="w-full h-auto object-cover rounded-2xl group-hover:scale-[1.01] transition-transform duration-700"/>
-</div>
-</div>
-</section>
-
-<!-- SECTION 06: FOR CREATORS -->
-
-<section class="w-full bg-surface px-6 lg:px-12 py-20 lg:py-28">
-
-<div class="max-w-7xl mx-auto">
-
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
-<!-- Left Editorial Column -->
-
-<div class="lg:col-span-6 flex flex-col gap-6">
-
-<div class="flex items-center gap-2">
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">06 / FOR CREATORS</span>
-
-<span class="w-8 h-[1px] bg-secondary"></span>
-
-</div>
-
-<h2 class="font-display-sm text-display-sm-mobile md:text-display-sm text-primary uppercase leading-tight">
-
-            YOUR WORK. YOUR IDENTITY. YOUR STAGE.
-
-          </h2>
-
-<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-
-            Build a professional presence where your talent, content, achievements, and journey come together. Get discovered, build meaningful connections, and open the door to new opportunities.
-
-          </p>
-
-<div class="space-y-4 pt-2">
-
-<div class="flex items-start gap-4 p-4 bg-surface-container-low rounded">
-
-<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">folder_special</span>
-
-<div>
-
-<h4 class="font-headline-sm text-headline-sm text-primary text-[1.125rem]">PROFILE &amp; PORTFOLIO</h4>
-
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Build a profile that showcases your talent, work, experience, and achievements.</p>
-
-</div>
-
-</div>
-
-<div class="flex items-start gap-4 p-4 bg-surface-container-low rounded">
-
-<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">handshake</span>
-
-<div>
-
-<h4 class="font-headline-sm text-headline-sm text-primary text-[1.125rem]">OPPORTUNITIES &amp; COLLABORATIONS</h4>
-
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Connect with the right people, discover opportunities, and turn your work into meaningful collaborations.</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="pt-4">
-
-<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-widest px-8 py-4 hover:bg-secondary transition-colors duration-200 shadow-sm" href="#install">
-
-<span>BUILD YOUR PROFILE</span>
-
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-
-</a>
-
-</div>
-
-</div>
-
-<!-- Right Visual Showcase -->
-
-<div class="lg:col-span-6">
-
-<div class="relative w-full rounded-2xl overflow-hidden shadow-2xl bg-surface-container-low border border-border-hairline group">
-
-<img class="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-500 ease-out" alt="Ananya Sharma Creator Profile" src="assets/ananya_profile_card.png"/>
-
-<div class="p-6 bg-surface-container-lowest">
-
-<div class="flex items-center justify-between pb-3 mb-3">
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">CREATOR SPOTLIGHT</span>
-
-<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">ANANYA SHARMA // CREATOR &amp; LIFESTYLE</span>
-
-</div>
-
-<p class="font-body-md text-body-md text-on-surface italic">
-
-                "Celebso X helped me bring my work, profile, and professional identity together in one place and made it easier for the right people to discover me"
-
-              </p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- SECTION 07: FOR BRANDS & PATRONS -->
-
-<section class="w-full bg-surface-container-low px-6 lg:px-12 py-20 lg:py-28">
-
-<div class="max-w-7xl mx-auto">
-
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
-<!-- Left Visual Showcase -->
-
-<div class="lg:col-span-6 order-2 lg:order-1">
-
-<div class="bg-surface-container-lowest p-8 rounded-lg shadow-xl flex flex-col gap-6">
-
-<div class="flex items-center justify-between pb-4">
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-mono">SCOUTING ENGINE // Q2</span>
-
-<span class="font-label-sm text-label-sm text-primary uppercase font-mono">ACTIVE BRIEFS: 82</span>
-
-</div>
-
-<!-- Sample Brief UI Card -->
-
-<div class="p-5 bg-surface-container-low rounded flex flex-col gap-3">
-
-<div class="flex items-center justify-between">
-
-<span class="bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 font-label-sm text-label-sm uppercase font-semibold rounded">CREATIVE PROJECT</span>
-
-<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">BUDGET: ₹8,00,000</span>
-
-</div>
-
-<h4 class="font-headline-sm text-headline-sm text-primary">Brand Launch &amp; Content Campaign</h4>
-
-<p class="font-body-sm text-body-sm text-on-surface-variant">Looking for creators, photographers, videographers, designers, and content strategists to build a complete brand campaign.</p>
-
-<div class="flex items-center gap-2 pt-2 text-xs font-mono text-on-surface-variant">
-
-<span>APPLICANTS: 24 VERIFIED</span>
-
-<span>•</span>
-
-<span>DEADLINE: 7 DAYS</span>
-
-</div>
-
-</div>
-
-<div class="grid grid-cols-2 gap-4 pt-2">
-
-<div class="p-4 bg-surface-container rounded">
-
-<p class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">MATCH SPEED</p>
-
-<p class="font-headline-sm text-headline-sm text-primary font-mono mt-1">&lt; 48 HOURS</p>
-
-</div>
-
-<div class="p-4 bg-surface-container rounded">
-
-<p class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">ROLES REQUIRED</p>
-
-<p class="font-headline-sm text-headline-sm text-secondary font-mono mt-1">5 SPECIALISTS</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- Right Editorial Column -->
-
-<div class="lg:col-span-6 order-1 lg:order-2 flex flex-col gap-6">
-
-<div class="flex items-center gap-2">
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">07 / FOR BRANDS &amp; INSTITUTIONS</span>
-
-<span class="w-8 h-[1px] bg-secondary"></span>
-
-</div>
-
-<h2 class="font-display-sm text-display-sm-mobile md:text-display-sm text-primary uppercase leading-tight">
-
-            FIND THE RIGHT PEOPLE. BUILD WHAT MATTERS.
-
-          </h2>
-
-<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-
-            Move beyond scattered agency searches and unreliable social DMs. Discover verified creators and professionals, explore their work, and connect with the right talent for campaigns, projects, and collaborations.
-
-          </p>
-
-<ul class="space-y-3 font-body-md text-body-md text-on-surface">
-
-<li class="flex items-center gap-3">
-
-<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
-
-<span>Verified profiles and authentic work portfolios.</span>
-
-</li>
-
-<li class="flex items-center gap-3">
-
-<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
-
-<span>Post project briefs and discover relevant talent in one place.</span>
-
-</li>
-
-<li class="flex items-center gap-3">
-
-<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
-
-<span>Manage collaborations, milestones, and communication seamlessly.</span>
-
-</li>
-
-</ul>
-
-<div class="pt-4">
-
-<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-widest px-8 py-4 hover:bg-secondary transition-colors duration-200 shadow-sm" href="#install">
-
-<span>EXPLORE COLLABORATIONS</span>
-
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- SECTION 08: FINAL HERO CALL TO ACTION -->
-
-<section class="w-full bg-primary-container text-on-primary px-6 lg:px-12 py-24 lg:py-32 relative overflow-hidden" id="install">
-
-<!-- Subtle architectural background glow -->
-
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/15 rounded-full blur-3xl pointer-events-none"></div>
-
-<div class="max-w-4xl mx-auto flex flex-col items-center text-center gap-8 relative z-10">
-
-<div class="flex items-center gap-3">
-
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed">08 // REGISTRATION INITIATIVE</span>
-
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-
-</div>
-
-<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg uppercase tracking-tight text-on-primary leading-none">
-
-        READY TO BUILD YOUR IDENTITY?
-
-      </h2>
-
-<p class="font-body-lg text-body-lg text-on-primary-container max-w-2xl leading-relaxed">
-
-        Join a network of creators and professionals. Showcase your talent, build your identity, and connect with people who share your ambition.
-
-      </p>
-
-<div class="flex flex-wrap items-center justify-center gap-5 pt-4">
-
-<a class="inline-flex items-center gap-3 bg-secondary text-on-secondary font-label-lg text-label-lg uppercase tracking-widest px-10 py-5 hover:bg-primary transition-colors duration-200 shadow-xl" href="https://github.com/veer2580/client-portfolio/raw/main/assets/celebsox.apk" download="CelebsoX.apk">
-
-<span class="material-symbols-outlined text-[20px]">download</span>
-
-<span>INSTALL CELEBSO</span>
-
-</a>
-
-<a class="inline-flex items-center gap-3 bg-surface-container-highest/20 text-on-primary font-label-lg text-label-lg uppercase tracking-widest px-8 py-5 hover:bg-surface-container-highest/40 transition-colors duration-200" href="#profile-section">
-
-<span>EXPLORE THE PLATFORM</span>
-
-<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
-
-</a>
-
-</div>
-
-<!-- System specifications footer strip -->
-
-<div class="mt-12 pt-8 flex flex-wrap items-center justify-center gap-8 font-label-sm text-label-sm text-on-primary-container uppercase tracking-widest">
-
-<span>CELEBSO X CORE 2.4</span>
-
-<span>•</span>
-
-<span>PRIVACY-FIRST</span>
-
-<span>•</span>
-
-<span>VERIFIED PROFILES</span>
-
-<span>•</span>
-
-<span>CREATOR-LED</span>
-
-<span>•</span>
-
-<span>INDIA-WIDE</span>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- COLLABORATION MODAL (MICRO-INTERACTION) -->
-
-<div class="fixed inset-0 z-50 bg-primary/80 backdrop-blur-sm hidden items-center justify-center p-4" id="collabModal">
-
-<div class="bg-surface-container-lowest w-full max-w-lg rounded-xl shadow-2xl p-8 flex flex-col gap-6 relative">
-
-<div class="flex items-center justify-between pb-4">
-
-<div>
-
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">DIRECT INQUIRY // BRIEF TRANSMISSION</span>
-
-<h3 class="font-headline-sm text-headline-sm text-primary">Collaborate with Kabir Mehta</h3>
-
-</div>
-
-<button class="text-on-surface-variant hover:text-primary" id="btnCloseModal">
-
-<span class="material-symbols-outlined text-[24px]">close</span>
-
-</button>
-
-</div>
-
-<form class="flex flex-col gap-4" id="collabForm" onsubmit="event.preventDefault(); alert('Brief submitted to Kabir Mehta\'s agent queue.'); document.getElementById('collabModal').classList.add('hidden'); document.getElementById('collabModal').classList.remove('flex');">
-
-<div>
-
-<label class="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-1">Your Organization / Name</label>
-
-<input class="w-full bg-surface-container-low px-4 py-2.5 rounded font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="e.g. Studio Mumbai / Tarun Tahiliani" required="" type="text"/>
-
-</div>
-
-<div>
-
-<label class="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-1">Brief Scope</label>
-
-<select class="w-full bg-surface-container-low px-4 py-2.5 rounded font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary">
-
-<option>Architectural Cinematography (4K)</option>
-
-<option>Creative Direction / Exhibition</option>
-
-<option>Spatial &amp; Lighting Scenography</option>
-
-<option>Speaking &amp; Masterclass Engagement</option>
-
-</select>
-
-</div>
-
-<div>
-
-<label class="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-1">Brief Synopsis</label>
-
-<textarea class="w-full bg-surface-container-low px-4 py-2.5 rounded font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Outline production scope, key timelines, and location coordinates..." required="" rows="3"></textarea>
-
-</div>
-
-<div class="flex items-center justify-end gap-3 pt-4">
-
-<button class="px-5 py-2.5 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary" id="btnCancelModal" type="button">Cancel</button>
-
-<button class="bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-widest px-6 py-2.5 rounded hover:bg-primary transition-colors" type="submit">Transmit Brief</button>
-
-</div>
-
-</form>
-
-</div>
-
-</div>
-
-<!-- Micro-interactions Script -->
-
-<script>
-
-    // 1. Live Clock
-
-    function updateClock() {
-
-      const clock = document.getElementById('liveClock');
-
-      if (clock) {
-
-        const now = new Date();
-
-        clock.innerText = now.toLocaleTimeString('en-GB', { timeZone: 'Asia/Kolkata' }) + ' IST';
-
       }
-
-    }
-
-    setInterval(updateClock, 1000);
-
-    updateClock();
-
-
-
-    // 2. Profile Interactive Tabs
-
-    const tabBtns = document.querySelectorAll('.tab-btn');
-
-    const tabContents = document.querySelectorAll('.tab-content');
-
-
-
-    tabBtns.forEach(btn => {
-
-      btn.addEventListener('click', () => {
-
-        tabBtns.forEach(b => {
-
-          b.classList.remove('bg-primary', 'text-on-primary');
-
-          b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
-
-        });
-
-        tabContents.forEach(c => c.classList.add('hidden'));
-
-
-
-        btn.classList.add('bg-primary', 'text-on-primary');
-
-        btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
-
-        
-
-        const targetId = btn.getAttribute('data-target');
-
-        const targetContent = document.getElementById(targetId);
-
-        if (targetContent) {
-
-          targetContent.classList.remove('hidden');
-
-        }
-
-      });
-
-    });
-
-
-
-    // 3. Follow Button Micro-interaction
-
-    const followBtn = document.getElementById('btnFollowToggle');
-
-    const followText = document.getElementById('followText');
-
-    const followIcon = document.getElementById('followIcon');
-
-    let isFollowing = false;
-
-
-
-    if (followBtn) {
-
-      followBtn.addEventListener('click', () => {
-
-        isFollowing = !isFollowing;
-
-        if (isFollowing) {
-
-          followText.innerText = 'FOLLOWING';
-
-          followIcon.innerText = 'check';
-
-          followBtn.classList.add('bg-secondary', 'text-on-secondary');
-
-          followBtn.classList.remove('bg-surface', 'text-primary');
-
-        } else {
-
-          followText.innerText = 'FOLLOW';
-
-          followIcon.innerText = 'person_add';
-
-          followBtn.classList.remove('bg-secondary', 'text-on-secondary');
-
-          followBtn.classList.add('bg-surface', 'text-primary');
-
-        }
-
-      });
-
-    }
-
-
-
-    // 4. Collaboration Modal Trigger
-
-    const collabModal = document.getElementById('collabModal');
-
-    const btnCollabModal = document.getElementById('btnCollabModal');
-
-    const btnCloseModal = document.getElementById('btnCloseModal');
-
-    const btnCancelModal = document.getElementById('btnCancelModal');
-
-
-
-    if (btnCollabModal && collabModal) {
-
-      btnCollabModal.addEventListener('click', () => {
-
-        collabModal.classList.remove('hidden');
-
-        collabModal.classList.add('flex');
-
-      });
-
-    }
-
-
-
-    const closeModal = () => {
-
-      if (collabModal) {
-
-        collabModal.classList.add('hidden');
-
-        collabModal.classList.remove('flex');
-
-      }
-
     };
-
-
-
-    if (btnCloseModal) btnCloseModal.addEventListener('click', closeModal);
-
-    if (btnCancelModal) btnCancelModal.addEventListener('click', closeModal);
-
-  
-    // Mobile Drawer Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileDrawer = document.getElementById('mobileDrawer');
-    if (mobileMenuBtn && mobileDrawer) {
-      mobileMenuBtn.addEventListener('click', () => {
-        const isHidden = mobileDrawer.classList.contains('hidden');
-        if (isHidden) {
-          mobileDrawer.classList.remove('hidden');
-          mobileDrawer.classList.add('flex');
-          mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">close</span>';
-        } else {
-          mobileDrawer.classList.add('hidden');
-          mobileDrawer.classList.remove('flex');
-          mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">menu</span>';
-        }
-      });
-    }
-
   </script>
 
-</div></main><footer class="w-full bg-surface-container-low border-t border-surface-container-highest"><div class="w-full px-6 lg:px-12 py-16"><div class="mb-16 pb-12 border-b border-surface-container-highest"><p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-4">00 // IDENTITY ARCHITECTURE</p><h2 class="font-headline-lg text-headline-lg text-primary max-w-4xl">CELEBSO X — Build Your Identity. Create Your Legacy.</h2></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12"><div class="lg:col-span-1"><h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-4 pb-2 border-b border-surface-container-highest">BRAND &amp; VISION</h3><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">An India-first professional social platform for creators, professionals and the next generation of architectural talent.</p></div><div><h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-4 pb-2 border-b border-surface-container-highest">NAVIGATION</h3><ul class="space-y-2.5 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="home" href="index.html">01 / HOME</a></li><li><a class="hover:text-primary transition-colors" data-path="about" href="about.html">02 / ABOUT</a></li>
-<li><a class="hover:text-primary transition-colors" data-path="portfolio" href="portfolio.html">03 / PORTFOLIO</a></li><li><a class="hover:text-primary transition-colors" data-path="blog" href="blog.html">04 / BLOG</a></li><li><a class="hover:text-primary transition-colors" data-path="contact" href="contact.html">05 / CONTACT</a></li></ul></div><div><h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-4 pb-2 border-b border-surface-container-highest">PLATFORM</h3><ul class="space-y-2.5 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant"><li><a class="hover:text-primary transition-colors" href="#">PROFILE &amp; PORTFOLIO</a></li><li><a class="hover:text-primary transition-colors" href="#">CONTENT &amp; LIVE</a></li><li><a class="hover:text-primary transition-colors" href="#">CONNECT</a></li><li><a class="hover:text-primary transition-colors" href="#">COLLABORATE</a></li></ul></div><div><h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-4 pb-2 border-b border-surface-container-highest">SUPPORT &amp; LEGAL</h3><ul class="space-y-2.5 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="contact" href="contact.html">CONTACT</a></li><li><a class="hover:text-primary transition-colors" href="#">PRIVACY POLICY</a></li><li><a class="hover:text-primary transition-colors" href="terms.html">TERMS OF SERVICE</a></li><li><a class="hover:text-primary transition-colors" href="help-center.html">HELP CENTER</a></li></ul></div><div><h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-4 pb-2 border-b border-surface-container-highest">SOCIAL</h3><ul class="space-y-2.5 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant"><li><a class="hover:text-primary transition-colors" href="https://www.instagram.com/celebsox?stkn=MXZkcjhxM3huYjRlcw==" target="_blank" rel="noopener">INSTAGRAM</a></li><li><a class="hover:text-primary transition-colors" href="https://www.linkedin.com/company/celebso/" target="_blank" rel="noopener">LINKEDIN</a></li><li><a class="hover:text-primary transition-colors" href="#">YOUTUBE</a></li><li><a class="hover:text-primary transition-colors" href="https://x.com/Celebso_" target="_blank" rel="noopener">X (TWITTER)</a></li></ul></div></div></div><div class="w-full px-6 lg:px-12 py-6 border-t border-surface-container-highest flex flex-col md:flex-row items-center justify-between gap-4"><div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">© 2026 <a href="https://antellay.in/" target="_blank" rel="noopener" class="font-bold text-primary hover:text-secondary transition-colors underline-offset-2 hover:underline">ANTELLAY Labs</a>. All Rights Reserved. A <a href="https://celebso.com/" target="_blank" rel="noopener" class="font-bold text-primary hover:text-secondary transition-colors underline-offset-2 hover:underline">Celebso Group</a> Company.</div><div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">19.0760° N, 72.8777° E</div></div></footer></body></html>
+  <style>
+    /* Exact warm studio lighting backdrop */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #E4DCCF;
+      background: radial-gradient(circle at 50% 36%, #EAE3D8 0%, #E4DCCF 42%, #DFD5C6 75%, #D9CDC0 100%);
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      color: #1A1A18;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* Chair smooth interaction */
+    .chair-container {
+      transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease;
+      will-change: transform;
+    }
+    .chair-container:hover {
+      transform: translateY(-4px) scale(1.012);
+      filter: drop-shadow(0 15px 25px rgba(80, 55, 20, 0.1));
+    }
+
+    /* Navbar Bracket button */
+    .btn-bracket {
+      transition: all 0.2s ease;
+    }
+    .btn-bracket:hover {
+      background-color: #242529;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Primary Explore Button */
+    .btn-explore {
+      background-color: #141517;
+      color: #FFFFFF;
+      transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .btn-explore:hover {
+      background-color: #000000;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.35);
+    }
+    .btn-explore:active {
+      transform: translateY(0);
+    }
+
+    /* Secondary Install Button */
+    .btn-install {
+      background-color: #ECE4D6;
+      border: 1px solid rgba(195, 185, 170, 0.85);
+      color: #161719;
+      transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .btn-install:hover {
+      background-color: #F7F3EC;
+      border-color: rgba(150, 140, 125, 0.95);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px -2px rgba(90, 70, 40, 0.14);
+    }
+
+    /* Cinematic Transition When Entering Website */
+    .launch-transition {
+      opacity: 0;
+      transform: scale(0.985);
+      transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+    }
+
+    /* Custom subtle scrollbar if mobile needs it */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #E4DCCF;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C7BCAE;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between select-none relative">
+
+  <!-- ============================================================ -->
+  <!-- TOP NAVIGATION BAR                                           -->
+  <!-- ============================================================ -->
+  <header class="w-full pt-7 md:pt-9 pb-4 px-6 md:px-14 flex items-center justify-between z-30 flex-shrink-0">
+    <!-- Brand Logo -->
+    <a href="landing.html" class="flex items-center group transition-transform duration-200 hover:scale-[1.02]">
+      <span class="font-bold text-[24px] md:text-[27px] tracking-tight text-[#111215]">
+        Celebso<span class="text-brand-gold">X</span>
+      </span>
+    </a>
+
+    <!-- Top Right Actions -->
+    <div class="flex items-center gap-3 md:gap-3.5">
+      <!-- [ INSTALL CELEBSO ] Button -->
+      <button 
+        id="btnTopInstall"
+        onclick="openInstallModal()"
+        class="btn-bracket inline-flex items-center justify-center bg-[#111215] text-[#ECE7DF] px-4 md:px-5 py-2 md:py-2.5 rounded-full font-mono text-[11px] md:text-[12px] font-medium tracking-[0.14em] uppercase shadow-sm cursor-pointer"
+        title="Download CelebsoX App"
+      >
+        <span>[ INSTALL CELEBSO ]</span>
+      </button>
+
+      <!-- User Profile Circle Icon -->
+      <button 
+        id="btnUserProfile"
+        onclick="openProfileModal()"
+        class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-[#18191C]/80 flex items-center justify-center text-[#18191C] hover:bg-[#18191C] hover:text-[#ECE7DF] transition-all duration-200 cursor-pointer shadow-xs group"
+        title="Account & Gateway Navigation"
+        aria-label="User Profile"
+      >
+        <svg class="w-4 h-4 md:w-[18px] md:h-[18px] transition-transform duration-200 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- MAIN HERO SECTION (Spacious luxury layout with increased length) -->
+  <!-- ============================================================ -->
+  <main class="flex-1 flex flex-col items-center justify-center px-4 pt-4 sm:pt-6 md:pt-10 pb-16 sm:pb-20 md:pb-28 z-20 max-w-4xl mx-auto w-full text-center">
+    
+    <!-- Hero Visual: Exact Original Wooden Director's Chair with Proper Photo Height -->
+    <div class="chair-container relative flex items-center justify-center cursor-pointer mb-8 sm:mb-10 md:mb-12 group" onclick="pulseChair()">
+      <img 
+        id="chairImage"
+        src="assets/celebsox_chair_original_hd.png" 
+        alt="CelebsoX Director's Chair" 
+        class="h-[460px] sm:h-[530px] md:h-[600px] lg:h-[640px] w-auto max-w-full object-contain transition-all duration-300 select-none pointer-events-auto"
+        draggable="false"
+      />
+    </div>
+
+    <!-- Subtitle: BUILD YOUR IDENTITY. -->
+    <p class="font-sans text-[11.5px] sm:text-[12.5px] md:text-[13.5px] tracking-[0.24em] font-semibold text-[#54504A] uppercase mb-2">
+      BUILD YOUR IDENTITY.
+    </p>
+
+    <!-- Main Headline: CREATE YOUR LEGACY. -->
+    <h1 class="font-serif text-[38px] sm:text-[48px] md:text-[58px] lg:text-[64px] font-normal leading-[1.08] tracking-[-0.015em] text-[#131416] mb-3 md:mb-3.5">
+      CREATE YOUR <span class="text-brand-gold font-medium">LEGACY.</span>
+    </h1>
+
+    <!-- Descriptive Tagline -->
+    <p class="font-sans text-[14px] sm:text-[15.5px] md:text-[16.5px] text-[#5F5B54] max-w-[480px] leading-[1.55] mb-7 md:mb-9 font-normal">
+      Showcase your talent, share your story,<br class="hidden sm:inline" />
+      and be discovered on CelebsoX.
+    </p>
+
+    <!-- Action Button (Centered) -->
+    <div class="flex items-center justify-center w-full">
+      
+      <!-- Primary Button: EXPLORE CELEBSO -> (Tapping opens the user's website!) -->
+      <a 
+        id="btnExploreCelebso"
+        href="home.html" 
+        onclick="enterWebsite(event, 'home.html')"
+        class="btn-explore inline-flex items-center justify-center gap-2 px-8 sm:px-11 py-3.5 md:py-4 rounded-lg font-sans text-[12.5px] sm:text-[13px] font-semibold tracking-[0.08em] uppercase shadow-md cursor-pointer group"
+      >
+        <span>EXPLORE CELEBSO</span>
+        <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- BOTTOM FOOTER BAR                                            -->
+  <!-- ============================================================ -->
+  <footer class="w-full bg-[#101114] py-3.5 md:py-4 px-6 md:px-14 grid grid-cols-1 md:grid-cols-3 items-center gap-3 md:gap-4 z-30 border-t border-[#1C1D22] flex-shrink-0 text-center md:text-left">
+    
+    <!-- Left / Starting: ANTELLAY Labs & Celebso Group Copyright -->
+    <div class="flex items-center justify-center md:justify-start order-2 md:order-1 text-[11px] sm:text-[12px] text-neutral-400 font-sans tracking-wide">
+      <span>© 2026 <a href="https://www.bing.com/search?q=antellay.in&form=ANNTH1&refig=6ab69de6373f4b9487014cf3594cdbaa&pc=EDBBAN" target="_blank" rel="noopener noreferrer" class="text-neutral-200 hover:text-brand-gold transition-colors font-medium underline-offset-2 hover:underline">ANTELLAY Labs</a>. All Rights Reserved. A <a href="https://celebso.com/" target="_blank" rel="noopener noreferrer" class="text-neutral-200 hover:text-brand-gold transition-colors font-medium underline-offset-2 hover:underline">Celebso Group</a> Company.</span>
+    </div>
+
+    <!-- Center: Brand Logo in Footer -->
+    <div class="flex items-center justify-center order-1 md:order-2">
+      <a href="landing.html" class="flex items-center group transition-transform duration-200 hover:scale-[1.03]">
+        <span class="font-bold text-[20px] md:text-[22px] tracking-tight text-white group-hover:text-neutral-200 transition-colors">
+          Celebso<span class="text-brand-gold">X</span>
+        </span>
+      </a>
+    </div>
+
+    <!-- Right: Social Media Icons (Instagram, YouTube, X) -->
+    <div class="flex items-center justify-center md:justify-end gap-5 md:gap-6 order-3">
+      
+      <!-- Instagram -->
+      <a 
+        href="https://www.instagram.com/celebsox?stkn=MXZkcjhxM3huYjRlcw==" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="text-neutral-400 hover:text-white transition-colors duration-200 p-1 group" 
+        title="Follow CelebsoX on Instagram"
+        aria-label="Instagram"
+      >
+        <svg class="w-[18px] h-[18px] md:w-5 md:h-5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+
+      <!-- YouTube -->
+      <a 
+        href="https://youtube.com/@celebsox" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="text-neutral-400 hover:text-white transition-colors duration-200 p-1 group" 
+        title="CelebsoX YouTube Channel"
+        aria-label="YouTube"
+      >
+        <svg class="w-[19px] h-[19px] md:w-[21px] md:h-[21px] transition-transform duration-200 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+          <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"></polygon>
+        </svg>
+      </a>
+
+      <!-- X / Twitter -->
+      <a 
+        href="https://x.com/Celebso_" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="text-neutral-400 hover:text-white transition-colors duration-200 p-1 group" 
+        title="Follow CelebsoX on X"
+        aria-label="X (Twitter)"
+      >
+        <svg class="w-[16px] h-[16px] md:w-[18px] md:h-[18px] transition-transform duration-200 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+        </svg>
+      </a>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- INTERACTIVE MODAL: INSTALL CELEBSO APP                       -->
+  <!-- ============================================================ -->
+  <div id="installModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-[#FAF8F5] text-[#141518] border border-[#DDD5C7] rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative transform scale-95 transition-transform duration-300">
+      
+      <!-- Close Button -->
+      <button onclick="closeInstallModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-neutral-200/80 hover:bg-neutral-300 flex items-center justify-center text-neutral-700 transition cursor-pointer" aria-label="Close Modal">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#111215] text-[#ECE7DF] mb-3 shadow-md">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+          </svg>
+        </div>
+        <h3 class="font-serif text-2xl font-bold text-[#141518]">Get CelebsoX App</h3>
+        <p class="font-sans text-xs text-[#6F6B63] mt-1">Official Mobile Application • Android v1.0.4 (51.5 MB)</p>
+      </div>
+
+      <!-- Action Options -->
+      <div class="space-y-3">
+        <!-- Direct APK Download -->
+        <a 
+          href="assets/celebsox.apk" 
+          download="CelebsoX.apk"
+          onclick="triggerDownloadToast()"
+          class="w-full flex items-center justify-between p-4 bg-[#111215] text-white hover:bg-black rounded-xl transition duration-200 shadow-md group cursor-pointer"
+        >
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-neutral-800 flex items-center justify-center text-brand-gold">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </div>
+            <div class="text-left">
+              <div class="font-semibold text-sm">Download Android APK</div>
+              <div class="text-[11px] text-neutral-400">Direct instant download (51.5 MB)</div>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-400 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+
+        <!-- Web Experience Option -->
+        <a 
+          href="home.html" 
+          onclick="enterWebsite(event, 'home.html')"
+          class="w-full flex items-center justify-between p-4 bg-white hover:bg-neutral-50 text-[#141518] border border-[#DDD5C7] rounded-xl transition duration-200 shadow-xs group cursor-pointer"
+        >
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-[#EFE8DC] flex items-center justify-center text-neutral-800">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <div class="text-left">
+              <div class="font-semibold text-sm">Launch Web Platform</div>
+              <div class="text-[11px] text-neutral-500">Continue directly in browser</div>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-400 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </div>
+
+      <div class="mt-5 pt-4 border-t border-[#E5DDCF] flex items-center justify-between text-[11px] text-[#78746B]">
+        <span>Verified Package • SHA-256 Validated</span>
+        <span class="text-emerald-700 font-medium flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Live Release
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- INTERACTIVE MODAL: PROFILE & QUICK GATEWAY ACCESS            -->
+  <!-- ============================================================ -->
+  <div id="profileModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-[#FAF8F5] text-[#141518] border border-[#DDD5C7] rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative transform scale-95 transition-transform duration-300">
+      
+      <!-- Close Button -->
+      <button onclick="closeProfileModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-neutral-200/80 hover:bg-neutral-300 flex items-center justify-center text-neutral-700 transition cursor-pointer" aria-label="Close Modal">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-13 h-13 rounded-full bg-[#141518] text-[#EDE5DA] flex items-center justify-center text-xl font-bold font-serif shadow-sm p-3">
+          CX
+        </div>
+        <div>
+          <h3 class="font-serif text-xl font-bold text-[#141518]">CelebsoX Gateway</h3>
+          <p class="font-sans text-xs text-[#6F6B63]">Digital Identity & Architectural Network</p>
+        </div>
+      </div>
+
+      <!-- Quick Platform Destination Links -->
+      <div class="space-y-2 mb-6">
+        <p class="font-mono text-[10px] tracking-widest uppercase text-neutral-500 font-semibold mb-2">QUICK PLATFORM DESTINATIONS</p>
+        
+        <a href="home.html" onclick="enterWebsite(event, 'home.html')" class="flex items-center justify-between p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
+          <span class="font-medium text-sm text-neutral-800 group-hover:text-black">01 / Foundation Platform (Home)</span>
+          <span class="text-xs text-brand-gold font-mono font-bold">ENTER →</span>
+        </a>
+
+        <a href="portfolio.html" onclick="enterWebsite(event, 'portfolio.html')" class="flex items-center justify-between p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
+          <span class="font-medium text-sm text-neutral-800 group-hover:text-black">02 / Creator Portfolios & Discovery</span>
+          <span class="text-xs text-brand-gold font-mono font-bold">ENTER →</span>
+        </a>
+
+        <a href="founding-members.html" onclick="enterWebsite(event, 'founding-members.html')" class="flex items-center justify-between p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
+          <span class="font-medium text-sm text-neutral-800 group-hover:text-black">03 / Founding Members Registry</span>
+          <span class="text-xs text-brand-gold font-mono font-bold">ENTER →</span>
+        </a>
+
+        <a href="about.html" onclick="enterWebsite(event, 'about.html')" class="flex items-center justify-between p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
+          <span class="font-medium text-sm text-neutral-800 group-hover:text-black">04 / Manifesto & Four Pillars</span>
+          <span class="text-xs text-brand-gold font-mono font-bold">ENTER →</span>
+        </a>
+      </div>
+
+      <!-- Launch Platform Button -->
+      <button onclick="enterWebsite(null, 'home.html')" class="w-full py-3.5 bg-[#141517] hover:bg-black text-white text-xs font-mono uppercase tracking-widest rounded-lg shadow-sm transition cursor-pointer">
+        [ LAUNCH CELEBSO X WEBSITE ]
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification element -->
+  <div id="toast" class="fixed bottom-16 left-1/2 transform -translate-x-1/2 z-50 bg-[#141517] text-white px-5 py-3 rounded-full shadow-2xl flex items-center gap-3 text-xs font-mono tracking-wider opacity-0 pointer-events-none transition-all duration-300">
+    <span class="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
+    <span id="toastText">Processing request...</span>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- JAVASCRIPT LOGIC & INTERACTIONS                              -->
+  <!-- ============================================================ -->
+  <script>
+    // Toast Notification helper
+    function showToast(message, duration = 3000) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toastText');
+      if (!toast || !toastText) return;
+      
+      toastText.innerText = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-[-6px]');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-[-6px]');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, duration);
+    }
+
+    // Entering the User's Website: Smooth transition
+    function enterWebsite(event, destinationUrl = 'home.html') {
+      if (event) {
+        event.preventDefault();
+      }
+      showToast('Launching CelebsoX Platform...');
+      
+      // Visual feedback transition
+      document.body.classList.add('launch-transition');
+      
+      setTimeout(() => {
+        window.location.href = destinationUrl;
+      }, 300);
+    }
+
+    // Direct APK Download trigger
+    function downloadApkAndNotify() {
+      showToast('Starting CelebsoX APK download (51.5 MB)...');
+      
+      const link = document.createElement('a');
+      link.href = 'assets/celebsox.apk';
+      link.download = 'CelebsoX.apk';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    function triggerDownloadToast() {
+      showToast('Download initiated: CelebsoX.apk');
+      setTimeout(closeInstallModal, 1200);
+    }
+
+    // Install Modal Controls
+    function openInstallModal() {
+      const modal = document.getElementById('installModal');
+      if (!modal) return;
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      const inner = modal.querySelector('div');
+      inner.classList.remove('scale-95');
+      inner.classList.add('scale-100');
+    }
+
+    function closeInstallModal() {
+      const modal = document.getElementById('installModal');
+      if (!modal) return;
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      const inner = modal.querySelector('div');
+      inner.classList.remove('scale-100');
+      inner.classList.add('scale-95');
+    }
+
+    // Profile Modal Controls
+    function openProfileModal() {
+      const modal = document.getElementById('profileModal');
+      if (!modal) return;
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      const inner = modal.querySelector('div');
+      inner.classList.remove('scale-95');
+      inner.classList.add('scale-100');
+    }
+
+    function closeProfileModal() {
+      const modal = document.getElementById('profileModal');
+      if (!modal) return;
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      const inner = modal.querySelector('div');
+      inner.classList.remove('scale-100');
+      inner.classList.add('scale-95');
+    }
+
+    // Close modals when clicking backdrop
+    window.addEventListener('click', (e) => {
+      const installModal = document.getElementById('installModal');
+      const profileModal = document.getElementById('profileModal');
+      if (e.target === installModal) closeInstallModal();
+      if (e.target === profileModal) closeProfileModal();
+    });
+
+    // Close modals with Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeInstallModal();
+        closeProfileModal();
+      }
+    });
+
+    // Gentle chair 3D tilt on mousemove
+    const chair = document.getElementById('chairImage');
+    if (chair) {
+      window.addEventListener('mousemove', (e) => {
+        const { clientX, clientY } = e;
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        const deltaX = (clientX - centerX) / centerX;
+        const deltaY = (clientY - centerY) / centerY;
+        
+        chair.style.transform = `rotateY(${deltaX * 4}deg) rotateX(${-deltaY * 2.5}deg)`;
+      });
+
+      window.addEventListener('mouseleave', () => {
+        chair.style.transform = 'rotateY(0deg) rotateX(0deg)';
+      });
+    }
+
+    function pulseChair() {
+      if (!chair) return;
+      chair.style.transition = 'transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+      chair.style.transform = 'scale(1.04)';
+      setTimeout(() => {
+        chair.style.transform = 'scale(1)';
+      }, 250);
+    }
+  </script>
+
+</body>
+</html>

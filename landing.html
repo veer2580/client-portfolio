@@ -204,8 +204,8 @@
       <!-- Primary Button: EXPLORE CELEBSO -> (Tapping opens the user's website!) -->
       <a 
         id="btnExploreCelebso"
-        href="index.html" 
-        onclick="enterWebsite(event, 'index.html')"
+        href="home.html" 
+        onclick="enterWebsite(event, 'home.html')"
         class="btn-explore inline-flex items-center justify-center gap-2 px-8 sm:px-11 py-3.5 md:py-4 rounded-lg font-sans text-[12.5px] sm:text-[13px] font-semibold tracking-[0.08em] uppercase shadow-md cursor-pointer group"
       >
         <span>EXPLORE CELEBSO</span>
@@ -334,8 +334,8 @@
 
         <!-- Web Experience Option -->
         <a 
-          href="index.html" 
-          onclick="enterWebsite(event, 'index.html')"
+          href="home.html" 
+          onclick="enterWebsite(event, 'home.html')"
           class="w-full flex items-center justify-between p-4 bg-white hover:bg-neutral-50 text-[#141518] border border-[#DDD5C7] rounded-xl transition duration-200 shadow-xs group cursor-pointer"
         >
           <div class="flex items-center gap-3">
@@ -386,7 +386,7 @@
       <div class="space-y-2 mb-6">
         <p class="font-mono text-[10px] tracking-widest uppercase text-neutral-500 font-semibold mb-2">QUICK PLATFORM DESTINATIONS</p>
         
-        <a href="index.html" onclick="enterWebsite(event, 'index.html')" class="flex items-center justify-between p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
+        <a href="home.html" onclick="enterWebsite(event, 'home.html')" class="flex items-center justify-between p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
           <span class="font-medium text-sm text-neutral-800 group-hover:text-black">01 / Foundation Platform (Home)</span>
           <span class="text-xs text-brand-gold font-mono font-bold">ENTER →</span>
         </a>
@@ -408,7 +408,7 @@
       </div>
 
       <!-- Launch Platform Button -->
-      <button onclick="enterWebsite(null, 'index.html')" class="w-full py-3.5 bg-[#141517] hover:bg-black text-white text-xs font-mono uppercase tracking-widest rounded-lg shadow-sm transition cursor-pointer">
+      <button onclick="enterWebsite(null, 'home.html')" class="w-full py-3.5 bg-[#141517] hover:bg-black text-white text-xs font-mono uppercase tracking-widest rounded-lg shadow-sm transition cursor-pointer">
         [ LAUNCH CELEBSO X WEBSITE ]
       </button>
 
@@ -442,7 +442,7 @@
     }
 
     // Entering the User's Website: Smooth transition
-    function enterWebsite(event, destinationUrl = 'index.html') {
+    function enterWebsite(event, destinationUrl = 'home.html') {
       if (event) {
         event.preventDefault();
       }
