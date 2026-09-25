@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CelebsoX — Build Your Identity. Create Your Legacy.</title>
+  <meta name="description" content="An India-first professional social platform and architectural portfolio network. Showcase your talent, share your story, and be discovered on CelebsoX." />
+
+  <!-- Google Fonts: Editorial luxury serif + sleek sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400&family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#D89016',
+              goldLight: '#E8A32A',
+              goldDark: '#B87508',
+              bgLight: '#E8E1D5',
+              bgMid: '#E4DC CF',
+              bgDark: '#DDD4C5',
+              dark: '#101114',
+              darkSurface: '#16171B',
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Bodoni Moda', 'serif'],
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Exact warm studio lighting backdrop */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #E4DCCF;
+      background: radial-gradient(circle at 50% 36%, #EAE3D8 0%, #E4DCCF 42%, #DFD5C6 75%, #D9CDC0 100%);
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      color: #1A1A18;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* Chair smooth interaction */
+    .chair-container {
+      transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease;
+      will-change: transform;
+    }
+    .chair-container:hover {
+      transform: translateY(-4px) scale(1.012);
+      filter: drop-shadow(0 15px 25px rgba(80, 55, 20, 0.1));
+    }
+
+    /* Navbar Bracket button */
+    .btn-bracket {
+      transition: all 0.2s ease;
+    }
+    .btn-bracket:hover {
+      background-color: #242529;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Primary Explore Button */
+    .btn-explore {
+      background-color: #141517;
+      color: #FFFFFF;
+      transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .btn-explore:hover {
+      background-color: #000000;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.35);
+    }
+    .btn-explore:active {
+      transform: translateY(0);
+    }
+
+    /* Secondary Install Button */
+    .btn-install {
+      background-color: #ECE4D6;
+      border: 1px solid rgba(195, 185, 170, 0.85);
+      color: #161719;
+      transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .btn-install:hover {
+      background-color: #F7F3EC;
+      border-color: rgba(150, 140, 125, 0.95);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px -2px rgba(90, 70, 40, 0.14);
+    }
+
+    /* Cinematic Transition When Entering Website */
+    .launch-transition {
+      opacity: 0;
+      transform: scale(0.985);
+      transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+    }
+
+    /* Custom subtle scrollbar if mobile needs it */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #E4DCCF;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C7BCAE;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between select-none relative">
+
+  <!-- ============================================================ -->
+  <!-- TOP NAVIGATION BAR                                           -->
+  <!-- ============================================================ -->
+  <header class="w-full pt-7 md:pt-9 pb-4 px-6 md:px-14 flex items-center justify-between z-30 flex-shrink-0">
+    <!-- Brand Logo -->
+    <a href="landing.html" class="flex items-center group transition-transform duration-200 hover:scale-[1.02]">
+      <span class="font-bold text-[24px] md:text-[27px] tracking-tight text-[#111215]">
+        Celebso<span class="text-brand-gold">X</span>
+      </span>
+    </a>
+
+    <!-- Top Right Actions -->
+    <div class="flex items-center gap-3 md:gap-3.5">
+      <!-- [ INSTALL CELEBSO ] Button -->
+      <button 
+        id="btnTopInstall"
+        onclick="openInstallModal()"
+        class="btn-bracket inline-flex items-center justify-center bg-[#111215] text-[#ECE7DF] px-4 md:px-5 py-2 md:py-2.5 rounded-full font-mono text-[11px] md:text-[12px] font-medium tracking-[0.14em] uppercase shadow-sm cursor-pointer"
+        title="Download CelebsoX App"
+      >
+        <span>[ INSTALL CELEBSO ]</span>
+      </button>
+
+      <!-- User Profile Circle Icon -->
+      <button 
+        id="btnUserProfile"
+        onclick="openProfileModal()"
+        class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-[#18191C]/80 flex items-center justify-center text-[#18191C] hover:bg-[#18191C] hover:text-[#ECE7DF] transition-all duration-200 cursor-pointer shadow-xs group"
+        title="Account & Gateway Navigation"
+        aria-label="User Profile"
+      >
+        <svg class="w-4 h-4 md:w-[18px] md:h-[18px] transition-transform duration-200 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- MAIN HERO SECTION (Spacious luxury layout with increased length) -->
+  <!-- ============================================================ -->
+  <main class="flex-1 flex flex-col items-center justify-center px-4 pt-4 sm:pt-6 md:pt-10 pb-16 sm:pb-20 md:pb-28 z-20 max-w-4xl mx-auto w-full text-center">
+    
+    <!-- Hero Visual: Exact Original Wooden Director's Chair with Proper Photo Height -->
+    <div class="chair-container relative flex items-center justify-center cursor-pointer mb-8 sm:mb-10 md:mb-12 group" onclick="pulseChair()">
+      <img 
+        id="chairImage"
+        src="assets/celebsox_chair_original_hd.png" 
+        alt="CelebsoX Director's Chair" 
+        class="h-[460px] sm:h-[530px] md:h-[600px] lg:h-[640px] w-auto max-w-full object-contain transition-all duration-300 select-none pointer-events-auto"
+        draggable="false"
+      />
+    </div>
+
+    <!-- Subtitle: BUILD YOUR IDENTITY. -->
+    <p class="font-sans text-[11.5px] sm:text-[12.5px] md:text-[13.5px] tracking-[0.24em] font-semibold text-[#54504A] uppercase mb-2">
+      BUILD YOUR IDENTITY.
+    </p>
+
+    <!-- Main Headline: CREATE YOUR LEGACY. -->
+    <h1 class="font-serif text-[38px] sm:text-[48px] md:text-[58px] lg:text-[64px] font-normal leading-[1.08] tracking-[-0.015em] text-[#131416] mb-3 md:mb-3.5">
+      CREATE YOUR <span class="text-brand-gold font-medium">LEGACY.</span>
+    </h1>
+
+    <!-- Descriptive Tagline -->
+    <p class="font-sans text-[14px] sm:text-[15.5px] md:text-[16.5px] text-[#5F5B54] max-w-[480px] leading-[1.55] mb-7 md:mb-9 font-normal">
+      Showcase your talent, share your story,<br class="hidden sm:inline" />
+      and be discovered on CelebsoX.
+    </p>
+
+    <!-- Action Button (Centered) -->
+    <div class="flex items-center justify-center w-full">
+      
+      <!-- Primary Button: EXPLORE CELEBSO -> (Tapping opens the user's website!) -->
+      <a 
+        id="btnExploreCelebso"
+        href="index.html" 
+        onclick="enterWebsite(event, 'index.html')"
+        class="btn-explore inline-flex items-center justify-center gap-2 px-8 sm:px-11 py-3.5 md:py-4 rounded-lg font-sans text-[12.5px] sm:text-[13px] font-semibold tracking-[0.08em] uppercase shadow-md cursor-pointer group"
+      >
+        <span>EXPLORE CELEBSO</span>
+        <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- BOTTOM FOOTER BAR                                            -->
+  <!-- ============================================================ -->
+  <footer class="w-full bg-[#101114] py-3.5 md:py-4 px-6 md:px-14 grid grid-cols-1 md:grid-cols-3 items-center gap-3 md:gap-4 z-30 border-t border-[#1C1D22] flex-shrink-0 text-center md:text-left">
+    
+    <!-- Left / Starting: ANTELLAY Labs & Celebso Group Copyright -->
+    <div class="flex items-center justify-center md:justify-start order-2 md:order-1 text-[11px] sm:text-[12px] text-neutral-400 font-sans tracking-wide">
+      <span>© 2026 <a href="https://www.bing.com/search?q=antellay.in&form=ANNTH1&refig=6ab69de6373f4b9487014cf3594cdbaa&pc=EDBBAN" target="_blank" rel="noopener noreferrer" class="text-neutral-200 hover:text-brand-gold transition-colors font-medium underline-offset-2 hover:underline">ANTELLAY Labs</a>. All Rights Reserved. A <a href="https://celebso.com/" target="_blank" rel="noopener noreferrer" class="text-neutral-200 hover:text-brand-gold transition-colors font-medium underline-offset-2 hover:underline">Celebso Group</a> Company.</span>
+    </div>
+
+    <!-- Center: Brand Logo in Footer -->
+    <div class="flex items-center justify-center order-1 md:order-2">
+      <a href="landing.html" class="flex items-center group transition-transform duration-200 hover:scale-[1.03]">
+        <span class="font-bold text-[20px] md:text-[22px] tracking-tight text-white group-hover:text-neutral-200 transition-colors">
+          Celebso<span class="text-brand-gold">X</span>
+        </span>
+      </a>
+    </div>
+
+    <!-- Right: Social Media Icons (Instagram, YouTube, X) -->
+    <div class="flex items-center justify-center md:justify-end gap-5 md:gap-6 order-3">
+      
+      <!-- Instagram -->
+      <a 
+        href="https://www.instagram.com/celebsox?stkn=MXZkcjhxM3huYjRlcw==" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="text-neutral-400 hover:text-white transition-colors duration-200 p-1 group" 
+        title="Follow CelebsoX on Instagram"
+        aria-label="Instagram"
+      >
+        <svg class="w-[18px] h-[18px] md:w-5 md:h-5 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+
+      <!-- YouTube -->
+      <a 
+        href="https://youtube.com/@celebsox" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="text-neutral-400 hover:text-white transition-colors duration-200 p-1 group" 
+        title="CelebsoX YouTube Channel"
+        aria-label="YouTube"
+      >
+        <svg class="w-[19px] h-[19px] md:w-[21px] md:h-[21px] transition-transform duration-200 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+          <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"></polygon>
+        </svg>
+      </a>
+
+      <!-- X / Twitter -->
+      <a 
+        href="https://x.com/Celebso_" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="text-neutral-400 hover:text-white transition-colors duration-200 p-1 group" 
+        title="Follow CelebsoX on X"
+        aria-label="X (Twitter)"
+      >
+        <svg class="w-[16px] h-[16px] md:w-[18px] md:h-[18px] transition-transform duration-200 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+        </svg>
+      </a>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- INTERACTIVE MODAL: INSTALL CELEBSO APP                       -->
+  <!-- ============================================================ -->
+  <div id="installModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-[#FAF8F5] text-[#141518] border border-[#DDD5C7] rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative transform scale-95 transition-transform duration-300">
+      
+      <!-- Close Button -->
+      <button onclick="closeInstallModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-neutral-200/80 hover:bg-neutral-300 flex items-center justify-center text-neutral-700 transition cursor-pointer" aria-label="Close Modal">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#111215] text-[#ECE7DF] mb-3 shadow-md">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+          </svg>
+        </div>
+        <h3 class="font-serif text-2xl font-bold text-[#141518]">Get CelebsoX App</h3>
+        <p class="font-sans text-xs text-[#6F6B63] mt-1">Official Mobile Application • Android v1.0.4 (51.5 MB)</p>
+      </div>
+
+      <!-- Action Options -->
+      <div class="space-y-3">
+        <!-- Direct APK Download -->
+        <a 
+          href="assets/celebsox.apk" 
+          download="CelebsoX.apk"
+          onclick="triggerDownloadToast()"
+          class="w-full flex items-center justify-between p-4 bg-[#111215] text-white hover:bg-black rounded-xl transition duration-200 shadow-md group cursor-pointer"
+        >
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-neutral-800 flex items-center justify-center text-brand-gold">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </div>
+            <div class="text-left">
+              <div class="font-semibold text-sm">Download Android APK</div>
+              <div class="text-[11px] text-neutral-400">Direct instant download (51.5 MB)</div>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-400 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+
+        <!-- Web Experience Option -->
+        <a 
+          href="index.html" 
+          onclick="enterWebsite(event, 'index.html')"
+          class="w-full flex items-center justify-between p-4 bg-white hover:bg-neutral-50 text-[#141518] border border-[#DDD5C7] rounded-xl transition duration-200 shadow-xs group cursor-pointer"
+        >
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-[#EFE8DC] flex items-center justify-center text-neutral-800">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <div class="text-left">
+              <div class="font-semibold text-sm">Launch Web Platform</div>
+              <div class="text-[11px] text-neutral-500">Continue directly in browser</div>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-neutral-400 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </div>
+
+      <div class="mt-5 pt-4 border-t border-[#E5DDCF] flex items-center justify-between text-[11px] text-[#78746B]">
+        <span>Verified Package • SHA-256 Validated</span>
+        <span class="text-emerald-700 font-medium flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Live Release
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- INTERACTIVE MODAL: PROFILE & QUICK GATEWAY ACCESS            -->
+  <!-- ============================================================ -->
+  <div id="profileModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-[#FAF8F5] text-[#141518] border border-[#DDD5C7] rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative transform scale-95 transition-transform duration-300">
+      
+      <!-- Close Button -->
+      <button onclick="closeProfileModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-neutral-200/80 hover:bg-neutral-300 flex items-center justify-center text-neutral-700 transition cursor-pointer" aria-label="Close Modal">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-13 h-13 rounded-full bg-[#141518] text-[#EDE5DA] flex items-center justify-center text-xl font-bold font-serif shadow-sm p-3">
+          CX
+        </div>
+        <div>
+          <h3 class="font-serif text-xl font-bold text-[#141518]">CelebsoX Gateway</h3>
+          <p class="font-sans text-xs text-[#6F6B63]">Digital Identity & Architectural Network</p>
+        </div>
+      </div>
+
+      <!-- Quick Platform Destination Links -->
+      <div class="space-y-2 mb-6">
+        <p class="font-mono text-[10px] tracking-widest uppercase text-neutral-500 font-semibold mb-2">QUICK PLATFORM DESTINATIONS</p>
+        
+        <a href="index.html" onclick="enterWebsite(event, 'index.html')" class="flex items-center justify-between p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
+          <span class="font-medium text-sm text-neutral-800 group-hover:text-black">01 / Foundation Platform (Home)</span>
+          <span class="text-xs text-brand-gold font-mono font-bold">ENTER →</span>
+        </a>
+
+        <a href="portfolio.html" onclick="enterWebsite(event, 'portfolio.html')" class="flex items-center justify-between p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
+          <span class="font-medium text-sm text-neutral-800 group-hover:text-black">02 / Creator Portfolios & Discovery</span>
+          <span class="text-xs text-brand-gold font-mono font-bold">ENTER →</span>
+        </a>
+
+        <a href="founding-members.html" onclick="enterWebsite(event, 'founding-members.html')" class="flex items-center justify-between p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
+          <span class="font-medium text-sm text-neutral-800 group-hover:text-black">03 / Founding Members Registry</span>
+          <span class="text-xs text-brand-gold font-mono font-bold">ENTER →</span>
+        </a>
+
+        <a href="about.html" onclick="enterWebsite(event, 'about.html')" class="flex items-center justify-between p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
+          <span class="font-medium text-sm text-neutral-800 group-hover:text-black">04 / Manifesto & Four Pillars</span>
+          <span class="text-xs text-brand-gold font-mono font-bold">ENTER →</span>
+        </a>
+      </div>
+
+      <!-- Launch Platform Button -->
+      <button onclick="enterWebsite(null, 'index.html')" class="w-full py-3.5 bg-[#141517] hover:bg-black text-white text-xs font-mono uppercase tracking-widest rounded-lg shadow-sm transition cursor-pointer">
+        [ LAUNCH CELEBSO X WEBSITE ]
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification element -->
+  <div id="toast" class="fixed bottom-16 left-1/2 transform -translate-x-1/2 z-50 bg-[#141517] text-white px-5 py-3 rounded-full shadow-2xl flex items-center gap-3 text-xs font-mono tracking-wider opacity-0 pointer-events-none transition-all duration-300">
+    <span class="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
+    <span id="toastText">Processing request...</span>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- JAVASCRIPT LOGIC & INTERACTIONS                              -->
+  <!-- ============================================================ -->
+  <script>
+    // Toast Notification helper
+    function showToast(message, duration = 3000) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toastText');
+      if (!toast || !toastText) return;
+      
+      toastText.innerText = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-[-6px]');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-[-6px]');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, duration);
+    }
+
+    // Entering the User's Website: Smooth transition
+    function enterWebsite(event, destinationUrl = 'index.html') {
+      if (event) {
+        event.preventDefault();
+      }
+      showToast('Launching CelebsoX Platform...');
+      
+      // Visual feedback transition
+      document.body.classList.add('launch-transition');
+      
+      setTimeout(() => {
+        window.location.href = destinationUrl;
+      }, 300);
+    }
+
+    // Direct APK Download trigger
+    function downloadApkAndNotify() {
+      showToast('Starting CelebsoX APK download (51.5 MB)...');
+      
+      const link = document.createElement('a');
+      link.href = 'assets/celebsox.apk';
+      link.download = 'CelebsoX.apk';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    function triggerDownloadToast() {
+      showToast('Download initiated: CelebsoX.apk');
+      setTimeout(closeInstallModal, 1200);
+    }
+
+    // Install Modal Controls
+    function openInstallModal() {
+      const modal = document.getElementById('installModal');
+      if (!modal) return;
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      const inner = modal.querySelector('div');
+      inner.classList.remove('scale-95');
+      inner.classList.add('scale-100');
+    }
+
+    function closeInstallModal() {
+      const modal = document.getElementById('installModal');
+      if (!modal) return;
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      const inner = modal.querySelector('div');
+      inner.classList.remove('scale-100');
+      inner.classList.add('scale-95');
+    }
+
+    // Profile Modal Controls
+    function openProfileModal() {
+      const modal = document.getElementById('profileModal');
+      if (!modal) return;
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      const inner = modal.querySelector('div');
+      inner.classList.remove('scale-95');
+      inner.classList.add('scale-100');
+    }
+
+    function closeProfileModal() {
+      const modal = document.getElementById('profileModal');
+      if (!modal) return;
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      const inner = modal.querySelector('div');
+      inner.classList.remove('scale-100');
+      inner.classList.add('scale-95');
+    }
+
+    // Close modals when clicking backdrop
+    window.addEventListener('click', (e) => {
+      const installModal = document.getElementById('installModal');
+      const profileModal = document.getElementById('profileModal');
+      if (e.target === installModal) closeInstallModal();
+      if (e.target === profileModal) closeProfileModal();
+    });
+
+    // Close modals with Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeInstallModal();
+        closeProfileModal();
+      }
+    });
+
+    // Gentle chair 3D tilt on mousemove
+    const chair = document.getElementById('chairImage');
+    if (chair) {
+      window.addEventListener('mousemove', (e) => {
+        const { clientX, clientY } = e;
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        const deltaX = (clientX - centerX) / centerX;
+        const deltaY = (clientY - centerY) / centerY;
+        
+        chair.style.transform = `rotateY(${deltaX * 4}deg) rotateX(${-deltaY * 2.5}deg)`;
+      });
+
+      window.addEventListener('mouseleave', () => {
+        chair.style.transform = 'rotateY(0deg) rotateX(0deg)';
+      });
+    }
+
+    function pulseChair() {
+      if (!chair) return;
+      chair.style.transition = 'transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+      chair.style.transform = 'scale(1.04)';
+      setTimeout(() => {
+        chair.style.transform = 'scale(1)';
+      }, 250);
+    }
+  </script>
+
+</body>
+</html>
