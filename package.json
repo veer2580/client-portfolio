@@ -1,13 +1,14 @@
 {
   "name": "client-portfolio",
   "version": "1.0.0",
-  "private": true,
-  "description": "CELEBSO X — Architectural Portfolio Platform",
+  "description": "CelebsoX Client Portfolio",
   "scripts": {
     "dev": "python -m http.server 3000",
     "start": "python -m http.server 3000",
     "build": "echo 'Ready for deployment'",
-    "deploy:cloudflare": "wrangler pages deploy .",
+    "deploy": "npx wrangler deploy",
+    "deploy:worker": "npx wrangler deploy",
+    "deploy:pages": "npx wrangler pages deploy .",
     "deploy:vercel": "vercel --prod"
   }
 }
