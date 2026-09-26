@@ -83,12 +83,34 @@
         <a class="font-mono text-xs uppercase text-sh-muted hover:text-sh-navy transition-colors py-1 tracking-widest" href="portfolio.html">PORTFOLIO</a>
         <a class="font-mono text-xs uppercase text-sh-muted hover:text-sh-navy transition-colors py-1 tracking-widest" href="founding-members.html">FOUNDING MEMBERS</a>
       </nav>
-      <div class="flex items-center gap-4">
-        <a class="inline-flex items-center font-mono text-xs uppercase text-sh-blue font-semibold tracking-widest" href="showcase.html">[ EXPLORE TALENT ]</a>
-        <a href="portfolio.html#discovery-section" class="inline-flex items-center justify-center bg-black text-white font-mono text-xs uppercase px-4 py-2 hover:bg-sh-blue transition-all duration-150 tracking-wider shadow-sm">[ JOIN CELEBSO ]</a>
-        <a href="portfolio.html" class="w-8 h-8 rounded-full bg-black flex items-center justify-center cursor-pointer border border-sh-border text-white">
+      <div class="flex items-center gap-2 sm:gap-4">
+        <a class="hidden sm:inline-flex items-center font-mono text-xs uppercase text-sh-blue font-semibold tracking-widest" href="showcase.html">[ EXPLORE TALENT ]</a>
+        <a href="portfolio.html#discovery-section" class="hidden sm:inline-flex items-center justify-center bg-black text-white font-mono text-xs uppercase px-4 py-2 hover:bg-sh-blue transition-all duration-150 tracking-wider shadow-sm">[ JOIN CELEBSO ]</a>
+        <a href="portfolio.html" class="w-8 h-8 rounded-full bg-black flex items-center justify-center cursor-pointer border border-sh-border text-white" title="Profile">
           <span class="material-symbols-outlined text-[18px]">person</span>
         </a>
+        <button aria-label="Toggle Navigation Menu" id="mobileMenuBtn" class="md:hidden flex items-center justify-center p-2 text-sh-navy hover:bg-[#ebe8e1] rounded-md transition-colors cursor-pointer" type="button">
+          <span class="material-symbols-outlined text-[24px]">menu</span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileDrawer" class="fixed inset-x-0 top-20 bg-[#fcf9f2]/98 backdrop-blur-lg border-b border-sh-border p-5 sm:p-6 hidden flex-col gap-4 shadow-2xl z-50 md:hidden max-h-[calc(100vh-80px)] overflow-y-auto">
+      <nav class="flex flex-col gap-1">
+        <a href="home.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-sh-muted hover:text-sh-navy hover:bg-[#f1eee7] transition-colors">01 / HOME</a>
+        <a href="about.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-sh-muted hover:text-sh-navy hover:bg-[#f1eee7] transition-colors">02 / ABOUT</a>
+        <a href="portfolio.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-sh-muted hover:text-sh-navy hover:bg-[#f1eee7] transition-colors">03 / PORTFOLIO</a>
+        <a href="founding-members.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-sh-muted hover:text-sh-navy hover:bg-[#f1eee7] transition-colors">04 / FOUNDING MEMBERS</a>
+        <a href="showcase.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-sh-navy font-bold bg-[#f1eee7]">05 / SHOWCASE (TALENT)</a>
+        <a href="blog.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-sh-muted hover:text-sh-navy hover:bg-[#f1eee7] transition-colors">06 / BLOG</a>
+        <a href="contact.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-sh-muted hover:text-sh-navy hover:bg-[#f1eee7] transition-colors">07 / CONTACT</a>
+        <a href="help-center.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-sh-muted hover:text-sh-navy hover:bg-[#f1eee7] transition-colors">08 / HELP CENTER</a>
+      </nav>
+      <div class="pt-2 flex flex-col gap-3 border-t border-sh-border">
+        <a href="portfolio.html#discovery-section" class="inline-flex items-center justify-center bg-black text-white font-mono text-xs uppercase tracking-widest px-5 py-3 hover:bg-sh-blue transition-colors text-center">[ JOIN CELEBSO ]</a>
+        <div class="flex items-center justify-between text-sh-muted font-mono text-xs pt-1">
+          <span>COORD: 19.0760° N, 72.8777° E</span>
+          <span class="text-sh-blue font-medium">SYS: STABLE</span>
+        </div>
       </div>
     </div>
   </header>
@@ -1231,6 +1253,43 @@
         if (e.key === ' ') { e.preventDefault(); togglePlayPause(); }
       }
     });
+
+    // Mobile Navigation Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    if (mobileMenuBtn && mobileDrawer) {
+      mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isHidden = mobileDrawer.classList.contains('hidden');
+        if (isHidden) {
+          mobileDrawer.classList.remove('hidden');
+          mobileDrawer.classList.add('flex');
+          mobileMenuBtn.querySelector('.material-symbols-outlined').textContent = 'close';
+        } else {
+          mobileDrawer.classList.add('hidden');
+          mobileDrawer.classList.remove('flex');
+          mobileMenuBtn.querySelector('.material-symbols-outlined').textContent = 'menu';
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!mobileDrawer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+          mobileDrawer.classList.add('hidden');
+          mobileDrawer.classList.remove('flex');
+          const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+          if (icon) icon.textContent = 'menu';
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileDrawer.classList.contains('hidden')) {
+          mobileDrawer.classList.add('hidden');
+          mobileDrawer.classList.remove('flex');
+          const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+          if (icon) icon.textContent = 'menu';
+        }
+      });
+    }
   </script>
 </body>
 </html>

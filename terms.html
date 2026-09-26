@@ -162,16 +162,21 @@
       </div>
     </div>
 
-    <!-- Mobile Drawer -->
-    <div id="mobileDrawer" class="fixed inset-x-0 top-[72px] bg-surface-container-low/95 backdrop-blur-md border-b border-surface-container-highest p-6 hidden flex-col gap-4 shadow-xl z-50 md:hidden">
-      <nav class="flex flex-col gap-3">
-        <a href="about.html" class="font-label-md text-label-md tracking-widest uppercase py-2 border-b border-surface-container-highest text-on-surface-variant hover:text-primary">01 / ABOUT</a>
-        <a href="portfolio.html" class="font-label-md text-label-md tracking-widest uppercase py-2 border-b border-surface-container-highest text-on-surface-variant hover:text-primary">02 / PORTFOLIO</a>
-        <a href="founding-members.html" class="font-label-md text-label-md tracking-widest uppercase py-2 border-b border-surface-container-highest text-on-surface-variant hover:text-primary">03 / FOUNDING MEMBERS</a>
+        <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="fixed inset-x-0 top-[72px] bg-surface-container-low/98 backdrop-blur-lg border-b border-surface-container-highest p-5 sm:p-6 hidden flex-col gap-4 shadow-2xl z-50 md:hidden max-h-[calc(100vh-72px)] overflow-y-auto">
+      <nav class="flex flex-col gap-1">
+      <a href="home.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">01 / HOME</a>
+      <a href="about.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">02 / ABOUT</a>
+      <a href="portfolio.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">03 / PORTFOLIO</a>
+      <a href="founding-members.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">04 / FOUNDING MEMBERS</a>
+      <a href="showcase.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">05 / SHOWCASE (TALENT)</a>
+      <a href="blog.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">06 / BLOG</a>
+      <a href="contact.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">07 / CONTACT</a>
+      <a href="help-center.html" class="font-mono text-xs tracking-widest uppercase py-2.5 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">08 / HELP CENTER</a>
       </nav>
-      <div class="pt-2 flex flex-col gap-3">
-        <a href="https://github.com/veer2580/client-portfolio/raw/main/assets/celebsox.apk" download="CelebsoX.apk" class="inline-flex items-center justify-center bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest px-5 py-3 hover:bg-secondary transition-colors">[ INSTALL CELEBSO ]</a>
-        <div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-2">
+      <div class="pt-2 flex flex-col gap-3 border-t border-surface-container-highest">
+        <a href="https://github.com/veer2580/client-portfolio/raw/main/assets/celebsox.apk" download="CelebsoX.apk" class="inline-flex items-center justify-center bg-primary text-on-primary font-mono text-xs uppercase tracking-widest px-5 py-3 hover:bg-secondary transition-colors text-center">[ INSTALL CELEBSO ]</a>
+        <div class="flex items-center justify-between text-on-surface-variant font-mono text-[10px] pt-1">
           <span>COORD: 19.0760° N, 72.8777° E</span>
           <span class="text-secondary font-medium">SYS: STABLE</span>
         </div>
@@ -597,43 +602,39 @@
     updateClock();
 
     // Mobile Drawer Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileDrawer = document.getElementById('mobileDrawer');
-    if (mobileMenuBtn && mobileDrawer) {
-      mobileMenuBtn.addEventListener('click', () => {
-        const isHidden = mobileDrawer.classList.contains('hidden');
-        if (isHidden) {
-          mobileDrawer.classList.remove('hidden');
-          mobileDrawer.classList.add('flex');
-          mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">close</span>';
-        } else {
-          mobileDrawer.classList.add('hidden');
-          mobileDrawer.classList.remove('flex');
-          mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">menu</span>';
-        }
-      });
-    }
-
-    // Active TOC link on scroll
-    const sections = document.querySelectorAll('article section[id]');
-    const navLinks = document.querySelectorAll('.toc-link');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        if (window.pageYOffset >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active', 'border-secondary', 'text-primary');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active', 'border-secondary', 'text-primary');
-        }
-      });
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  if (mobileMenuBtn && mobileDrawer) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isHidden = mobileDrawer.classList.contains('hidden');
+      if (isHidden) {
+        mobileDrawer.classList.remove('hidden');
+        mobileDrawer.classList.add('flex');
+        mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">close</span>';
+      } else {
+        mobileDrawer.classList.add('hidden');
+        mobileDrawer.classList.remove('flex');
+        mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">menu</span>';
+      }
     });
-  </script>
+
+    document.addEventListener('click', (e) => {
+      if (!mobileDrawer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileDrawer.classList.add('hidden');
+        mobileDrawer.classList.remove('flex');
+        mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">menu</span>';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileDrawer.classList.contains('hidden')) {
+        mobileDrawer.classList.add('hidden');
+        mobileDrawer.classList.remove('flex');
+        mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">menu</span>';
+      }
+    });
+  }
+</script>
 </body>
 </html>

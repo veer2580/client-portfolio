@@ -1,0 +1,13 @@
+# Ignore large APK binary exceeding Vercel limits
+assets/celebsox.apk
+*.apk
+assets/*.apk
+
+# Scratch and internal dirs
+scratch/
+.wrangler/
+.git/
+node_modules/
+dist/
+*.log
+_raw_input.txt

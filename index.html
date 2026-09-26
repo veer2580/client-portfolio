@@ -130,21 +130,21 @@
   <!-- ============================================================ -->
   <!-- TOP NAVIGATION BAR                                           -->
   <!-- ============================================================ -->
-  <header class="w-full pt-7 md:pt-9 pb-4 px-6 md:px-14 flex items-center justify-between z-30 flex-shrink-0">
+  <header class="w-full pt-4 sm:pt-7 md:pt-9 pb-3 sm:pb-4 px-4 sm:px-6 md:px-14 flex items-center justify-between z-30 flex-shrink-0">
     <!-- Brand Logo -->
     <a href="landing.html" class="flex items-center group transition-transform duration-200 hover:scale-[1.02]">
-      <span class="font-bold text-[24px] md:text-[27px] tracking-tight text-[#111215]">
+      <span class="font-bold text-[22px] sm:text-[25px] md:text-[27px] tracking-tight text-[#111215]">
         Celebso<span class="text-brand-gold">X</span>
       </span>
     </a>
 
     <!-- Top Right Actions -->
-    <div class="flex items-center gap-3 md:gap-3.5">
+    <div class="flex items-center gap-2 sm:gap-3 md:gap-3.5">
       <!-- [ INSTALL CELEBSO ] Button -->
       <button 
         id="btnTopInstall"
         onclick="openInstallModal()"
-        class="btn-bracket inline-flex items-center justify-center bg-[#111215] text-[#ECE7DF] px-4 md:px-5 py-2 md:py-2.5 rounded-full font-mono text-[11px] md:text-[12px] font-medium tracking-[0.14em] uppercase shadow-sm cursor-pointer"
+        class="btn-bracket inline-flex items-center justify-center bg-[#111215] text-[#ECE7DF] px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-full font-mono text-[10px] sm:text-[11px] md:text-[12px] font-medium tracking-wider sm:tracking-[0.14em] uppercase shadow-sm cursor-pointer whitespace-nowrap"
         title="Download CelebsoX App"
       >
         <span>[ INSTALL CELEBSO ]</span>
@@ -154,7 +154,7 @@
       <button 
         id="btnUserProfile"
         onclick="openProfileModal()"
-        class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-[#18191C]/80 flex items-center justify-center text-[#18191C] hover:bg-[#18191C] hover:text-[#ECE7DF] transition-all duration-200 cursor-pointer shadow-xs group"
+        class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full border border-[#18191C]/80 flex items-center justify-center text-[#18191C] hover:bg-[#18191C] hover:text-[#ECE7DF] transition-all duration-200 cursor-pointer shadow-xs group shrink-0"
         title="Account & Gateway Navigation"
         aria-label="User Profile"
       >
@@ -169,31 +169,31 @@
   <!-- ============================================================ -->
   <!-- MAIN HERO SECTION (Spacious luxury layout with increased length) -->
   <!-- ============================================================ -->
-  <main class="flex-1 flex flex-col items-center justify-center px-4 pt-4 sm:pt-6 md:pt-10 pb-16 sm:pb-20 md:pb-28 z-20 max-w-4xl mx-auto w-full text-center">
+  <main class="flex-1 flex flex-col items-center justify-center px-4 pt-2 sm:pt-6 md:pt-10 pb-10 sm:pb-20 md:pb-28 z-20 max-w-4xl mx-auto w-full text-center">
     
     <!-- Hero Visual: Exact Original Wooden Director's Chair with Proper Photo Height -->
-    <div class="chair-container relative flex items-center justify-center cursor-pointer mb-8 sm:mb-10 md:mb-12 group" onclick="pulseChair()">
+    <div class="chair-container relative flex items-center justify-center cursor-pointer mb-5 sm:mb-8 md:mb-12 group" onclick="pulseChair()">
       <img 
         id="chairImage"
         src="assets/celebsox_chair_original_hd.png" 
         alt="CelebsoX Director's Chair" 
-        class="h-[460px] sm:h-[530px] md:h-[600px] lg:h-[640px] w-auto max-w-full object-contain transition-all duration-300 select-none pointer-events-auto"
+        class="h-[280px] xs:h-[320px] sm:h-[420px] md:h-[540px] lg:h-[620px] max-h-[42vh] sm:max-h-[50vh] w-auto max-w-full object-contain transition-all duration-300 select-none pointer-events-auto"
         draggable="false"
       />
     </div>
 
     <!-- Subtitle: BUILD YOUR IDENTITY. -->
-    <p class="font-sans text-[11.5px] sm:text-[12.5px] md:text-[13.5px] tracking-[0.24em] font-semibold text-[#54504A] uppercase mb-2">
+    <p class="font-sans text-[11px] sm:text-[12.5px] md:text-[13.5px] tracking-[0.24em] font-semibold text-[#54504A] uppercase mb-1.5 sm:mb-2">
       BUILD YOUR IDENTITY.
     </p>
 
     <!-- Main Headline: CREATE YOUR LEGACY. -->
-    <h1 class="font-serif text-[38px] sm:text-[48px] md:text-[58px] lg:text-[64px] font-normal leading-[1.08] tracking-[-0.015em] text-[#131416] mb-3 md:mb-3.5">
+    <h1 class="font-serif text-[28px] xs:text-[34px] sm:text-[46px] md:text-[56px] lg:text-[64px] font-normal leading-[1.08] tracking-[-0.015em] text-[#131416] mb-2 sm:mb-3 md:mb-3.5">
       CREATE YOUR <span class="text-brand-gold font-medium">LEGACY.</span>
     </h1>
 
     <!-- Descriptive Tagline -->
-    <p class="font-sans text-[14px] sm:text-[15.5px] md:text-[16.5px] text-[#5F5B54] max-w-[480px] leading-[1.55] mb-7 md:mb-9 font-normal">
+    <p class="font-sans text-[13px] sm:text-[15.5px] md:text-[16.5px] text-[#5F5B54] max-w-[480px] leading-[1.5] sm:leading-[1.55] mb-6 sm:mb-8 md:mb-9 font-normal px-2">
       Showcase your talent, share your story,<br class="hidden sm:inline" />
       and be discovered on CelebsoX.
     </p>
@@ -206,7 +206,7 @@
         id="btnExploreCelebso"
         href="home.html" 
         onclick="enterWebsite(event, 'home.html')"
-        class="btn-explore inline-flex items-center justify-center gap-2 px-8 sm:px-11 py-3.5 md:py-4 rounded-lg font-sans text-[12.5px] sm:text-[13px] font-semibold tracking-[0.08em] uppercase shadow-md cursor-pointer group"
+        class="btn-explore inline-flex items-center justify-center gap-2 px-7 sm:px-11 py-3.5 sm:py-4 rounded-lg font-sans text-[12px] sm:text-[13px] font-semibold tracking-[0.08em] uppercase shadow-md cursor-pointer group"
       >
         <span>EXPLORE CELEBSO</span>
         <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -292,22 +292,22 @@
   <!-- ============================================================ -->
   <!-- INTERACTIVE MODAL: INSTALL CELEBSO APP                       -->
   <!-- ============================================================ -->
-  <div id="installModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
-    <div class="bg-[#FAF8F5] text-[#141518] border border-[#DDD5C7] rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative transform scale-95 transition-transform duration-300">
+  <div id="installModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-[#FAF8F5] text-[#141518] border border-[#DDD5C7] rounded-2xl max-w-md w-full p-5 sm:p-6 md:p-8 max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 transition-transform duration-300">
       
       <!-- Close Button -->
-      <button onclick="closeInstallModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-neutral-200/80 hover:bg-neutral-300 flex items-center justify-center text-neutral-700 transition cursor-pointer" aria-label="Close Modal">
+      <button onclick="closeInstallModal()" class="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 rounded-full bg-neutral-200/80 hover:bg-neutral-300 flex items-center justify-center text-neutral-700 transition cursor-pointer" aria-label="Close Modal">
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
 
-      <div class="text-center mb-6">
-        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#111215] text-[#ECE7DF] mb-3 shadow-md">
-          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="text-center mb-5 sm:mb-6">
+        <div class="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#111215] text-[#ECE7DF] mb-3 shadow-md">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
             <line x1="12" y1="18" x2="12.01" y2="18"></line>
           </svg>
         </div>
-        <h3 class="font-serif text-2xl font-bold text-[#141518]">Get CelebsoX App</h3>
+        <h3 class="font-serif text-xl sm:text-2xl font-bold text-[#141518]">Get CelebsoX App</h3>
         <p class="font-sans text-xs text-[#6F6B63] mt-1">Official Mobile Application • Android v1.0.4 (51.5 MB)</p>
       </div>
 
@@ -315,43 +315,43 @@
       <div class="space-y-3">
         <!-- Direct APK Download -->
         <a 
-          href="assets/celebsox.apk" 
+          href="https://github.com/veer2580/client-portfolio/raw/main/assets/celebsox.apk" 
           download="CelebsoX.apk"
           onclick="triggerDownloadToast()"
-          class="w-full flex items-center justify-between p-4 bg-[#111215] text-white hover:bg-black rounded-xl transition duration-200 shadow-md group cursor-pointer"
+          class="w-full flex items-center justify-between p-3.5 sm:p-4 bg-[#111215] text-white hover:bg-black rounded-xl transition duration-200 shadow-md group cursor-pointer"
         >
           <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-neutral-800 flex items-center justify-center text-brand-gold">
+            <div class="w-9 h-9 rounded-lg bg-neutral-800 flex items-center justify-center text-brand-gold shrink-0">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             </div>
             <div class="text-left">
-              <div class="font-semibold text-sm">Download Android APK</div>
-              <div class="text-[11px] text-neutral-400">Direct instant download (51.5 MB)</div>
+              <div class="font-semibold text-xs sm:text-sm">Download Android APK</div>
+              <div class="text-[10px] sm:text-[11px] text-neutral-400">Direct instant download (51.5 MB)</div>
             </div>
           </div>
-          <svg class="w-5 h-5 text-neutral-400 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <svg class="w-5 h-5 text-neutral-400 group-hover:translate-x-1 transition-transform shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </a>
 
         <!-- Web Experience Option -->
         <a 
           href="home.html" 
           onclick="enterWebsite(event, 'home.html')"
-          class="w-full flex items-center justify-between p-4 bg-white hover:bg-neutral-50 text-[#141518] border border-[#DDD5C7] rounded-xl transition duration-200 shadow-xs group cursor-pointer"
+          class="w-full flex items-center justify-between p-3.5 sm:p-4 bg-white hover:bg-neutral-50 text-[#141518] border border-[#DDD5C7] rounded-xl transition duration-200 shadow-xs group cursor-pointer"
         >
           <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-[#EFE8DC] flex items-center justify-center text-neutral-800">
+            <div class="w-9 h-9 rounded-lg bg-[#EFE8DC] flex items-center justify-center text-neutral-800 shrink-0">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
             </div>
             <div class="text-left">
-              <div class="font-semibold text-sm">Launch Web Platform</div>
-              <div class="text-[11px] text-neutral-500">Continue directly in browser</div>
+              <div class="font-semibold text-xs sm:text-sm">Launch Web Platform</div>
+              <div class="text-[10px] sm:text-[11px] text-neutral-500">Continue directly in browser</div>
             </div>
           </div>
-          <svg class="w-5 h-5 text-neutral-400 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <svg class="w-5 h-5 text-neutral-400 group-hover:translate-x-1 transition-transform shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </a>
       </div>
 
-      <div class="mt-5 pt-4 border-t border-[#E5DDCF] flex items-center justify-between text-[11px] text-[#78746B]">
+      <div class="mt-4 sm:mt-5 pt-3 sm:pt-4 border-t border-[#E5DDCF] flex items-center justify-between text-[10px] sm:text-[11px] text-[#78746B]">
         <span>Verified Package • SHA-256 Validated</span>
         <span class="text-emerald-700 font-medium flex items-center gap-1">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Live Release
@@ -364,51 +364,51 @@
   <!-- ============================================================ -->
   <!-- INTERACTIVE MODAL: PROFILE & QUICK GATEWAY ACCESS            -->
   <!-- ============================================================ -->
-  <div id="profileModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
-    <div class="bg-[#FAF8F5] text-[#141518] border border-[#DDD5C7] rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative transform scale-95 transition-transform duration-300">
+  <div id="profileModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-[#FAF8F5] text-[#141518] border border-[#DDD5C7] rounded-2xl max-w-md w-full p-5 sm:p-6 md:p-8 max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 transition-transform duration-300">
       
       <!-- Close Button -->
-      <button onclick="closeProfileModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-neutral-200/80 hover:bg-neutral-300 flex items-center justify-center text-neutral-700 transition cursor-pointer" aria-label="Close Modal">
+      <button onclick="closeProfileModal()" class="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 rounded-full bg-neutral-200/80 hover:bg-neutral-300 flex items-center justify-center text-neutral-700 transition cursor-pointer" aria-label="Close Modal">
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
 
-      <div class="flex items-center gap-4 mb-6">
-        <div class="w-13 h-13 rounded-full bg-[#141518] text-[#EDE5DA] flex items-center justify-center text-xl font-bold font-serif shadow-sm p-3">
+      <div class="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
+        <div class="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#141518] text-[#EDE5DA] flex items-center justify-center text-lg sm:text-xl font-bold font-serif shadow-sm p-2 sm:p-3 shrink-0">
           CX
         </div>
         <div>
-          <h3 class="font-serif text-xl font-bold text-[#141518]">CelebsoX Gateway</h3>
-          <p class="font-sans text-xs text-[#6F6B63]">Digital Identity & Architectural Network</p>
+          <h3 class="font-serif text-lg sm:text-xl font-bold text-[#141518]">CelebsoX Gateway</h3>
+          <p class="font-sans text-[11px] sm:text-xs text-[#6F6B63]">Digital Identity & Architectural Network</p>
         </div>
       </div>
 
       <!-- Quick Platform Destination Links -->
-      <div class="space-y-2 mb-6">
-        <p class="font-mono text-[10px] tracking-widest uppercase text-neutral-500 font-semibold mb-2">QUICK PLATFORM DESTINATIONS</p>
+      <div class="space-y-1.5 sm:space-y-2 mb-5 sm:mb-6">
+        <p class="font-mono text-[9px] sm:text-[10px] tracking-widest uppercase text-neutral-500 font-semibold mb-2">QUICK PLATFORM DESTINATIONS</p>
         
-        <a href="home.html" onclick="enterWebsite(event, 'home.html')" class="flex items-center justify-between p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
-          <span class="font-medium text-sm text-neutral-800 group-hover:text-black">01 / Foundation Platform (Home)</span>
+        <a href="home.html" onclick="enterWebsite(event, 'home.html')" class="flex items-center justify-between p-2.5 sm:p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
+          <span class="font-medium text-xs sm:text-sm text-neutral-800 group-hover:text-black">01 / Foundation Platform (Home)</span>
           <span class="text-xs text-brand-gold font-mono font-bold">ENTER →</span>
         </a>
 
-        <a href="portfolio.html" onclick="enterWebsite(event, 'portfolio.html')" class="flex items-center justify-between p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
-          <span class="font-medium text-sm text-neutral-800 group-hover:text-black">02 / Creator Portfolios & Discovery</span>
+        <a href="portfolio.html" onclick="enterWebsite(event, 'portfolio.html')" class="flex items-center justify-between p-2.5 sm:p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
+          <span class="font-medium text-xs sm:text-sm text-neutral-800 group-hover:text-black">02 / Creator Portfolios & Discovery</span>
           <span class="text-xs text-brand-gold font-mono font-bold">ENTER →</span>
         </a>
 
-        <a href="founding-members.html" onclick="enterWebsite(event, 'founding-members.html')" class="flex items-center justify-between p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
-          <span class="font-medium text-sm text-neutral-800 group-hover:text-black">03 / Founding Members Registry</span>
+        <a href="founding-members.html" onclick="enterWebsite(event, 'founding-members.html')" class="flex items-center justify-between p-2.5 sm:p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
+          <span class="font-medium text-xs sm:text-sm text-neutral-800 group-hover:text-black">03 / Founding Members Registry</span>
           <span class="text-xs text-brand-gold font-mono font-bold">ENTER →</span>
         </a>
 
-        <a href="about.html" onclick="enterWebsite(event, 'about.html')" class="flex items-center justify-between p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
-          <span class="font-medium text-sm text-neutral-800 group-hover:text-black">04 / Manifesto & Four Pillars</span>
+        <a href="about.html" onclick="enterWebsite(event, 'about.html')" class="flex items-center justify-between p-2.5 sm:p-3 rounded-lg hover:bg-[#EFE8DC] transition group">
+          <span class="font-medium text-xs sm:text-sm text-neutral-800 group-hover:text-black">04 / Manifesto & Four Pillars</span>
           <span class="text-xs text-brand-gold font-mono font-bold">ENTER →</span>
         </a>
       </div>
 
       <!-- Launch Platform Button -->
-      <button onclick="enterWebsite(null, 'home.html')" class="w-full py-3.5 bg-[#141517] hover:bg-black text-white text-xs font-mono uppercase tracking-widest rounded-lg shadow-sm transition cursor-pointer">
+      <button onclick="enterWebsite(null, 'home.html')" class="w-full py-3 sm:py-3.5 bg-[#141517] hover:bg-black text-white text-xs font-mono uppercase tracking-widest rounded-lg shadow-sm transition cursor-pointer">
         [ LAUNCH CELEBSO X WEBSITE ]
       </button>
 
@@ -461,7 +461,7 @@
       showToast('Starting CelebsoX APK download (51.5 MB)...');
       
       const link = document.createElement('a');
-      link.href = 'assets/celebsox.apk';
+      link.href = 'https://github.com/veer2580/client-portfolio/raw/main/assets/celebsox.apk';
       link.download = 'CelebsoX.apk';
       document.body.appendChild(link);
       link.click();

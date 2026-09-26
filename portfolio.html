@@ -8,21 +8,26 @@
 <a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs tracking-widest" data-path="about" href="about.html">ABOUT</a>
 <a aria-current="page" class="uppercase transition-colors py-space-xs tracking-widest text-on-surface border-b border-primary font-semibold" data-path="portfolio" href="portfolio.html">PORTFOLIO</a>
 <a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-xs tracking-widest" data-path="founding-members" href="founding-members.html">FOUNDING MEMBERS</a>
-</nav><div class="flex items-center gap-space-md">
+</nav><div class="flex items-center gap-space-sm sm:gap-space-md">
 <a class="hidden sm:inline-flex items-center font-mono-technical text-mono-technical uppercase text-on-surface hover:text-secondary transition-colors tracking-widest" href="showcase.html">[ EXPLORE TALENT ]</a>
-<button class="inline-flex items-center justify-center bg-primary text-on-primary font-mono-technical text-mono-technical uppercase px-space-md py-space-sm hover:bg-secondary hover:text-on-secondary transition-all duration-150 tracking-wider shadow-sm cursor-pointer" onclick="openJoinModal()">[ JOIN CELEBSO ]</button>
-<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer ml-space-xs border border-border-hairline" onclick="openPortfolioModal()"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
-<button aria-label="Toggle Navigation Menu" id="mobileMenuBtn" class="md:hidden flex items-center justify-center p-2 text-primary hover:bg-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button>
+<button class="hidden sm:inline-flex items-center justify-center bg-primary text-on-primary font-mono-technical text-mono-technical uppercase px-space-md py-space-sm hover:bg-secondary hover:text-on-secondary transition-all duration-150 tracking-wider shadow-sm cursor-pointer" onclick="openJoinModal()">[ JOIN CELEBSO ]</button>
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer border border-border-hairline text-on-primary" onclick="openPortfolioModal()" title="View Portfolio Dossier"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+<button aria-label="Toggle Navigation Menu" id="mobileMenuBtn" class="md:hidden flex items-center justify-center p-2 text-primary hover:bg-surface-variant rounded-md transition-colors cursor-pointer" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button>
 </div></div>
-<div id="mobileDrawer" class="fixed inset-x-0 top-20 bg-surface/95 backdrop-blur-md border-b border-border-hairline p-6 hidden flex-col gap-4 shadow-xl z-50 md:hidden">
-  <nav class="flex flex-col gap-3">
-    <a href="about.html" class="font-mono-technical text-mono-technical tracking-widest uppercase py-2 border-b border-border-hairline text-on-surface-variant hover:text-on-surface">01 / ABOUT</a>
-    <a href="portfolio.html" class="font-mono-technical text-mono-technical tracking-widest uppercase py-2 border-b border-border-hairline text-on-surface font-semibold">02 / PORTFOLIO</a>
-    <a href="founding-members.html" class="font-mono-technical text-mono-technical tracking-widest uppercase py-2 border-b border-border-hairline text-on-surface-variant hover:text-on-surface">03 / FOUNDING MEMBERS</a>
+<div id="mobileDrawer" class="fixed inset-x-0 top-20 bg-surface/98 backdrop-blur-lg border-b border-border-hairline p-5 sm:p-6 hidden flex-col gap-4 shadow-2xl z-50 md:hidden max-h-[calc(100vh-80px)] overflow-y-auto">
+  <nav class="flex flex-col gap-1">
+    <a href="home.html" class="font-mono-technical text-mono-technical tracking-widest uppercase py-2.5 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">01 / HOME</a>
+    <a href="about.html" class="font-mono-technical text-mono-technical tracking-widest uppercase py-2.5 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">02 / ABOUT</a>
+    <a href="portfolio.html" class="font-mono-technical text-mono-technical tracking-widest uppercase py-2.5 px-3 rounded text-on-surface font-bold bg-surface-container">03 / PORTFOLIO</a>
+    <a href="founding-members.html" class="font-mono-technical text-mono-technical tracking-widest uppercase py-2.5 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">04 / FOUNDING MEMBERS</a>
+    <a href="showcase.html" class="font-mono-technical text-mono-technical tracking-widest uppercase py-2.5 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">05 / SHOWCASE (TALENT)</a>
+    <a href="blog.html" class="font-mono-technical text-mono-technical tracking-widest uppercase py-2.5 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">06 / BLOG</a>
+    <a href="contact.html" class="font-mono-technical text-mono-technical tracking-widest uppercase py-2.5 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">07 / CONTACT</a>
+    <a href="help-center.html" class="font-mono-technical text-mono-technical tracking-widest uppercase py-2.5 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">08 / HELP CENTER</a>
   </nav>
-  <div class="pt-2 flex flex-col gap-3">
-    <button onclick="openJoinModal()" class="inline-flex items-center justify-center bg-primary text-on-primary font-mono-technical text-mono-technical uppercase tracking-widest px-5 py-3 hover:bg-secondary transition-colors">[ JOIN CELEBSO ]</button>
-    <div class="flex items-center justify-between text-text-muted font-mono-technical text-xs pt-2">
+  <div class="pt-2 flex flex-col gap-3 border-t border-border-hairline">
+    <button onclick="openJoinModal()" class="inline-flex items-center justify-center bg-primary text-on-primary font-mono-technical text-mono-technical uppercase tracking-widest px-5 py-3 hover:bg-secondary transition-colors text-center cursor-pointer">[ JOIN CELEBSO ]</button>
+    <div class="flex items-center justify-between text-text-muted font-mono-technical text-xs pt-1">
       <span>COORD: 19.0760° N, 72.8777° E</span>
       <span class="text-secondary font-medium">SYS: STABLE</span>
     </div>
@@ -2432,21 +2437,36 @@
 
 <!-- JAVASCRIPT LOGIC -->
 <script>
-  // Mobile menu toggle
+  // Mobile menu controller
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
   if (mobileMenuBtn && mobileDrawer) {
-    mobileMenuBtn.addEventListener('click', () => {
+    const toggleDrawer = (forceClose = false) => {
       const isHidden = mobileDrawer.classList.contains('hidden');
-      if (isHidden) {
-        mobileDrawer.classList.remove('hidden');
-        mobileDrawer.classList.add('flex');
-        mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">close</span>';
-      } else {
+      if (forceClose || !isHidden) {
         mobileDrawer.classList.add('hidden');
         mobileDrawer.classList.remove('flex');
         mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">menu</span>';
+      } else {
+        mobileDrawer.classList.remove('hidden');
+        mobileDrawer.classList.add('flex');
+        mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">close</span>';
       }
+    };
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleDrawer();
+    });
+    mobileDrawer.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('click', () => toggleDrawer(true));
+    });
+    document.addEventListener('click', (e) => {
+      if (!mobileDrawer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        toggleDrawer(true);
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') toggleDrawer(true);
     });
   }
 
