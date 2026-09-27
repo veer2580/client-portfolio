@@ -47,8 +47,8 @@
       padding: 0;
     }
     body {
-      background-color: #E4DCCF;
-      background: radial-gradient(circle at 50% 36%, #EAE3D8 0%, #E4DCCF 42%, #DFD5C6 75%, #D9CDC0 100%);
+      background-color: #E8E2D6;
+      background: radial-gradient(circle at 50% 36%, #EFECE6 0%, #E8E2D6 45%, #E1DBCE 100%);
       font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
       color: #1A1A18;
       -webkit-font-smoothing: antialiased;
@@ -156,7 +156,7 @@
   <!-- ============================================================ -->
   <!-- TOP NAVIGATION BAR                                           -->
   <!-- ============================================================ -->
-  <header class="w-full pt-8 sm:pt-12 md:pt-16 pb-6 sm:pb-8 md:pb-10 px-5 sm:px-8 md:px-14 flex items-center justify-between z-30 flex-shrink-0">
+  <header class="w-full pt-4 sm:pt-6 md:pt-7 pb-2 sm:pb-3 px-4 sm:px-6 md:px-14 flex items-center justify-between z-30 flex-shrink-0">
     <!-- Brand Logo -->
     <a href="landing.html" class="flex items-center group transition-transform duration-200 hover:scale-[1.02]">
       <span class="font-bold text-[22px] sm:text-[25px] md:text-[27px] tracking-tight text-[#111215]">
@@ -193,46 +193,46 @@
   </header>
 
   <!-- ============================================================ -->
-  <!-- MAIN HERO SECTION (Extended luxury layout with prominent length) -->
+  <!-- MAIN HERO SECTION (Responsive & Balanced for Mobile & Desktop) -->
   <!-- ============================================================ -->
-  <main class="flex-1 flex flex-col items-center justify-center px-4 pt-10 sm:pt-20 md:pt-28 pb-28 sm:pb-44 md:pb-56 z-20 max-w-4xl mx-auto w-full text-center">
+  <main class="flex-1 flex flex-col items-center justify-center px-4 pt-2 sm:pt-4 md:pt-6 pb-6 sm:pb-8 md:pb-10 z-20 max-w-4xl mx-auto w-full text-center">
     
-    <!-- Hero Visual: Exact Original Wooden Director's Chair with Prominent Height -->
-    <div class="chair-container relative flex items-center justify-center cursor-pointer mb-12 sm:mb-16 md:mb-20 group" onclick="pulseChair()">
+    <!-- Hero Visual: Clean Transparent Director's Chair with Natural Ground Shadow -->
+    <div class="chair-container relative flex items-center justify-center cursor-pointer mb-3 sm:mb-5 md:mb-6 group" onclick="pulseChair()">
       <img 
         id="chairImage"
-        src="assets/celebsox_chair_original_hd.png" 
+        src="assets/celebsox_chair_hd_final.png" 
         alt="CelebsoX Director's Chair" 
-        class="h-[440px] xs:h-[480px] sm:h-[540px] md:h-[640px] lg:h-[720px] w-auto max-w-full object-contain transition-all duration-300 select-none pointer-events-auto"
+        class="h-[210px] xs:h-[240px] sm:h-[300px] md:h-[380px] lg:h-[440px] max-h-[33vh] sm:max-h-[42vh] w-auto max-w-full object-contain transition-all duration-300 select-none pointer-events-auto"
         draggable="false"
       />
     </div>
 
     <!-- Subtitle: BUILD YOUR IDENTITY. -->
-    <p class="font-sans text-[11.5px] sm:text-[13px] md:text-[14px] tracking-[0.26em] font-semibold text-[#54504A] uppercase mb-3.5 sm:mb-4.5">
+    <p class="font-sans text-[10.5px] sm:text-[12px] md:text-[13px] tracking-[0.22em] font-semibold text-[#54504A] uppercase mb-1 sm:mb-2">
       BUILD YOUR IDENTITY.
     </p>
 
     <!-- Main Headline: CREATE YOUR LEGACY. -->
-    <h1 class="font-serif text-[32px] xs:text-[38px] sm:text-[50px] md:text-[62px] lg:text-[70px] font-normal leading-[1.12] tracking-[-0.015em] text-[#131416] mb-4 sm:mb-5 md:mb-6">
+    <h1 class="font-serif text-[26px] xs:text-[30px] sm:text-[42px] md:text-[52px] lg:text-[60px] font-normal leading-[1.1] tracking-[-0.015em] text-[#131416] mb-2 sm:mb-2.5 md:mb-3">
       CREATE YOUR <span class="text-brand-gold font-medium">LEGACY.</span>
     </h1>
 
     <!-- Descriptive Tagline -->
-    <p class="font-sans text-[14px] sm:text-[16.5px] md:text-[17.5px] text-[#5F5B54] max-w-[520px] leading-[1.6] sm:leading-[1.65] mb-12 sm:mb-16 md:mb-20 font-normal px-2">
+    <p class="font-sans text-[12.5px] sm:text-[15px] md:text-[16px] text-[#5F5B54] max-w-[480px] leading-[1.5] sm:leading-[1.55] mb-5 sm:mb-6 md:mb-7 font-normal px-2">
       Showcase your talent, share your story,<br class="hidden sm:inline" />
       and be discovered on CelebsoX.
     </p>
 
     <!-- Action Button (Centered) -->
-    <div class="flex items-center justify-center w-full mb-4 sm:mb-6">
+    <div class="flex items-center justify-center w-full">
       
       <!-- Primary Button: EXPLORE CELEBSO -> (Tapping opens the user's website!) -->
       <a 
         id="btnExploreCelebso"
         href="home.html" 
         onclick="enterWebsite(event, 'home.html')"
-        class="btn-explore inline-flex items-center justify-center gap-2 px-9 sm:px-14 py-4.5 sm:py-5 rounded-lg font-sans text-[13px] sm:text-[14px] font-semibold tracking-[0.08em] uppercase shadow-lg cursor-pointer group"
+        class="btn-explore inline-flex items-center justify-center gap-2 px-7 sm:px-11 py-3.5 sm:py-4 rounded-lg font-sans text-[12px] sm:text-[13px] font-semibold tracking-[0.08em] uppercase shadow-md cursor-pointer group"
       >
         <span>EXPLORE CELEBSO</span>
         <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -248,7 +248,7 @@
   <!-- ============================================================ -->
   <!-- BOTTOM FOOTER BAR                                            -->
   <!-- ============================================================ -->
-  <footer class="w-full bg-[#101114] py-8 sm:py-10 md:py-12 px-6 md:px-14 grid grid-cols-1 md:grid-cols-3 items-center gap-5 md:gap-6 z-30 border-t border-[#1C1D22] flex-shrink-0 text-center md:text-left">
+  <footer class="w-full bg-[#101114] py-3.5 sm:py-4 md:py-4 px-6 md:px-14 grid grid-cols-1 md:grid-cols-3 items-center gap-3 md:gap-4 z-30 border-t border-[#1C1D22] flex-shrink-0 text-center md:text-left">
     
     <!-- Left / Starting: ANTELLAY Labs & Celebso Group Copyright -->
     <div class="flex items-center justify-center md:justify-start order-2 md:order-1 text-[11px] sm:text-[12px] text-neutral-400 font-sans tracking-wide">
