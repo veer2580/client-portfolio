@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <filter id="goldGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#FAB60A" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <g filter="url(#goldGlow)">
+    <circle cx="330" cy="121" r="45" fill="#FAB60A" />
+    <path d="M 179 121 L 179 265 L 330 265 L 330 410 L 179 410" stroke="#FAB60A" stroke-width="90" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+</svg>

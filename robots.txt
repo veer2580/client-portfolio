@@ -1,0 +1,6 @@
+# robots.txt for CelebsoX (https://x.celebso.com)
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://x.celebso.com/sitemap.xml
